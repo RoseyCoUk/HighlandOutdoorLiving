@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { Send } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Send, Calculator } from 'lucide-react';
+import { submitLead } from '../lib/forms';
 
-const QuoteForm = () => {
+interface QuoteFormProps {
+  onGetEstimate?: () => void;
+}
+
+const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +18,7 @@ const QuoteForm = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -19,24 +27,31 @@ const QuoteForm = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder form submission - ready for backend integration
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will contact you shortly.');
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        location: '',
-        message: ''
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitLead({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        product: 'General',
+        source: 'Home Page Quote Form'
       });
-    }, 3000);
+
+      if (result.success) {
+        navigate('/thank-you?product=project');
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -87,8 +102,19 @@ const QuoteForm = () => {
           <p className="text-xl text-[#C5B8AB]/90 mb-4">
             Tell us about your outdoor space and we'll help you bring it to life.
           </p>
-          <div className="inline-flex items-center px-4 py-2 bg-[#C5B8AB]/20 rounded-full border border-[#C5B8AB]/30">
-            <span className="text-[#C5B8AB] text-sm font-medium">✓ We typically respond within 24 hours</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-[#C5B8AB]/20 rounded-full border border-[#C5B8AB]/30">
+              <span className="text-[#C5B8AB] text-sm font-medium">✓ We typically respond within 24 hours</span>
+            </div>
+            {onGetEstimate && (
+              <button
+                onClick={onGetEstimate}
+                className="inline-flex items-center px-6 py-2 bg-[#C5B8AB] text-[#222126] font-semibold rounded-lg hover:bg-white transition-colors shadow-lg hover:shadow-xl"
+              >
+                <Calculator className="w-4 h-4 mr-2" />
+                Get Instant Estimate
+              </button>
+            )}
           </div>
         </div>
 
@@ -172,10 +198,11 @@ const QuoteForm = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#222126] text-[#C5B8AB] py-4 font-semibold text-lg transition-all duration-300 hover:bg-[#222126]/90 hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2"
+            disabled={isSubmitting}
+            className="w-full bg-[#222126] text-[#C5B8AB] py-4 font-semibold text-lg transition-all duration-300 hover:bg-[#222126]/90 hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <span>Request My Quote</span>
-            <Send className="w-5 h-5" />
+            <span>{isSubmitting ? 'Submitting...' : 'Request My Quote'}</span>
+            {!isSubmitting && <Send className="w-5 h-5" />}
           </button>
         </form>
       </div>

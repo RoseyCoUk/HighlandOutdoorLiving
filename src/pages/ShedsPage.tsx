@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Check, Shield, Wrench, Home, Star, Phone, Mail, MapPin, Send, Hammer, Building, TreePine } from 'lucide-react';
+import { submitLead } from '../lib/forms';
 
 const ShedsPage = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -14,6 +18,7 @@ const ShedsPage = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -22,22 +27,31 @@ const ShedsPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder form submission - ready for backend integration
-    console.log('Shed quote request:', formData);
-    alert('Thank you for your shed inquiry! We will contact you shortly with a detailed quote.');
-    setIsSubmitted(true);
-    
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitLead({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        product: 'Shed',
+        source: 'Sheds Page'
       });
-    }, 3000);
+
+      if (result.success) {
+        navigate('/thank-you?product=shed');
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToQuote = () => {
@@ -370,10 +384,11 @@ const ShedsPage = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#222126] text-[#C5B8AB] py-4 font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
+                disabled={isSubmitting}
+                className="w-full bg-[#222126] text-[#C5B8AB] py-4 font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Request My Quote</span>
-                <Send className="w-5 h-5" />
+                <span>{isSubmitting ? 'Sending...' : 'Request My Quote'}</span>
+                {!isSubmitting && <Send className="w-5 h-5" />}
               </button>
             </form>
           )}

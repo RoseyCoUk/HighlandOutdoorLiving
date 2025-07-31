@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { submitLead } from '../lib/forms';
 
 const ContactSection = () => {
+  const navigate = useNavigate();
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setContactForm({
@@ -15,12 +19,30 @@ const ContactSection = () => {
     });
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder form submission - ready for backend integration
-    console.log('Contact form submitted:', contactForm);
-    alert('Message sent! We will get back to you soon.');
-    setContactForm({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitLead({
+        name: contactForm.name,
+        email: contactForm.email,
+        message: contactForm.message,
+        product: 'General',
+        source: 'Contact Section'
+      });
+
+      if (result.success) {
+        navigate('/thank-you?product=project');
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -141,9 +163,10 @@ const ContactSection = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#C5B8AB] text-[#222126] py-3 font-semibold transition-all duration-300 hover:bg-white hover:scale-105"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#C5B8AB] text-[#222126] py-3 font-semibold transition-all duration-300 hover:bg-white hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

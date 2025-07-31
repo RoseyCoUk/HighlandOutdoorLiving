@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { submitLead } from '../lib/forms';
 
 const ContactPage = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -26,26 +30,28 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Placeholder form submission - ready for backend integration
-    console.log('Contact form submitted:', formData);
-    alert('Thank you for contacting us! We will respond within 24 hours.');
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-    
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
+
+    try {
+      const result = await submitLead({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        product: 'General',
+        source: 'Contact Page'
       });
-    }, 5000);
+
+      if (result.success) {
+        navigate('/thank-you?product=project');
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

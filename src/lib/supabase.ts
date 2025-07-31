@@ -21,6 +21,10 @@ export interface Lead {
   notes?: string;
   source?: string;
   created_at: string;
+  // Additional fields that might be useful for estimate calculator leads
+  location?: string;
+  timeframe?: string;
+  budget?: string;
 }
 
 export interface LeadUpdate {

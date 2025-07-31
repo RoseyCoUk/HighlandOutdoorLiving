@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { supabase, Lead, LeadUpdate } from '../../lib/supabase';
-import { Search, Filter, Download, Eye, X, Save } from 'lucide-react';
+import { Search, Filter, Download, Eye, X, Save, Upload, Plus } from 'lucide-react';
 
 const LeadsPage: React.FC = () => {
   const [leads, setLeads] = useState<Lead[]>([]);
@@ -12,6 +12,11 @@ const LeadsPage: React.FC = () => {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [editingLead, setEditingLead] = useState<LeadUpdate>({});
   const [saving, setSaving] = useState(false);
+  const [showUploadModal, setShowUploadModal] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState('');
+  const [uploadSuccess, setUploadSuccess] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     fetchLeads();
@@ -124,12 +129,138 @@ const LeadsPage: React.FC = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'New': return 'bg-blue-100 text-blue-800';
-      case 'Contacted': return 'bg-yellow-100 text-yellow-800';
-      case 'Quoted': return 'bg-purple-100 text-purple-800';
-      case 'Closed': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
+      case 'New': return 'bg-blue-100 text-blue-800 border border-blue-200';
+      case 'Contacted': return 'bg-yellow-100 text-yellow-800 border border-yellow-200';
+      case 'Quoted': return 'bg-purple-100 text-purple-800 border border-purple-200';
+      case 'Closed': return 'bg-green-100 text-green-800 border border-green-200';
+      default: return 'bg-gray-100 text-gray-800 border border-gray-200';
     }
+  };
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'New': return '🆕';
+      case 'Contacted': return '📞';
+      case 'Quoted': return '💰';
+      case 'Closed': return '✅';
+      default: return '📋';
+    }
+  };
+
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setUploadError('');
+    setUploadSuccess('');
+
+    try {
+      const text = await file.text();
+      const lines = text.split('\n');
+      const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+      
+      // Validate headers
+      const requiredHeaders = ['name', 'email', 'product'];
+      const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
+      
+      if (missingHeaders.length > 0) {
+        throw new Error(`Missing required columns: ${missingHeaders.join(', ')}`);
+      }
+
+      const leads = [];
+      let successCount = 0;
+      let errorCount = 0;
+
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        
+        const values = lines[i].split(',').map(v => v.trim().replace(/"/g, ''));
+        const lead = {
+          name: values[headers.indexOf('name')] || '',
+          email: values[headers.indexOf('email')] || '',
+          phone: values[headers.indexOf('phone')] || null,
+          product: values[headers.indexOf('product')] || 'General',
+          message: values[headers.indexOf('message')] || '',
+          status: values[headers.indexOf('status')] || 'New',
+          source: values[headers.indexOf('source')] || 'CSV Upload',
+          notes: values[headers.indexOf('notes')] || null
+        };
+
+        // Validate required fields
+        if (!lead.name || !lead.email) {
+          errorCount++;
+          continue;
+        }
+
+        // Validate product
+        if (!['Sauna', 'Grill Pod', 'Shed', 'General'].includes(lead.product)) {
+          lead.product = 'General';
+        }
+
+        // Validate status
+        if (!['New', 'Contacted', 'Quoted', 'Closed'].includes(lead.status)) {
+          lead.status = 'New';
+        }
+
+        try {
+          const { error } = await supabase
+            .from('leads')
+            .insert(lead);
+
+          if (error) {
+            console.error('Error inserting lead:', error);
+            errorCount++;
+          } else {
+            successCount++;
+            leads.push(lead);
+          }
+        } catch (error) {
+          console.error('Error inserting lead:', error);
+          errorCount++;
+        }
+      }
+
+      if (successCount > 0) {
+        setUploadSuccess(`Successfully uploaded ${successCount} leads${errorCount > 0 ? ` (${errorCount} failed)` : ''}`);
+        // Refresh leads list
+        fetchLeads();
+        // Close modal after 2 seconds
+        setTimeout(() => {
+          setShowUploadModal(false);
+          setUploadSuccess('');
+        }, 2000);
+      } else {
+        setUploadError('No leads were uploaded successfully');
+      }
+
+    } catch (error) {
+      console.error('Upload error:', error);
+      setUploadError(error instanceof Error ? error.message : 'Failed to upload file');
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    }
+  };
+
+  const downloadTemplate = () => {
+    const headers = ['name', 'email', 'phone', 'product', 'message', 'status', 'source', 'notes'];
+    const example = ['John Smith', 'john@example.com', '+44 7911 123456', 'Sauna', 'Interested in garden sauna', 'New', 'Website', 'Initial inquiry'];
+    
+    const csvContent = [
+      headers.join(','),
+      example.join(',')
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'nmg-leads-template.csv';
+    a.click();
+    window.URL.revokeObjectURL(url);
   };
 
   if (loading) {
@@ -149,7 +280,7 @@ const LeadsPage: React.FC = () => {
 
       {/* Filters and Search */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {/* Search */}
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
@@ -187,6 +318,15 @@ const LeadsPage: React.FC = () => {
             <option value="Shed">Shed</option>
             <option value="General">General</option>
           </select>
+
+          {/* Upload Button */}
+          <button
+            onClick={() => setShowUploadModal(true)}
+            className="flex items-center justify-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+          >
+            <Upload className="w-4 h-4 mr-2" />
+            Upload Leads
+          </button>
 
           {/* Export Button */}
           <button
@@ -251,7 +391,8 @@ const LeadsPage: React.FC = () => {
                     {lead.product}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(lead.status)}`}>
+                    <span className={`inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full ${getStatusColor(lead.status)}`}>
+                      <span className="mr-1">{getStatusIcon(lead.status)}</span>
                       {lead.status}
                     </span>
                   </td>
@@ -259,12 +400,57 @@ const LeadsPage: React.FC = () => {
                     {new Date(lead.created_at).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <button
-                      onClick={() => openLeadModal(lead)}
-                      className="text-[#222126] hover:text-[#222126]/80 transition-colors"
-                    >
-                      <Eye className="h-4 w-4" />
-                    </button>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => openLeadModal(lead)}
+                        className="text-[#222126] hover:text-[#222126]/80 transition-colors"
+                        title="View Details"
+                      >
+                        <Eye className="h-4 w-4" />
+                      </button>
+                      <select
+                        value={lead.status}
+                        onChange={async (e) => {
+                          const newStatus = e.target.value;
+                          console.log('Updating lead status:', lead.id, 'from', lead.status, 'to', newStatus);
+                          
+                          try {
+                            const { data, error } = await supabase
+                              .from('leads')
+                              .update({ status: newStatus })
+                              .eq('id', lead.id)
+                              .select();
+                            
+                            if (error) {
+                              console.error('Supabase error:', error);
+                              throw error;
+                            }
+                            
+                            console.log('Update successful:', data);
+                            
+                            // Update local state
+                            setLeads(leads.map(l =>
+                              l.id === lead.id ? { ...l, status: newStatus } : l
+                            ));
+                            
+                            // Also update filtered leads
+                            setFilteredLeads(filteredLeads.map(l =>
+                              l.id === lead.id ? { ...l, status: newStatus } : l
+                            ));
+                            
+                          } catch (error) {
+                            console.error('Error updating status:', error);
+                            alert('Failed to update status. Please try again.');
+                          }
+                        }}
+                        className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[#222126]"
+                      >
+                        <option value="New">New</option>
+                        <option value="Contacted">Contacted</option>
+                        <option value="Quoted">Quoted</option>
+                        <option value="Closed">Closed</option>
+                      </select>
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -379,6 +565,86 @@ const LeadsPage: React.FC = () => {
                 )}
                 Save Changes
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Upload Modal */}
+      {showUploadModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg max-w-md w-full">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <h2 className="text-xl font-semibold text-gray-900">Upload Leads</h2>
+              <button
+                onClick={() => setShowUploadModal(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            <div className="p-6 space-y-4">
+              <div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Upload CSV File</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Upload a CSV file with lead information. Required columns: name, email, product.
+                </p>
+                
+                <div className="space-y-3">
+                  <button
+                    onClick={downloadTemplate}
+                    className="flex items-center text-sm text-blue-600 hover:text-blue-800"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Download CSV Template
+                  </button>
+                  
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept=".csv"
+                      onChange={handleFileUpload}
+                      className="hidden"
+                    />
+                    <button
+                      onClick={() => fileInputRef.current?.click()}
+                      disabled={uploading}
+                      className="flex items-center justify-center w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+                    >
+                      {uploading ? (
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      ) : (
+                        <Upload className="w-4 h-4 mr-2" />
+                      )}
+                      {uploading ? 'Uploading...' : 'Choose CSV File'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {uploadError && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                  {uploadError}
+                </div>
+              )}
+
+              {uploadSuccess && (
+                <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
+                  {uploadSuccess}
+                </div>
+              )}
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-medium text-gray-900 mb-2">CSV Format:</h4>
+                <div className="text-xs text-gray-600 space-y-1">
+                  <p><strong>Required:</strong> name, email, product</p>
+                  <p><strong>Optional:</strong> phone, message, status, source, notes</p>
+                  <p><strong>Products:</strong> Sauna, Grill Pod, Shed, General</p>
+                  <p><strong>Status:</strong> New, Contacted, Quoted, Closed</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

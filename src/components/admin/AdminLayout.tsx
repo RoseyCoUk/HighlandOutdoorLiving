@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { User } from '@supabase/supabase-js';
-import { Menu, X, LogOut, Users, BarChart3, Settings } from 'lucide-react';
+import { Menu, X, LogOut, Users, BarChart3, Settings, BookOpen } from 'lucide-react';
 
 interface AdminLayoutProps {
   children?: React.ReactNode;
@@ -37,6 +37,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const navigation = [
     { name: 'Dashboard', href: '/admin', icon: BarChart3 },
     { name: 'Leads', href: '/admin/leads', icon: Users },
+    { name: 'Guide', href: '/admin/guide', icon: BookOpen },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
 

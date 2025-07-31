@@ -1,7 +1,11 @@
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Calculator } from 'lucide-react';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onGetEstimate?: () => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
   const scrollToQuote = () => {
     document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -45,14 +49,26 @@ const HeroSection = () => {
           Premium PVC solutions, luxury saunas, and handcrafted grill pods designed to transform your outdoor space.
         </p>
 
-        {/* CTA Button */}
-        <button
-          onClick={scrollToQuote}
-          className="group inline-flex items-center px-8 py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-lg rounded-none transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-2xl"
-        >
-          Get a Free Design Quote
-          <ChevronDown className="ml-2 w-5 h-5 transition-transform group-hover:translate-y-1" />
-        </button>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <button
+            onClick={scrollToQuote}
+            className="group inline-flex items-center px-8 py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-lg rounded-none transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-2xl"
+          >
+            Get a Free Design Quote
+            <ChevronDown className="ml-2 w-5 h-5 transition-transform group-hover:translate-y-1" />
+          </button>
+          
+          {onGetEstimate && (
+            <button
+              onClick={onGetEstimate}
+              className="group inline-flex items-center px-8 py-4 bg-transparent text-[#C5B8AB] font-semibold text-lg border-2 border-[#C5B8AB] rounded-none transition-all duration-300 hover:bg-[#C5B8AB] hover:text-[#222126] hover:scale-105 hover:shadow-2xl"
+            >
+              <Calculator className="mr-2 w-5 h-5" />
+              Get Instant Estimate
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Scroll indicator */}

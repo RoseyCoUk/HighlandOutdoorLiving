@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Calculator } from 'lucide-react';
 
-const Footer = () => {
+interface FooterProps {
+  onGetEstimate?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
   return (
     <footer className="bg-[#222126] text-[#C5B8AB] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
@@ -114,6 +118,27 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* CTA Section */}
+        {onGetEstimate && (
+          <div className="border-t border-[#C5B8AB]/20 pt-8 mb-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-white mb-4">
+                Ready to Get Started?
+              </h3>
+              <p className="text-[#C5B8AB]/80 mb-6 max-w-2xl mx-auto">
+                Get your free instant estimate in just a few clicks. No commitment required.
+              </p>
+              <button
+                onClick={onGetEstimate}
+                className="inline-flex items-center px-8 py-3 bg-[#C5B8AB] text-[#222126] font-semibold rounded-lg hover:bg-white transition-colors shadow-lg hover:shadow-xl"
+              >
+                <Calculator className="w-5 h-5 mr-2" />
+                Get Free Estimate
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Bottom Bar */}
         <div className="border-t border-[#C5B8AB]/20 pt-8">

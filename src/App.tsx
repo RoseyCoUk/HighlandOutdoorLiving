@@ -20,16 +20,23 @@ import AdminLogin from './components/admin/AdminLogin';
 import AdminDashboard from './components/admin/AdminDashboard';
 import LeadsPage from './components/admin/LeadsPage';
 import AdminSettings from './components/admin/AdminSettings';
+import AdminGuide from './components/admin/AdminGuide';
+import ThankYouPage from './pages/ThankYouPage';
 import Footer from './components/Footer';
+import EstimateCalculator from './components/EstimateCalculator';
+import { useEstimateCalculator } from './hooks/useEstimateCalculator';
 
 function App() {
+  const { isOpen, openCalculator, closeCalculator } = useEstimateCalculator();
+
   return (
     <Router>
       <Header />
+      <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />
       <Routes>
         <Route path="/" element={
           <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
-            <HeroSection />
+            <HeroSection onGetEstimate={openCalculator} />
             <BrandPositioning />
             <ServicesOverview />
             <section className="py-12 bg-[#111]">
@@ -53,7 +60,7 @@ function App() {
                       controls
                       playsInline
                     >
-                      <source src="/videos/nmg-showroom.mp4" type="video/mp4" />
+                      <source src="/NMG Showroom Vid.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -62,7 +69,7 @@ function App() {
             </section>
             <ProjectGallery />
             <Testimonials />
-            <QuoteForm />
+            <QuoteForm onGetEstimate={openCalculator} />
             <ContactSection />
           </div>
         } />
@@ -74,13 +81,15 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
           <Route path="leads" element={<LeadsPage />} />
+          <Route path="guide" element={<AdminGuide />} />
           <Route path="settings" element={<AdminSettings />} />
         </Route>
       </Routes>
-      <Footer />
+      <Footer onGetEstimate={openCalculator} />
     </Router>
   );
 }

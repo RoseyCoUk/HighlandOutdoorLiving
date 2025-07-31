@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Check, Shield, Leaf, Wrench, Globe, Clock, Phone, Mail, MapPin, Send, Star, Flame, Droplets, EclipseIcon as Eco } from 'lucide-react';
+import { submitLead, formatName } from '../lib/forms';
 
 const GrillPodPage = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -16,6 +20,7 @@ const GrillPodPage = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeTab, setActiveTab] = useState('All');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,23 +30,30 @@ const GrillPodPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder form submission - ready for backend integration
-    console.log('Grill Pod quote request:', formData);
-    alert('Thank you for your grill pod inquiry! We will contact you shortly with a detailed quote.');
-    setIsSubmitted(true);
-    
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        location: '',
-        message: ''
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitLead({
+        name: formatName(formData.firstName, formData.lastName),
+        email: formData.email,
+        message: formData.message,
+        product: 'Grill Pod',
+        source: 'Grill Pod Page'
       });
-    }, 3000);
+
+      if (result.success) {
+        navigate('/thank-you?product=grill pod');
+      } else {
+        alert('There was an error submitting your form. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToQuote = () => {
@@ -463,10 +475,11 @@ const GrillPodPage = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#222126] to-[#222126]/90 text-[#C5B8AB] py-6 font-black text-lg uppercase tracking-wider transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#222126] to-[#222126]/90 text-[#C5B8AB] py-6 font-black text-lg uppercase tracking-wider transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Send My Request</span>
-                <Send className="w-6 h-6" />
+                <span>{isSubmitting ? 'Sending...' : 'Send My Request'}</span>
+                {!isSubmitting && <Send className="w-6 h-6" />}
               </button>
             </form>
           )}

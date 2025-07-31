@@ -52,12 +52,33 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-lg border-b border-white/10 shadow-lg">
       <nav 
-        className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-end"
+        className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between"
         role="navigation"
         aria-label="Main navigation"
         onKeyDown={handleKeyDown}
       >
-        {/* Desktop Navigation - Hidden on mobile */}
+        {/* Animated Logo */}
+        <Link to="/admin/login" className="flex items-center space-x-2 group">
+          <div className="relative">
+            {/* 3D Rotating Logo */}
+            <div className="w-14 h-14 group-hover:animate-spin-slow transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
+              <img 
+                src="/ngmlogo.jpg" 
+                alt="NMG Outdoor Living Logo" 
+                className="w-full h-full object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  perspective: '1000px'
+                }}
+              />
+            </div>
+            {/* Glowing Ring Effect */}
+            <div className="absolute inset-0 rounded-lg border-2 border-[#C5B8AB]/30 group-hover:border-[#C5B8AB] group-hover:shadow-[0_0_20px_rgba(197,184,171,0.5)] transition-all duration-500 group-hover:scale-125 opacity-0 group-hover:opacity-100"></div>
+          </div>
+
+        </Link>
+
+                {/* Desktop Navigation - Hidden on mobile */}
         <ul className="hidden md:flex items-center space-x-8">
           {navigationLinks.map((link) => (
             <li key={link.path}>
@@ -94,9 +115,6 @@ const Header = () => {
         {/* Mobile Menu Overlay */}
         <div
           id="mobile-menu"
-          className={`md:hidden fixed inset-0 top-[73px] bg-white z-40 transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'
-          }`}
           className={`md:hidden fixed inset-0 top-[73px] bg-black/95 backdrop-blur-lg z-40 transition-transform duration-300 ease-in-out ${
             isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'
           }`}
