@@ -8,7 +8,7 @@ const ServicesOverview = () => {
       title: 'Sheds',
       description: 'Durable, stylish, and low-maintenance shed solutions built to last.',
       features: ['Fencing', 'Decking', 'Cladding'],
-      image: '/image copy copy copy copy.png',
+      image: '/landing pages/outdoor glass room.JPG',
       alt: 'NMG PVC outdoor fencing and cladding installation',
       cta: 'View Shed Range'
     },
@@ -16,7 +16,7 @@ const ServicesOverview = () => {
       title: 'Garden Saunas',
       description: 'Unwind in your own custom-built sauna — tailored for wellness, comfort, and style.',
       features: ['Custom Design', 'Premium Materials', 'Installation Included'],
-      image: '/image copy copy copy.png',
+      image: '/landing pages/Sauna1.JPG',
       alt: 'Interior of luxury garden sauna with soft lighting',
       cta: 'Explore Sauna Options'
     },
@@ -24,7 +24,7 @@ const ServicesOverview = () => {
       title: 'Grill Pods',
       description: 'Enjoy BBQs all year round with handcrafted grill pods designed for entertaining in any weather.',
       features: ['Weather Resistant', 'Custom Designs', 'Professional Installation'],
-      image: '/image copy copy.png',
+      image: '/landing pages/GrillPod1.JPG',
       alt: 'NMG custom grill pod installation',
       cta: 'View Grill Pod Range'
     }
@@ -50,6 +50,7 @@ const ServicesOverview = () => {
                   src={service.image}
                   alt={service.alt}
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>

@@ -22,6 +22,7 @@ import LeadsPage from './components/admin/LeadsPage';
 import AdminSettings from './components/admin/AdminSettings';
 import AdminGuide from './components/admin/AdminGuide';
 import ThankYouPage from './pages/ThankYouPage';
+import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
 import EstimateCalculator from './components/EstimateCalculator';
 import { useEstimateCalculator } from './hooks/useEstimateCalculator';
@@ -88,6 +89,7 @@ function App() {
           <Route path="guide" element={<AdminGuide />} />
           <Route path="settings" element={<AdminSettings />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer onGetEstimate={openCalculator} />
     </Router>

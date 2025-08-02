@@ -5,44 +5,62 @@ const ProjectGallery = () => {
   
   const projects = [
     {
-      title: 'Maghera Garden Revamp',
-      category: 'PVC',
-      image: '/image.png',
-      description: 'Complete garden transformation with PVC fencing and decking'
-    },
-    {
-      title: 'Garden Sauna in Maghera',
-      category: 'Saunas',
-      image: '/image copy copy copy.png',
-      description: 'Custom-built luxury sauna with premium finishes'
-    },
-    {
-      title: 'Custom Grill Pod Installation',
+      title: 'Premium Grill Pod Installation',
       category: 'Grill Pods',
-      image: '/image copy copy copy copy copy copy.png',
-      description: 'Weather-resistant grill pod for year-round entertaining'
+      image: '/landing pages/GrillPod1.JPG',
+      description: 'Custom-built weatherproof grill pod with Mont Alpi kitchen'
     },
     {
-      title: 'Modern PVC Decking',
-      category: 'PVC',
-      image: '/image copy.png',
-      description: 'Low-maintenance PVC decking with contemporary design'
-    },
-    {
-      title: 'Outdoor Wellness Sauna',
+      title: 'Luxury Garden Sauna',
       category: 'Saunas',
-      image: '/image copy copy copy copy copy.png',
-      description: 'Wellness-focused sauna design with natural materials'
+      image: '/landing pages/Sauna1.JPG',
+      description: 'Steel-framed, fully-insulated sauna with premium finishes'
+    },
+    {
+      title: 'Modern Outdoor Kitchen',
+      category: 'Grill Pods',
+      image: '/landing pages/GrillPod2.JPG',
+      description: 'All-weather outdoor kitchen perfect for year-round entertaining'
+    },
+    {
+      title: 'Custom Shed Workshop',
+      category: 'Sheds',
+      image: '/landing pages/outdoor glass room.JPG',
+      description: 'Bespoke workshop shed with power and lighting'
+    },
+    {
+      title: 'Garden Wellness Sauna',
+      category: 'Saunas',
+      image: '/landing pages/Sauna2.JPG',
+      description: 'Thermal aspen interior sauna for ultimate relaxation'
     },
     {
       title: 'Entertainment Grill Pod',
       category: 'Grill Pods',
-      image: '/image copy copy.png',
-      description: 'Spacious grill pod perfect for family gatherings'
+      image: '/landing pages/GrillPod3.JPG',
+      description: 'Spacious grill pod designed for family gatherings'
+    },
+    {
+      title: 'Compact Garden Sauna',
+      category: 'Saunas',
+      image: '/landing pages/Sauna3.JPG',
+      description: 'Space-efficient sauna perfect for smaller gardens'
+    },
+    {
+      title: 'Professional Grill Pod',
+      category: 'Grill Pods',
+      image: '/landing pages/GrillPod4.JPG',
+      description: 'Commercial-grade outdoor kitchen installation'
+    },
+    {
+      title: 'Luxury Shed Office',
+      category: 'Sheds',
+      image: '/landing pages/outdoor glass room 2.jpg',
+      description: 'Insulated garden office with modern amenities'
     }
   ];
 
-  const filters = ['All', 'PVC', 'Saunas', 'Grill Pods'];
+  const filters = ['All', 'Saunas', 'Grill Pods', 'Sheds'];
   
   const filteredProjects = filter === 'All' 
     ? projects 
@@ -85,6 +103,7 @@ const ProjectGallery = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/90 via-[#222126]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

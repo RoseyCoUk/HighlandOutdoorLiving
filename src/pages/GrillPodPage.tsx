@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, Check, Shield, Leaf, Wrench, Globe, Clock, Phone, Mail, MapPin, Send, Star, Flame, Droplets, EclipseIcon as Eco } from 'lucide-react';
+import { ChevronDown, Check, Shield, Leaf, Wrench, Globe, Clock, Phone, Mail, MapPin, Send, Star, Flame, Droplets, X, ChevronRight, ChevronLeft, Play, Quote } from 'lucide-react';
 import { submitLead, formatName } from '../lib/forms';
 
 const GrillPodPage = () => {
@@ -21,7 +20,7 @@ const GrillPodPage = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [activeTab, setActiveTab] = useState('All');
+  const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -60,63 +59,100 @@ const GrillPodPage = () => {
     document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const galleryTabs = ['All', 'Interior', 'Exterior', 'At Night'];
-  
-  const galleryImages = {
-    All: [
-      { src: '/image copy copy copy copy copy copy.png', alt: 'Premium Grill Pod Installation' },
-      { src: '/image copy copy.png', alt: 'Interior Comfort' },
-      { src: '/image copy copy copy copy copy.png', alt: 'Night Ambiance' },
-      { src: '/image copy copy copy.png', alt: 'Custom Features' },
-      { src: '/image copy copy copy copy.png', alt: 'All-Season Use' },
-      { src: '/image.png', alt: 'Entertainment Space' }
-    ],
-    Interior: [
-      { src: '/image copy copy.png', alt: 'Interior Comfort' },
-      { src: '/image copy copy copy.png', alt: 'Custom Features' }
-    ],
-    Exterior: [
-      { src: '/image copy copy copy copy copy copy.png', alt: 'Premium Installation' },
-      { src: '/image copy copy copy copy.png', alt: 'All-Season Design' }
-    ],
-    'At Night': [
-      { src: '/image copy copy copy copy copy.png', alt: 'Night Ambiance' },
-      { src: '/image.png', alt: 'Evening Entertainment' }
-    ]
+  const scrollToViewing = () => {
+    document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const faqs = [
+    {
+      question: "How weatherproof is the Grill Pod?",
+      answer: "The Grill Pod is fully weatherproof with galvanized steel frame, composite cladding, and sealed construction. It's designed to withstand all weather conditions year-round, including rain, snow, and wind."
+    },
+    {
+      question: "Can it be used in winter?",
+      answer: "Absolutely! The Grill Pod is fully insulated and designed for year-round use. The Mont Alpi kitchen provides powerful heating, and the insulated structure keeps you comfortable even in cold weather."
+    },
+    {
+      question: "Can I customize the interior?",
+      answer: "Yes, the interior is fully customizable. You can choose from different flooring options, wall finishes, lighting configurations, and add features like TVs, sound systems, and additional storage."
+    },
+    {
+      question: "How is delivery/installation handled?",
+      answer: "We handle everything from delivery to installation. Our team will deliver the Grill Pod to your location and professionally install it, including electrical connections and any additional features you've chosen."
+    },
+    {
+      question: "What power requirements are needed?",
+      answer: "The Grill Pod requires a 32A power supply. We'll assess your current electrical setup and provide guidance on any necessary upgrades during the consultation process."
+    },
+    {
+      question: "How long does installation take?",
+      answer: "Installation typically takes 1-2 days depending on the complexity of your setup and any additional features. We'll provide a detailed timeline during the planning phase."
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah & Mark Thompson",
+      location: "Belfast",
+      quote: "The Grill Pod has transformed our outdoor entertaining. We use it year-round and the Mont Alpi kitchen is incredible. Best investment we've made!",
+      rating: 5
+    },
+    {
+      name: "David Wilson",
+      location: "Lisburn",
+      quote: "Professional installation, exceptional quality. The weatherproof design means we can BBQ even in the rain. Highly recommend!",
+      rating: 5
+    },
+    {
+      name: "Emma & James O'Connor",
+      location: "Newry",
+      quote: "From the initial consultation to final installation, the team was fantastic. Our Grill Pod is the envy of the neighborhood!",
+      rating: 5
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
-      {/* Cinematic Hero Section */}
+      {/* 1. Hero Section - Above the Fold */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-[73px]">
-        {/* Background Image */}
+        {/* Background Video/Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: "url('/image copy copy copy copy copy copy.png')"
+            backgroundImage: "url('/Nigel Grill Pod/001.jpg')"
           }}
         ></div>
         
-        {/* Dark Cinematic Overlay */}
+        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-white leading-none tracking-tighter uppercase transform hover:scale-105 transition-transform duration-700">
-            THE GRILL POD
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-white leading-none tracking-tighter">
+            The Ultimate Outdoor Kitchen Experience Starts Here
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/95 mb-16 max-w-4xl mx-auto leading-relaxed font-light tracking-wide">
-            Outdoor cooking, all year round — beautifully enclosed.
+          <p className="text-xl md:text-2xl text-white/95 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
+            Weatherproof. Luxurious. Effortless. Meet the Grill Pod.
           </p>
 
-          <button
-            onClick={scrollToQuote}
-            className="group inline-flex items-center px-12 py-6 bg-gradient-to-r from-[#C5B8AB] to-white text-[#222126] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:shadow-2xl transform hover:from-white hover:to-[#C5B8AB]"
-          >
-            Request a Quote
-            <ChevronDown className="ml-3 w-6 h-6 transition-transform group-hover:translate-y-3" />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button
+              onClick={scrollToQuote}
+              className="group inline-flex items-center px-12 py-6 bg-gradient-to-r from-[#C5B8AB] to-white text-[#222126] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:shadow-2xl transform hover:from-white hover:to-[#C5B8AB]"
+            >
+              Request a Quote
+              <ChevronRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-2" />
+            </button>
+            
+            <button
+              onClick={scrollToViewing}
+              className="group inline-flex items-center px-12 py-6 border-2 border-[#C5B8AB] text-[#C5B8AB] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:bg-[#C5B8AB] hover:text-[#222126]"
+            >
+              Book a Viewing
+              <MapPin className="ml-3 w-6 h-6 transition-transform group-hover:scale-110" />
+            </button>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
@@ -125,243 +161,197 @@ const GrillPodPage = () => {
         </div>
       </section>
 
-      {/* Intro Section - Premium Outdoor Solution */}
+      {/* 2. What is the Grill Pod? */}
       <section className="py-32 bg-[#222126] relative">
-        {/* Background Texture */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#C5B8AB]/20 via-transparent to-[#C5B8AB]/10"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* Left Content */}
-            <div className="space-y-12">
-              <div>
-                <p className="text-sm font-bold text-[#C5B8AB]/70 mb-6 tracking-[0.3em] uppercase">
-                  GRILL POD INTRO
-                </p>
-                <h2 className="text-4xl md:text-5xl font-light text-white mb-12 leading-tight">
-                  Premium Outdoor Solution
-                </h2>
-              </div>
-              
-              <p className="text-lg text-[#C5B8AB]/90 leading-relaxed font-light">
-                The Grill Pod is our premium solution for year-round cooking and hosting. Built to last, insulated for all seasons, and tailored to your style — it's more than a BBQ shelter. <span className="text-white font-medium">It's a showpiece.</span>
-              </p>
-            </div>
-
-            {/* Right - Floating Features Card */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-12 border border-[#C5B8AB]/20 shadow-2xl transform hover:scale-105 transition-all duration-500">
-                <h3 className="text-2xl font-bold text-white mb-8 tracking-wide">Key Features</h3>
-                <div className="space-y-6">
-                  {[
-                    'Enclosed grilling design',
-                    'Veranda add-on',
-                    'LED lighting',
-                    '32A electric hookup',
-                    'All-weather materials'
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center text-[#C5B8AB] text-base">
-                      <div className="w-4 h-4 bg-gradient-to-r from-[#C5B8AB] to-white rounded-full mr-5 flex-shrink-0"></div>
-                      <span className="font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#C5B8AB]/20 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Customisation Section - Bespoke Pods */}
-      <section className="py-32 bg-[#C5B8AB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8 tracking-tight">
-              Bespoke Pods, Built Your Way
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-8 tracking-tight">
+              Not Just a Grill. A Revolution in Outdoor Living.
             </h2>
+            <p className="text-xl text-[#C5B8AB]/90 max-w-4xl mx-auto leading-relaxed font-light">
+              The Grill Pod is a fully insulated, weatherproof outdoor kitchen, built to last with a galvanized steel frame, luxury finishes, and high-end cooking equipment.
+            </p>
           </div>
 
-          {/* Asymmetric Staggered Layout */}
-          <div className="space-y-8">
-            {/* Row 1 - Large + Small */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2 bg-white p-16 shadow-2xl transform hover:scale-105 transition-all duration-700 hover:shadow-3xl">
-                <h3 className="text-2xl font-black text-[#222126] mb-6 uppercase tracking-wide">
-                  Pod Options
-                </h3>
-                <p className="text-base text-[#222126]/80 leading-relaxed font-light">
-                  Exterior cladding, lighting, wall finishes — every detail crafted to your vision and space requirements.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#222126] to-[#222126]/80 p-10 text-white transform hover:scale-105 transition-all duration-700">
-                <h3 className="text-xl font-bold mb-4 text-[#C5B8AB]">
-                  Standard Features
-                </h3>
-                <p className="text-sm text-white/90 leading-relaxed">
-                  Insulation, grill-ready setup, electrics — all essentials included.
-                </p>
-              </div>
-            </div>
-
-            {/* Row 2 - Small + Large */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-10 shadow-xl transform hover:scale-105 transition-all duration-700">
-                <h3 className="text-xl font-bold text-[#222126] mb-4">
-                  Verandas
-                </h3>
-                <p className="text-sm text-[#222126]/80 leading-relaxed">
-                  Optional covered extension for expanded entertaining space.
-                </p>
-              </div>
-
-              <div className="lg:col-span-2 bg-gradient-to-r from-[#222126] via-[#222126]/90 to-[#222126] p-16 text-white transform hover:scale-105 transition-all duration-700">
-                <h3 className="text-2xl font-bold mb-6 text-[#C5B8AB]">
-                  Requirements & Links
-                </h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="font-bold text-white mb-3 text-base">Requirements:</h4>
-                    <p className="text-white/90 text-sm">32A power, solid base</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-3 text-base">Resources:</h4>
-                    <p className="text-white/90 text-sm">Installation PDFs, warranty link</p>
-                  </div>
+          {/* Feature Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Shield,
+                title: "Galvanized Steel Frame",
+                description: "Rustproof and durable construction"
+              },
+              {
+                icon: Leaf,
+                title: "Composite Cladding",
+                description: "Modern, maintenance-free exterior"
+              },
+              {
+                icon: Wrench,
+                title: "Child-Safe Electric Roller Door",
+                description: "Secure and convenient access"
+              },
+              {
+                icon: Flame,
+                title: "Fully Insulated",
+                description: "Year-round comfort and use"
+              }
+            ].map((feature, index) => (
+              <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-8 border border-[#C5B8AB]/20 rounded-lg text-center transform hover:scale-105 transition-all duration-500">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#C5B8AB] to-white rounded-full flex items-center justify-center mx-auto mb-6">
+                  <feature.icon className="w-8 h-8 text-[#222126]" />
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section - See the Grill Pod in Action */}
-      <section className="py-32 bg-[#222126]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-12 tracking-tight">
-              See the Grill Pod in Action
-            </h2>
-
-            {/* Gallery Tabs */}
-            <div className="flex flex-wrap justify-center gap-6 mb-16">
-              {galleryTabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 text-base font-medium transition-all duration-500 transform hover:scale-105 ${
-                    activeTab === tab
-                      ? 'bg-[#C5B8AB] text-[#222126] font-bold shadow-xl'
-                      : 'border-2 border-[#C5B8AB]/50 text-[#C5B8AB] hover:border-[#C5B8AB] hover:bg-[#C5B8AB]/10'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Dynamic Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages[activeTab as keyof typeof galleryImages].map((image, index) => (
-              <div
-                key={index}
-                className={`group relative overflow-hidden shadow-2xl transition-all duration-700 hover:shadow-3xl hover:-translate-y-4 hover:scale-105 ${
-                  index === 0 ? 'lg:col-span-2 lg:row-span-2' : 
-                  index === 2 ? 'lg:row-span-2' : ''
-                }`}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${
-                    index === 0 ? 'h-96 lg:h-full' : 'h-80'
-                  }`}
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/90 via-[#222126]/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {image.alt}
-                    </h3>
-                    <div className="w-16 h-1 bg-[#C5B8AB] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                  </div>
-                </div>
+                <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                <p className="text-[#C5B8AB]/90 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Section - Get to Know Us */}
+      {/* 3. Inside the Pod */}
       <section className="py-32 bg-[#C5B8AB]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-12 font-serif tracking-tight">
-            Trusted By Homeowners Across the UK
-          </h2>
-          
-          <p className="text-lg text-[#222126]/90 leading-relaxed mb-12 font-light max-w-4xl mx-auto">
-            We craft custom-built outdoor living spaces that fuse beauty, comfort, and durability. With 15+ years of design and installation experience, our team brings every Grill Pod to life with care and precision.
-          </p>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8 tracking-tight">
+              Step Inside Comfort and Style
+            </h2>
+          </div>
 
-          {/* Trust Indicators */}
-          <div className="flex flex-col items-center space-y-8">
-            <div className="flex items-center space-x-3">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="w-10 h-10 text-yellow-500 fill-current" />
-              ))}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Image */}
+            <div className="relative">
+              <img
+                src="/Nigel Grill Pod/002.jpg"
+                alt="Grill Pod Interior"
+                className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/20 to-transparent rounded-lg"></div>
             </div>
-            <p className="text-[#222126] text-lg font-bold">
-              Over 100 custom-built pods delivered
-            </p>
-            <p className="text-[#222126]/70 text-base font-medium">
-              "Exceptional craftsmanship and attention to detail"
-            </p>
+
+            {/* Right - Features */}
+            <div className="space-y-8">
+              <p className="text-lg text-[#222126]/90 leading-relaxed font-light">
+                Inside the Grill Pod, you'll find everything you need for the ultimate outdoor cooking experience:
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  "Luxury LVT flooring for comfort and style",
+                  "PVC wall panels for easy cleaning",
+                  "TV & Bluetooth speaker system for entertainment",
+                  "Mini fridge & Mont Alpi deluxe kitchen",
+                  "All built with the highest standards of comfort, safety, and tech"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-6 h-6 bg-[#222126] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <Check className="w-4 h-4 text-[#C5B8AB]" />
+                    </div>
+                    <p className="text-[#222126] font-medium">{feature}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section - Why Choose the Grill Pod? */}
+      {/* 4. Mont Alpi Kitchen Highlight */}
       <section className="py-32 bg-[#222126]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-light text-white mb-8 tracking-tight">
-              Why Choose the Grill Pod?
+              Culinary Excellence with Mont Alpi
             </h2>
           </div>
 
-          {/* Zig-zag Feature Layout */}
-          <div className="space-y-20">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Product Image */}
+            <div className="relative">
+              <img
+                src="/Nigel Grill Pod/003.jpg"
+                alt="Mont Alpi 805 DFC Kitchen"
+                className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute top-4 right-4 bg-[#C5B8AB] text-[#222126] px-4 py-2 rounded-full font-bold text-sm">
+                Premium Kitchen
+              </div>
+            </div>
+
+            {/* Right - Feature Highlights */}
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Mont Alpi 805 DFC Features</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  "6 x 304 stainless steel burners + 2 infrared burners",
+                  "White granite waterfall sides",
+                  "LED-lit knobs & internal lights",
+                  "Integrated outdoor fridge with LED lighting",
+                  "115,000 BTUs of pure power",
+                  "Fully assembled, ready to cook"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="w-5 h-5 bg-[#C5B8AB] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <Check className="w-3 h-3 text-[#222126]" />
+                    </div>
+                    <p className="text-[#C5B8AB]/90 text-sm leading-relaxed">{feature}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-gradient-to-r from-[#C5B8AB]/20 to-transparent p-6 rounded-lg border border-[#C5B8AB]/30">
+                <p className="text-white font-bold text-lg mb-2">Professional Grade</p>
+                <p className="text-[#C5B8AB]/90 text-sm">
+                  The Mont Alpi kitchen is the same equipment used by professional chefs and outdoor catering companies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Why Choose the Grill Pod Over Wood? */}
+      <section className="py-32 bg-[#C5B8AB]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8 tracking-tight">
+              Why Grill Pods Beat Traditional Wooden Kitchens
+            </h2>
+          </div>
+
+          {/* Comparison Table */}
+          <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
+            <div className="grid grid-cols-3 divide-x divide-gray-200">
+              {/* Header */}
+              <div className="p-8 bg-[#222126] text-white">
+                <h3 className="text-xl font-bold mb-2">Feature</h3>
+              </div>
+              <div className="p-8 bg-[#222126] text-white">
+                <h3 className="text-xl font-bold mb-2">Grill Pod</h3>
+              </div>
+              <div className="p-8 bg-[#222126] text-white">
+                <h3 className="text-xl font-bold mb-2">Traditional Wood</h3>
+              </div>
+            </div>
+
+            {/* Comparison Rows */}
             {[
-              { icon: Flame, title: 'Exceptional Quality', description: 'Premium materials and meticulous attention to every detail' },
-              { icon: Droplets, title: 'Weatherproof Build', description: 'Engineered to withstand all seasons and weather conditions' },
-              { icon: Eco, title: 'Eco-Friendly', description: 'Sustainable materials and environmentally conscious construction' },
-              { icon: Wrench, title: 'First-Rate Craftsmanship', description: 'Expert installation and superior build quality' },
-              { icon: Globe, title: 'Multilingual Support', description: 'We communicate in your preferred language' },
-              { icon: Clock, title: '24/7 Assistance', description: 'Always available when you need support or guidance' }
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className={`flex items-center gap-16 ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                } max-w-5xl mx-auto`}
-              >
-                <div className="w-32 h-32 bg-gradient-to-br from-[#C5B8AB] to-white rounded-full flex items-center justify-center flex-shrink-0 transform hover:scale-110 transition-all duration-500 shadow-2xl">
-                  <feature.icon className="w-16 h-16 text-[#222126]" />
+              { feature: "Weatherproof", grillPod: "✅ Fully sealed", traditional: "❌ Warps, rots" },
+              { feature: "Insulated", grillPod: "✅ Year-round use", traditional: "❌ Poor insulation" },
+              { feature: "Low Maintenance", grillPod: "✅ Composite cladding", traditional: "❌ Requires staining" },
+              { feature: "Built-In Appliances", grillPod: "✅ Included", traditional: "❌ Often extra" },
+              { feature: "Safety", grillPod: "✅ Roller door & frame", traditional: "❌ Not secure" }
+            ].map((row, index) => (
+              <div key={index} className="grid grid-cols-3 divide-x divide-gray-200">
+                <div className="p-6 bg-gray-50">
+                  <p className="font-bold text-[#222126]">{row.feature}</p>
                 </div>
-                <div className={`${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
-                  <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">
-                    {feature.title}
-                  </h3>
-                  <p className="text-lg text-[#C5B8AB]/90 leading-relaxed font-light">
-                    {feature.description}
-                  </p>
+                <div className="p-6">
+                  <p className="text-green-600 font-medium">{row.grillPod}</p>
+                </div>
+                <div className="p-6">
+                  <p className="text-red-600 font-medium">{row.traditional}</p>
                 </div>
               </div>
             ))}
@@ -369,15 +359,175 @@ const GrillPodPage = () => {
         </div>
       </section>
 
-      {/* Quote Form Section - Ready to Build Yours? */}
-      <section id="quote-form" className="py-32 bg-[#C5B8AB]">
-        <div className="max-w-5xl mx-auto px-6">
+      {/* 6. Add-On: Pergola & Glass Surround */}
+      <section className="py-32 bg-[#222126]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-8 tracking-tight">
+              Rain or Shine – Entertain in Any Weather
+            </h2>
+            <p className="text-xl text-[#C5B8AB]/90 max-w-4xl mx-auto leading-relaxed font-light">
+              Add a sleek veranda or pergola with glass enclosures to your Grill Pod. Perfect for winter barbecues or cozy autumn evenings.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Image */}
+            <div className="relative">
+              <img
+                src="/Nigel Grill Pod/004.jpg"
+                alt="Grill Pod with Pergola"
+                className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/20 to-transparent rounded-lg"></div>
+            </div>
+
+            {/* Right - Features */}
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Pergola & Glass Features</h3>
+              
+              <div className="space-y-6">
+                {[
+                  "Weatherproof glass panels for year-round use",
+                  "Integrated lighting for evening entertainment",
+                  "Optional heating for winter comfort",
+                  "Customizable size to fit your space",
+                  "Professional installation included"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-6 h-6 bg-[#C5B8AB] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <Check className="w-4 h-4 text-[#222126]" />
+                    </div>
+                    <p className="text-[#C5B8AB]/90 font-medium">{feature}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-gradient-to-r from-[#C5B8AB]/20 to-transparent p-6 rounded-lg border border-[#C5B8AB]/30">
+                <p className="text-white font-bold text-lg mb-2">Perfect for All Seasons</p>
+                <p className="text-[#C5B8AB]/90 text-sm">
+                  Enjoy outdoor entertaining regardless of the weather. The pergola and glass surround create a comfortable, protected space.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Testimonials / Lifestyle Section */}
+      <section className="py-32 bg-[#C5B8AB]">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8 tracking-tight">
-              Ready to Build Yours?
+              See What Our Customers Are Saying
             </h2>
-            <p className="text-xl text-[#222126]/80 font-light">
-              Tell us about your vision...
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-lg p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
+                <div className="flex items-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
+                  ))}
+                </div>
+                
+                <blockquote className="text-[#222126] text-lg font-light mb-6 leading-relaxed">
+                  "{testimonial.quote}"
+                </blockquote>
+                
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-bold text-[#222126]">{testimonial.name}</p>
+                    <p className="text-[#222126]/70 text-sm">{testimonial.location}</p>
+                  </div>
+                  <Quote className="w-8 h-8 text-[#C5B8AB]" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Call to Action (CTA) */}
+      <section className="py-32 bg-[#222126]">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-8 tracking-tight">
+            Ready to Elevate Your Outdoor Living?
+          </h2>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+            <button
+              onClick={scrollToQuote}
+              className="group inline-flex items-center px-12 py-6 bg-gradient-to-r from-[#C5B8AB] to-white text-[#222126] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:shadow-2xl transform hover:from-white hover:to-[#C5B8AB]"
+            >
+              Get a Custom Quote
+              <ChevronRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-2" />
+            </button>
+            
+            <button
+              onClick={scrollToViewing}
+              className="group inline-flex items-center px-12 py-6 border-2 border-[#C5B8AB] text-[#C5B8AB] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:bg-[#C5B8AB] hover:text-[#222126]"
+            >
+              See a Live Demo
+              <Play className="ml-3 w-6 h-6 transition-transform group-hover:scale-110" />
+            </button>
+            
+            <a
+              href="tel:07730510368"
+              className="group inline-flex items-center px-12 py-6 bg-[#222126] border-2 border-[#C5B8AB] text-[#C5B8AB] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:bg-[#C5B8AB] hover:text-[#222126]"
+            >
+              Talk to Our Team
+              <Phone className="ml-3 w-6 h-6 transition-transform group-hover:scale-110" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. FAQ Section */}
+      <section className="py-32 bg-[#C5B8AB]">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8 tracking-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <button
+                  onClick={() => setActiveFAQ(activeFAQ === index ? null : index)}
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                >
+                  <h3 className="text-lg font-bold text-[#222126]">{faq.question}</h3>
+                  {activeFAQ === index ? (
+                    <X className="w-6 h-6 text-[#222126]" />
+                  ) : (
+                    <ChevronDown className="w-6 h-6 text-[#222126]" />
+                  )}
+                </button>
+                
+                {activeFAQ === index && (
+                  <div className="px-8 pb-6">
+                    <p className="text-[#222126]/80 leading-relaxed">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Form Section */}
+      <section id="quote-form" className="py-32 bg-[#222126]">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-8 tracking-tight">
+              Get Your Custom Grill Pod Quote
+            </h2>
+            <p className="text-xl text-[#C5B8AB]/80 font-light">
+              Tell us about your vision and we'll create a custom quote for your perfect outdoor kitchen.
             </p>
           </div>
 
@@ -478,7 +628,7 @@ const GrillPodPage = () => {
                 disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-[#222126] to-[#222126]/90 text-[#C5B8AB] py-6 font-black text-lg uppercase tracking-wider transition-all duration-500 hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>{isSubmitting ? 'Sending...' : 'Send My Request'}</span>
+                <span>{isSubmitting ? 'Sending...' : 'Get My Custom Quote'}</span>
                 {!isSubmitting && <Send className="w-6 h-6" />}
               </button>
             </form>
@@ -487,7 +637,7 @@ const GrillPodPage = () => {
       </section>
 
       {/* Contact Section - Visit Our Workshop */}
-      <section className="relative h-screen">
+      <section id="contact-section" className="relative h-screen">
         <div className="grid lg:grid-cols-2 h-full">
           {/* Map */}
           <div className="relative">

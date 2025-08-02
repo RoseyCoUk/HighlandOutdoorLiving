@@ -62,7 +62,7 @@ const ContactPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/image copy copy.png')"
+            backgroundImage: "url('/landing pages/Sauna3.JPG')"
           }}
         ></div>
         

@@ -412,7 +412,7 @@ const LeadsPage: React.FC = () => {
                         value={lead.status}
                         onChange={async (e) => {
                           const newStatus = e.target.value;
-                          console.log('Updating lead status:', lead.id, 'from', lead.status, 'to', newStatus);
+                          // Updating lead status
                           
                           try {
                             const { data, error } = await supabase
@@ -426,7 +426,7 @@ const LeadsPage: React.FC = () => {
                               throw error;
                             }
                             
-                            console.log('Update successful:', data);
+                            // Update successful
                             
                             // Update local state
                             setLeads(leads.map(l =>

@@ -14,64 +14,106 @@ const GalleryPage = () => {
       id: 1,
       title: 'Luxury Garden Sauna',
       category: 'Sauna',
-      image: '/image copy copy copy.png',
-      description: 'Custom-built sauna with premium cedar interior and LED lighting'
+      image: '/landing pages/Sauna1.JPG',
+      description: 'Steel-framed, fully-insulated sauna with premium finishes'
     },
     {
       id: 2,
       title: 'Premium Grill Pod',
       category: 'Grill Pod',
-      image: '/image copy copy copy copy copy copy.png',
-      description: 'All-weather grill pod with veranda extension'
+      image: '/landing pages/GrillPod1.JPG',
+      description: 'All-weather grill pod with Mont Alpi kitchen'
     },
     {
       id: 3,
       title: 'Modern Storage Shed',
       category: 'Shed',
-      image: '/image copy copy copy copy.png',
+      image: '/landing pages/outdoor glass room.JPG',
       description: 'Contemporary shed design with composite cladding'
     },
     {
       id: 4,
       title: 'Compact Spa Sauna',
       category: 'Sauna',
-      image: '/image copy copy copy copy copy.png',
+      image: '/landing pages/Sauna2.JPG',
       description: 'Space-efficient sauna perfect for smaller gardens'
     },
     {
       id: 5,
       title: 'Entertainment Grill Pod',
       category: 'Grill Pod',
-      image: '/image copy copy.png',
+      image: '/landing pages/GrillPod2.JPG',
       description: 'Large grill pod designed for family gatherings'
     },
     {
       id: 6,
       title: 'Workshop Shed',
       category: 'Shed',
-      image: '/image.png',
+      image: '/landing pages/outdoor glass room 2.jpg',
       description: 'Spacious workshop with power and lighting installation'
     },
     {
       id: 7,
-      title: 'Lakeside Sauna',
+      title: 'Garden Wellness Sauna',
       category: 'Sauna',
-      image: '/image copy copy copy.png',
-      description: 'Scenic sauna installation with panoramic views'
+      image: '/landing pages/Sauna3.JPG',
+      description: 'Thermal aspen interior sauna for ultimate relaxation'
     },
     {
       id: 8,
       title: 'Garden Office Shed',
       category: 'Shed',
-      image: '/image copy.png',
+      image: '/landing pages/Sauna4.JPG',
       description: 'Insulated garden office with modern finishes'
     },
     {
       id: 9,
       title: 'Deluxe Grill Pod',
       category: 'Grill Pod',
-      image: '/image copy copy copy copy copy copy.png',
+      image: '/landing pages/GrillPod3.JPG',
       description: 'Premium grill pod with custom lighting and seating'
+    },
+    {
+      id: 10,
+      title: 'Modern Outdoor Kitchen',
+      category: 'Grill Pod',
+      image: '/landing pages/GrillPod4.JPG',
+      description: 'Contemporary outdoor kitchen with premium appliances'
+    },
+    {
+      id: 11,
+      title: 'Luxury Shed Office',
+      category: 'Shed',
+      image: '/landing pages/Sauna5.JPG',
+      description: 'Professional garden office with all amenities'
+    },
+    {
+      id: 12,
+      title: 'Compact Garden Sauna',
+      category: 'Sauna',
+      image: '/landing pages/Sauna6.JPG',
+      description: 'Perfect sauna for smaller garden spaces'
+    },
+    {
+      id: 13,
+      title: 'Luxury Spa Sauna',
+      category: 'Sauna',
+      image: '/landing pages/Sauna7.JPG',
+      description: 'Premium spa-grade sauna with advanced features'
+    },
+    {
+      id: 14,
+      title: 'Premium Grill Pod',
+      category: 'Grill Pod',
+      image: '/landing pages/GrillPod5.JPG',
+      description: 'Deluxe grill pod with premium finishes and appliances'
+    },
+    {
+      id: 15,
+      title: 'Garden Wellness Retreat',
+      category: 'Sauna',
+      image: '/landing pages/Sauna8.JPG',
+      description: 'Comprehensive wellness space for ultimate relaxation'
     }
   ];
 
@@ -103,206 +145,151 @@ const GalleryPage = () => {
     }
   };
 
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (lightboxImage !== null) {
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'ArrowLeft') prevImage();
-      }
-    };
+  const handleKeyPress = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      nextImage();
+    } else if (e.key === 'ArrowLeft') {
+      prevImage();
+    }
+  };
 
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
+  useEffect(() => {
+    if (lightboxImage !== null) {
+      document.addEventListener('keydown', handleKeyPress);
+      return () => document.removeEventListener('keydown', handleKeyPress);
+    }
   }, [lightboxImage]);
 
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-[73px]">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/image.png')"
-          }}
-        ></div>
-        
-        {/* Soft Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
-        
-        {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-white leading-tight tracking-wide">
-            Our Work
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Real builds. Real results. Explore our portfolio of premium outdoor living solutions.
-          </p>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section className="py-24 bg-[#222126]">
+      <section className="relative py-32 pt-[120px]">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Filter Tabs */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-12">
-              Project Gallery
-            </h2>
-
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {filters.map((filterOption) => (
-                <button
-                  key={filterOption}
-                  onClick={() => setFilter(filterOption)}
-                  className={`px-6 py-3 text-base font-medium transition-all duration-300 transform hover:scale-105 ${
-                    filter === filterOption
-                      ? 'bg-[#C5B8AB] text-[#222126] font-semibold shadow-xl'
-                      : 'border-2 border-[#C5B8AB]/50 text-[#C5B8AB] hover:border-[#C5B8AB] hover:bg-[#C5B8AB]/10'
-                  }`}
-                >
-                  {filterOption}
-                </button>
-              ))}
-            </div>
+            <h1 className="text-4xl md:text-6xl font-light text-white mb-8">
+              Our Portfolio
+            </h1>
+            <p className="text-xl text-[#C5B8AB]/90 max-w-3xl mx-auto leading-relaxed">
+              Explore our latest projects showcasing premium outdoor living solutions across Northern Ireland.
+            </p>
           </div>
 
-          {/* Project Grid */}
+          {/* Filter tabs */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            {filters.map((filterOption) => (
+              <button
+                key={filterOption}
+                onClick={() => setFilter(filterOption)}
+                className={`px-8 py-3 transition-all duration-300 rounded-lg ${
+                  filter === filterOption
+                    ? 'bg-[#C5B8AB] text-[#222126] font-semibold shadow-lg'
+                    : 'border-2 border-[#C5B8AB]/50 text-[#C5B8AB] hover:border-[#C5B8AB] hover:bg-[#C5B8AB]/10'
+                }`}
+              >
+                {filterOption}
+              </button>
+            ))}
+          </div>
+
+          {/* Project grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="group relative overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-3xl hover:-translate-y-2 hover:scale-105 cursor-pointer"
+                className="group relative overflow-hidden rounded-lg shadow-2xl transition-all duration-500 hover:shadow-3xl hover:-translate-y-4 hover:scale-105 cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/90 via-[#222126]/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <span className="inline-block px-3 py-1 bg-[#C5B8AB] text-[#222126] text-sm font-medium rounded-full mb-3">
-                      {project.category}
-                    </span>
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/90 via-[#222126]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <h3 className="text-2xl font-bold text-white mb-3">
                       {project.title}
                     </h3>
-                    <p className="text-[#C5B8AB]/90 text-sm leading-relaxed">
+                    <p className="text-[#C5B8AB]/90 text-base mb-4 leading-relaxed">
                       {project.description}
                     </p>
+                    <span className="inline-block px-4 py-2 bg-[#C5B8AB] text-[#222126] text-sm font-semibold rounded-full">
+                      {project.category}
+                    </span>
                   </div>
-                </div>
-
-                {/* Click indicator */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-4 h-4 border-2 border-white rounded-sm"></div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Results count */}
-          <div className="text-center mt-12">
-            <p className="text-[#C5B8AB]/70">
-              Showing {filteredProjects.length} {filter === 'All' ? 'projects' : filter.toLowerCase() + ' projects'}
-            </p>
-          </div>
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-[#C5B8AB]/70 text-xl">
+                No projects found in this category.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Lightbox */}
       {lightboxImage !== null && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
-          {/* Close button */}
-          <button
-            onClick={closeLightbox}
-            className="absolute top-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
-          >
-            <X className="w-6 h-6" />
-          </button>
+        <div className="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-6xl w-full">
+            {/* Close button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 text-white hover:text-[#C5B8AB] transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
 
-          {/* Navigation buttons */}
-          {filteredProjects.length > 1 && (
-            <>
-              <button
-                onClick={prevImage}
-                className="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
+            {/* Navigation buttons */}
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-white hover:text-[#C5B8AB] transition-colors"
+            >
+              <ChevronLeft className="w-12 h-12" />
+            </button>
 
-              <button
-                onClick={nextImage}
-                className="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </>
-          )}
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-white hover:text-[#C5B8AB] transition-colors"
+            >
+              <ChevronRight className="w-12 h-12" />
+            </button>
 
-          {/* Image and info */}
-          <div className="max-w-6xl w-full">
-            <img
-              src={filteredProjects[lightboxImage].image}
-              alt={filteredProjects[lightboxImage].title}
-              className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
-            />
-            
-            {/* Image info */}
-            <div className="text-center mt-6">
-              <span className="inline-block px-3 py-1 bg-[#C5B8AB] text-[#222126] text-sm font-medium rounded-full mb-3">
-                {filteredProjects[lightboxImage].category}
-              </span>
-              <h3 className="text-2xl font-semibold text-white mb-2">
-                {filteredProjects[lightboxImage].title}
-              </h3>
-              <p className="text-[#C5B8AB]/90 leading-relaxed max-w-2xl mx-auto">
-                {filteredProjects[lightboxImage].description}
-              </p>
+            {/* Image */}
+            <div className="relative">
+              <img
+                src={filteredProjects[lightboxImage].image}
+                alt={filteredProjects[lightboxImage].title}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
               
-              {/* Image counter */}
-              <p className="text-[#C5B8AB]/60 text-sm mt-4">
-                {lightboxImage + 1} of {filteredProjects.length}
-              </p>
+              {/* Image info */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 rounded-b-lg">
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {filteredProjects[lightboxImage].title}
+                </h3>
+                <p className="text-[#C5B8AB] text-lg">
+                  {filteredProjects[lightboxImage].description}
+                </p>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="inline-block px-4 py-2 bg-[#C5B8AB] text-[#222126] text-sm font-semibold rounded-full">
+                    {filteredProjects[lightboxImage].category}
+                  </span>
+                  <span className="text-white/70">
+                    {lightboxImage + 1} of {filteredProjects.length}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       )}
-
-      {/* CTA Section */}
-      <section className="py-24 bg-[#C5B8AB]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8">
-            Ready to Create Your Own?
-          </h2>
-          
-          <p className="text-xl text-[#222126]/80 mb-12 font-light">
-            Let's discuss your vision and bring it to life with the same quality and attention to detail.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a
-              href="tel:07730510368"
-              className="inline-flex items-center px-8 py-4 bg-[#222126] text-[#C5B8AB] font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            >
-              Call for Quote
-            </a>
-            
-            <a
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 border-2 border-[#222126] text-[#222126] font-semibold text-lg transition-all duration-300 hover:bg-[#222126] hover:text-[#C5B8AB] hover:scale-105"
-            >
-              Send Enquiry
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

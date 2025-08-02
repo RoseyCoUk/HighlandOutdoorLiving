@@ -14,7 +14,7 @@ const AboutPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/image copy.png')"
+            backgroundImage: "url('/landing pages/Sauna1.JPG')"
           }}
         ></div>
         
@@ -70,7 +70,7 @@ const AboutPage = () => {
             {/* Right - Company Image */}
             <div className="relative">
               <img
-                src="/image.png"
+                src="/landing pages/Sauna4.JPG"
                 alt="NMG Outdoor Living workshop and craftsmanship"
                 className="w-full h-[600px] object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
               />
@@ -98,30 +98,42 @@ const AboutPage = () => {
               {
                 icon: MapPin,
                 title: 'Local Expertise',
-                description: 'Based in Maghera with deep understanding of Northern Ireland\'s climate and building requirements. We know what works in our unique environment.'
+                description: 'Based in Maghera, we understand Northern Ireland\'s unique climate and building requirements.'
               },
               {
                 icon: Award,
-                title: 'High-Quality Materials',
-                description: 'We source only the finest materials, from premium timber to weather-resistant composites, ensuring your investment stands the test of time.'
+                title: 'Quality Craftsmanship',
+                description: 'Every project reflects our commitment to premium materials and expert workmanship.'
+              },
+              {
+                icon: Users,
+                title: 'Personal Service',
+                description: 'Direct communication with our team throughout your entire project journey.'
               },
               {
                 icon: Wrench,
-                title: 'Hassle-Free Service',
-                description: 'From initial consultation to final installation, we handle every detail. Our comprehensive service means you can relax while we create your dream space.'
+                title: 'Custom Solutions',
+                description: 'Bespoke designs tailored to your specific space and lifestyle requirements.'
+              },
+              {
+                icon: Phone,
+                title: 'Ongoing Support',
+                description: 'We\'re here for you long after installation with maintenance and support.'
+              },
+              {
+                icon: Mail,
+                title: 'Transparent Pricing',
+                description: 'Clear, honest quotes with no hidden costs or surprise fees.'
               }
             ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl"
-              >
-                <div className="w-16 h-16 bg-[#222126]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <feature.icon className="w-8 h-8 text-[#222126]" />
+              <div key={index} className="text-center">
+                <div className="w-20 h-20 bg-[#222126] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <feature.icon className="w-10 h-10 text-[#C5B8AB]" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#222126] mb-4 text-center">
+                <h3 className="text-xl font-semibold text-[#222126] mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-[#222126]/80 text-center leading-relaxed">
+                <p className="text-[#222126]/80 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -130,50 +142,110 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Customer Focused Section */}
+      {/* Our Process Section */}
       <section className="py-24 bg-[#222126]">
         <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+              Our Process
+            </h2>
+            <p className="text-lg text-[#C5B8AB]/80 max-w-3xl mx-auto">
+              From initial consultation to final installation, we guide you through every step.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Consultation',
+                description: 'We discuss your vision, assess your space, and provide expert recommendations.'
+              },
+              {
+                step: '02',
+                title: 'Design',
+                description: 'Custom design creation tailored to your specific requirements and preferences.'
+              },
+              {
+                step: '03',
+                title: 'Build',
+                description: 'Expert craftsmanship in our Maghera workshop using premium materials.'
+              },
+              {
+                step: '04',
+                title: 'Install',
+                description: 'Professional installation and setup at your location with ongoing support.'
+              }
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-[#C5B8AB] rounded-full flex items-center justify-center mx-auto mb-6 text-[#222126] font-bold text-xl">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-[#C5B8AB]/90 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-24 bg-[#C5B8AB]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8">
+              Meet Our Team
+            </h2>
+            <p className="text-lg text-[#222126]/80 max-w-3xl mx-auto">
+              Skilled craftsmen and outdoor living experts dedicated to bringing your vision to life.
+            </p>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left - Image */}
+            {/* Left - Team Image */}
             <div className="relative">
               <img
-                src="/image copy copy.png"
-                alt="Custom outdoor living installation by NMG"
-                className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
+                src="/landing pages/Sauna5.JPG"
+                alt="NMG Outdoor Living team at work"
+                className="w-full h-[500px] object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/60 to-transparent rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/40 to-transparent rounded-lg"></div>
             </div>
 
-            {/* Right Content */}
+            {/* Right - Team Info */}
             <div className="space-y-8">
               <div>
-                <p className="text-sm font-medium text-[#C5B8AB]/60 mb-4 tracking-[0.2em] uppercase">
-                  Customer Focused
+                <h3 className="text-3xl font-light text-[#222126] mb-6">
+                  Experienced Craftsmen
+                </h3>
+                <p className="text-lg text-[#222126]/80 leading-relaxed mb-6">
+                  Our team brings decades of combined experience in outdoor construction, joinery, and design. Each member is passionate about creating exceptional outdoor living spaces that stand the test of time.
                 </p>
-                <h2 className="text-4xl md:text-5xl font-light text-white mb-8 leading-tight">
-                  Tailored Builds, Personal Service
-                </h2>
-              </div>
-              
-              <div className="space-y-6 text-lg text-[#C5B8AB]/90 leading-relaxed font-light">
-                <p>
-                  Every project begins with understanding your vision. We listen carefully to your needs, assess your space, and work with you to design the perfect outdoor solution that fits both your lifestyle and budget.
-                </p>
-                
-                <p>
-                  Our commitment doesn't end with installation. We provide comprehensive aftercare, maintenance guidance, and warranty support to ensure your outdoor investment continues to bring joy for years to come.
+                <p className="text-lg text-[#222126]/80 leading-relaxed">
+                  From our workshop in Maghera, we've built a reputation for quality, reliability, and customer satisfaction across Northern Ireland.
                 </p>
               </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-8 pt-8 border-t border-[#C5B8AB]/20">
+              <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#C5B8AB] mb-2">200+</div>
-                  <div className="text-[#C5B8AB]/70 text-sm">Projects Completed</div>
+                  <div className="text-3xl font-bold text-[#222126] mb-2">100+</div>
+                  <div className="text-[#222126]/80">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#C5B8AB] mb-2">15+</div>
-                  <div className="text-[#C5B8AB]/70 text-sm">Years Experience</div>
+                  <div className="text-3xl font-bold text-[#222126] mb-2">15+</div>
+                  <div className="text-[#222126]/80">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#222126] mb-2">5★</div>
+                  <div className="text-[#222126]/80">Customer Rating</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#222126] mb-2">24/7</div>
+                  <div className="text-[#222126]/80">Support Available</div>
                 </div>
               </div>
             </div>
@@ -181,32 +253,30 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Contact CTA Section */}
-      <section className="py-24 bg-[#C5B8AB]">
+      {/* CTA Section */}
+      <section className="py-24 bg-[#222126]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8">
-            Ready to Start Your Project?
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+            Ready to Work With Us?
           </h2>
           
-          <p className="text-xl text-[#222126]/80 mb-12 font-light">
-            Let's discuss how we can transform your outdoor space.
+          <p className="text-xl text-[#C5B8AB]/80 mb-12 font-light">
+            Let's discuss your outdoor living project and bring your vision to life.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="tel:07730510368"
-              className="inline-flex items-center px-8 py-4 bg-[#222126] text-[#C5B8AB] font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="inline-flex items-center px-8 py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
-              <Phone className="w-5 h-5 mr-3" />
-              Call Us Now
+              Call for Consultation
             </a>
             
             <a
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 border-2 border-[#222126] text-[#222126] font-semibold text-lg transition-all duration-300 hover:bg-[#222126] hover:text-[#C5B8AB] hover:scale-105"
+              href="mailto:nigelmcg@gmail.com"
+              className="inline-flex items-center px-8 py-4 border-2 border-[#C5B8AB] text-[#C5B8AB] font-semibold text-lg transition-all duration-300 hover:bg-[#C5B8AB] hover:text-[#222126] hover:scale-105"
             >
-              <Mail className="w-5 h-5 mr-3" />
-              Send Enquiry
+              Send Message
             </a>
           </div>
         </div>

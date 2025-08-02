@@ -66,6 +66,7 @@ const Header = () => {
                 src="/ngmlogo.jpg" 
                 alt="NMG Outdoor Living Logo" 
                 className="w-full h-full object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300"
+                loading="lazy"
                 style={{
                   transformStyle: 'preserve-3d',
                   perspective: '1000px'
