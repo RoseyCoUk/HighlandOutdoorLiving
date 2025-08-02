@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Flame, Waves, Home, Phone, Mail } from 'lucide-react';
 
 const ServicesPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const services = [
     {

@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Check, Shield, Wrench, Home, Star, Phone, Mail, MapPin, Send, Hammer, Building, TreePine } from 'lucide-react';
 import { submitLead } from '../lib/forms';
 
 const ShedsPage = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [formData, setFormData] = useState({
     name: '',

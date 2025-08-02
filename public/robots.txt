@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nmgoutdoorliving.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /admin/login
+
+# Allow all other content
+Allow: /blog/
+Allow: /gallery/
+Allow: /saunas/
+Allow: /grill-pods/
+Allow: /sheds/
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+
+# Crawl delay (optional)
+Crawl-delay: 1 

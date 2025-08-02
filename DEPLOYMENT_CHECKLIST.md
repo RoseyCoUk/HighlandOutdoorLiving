@@ -71,13 +71,18 @@ vercel
 # Set environment variables in Vercel dashboard
 ```
 
-### Option 2: Netlify
+### Option 2: Netlify (RECOMMENDED)
 ```bash
 # Build the project
 npm run build
 
-# Deploy dist folder to Netlify
-# Set environment variables in Netlify dashboard
+# Deploy options:
+# 1. Drag and drop dist folder to Netlify
+# 2. Connect GitHub repository for automatic deployments
+# 3. Use Netlify CLI: npm install -g netlify-cli && netlify deploy
+
+# Set environment variables in Netlify dashboard:
+# Site settings > Environment variables
 ```
 
 ### Option 3: Traditional Hosting

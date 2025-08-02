@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Home, ArrowLeft, Phone, Mail } from 'lucide-react';
 
 const NotFoundPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] flex items-center justify-center px-6">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Calculator } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Calculator, Facebook, Instagram } from 'lucide-react';
 
 interface FooterProps {
   onGetEstimate?: () => void;
@@ -154,6 +154,28 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
                   <p>Sat: 9:00 AM - 4:00 PM</p>
                   <p>Sun: By appointment</p>
                 </div>
+              </div>
+              
+              {/* Social Media Links */}
+              <div className="flex items-center space-x-4 pt-2">
+                <a 
+                  href="https://www.facebook.com/profile.php?id=100065453470878" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#C5B8AB]/80 hover:text-white transition-colors"
+                  aria-label="Follow us on Facebook"
+                >
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/nmg_outdoorliving" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#C5B8AB]/80 hover:text-white transition-colors"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="w-6 h-6" />
+                </a>
               </div>
             </div>
           </div>

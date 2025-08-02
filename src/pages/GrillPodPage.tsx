@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Check, Shield, Leaf, Wrench, Globe, Clock, Phone, Mail, MapPin, Send, Star, Flame, Droplets, X, ChevronRight, ChevronLeft, Play, Quote } from 'lucide-react';
 import { submitLead, formatName } from '../lib/forms';
 
 const GrillPodPage = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [formData, setFormData] = useState({
     firstName: '',

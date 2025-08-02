@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
-import { Users, Award, Wrench, MapPin, Phone, Mail } from 'lucide-react';
+import React from 'react';
+import { Users, Award, Wrench, MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 
 const AboutPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
@@ -247,6 +244,34 @@ const AboutPage = () => {
                   <div className="text-3xl font-bold text-[#222126] mb-2">24/7</div>
                   <div className="text-[#222126]/80">Support Available</div>
                 </div>
+              </div>
+
+              {/* Social Media Links */}
+              <div className="text-center pt-8">
+                <h4 className="text-xl font-semibold text-[#222126] mb-4">Follow Our Journey</h4>
+                <div className="flex justify-center space-x-6">
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=100065453470878" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-[#222126]/80 hover:text-[#222126] transition-colors"
+                  >
+                    <Facebook className="w-6 h-6" />
+                    <span>Facebook</span>
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/nmg_outdoorliving" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-[#222126]/80 hover:text-[#222126] transition-colors"
+                  >
+                    <Instagram className="w-6 h-6" />
+                    <span>Instagram</span>
+                  </a>
+                </div>
+                <p className="text-[#222126]/60 text-sm mt-3">
+                  See our latest projects and behind-the-scenes content
+                </p>
               </div>
             </div>
           </div>

@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const GalleryPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [filter, setFilter] = useState('All');
   const [lightboxImage, setLightboxImage] = useState<number | null>(null);

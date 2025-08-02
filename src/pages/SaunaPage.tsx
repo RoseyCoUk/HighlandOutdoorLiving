@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Check, Droplets, Brain, Flame, Leaf, Star, Phone, Mail, MapPin, Send, X, ChevronRight, Shield, Wrench, Clock, Zap, Award, Truck, Home, Settings, Users, Calendar, ArrowRight, Eye, Palette } from 'lucide-react';
 import { submitLead, formatName } from '../lib/forms';
+import SEOHead from '../components/SEOHead';
 
 const SaunaPage = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -102,6 +99,14 @@ const SaunaPage = () => {
 
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
+      <SEOHead 
+        title="Garden Saunas in Northern Ireland - Premium Sauna Installation | NMG Outdoor Living"
+        description="Transform your garden with premium saunas in Northern Ireland. Expert sauna installation in Maghera, Belfast, and beyond. Health benefits, relaxation, and property value enhancement."
+        keywords={['garden saunas', 'sauna installation', 'Northern Ireland', 'Maghera', 'Belfast', 'sauna benefits', 'outdoor saunas', 'wellness']}
+        image="/landing pages/InsideSauna1.JPG"
+        url="/saunas"
+        type="product"
+      />
       {/* 1. Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-[73px]">
         {/* Background Image */}

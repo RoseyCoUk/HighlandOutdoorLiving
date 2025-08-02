@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Facebook, Instagram } from 'lucide-react';
 import { submitLead } from '../lib/forms';
 
 const ContactPage = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -270,6 +266,42 @@ const ContactPage = () => {
                     <p>Saturday: 9:00 AM - 4:00 PM</p>
                     <p>Sunday: By appointment</p>
                   </div>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-[#C5B8AB]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex space-x-2">
+                    <Facebook className="w-4 h-4 text-[#C5B8AB]" />
+                    <Instagram className="w-4 h-4 text-[#C5B8AB]" />
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-white font-medium mb-2">Follow Us</h4>
+                  <div className="flex space-x-4">
+                    <a 
+                      href="https://www.facebook.com/profile.php?id=100065453470878" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#C5B8AB] hover:text-white transition-colors flex items-center space-x-2"
+                    >
+                      <Facebook className="w-5 h-5" />
+                      <span>Facebook</span>
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/nmg_outdoorliving" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#C5B8AB] hover:text-white transition-colors flex items-center space-x-2"
+                    >
+                      <Instagram className="w-5 h-5" />
+                      <span>Instagram</span>
+                    </a>
+                  </div>
+                  <p className="text-[#C5B8AB]/70 text-sm mt-1">
+                    See our latest projects and updates
+                  </p>
                 </div>
               </div>
 

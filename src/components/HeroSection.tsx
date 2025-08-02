@@ -31,8 +31,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
           <div className="inline-flex items-center justify-center w-48 h-48 mb-8 bg-[#C5B8AB]/10 rounded-full border border-[#C5B8AB]/30 p-6">
             <img 
               src="/ngmlogo.jpg" 
-              alt="NMG Logo" 
+              alt="NMG Outdoor Living Logo" 
               className="w-full h-full object-contain rounded-full"
+              loading="eager"
             />
           </div>
         </div>
