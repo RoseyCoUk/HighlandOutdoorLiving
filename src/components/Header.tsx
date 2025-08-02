@@ -76,10 +76,9 @@ const Header = () => {
             {/* Glowing Ring Effect */}
             <div className="absolute inset-0 rounded-lg border-2 border-[#C5B8AB]/30 group-hover:border-[#C5B8AB] group-hover:shadow-[0_0_20px_rgba(197,184,171,0.5)] transition-all duration-500 group-hover:scale-125 opacity-0 group-hover:opacity-100"></div>
           </div>
-
         </Link>
 
-                {/* Desktop Navigation - Hidden on mobile */}
+        {/* Desktop Navigation - Hidden on mobile */}
         <ul className="hidden md:flex items-center space-x-8">
           {navigationLinks.map((link) => (
             <li key={link.path}>
@@ -113,20 +112,20 @@ const Header = () => {
           )}
         </button>
 
-        {/* Mobile Menu Overlay */}
+        {/* Mobile Menu Dropdown */}
         <div
           id="mobile-menu"
-          className={`md:hidden fixed inset-0 top-[73px] bg-black/95 backdrop-blur-lg z-40 transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? 'transform translate-y-0' : 'transform -translate-y-full'
+          className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-white/10 shadow-xl transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
           }`}
           aria-hidden={!isMenuOpen}
         >
-          <ul className="flex flex-col py-8 px-6 space-y-6" role="menu">
+          <ul className="flex flex-col py-4 px-6 space-y-2" role="menu">
             {navigationLinks.map((link, index) => (
               <li key={link.path} role="none">
                 <Link
                   to={link.path}
-                  className={`block py-4 text-lg font-medium transition-all duration-300 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none hover:bg-white/5 rounded-lg px-4 ${
+                  className={`block py-3 px-4 text-base font-medium transition-all duration-300 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none hover:bg-white/5 rounded-lg ${
                     location.pathname === link.path 
                       ? 'text-[#C5B8AB] font-bold bg-white/10' 
                       : 'text-[#e4d4c3]'
@@ -144,15 +143,6 @@ const Header = () => {
             ))}
           </ul>
         </div>
-
-        {/* Mobile Menu Backdrop */}
-        {isMenuOpen && (
-          <div
-            className="md:hidden fixed inset-0 bg-black/50 z-30"
-            onClick={() => setIsMenuOpen(false)}
-            aria-hidden="true"
-          />
-        )}
       </nav>
     </header>
   );
