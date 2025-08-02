@@ -71,7 +71,7 @@ const ShedsPage = () => {
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 text-white leading-tight tracking-wide golden-outline-strong">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 text-white leading-tight tracking-wide">
             Bespoke Sheds Built to Last
           </h1>
           
@@ -103,7 +103,7 @@ const ShedsPage = () => {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-8 golden-outline">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
               Why Choose Our Sheds?
             </h2>
           </div>

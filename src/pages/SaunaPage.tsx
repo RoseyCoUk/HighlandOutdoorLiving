@@ -122,7 +122,7 @@ const SaunaPage = () => {
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-white leading-none tracking-tighter golden-outline-strong">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-white leading-none tracking-tighter">
             Steel-Framed, Fully-Insulated, Bespoke Saunas.
           </h1>
           

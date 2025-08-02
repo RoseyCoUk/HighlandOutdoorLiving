@@ -39,10 +39,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         </div>
 
         {/* Main headline */}
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 text-white leading-tight golden-outline">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 text-white leading-tight">
           Tailored Outdoor Spaces
           <br />
-          <span className="text-[#C5B8AB] golden-outline-strong">That Inspire</span>
+          <span className="text-[#C5B8AB]">That Inspire</span>
         </h2>
 
         {/* Subheading */}
