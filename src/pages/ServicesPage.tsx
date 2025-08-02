@@ -48,7 +48,7 @@ const ServicesPage = () => {
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-white leading-tight tracking-wide">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-white leading-tight tracking-wide golden-outline-strong">
             Our Services
           </h1>
           

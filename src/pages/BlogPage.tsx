@@ -28,7 +28,7 @@ const BlogPage = () => {
       <section className="relative py-32 pt-[120px]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-light text-white mb-8">
+            <h1 className="text-4xl md:text-6xl font-light text-white mb-8 golden-outline">
               Outdoor Living Blog
             </h1>
             <p className="text-xl text-[#C5B8AB]/90 max-w-3xl mx-auto leading-relaxed">
