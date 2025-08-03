@@ -14,6 +14,8 @@ import PerformanceMonitor from './components/PerformanceMonitor';
 import StrategicCTA from './components/StrategicCTA';
 import LiveChat from './components/LiveChat';
 import FAQSection from './components/FAQSection';
+import AccessibilityManager from './components/AccessibilityManager';
+import AccessibilityTester from './components/AccessibilityTester';
 import GrillPodPage from './pages/GrillPodPage';
 import SaunaPage from './pages/SaunaPage';
 import ShedsPage from './pages/ShedsPage';
@@ -50,15 +52,17 @@ const ScrollToTop = () => {
 
 function App() {
   const { isOpen, openCalculator, closeCalculator } = useEstimateCalculator();
+  const [showAccessibilityTester, setShowAccessibilityTester] = useState(false);
 
   return (
     <HelmetProvider>
       <Router>
         <ScrollToTop />
         <PerformanceMonitor />
-        <Header />
-        <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />
-        <Routes>
+        <AccessibilityManager>
+          <Header />
+          <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />
+          <Routes>
         <Route path="/" element={
           <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
             <SEOHead 
@@ -126,11 +130,18 @@ function App() {
           <Route path="settings" element={<AdminSettings />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-      <Footer onGetEstimate={openCalculator} />
-      <FloatingSocialButton />
-      <LiveChat />
-      <StrategicCTA variant="floating" type="call" />
+                        </Routes>
+          <Footer onGetEstimate={openCalculator} />
+          <FloatingSocialButton />
+          <LiveChat />
+          <StrategicCTA variant="floating" type="call" />
+          {process.env.NODE_ENV === 'development' && (
+            <AccessibilityTester 
+              isVisible={showAccessibilityTester} 
+              onToggle={() => setShowAccessibilityTester(!showAccessibilityTester)} 
+            />
+          )}
+          </AccessibilityManager>
         </Router>
       </HelmetProvider>
   );

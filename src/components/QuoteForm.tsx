@@ -118,7 +118,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="relative z-10 bg-white/95 backdrop-blur-sm rounded-lg p-6 sm:p-8 shadow-xl">
+        <form onSubmit={handleSubmit} className="relative z-10 bg-white/95 backdrop-blur-sm rounded-lg p-6 sm:p-8 shadow-xl" role="form" aria-label="Quote request form">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-6">
             <div>
               <label htmlFor="name" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
@@ -131,8 +131,11 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                aria-required="true"
+                aria-describedby="name-error"
                 className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
               />
+              <div id="name-error" className="sr-only" role="alert"></div>
             </div>
 
             <div>
