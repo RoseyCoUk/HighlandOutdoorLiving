@@ -1,774 +1,879 @@
 export interface BlogPost {
   id: string;
+  slug: string;
   title: string;
   excerpt: string;
   content: string;
-  category: string;
-  readTime: string;
-  date: string;
-  image: string;
   author: string;
+  publishedDate: string;
+  updatedDate?: string;
+  category: string;
   tags: string[];
-  slug: string;
-  metaDescription: string;
-  metaKeywords: string[];
+  image: string;
+  readTime: string;
+  featured?: boolean;
+  seoKeywords: string[];
+  seoDescription: string;
 }
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 'outdoor-living-trends-northern-ireland-2025',
-    title: 'Outdoor Living Trends in Northern Ireland 2025: What Homeowners Want',
-    excerpt: 'Discover the latest outdoor living trends sweeping across Northern Ireland, from luxury saunas to all-weather grill pods that are transforming gardens in Maghera and beyond.',
+    id: '1',
+    slug: 'ultimate-guide-garden-saunas-northern-ireland',
+    title: 'The Ultimate Guide to Garden Saunas in Northern Ireland',
+    excerpt: 'Discover everything you need to know about installing a garden sauna in Northern Ireland, from choosing the right type to maintenance tips.',
     content: `
-      <p>Northern Ireland's outdoor living scene is experiencing a remarkable transformation in 2025. Homeowners across the region, from Maghera to Belfast, are increasingly investing in premium outdoor structures that extend their living space and enhance their quality of life.</p>
+# The Ultimate Guide to Garden Saunas in Northern Ireland
 
-      <h2>The Rise of Garden Saunas in Northern Ireland</h2>
-      <p>Garden saunas have become one of the most sought-after additions to Northern Ireland homes. With our unpredictable weather, having a year-round wellness retreat in your own garden is proving invaluable. Homeowners in Maghera and surrounding areas are particularly embracing this trend, with many opting for steel-framed, fully-insulated saunas that can withstand our climate.</p>
+Garden saunas have become increasingly popular across Northern Ireland, offering a perfect blend of wellness, luxury, and outdoor living. Whether you're looking to create a personal wellness retreat or add value to your property, a garden sauna can be an excellent investment.
 
-      <p>The benefits of garden saunas extend beyond relaxation. They provide a perfect escape from the stresses of modern life, offer health benefits through regular use, and can significantly increase property value. In Northern Ireland's climate, where outdoor activities are often weather-dependent, having a dedicated wellness space is becoming essential.</p>
+## Why Choose a Garden Sauna?
 
-      <h2>All-Weather Grill Pods: Revolutionizing Outdoor Cooking</h2>
-      <p>Grill pods are another trend that's gaining massive popularity across Northern Ireland. These all-weather outdoor kitchens are transforming how families entertain and cook outdoors. Unlike traditional BBQs that are limited by weather conditions, grill pods provide a sheltered, comfortable environment for year-round outdoor cooking.</p>
+### Health Benefits
+- **Stress Relief**: Regular sauna use can reduce stress hormones and promote relaxation
+- **Improved Circulation**: Heat therapy helps improve blood flow and cardiovascular health
+- **Detoxification**: Sweating helps eliminate toxins from the body
+- **Better Sleep**: Sauna sessions can improve sleep quality and duration
+- **Muscle Recovery**: Heat therapy aids in muscle recovery and reduces soreness
 
-      <p>Key features driving this trend include:</p>
-      <ul>
-        <li>Weatherproof construction suitable for Northern Ireland's climate</li>
-        <li>Integrated cooking appliances and preparation areas</li>
-        <li>Comfortable seating and dining spaces</li>
-        <li>LED lighting for evening use</li>
-        <li>Heating options for year-round comfort</li>
-      </ul>
+### Property Value
+A well-designed garden sauna can increase your property value by 5-10%, making it a smart investment for homeowners in Northern Ireland.
 
-      <h2>Custom Sheds: Beyond Basic Storage</h2>
-      <p>Custom sheds are evolving far beyond simple storage solutions. Homeowners across Northern Ireland are using bespoke sheds for:</p>
-      <ul>
-        <li>Garden offices for remote working</li>
-        <li>Workshops for DIY projects and crafts</li>
-        <li>Gym spaces and fitness areas</li>
-        <li>Entertainment rooms and man caves</li>
-        <li>Art studios and creative spaces</li>
-      </ul>
+## Types of Garden Saunas
 
-      <h2>Regional Trends: Maghera and Beyond</h2>
-      <p>In Maghera and the surrounding Mid Ulster area, we're seeing a particular focus on:</p>
-      <ul>
-        <li>Luxury saunas with premium finishes</li>
-        <li>Large grill pods designed for family gatherings</li>
-        <li>Multi-purpose garden buildings</li>
-        <li>Integrated outdoor living spaces</li>
-      </ul>
+### 1. Traditional Finnish Saunas
+- **Temperature**: 80-100°C
+- **Humidity**: Low (10-20%)
+- **Best for**: Traditional sauna experience
 
-      <h2>Investment and Value</h2>
-      <p>These outdoor living investments are proving to be smart financial decisions. Properties with premium outdoor structures are commanding higher prices in the Northern Ireland market. The return on investment for quality outdoor living spaces typically ranges from 70-90% of the initial cost.</p>
+### 2. Infrared Saunas
+- **Temperature**: 45-65°C
+- **Humidity**: Very low
+- **Best for**: Gentle heat therapy
 
-      <h2>Looking Ahead</h2>
-      <p>As we move through 2025, we expect to see continued growth in outdoor living investments across Northern Ireland. The combination of improved work-from-home arrangements, increased focus on wellness, and the desire for better outdoor entertainment spaces is driving this trend forward.</p>
+### 3. Steam Rooms
+- **Temperature**: 40-50°C
+- **Humidity**: High (100%)
+- **Best for**: Respiratory health
 
-      <p>For homeowners in Maghera and across Northern Ireland, now is the perfect time to consider how outdoor living structures can enhance your property and lifestyle.</p>
+## Planning Your Garden Sauna
+
+### Location Considerations
+- **Privacy**: Choose a location that offers privacy from neighbors
+- **Access**: Ensure easy access from your home
+- **Drainage**: Consider drainage requirements
+- **Power Supply**: Plan for electrical requirements
+- **Orientation**: Consider sun exposure and wind direction
+
+### Size Requirements
+- **2-3 person sauna**: 2.4m x 2.4m minimum
+- **4-6 person sauna**: 3m x 2.4m minimum
+- **Height**: 2.1m minimum for comfortable use
+
+## Installation Process
+
+### 1. Site Preparation
+- Clear the area and level the ground
+- Install proper drainage
+- Prepare electrical connections
+
+### 2. Foundation
+- Concrete slab or timber deck
+- Proper insulation and waterproofing
+- Ventilation system installation
+
+### 3. Construction
+- Steel frame assembly
+- Insulation installation
+- Interior cladding
+- Heater installation
+
+### 4. Finishing
+- Interior and exterior finishing
+- Electrical connections
+- Safety testing
+
+## Maintenance Tips
+
+### Regular Maintenance
+- **Weekly**: Clean benches and floor
+- **Monthly**: Check heater and ventilation
+- **Quarterly**: Deep clean and inspect seals
+- **Annually**: Professional inspection
+
+### Winter Care
+- Keep sauna heated to prevent moisture damage
+- Check for ice damage after cold spells
+- Ensure proper ventilation
+
+## Cost Considerations
+
+### Initial Investment
+- **Basic sauna**: £8,000 - £15,000
+- **Premium sauna**: £15,000 - £25,000
+- **Luxury sauna**: £25,000+
+
+### Running Costs
+- **Electricity**: £50-100 per month
+- **Maintenance**: £200-500 per year
+- **Insurance**: Minimal increase
+
+## Local Regulations
+
+### Planning Permission
+Most garden saunas don't require planning permission if they:
+- Are less than 2.5m in height
+- Don't cover more than 50% of your garden
+- Are not used for commercial purposes
+
+### Building Regulations
+- Must meet electrical safety standards
+- Proper ventilation required
+- Fire safety considerations
+
+## Choosing the Right Heater
+
+### Electric Heaters
+- **Pros**: Easy to control, clean, safe
+- **Cons**: Higher running costs
+- **Best for**: Most residential applications
+
+### Wood-Burning Heaters
+- **Pros**: Authentic experience, lower running costs
+- **Cons**: More maintenance, requires fuel storage
+- **Best for**: Traditional sauna enthusiasts
+
+## Safety Considerations
+
+### Essential Safety Features
+- **Temperature controls**: Prevent overheating
+- **Timers**: Automatic shut-off
+- **Ventilation**: Proper air circulation
+- **Emergency exits**: Easy access to exit
+- **Non-slip surfaces**: Prevent accidents
+
+### Usage Guidelines
+- **Session length**: 10-20 minutes maximum
+- **Temperature**: Start low, increase gradually
+- **Hydration**: Drink plenty of water
+- **Cooling**: Allow time to cool down between sessions
+
+## Conclusion
+
+A garden sauna can be a wonderful addition to your Northern Ireland home, providing health benefits, relaxation, and increased property value. With proper planning, installation, and maintenance, your sauna will provide years of enjoyment.
+
+For expert advice and professional installation, contact NMG Outdoor Living. Our team specializes in custom garden saunas designed for Northern Ireland's unique climate and requirements.
     `,
-    category: 'Trends',
-    readTime: '5 min read',
-    date: '2025-01-15',
+    author: 'NMG Outdoor Living Team',
+    publishedDate: '2024-01-15',
+    category: 'Saunas',
+    tags: ['garden saunas', 'wellness', 'health benefits', 'installation', 'maintenance'],
     image: '/landing pages/Sauna1.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Outdoor Living', 'Northern Ireland', 'Maghera', 'Garden Saunas', 'Grill Pods', '2025 Trends'],
-    slug: 'outdoor-living-trends-northern-ireland-2025',
-    metaDescription: 'Discover the latest outdoor living trends in Northern Ireland 2025, including garden saunas, grill pods, and custom sheds transforming homes in Maghera and beyond.',
-    metaKeywords: ['outdoor living trends', 'Northern Ireland', 'Maghera', 'garden saunas', 'grill pods', 'custom sheds', '2025']
+    readTime: '8 min read',
+    featured: true,
+    seoKeywords: ['garden saunas Northern Ireland', 'sauna installation', 'wellness benefits', 'outdoor living', 'health spa'],
+    seoDescription: 'Complete guide to garden saunas in Northern Ireland. Learn about health benefits, installation process, maintenance tips, and cost considerations for your perfect outdoor wellness retreat.'
   },
   {
-    id: 'garden-saunas-maghera',
-    title: 'Why Garden Saunas Are Becoming Essential in Maghera Homes',
-    excerpt: 'Explore how garden saunas are becoming a must-have feature for Maghera homeowners, offering year-round wellness and relaxation in your own backyard.',
+    id: '2',
+    slug: 'grill-pods-vs-traditional-bbq-comparison',
+    title: 'Grill Pods vs Traditional BBQs: Which is Right for Your Northern Ireland Garden?',
+    excerpt: 'Compare the benefits of weatherproof grill pods with traditional BBQs to find the perfect outdoor cooking solution for your Northern Ireland home.',
     content: `
-      <p>Maghera, nestled in the heart of Mid Ulster, is experiencing a wellness revolution as homeowners discover the incredible benefits of garden saunas. These luxurious outdoor structures are transforming how residents approach relaxation, health, and outdoor living in our unique Northern Ireland climate.</p>
+# Grill Pods vs Traditional BBQs: Which is Right for Your Northern Ireland Garden?
 
-      <h2>The Maghera Wellness Movement</h2>
-      <p>Maghera homeowners are increasingly recognizing that garden saunas offer more than just a luxury addition to their property. In our fast-paced world, having a dedicated wellness space just steps from your back door is becoming essential for maintaining physical and mental health.</p>
+When it comes to outdoor cooking in Northern Ireland, homeowners face a choice between traditional BBQs and modern grill pods. Both options have their merits, but understanding the differences can help you make the best decision for your lifestyle and climate.
 
-      <p>The local climate, with its cool temperatures and frequent rainfall, makes garden saunas particularly appealing. Unlike other regions where outdoor activities are limited by weather, Maghera residents can enjoy their sauna year-round, regardless of the conditions outside.</p>
+## Traditional BBQs: Pros and Cons
 
-      <h2>Health Benefits for Northern Ireland Residents</h2>
-      <p>Regular sauna use offers numerous health benefits that are especially valuable in our climate:</p>
-      <ul>
-        <li>Improved circulation and cardiovascular health</li>
-        <li>Stress relief and mental wellness</li>
-        <li>Detoxification through sweating</li>
-        <li>Muscle relaxation and pain relief</li>
-        <li>Enhanced immune system function</li>
-        <li>Better sleep quality</li>
-      </ul>
+### Advantages
+- **Lower initial cost**: £200-1,500
+- **Portable**: Can be moved around the garden
+- **Simple setup**: No installation required
+- **Familiar**: Most people know how to use them
 
-      <h2>Design Considerations for Maghera Homes</h2>
-      <p>When designing garden saunas for Maghera properties, several factors need consideration:</p>
-      <ul>
-        <li>Weather-resistant construction for our climate</li>
-        <li>Proper insulation for year-round use</li>
-        <li>Integration with existing garden design</li>
-        <li>Accessibility and convenience</li>
-        <li>Energy efficiency for cost-effective operation</li>
-      </ul>
+### Disadvantages
+- **Weather dependent**: Limited use in rain and wind
+- **Seasonal use**: Primarily summer months
+- **Storage issues**: Need to be covered and stored
+- **Limited features**: Basic cooking capabilities
+- **Maintenance**: Regular cleaning and rust prevention
 
-      <h2>Property Value Enhancement</h2>
-      <p>Garden saunas are proving to be excellent investments for Maghera homeowners. Properties with well-designed saunas are commanding premium prices in the local market, with many buyers specifically seeking homes with these features.</p>
+## Grill Pods: The Modern Alternative
 
-      <p>The return on investment for garden saunas in Maghera typically ranges from 75-85% of the initial cost, making them one of the most valuable outdoor living additions available.</p>
+### Advantages
+- **Year-round use**: Weatherproof design
+- **Professional equipment**: High-end appliances
+- **Versatile cooking**: Multiple cooking methods
+- **Low maintenance**: Durable materials
+- **Property value**: Increases home value
+- **Entertainment space**: Social hub for gatherings
 
-      <h2>Local Installation and Maintenance</h2>
-      <p>Professional installation is crucial for garden saunas in Maghera. Our team understands the local climate challenges and building requirements, ensuring your sauna is built to last and perform optimally in our weather conditions.</p>
+### Disadvantages
+- **Higher initial cost**: £15,000-30,000
+- **Permanent installation**: Cannot be moved
+- **Space requirements**: Needs dedicated area
+- **Professional installation**: Requires expert setup
 
-      <p>Regular maintenance is straightforward and can be easily managed by homeowners, with professional servicing available when needed.</p>
+## Climate Considerations for Northern Ireland
 
-      <h2>Community Impact</h2>
-      <p>The growing popularity of garden saunas in Maghera is creating a positive community trend toward wellness and outdoor living. Neighbors are sharing experiences and recommendations, creating a supportive network of sauna enthusiasts.</p>
+### Weather Challenges
+Northern Ireland's climate presents unique challenges for outdoor cooking:
+- **Rain**: 150+ rainy days per year
+- **Wind**: Strong coastal winds
+- **Temperature**: Cooler climate year-round
+- **Humidity**: High humidity levels
 
-      <p>This community aspect adds another dimension to the sauna experience, making it not just a personal wellness tool but also a social connector within the Maghera community.</p>
+### How Grill Pods Solve These Issues
+- **Waterproof construction**: All-weather protection
+- **Wind protection**: Enclosed cooking area
+- **Insulation**: Maintains comfortable temperature
+- **Ventilation**: Proper air circulation
+
+## Cost Comparison Over Time
+
+### Traditional BBQ (5-year period)
+- **Initial cost**: £500
+- **Replacement**: £500 (every 2-3 years)
+- **Accessories**: £200
+- **Maintenance**: £300
+- **Total**: £1,500
+
+### Grill Pod (5-year period)
+- **Initial cost**: £20,000
+- **Maintenance**: £500
+- **Running costs**: £1,000
+- **Property value increase**: +£15,000
+- **Net cost**: £6,500
+
+## Cooking Capabilities
+
+### Traditional BBQ
+- **Cooking methods**: Grilling, smoking
+- **Temperature control**: Limited
+- **Cooking space**: 1-2 items at a time
+- **Versatility**: Basic
+
+### Grill Pod
+- **Cooking methods**: Grilling, smoking, baking, roasting, warming
+- **Temperature control**: Precise digital controls
+- **Cooking space**: Multiple items simultaneously
+- **Versatility**: Restaurant-quality cooking
+
+## Entertainment Value
+
+### Traditional BBQ
+- **Social aspect**: Limited by weather
+- **Seating**: Usually separate from cooking area
+- **Comfort**: Weather dependent
+- **Atmosphere**: Basic
+
+### Grill Pod
+- **Social aspect**: Year-round entertainment
+- **Seating**: Integrated dining area
+- **Comfort**: Climate-controlled environment
+- **Atmosphere**: Premium outdoor living experience
+
+## Maintenance Requirements
+
+### Traditional BBQ
+- **Weekly**: Clean grates and surfaces
+- **Monthly**: Deep clean and check for rust
+- **Seasonal**: Cover and store during winter
+- **Annual**: Replace worn parts
+
+### Grill Pod
+- **Weekly**: Wipe down surfaces
+- **Monthly**: Clean appliances
+- **Quarterly**: Professional inspection
+- **Annual**: Deep clean and maintenance
+
+## Installation and Setup
+
+### Traditional BBQ
+- **Time**: Immediate use
+- **Space**: Minimal requirements
+- **Skills**: No special skills needed
+- **Cost**: No installation cost
+
+### Grill Pod
+- **Time**: 2-3 weeks installation
+- **Space**: Dedicated area required
+- **Skills**: Professional installation
+- **Cost**: Installation included in price
+
+## Making Your Decision
+
+### Choose Traditional BBQ if:
+- You have a limited budget
+- You only cook outdoors occasionally
+- You prefer simple setup
+- You have limited space
+- You're not concerned about weather
+
+### Choose Grill Pod if:
+- You entertain frequently
+- You want year-round outdoor cooking
+- You value convenience and comfort
+- You want to increase property value
+- You enjoy outdoor living
+
+## Conclusion
+
+While traditional BBQs offer simplicity and lower initial costs, grill pods provide a comprehensive outdoor living solution that's perfectly suited to Northern Ireland's climate. The investment in a grill pod pays dividends in terms of usability, entertainment value, and property enhancement.
+
+For homeowners serious about outdoor living, a grill pod represents the future of garden entertainment and cooking.
+
+Contact NMG Outdoor Living to discuss your outdoor cooking needs and explore our range of custom grill pods designed for Northern Ireland's unique climate.
     `,
-    category: 'Saunas',
-    readTime: '4 min read',
-    date: '2025-01-10',
-    image: '/landing pages/InsideSauna1.JPG',
     author: 'NMG Outdoor Living Team',
-    tags: ['Garden Saunas', 'Maghera', 'Wellness', 'Northern Ireland', 'Health Benefits', 'Property Value'],
-    slug: 'garden-saunas-maghera',
-    metaDescription: 'Discover why garden saunas are becoming essential in Maghera homes, offering year-round wellness and relaxation benefits for Northern Ireland residents.',
-    metaKeywords: ['garden saunas', 'Maghera', 'Northern Ireland', 'wellness', 'health benefits', 'outdoor living']
-  },
-  {
-    id: 'grill-pods-northern-ireland-weather',
-    title: 'All-Weather Grill Pods: The Perfect Solution for Northern Ireland Weather',
-    excerpt: 'Learn how all-weather grill pods are revolutionizing outdoor cooking in Northern Ireland, allowing you to BBQ year-round regardless of the weather.',
-    content: `
-      <p>Northern Ireland's unpredictable weather has long been a challenge for outdoor cooking enthusiasts. Traditional BBQs are often limited to the few sunny days we get each year, leaving families unable to enjoy outdoor dining for much of the year. Enter all-weather grill pods – the revolutionary solution that's transforming outdoor cooking across Northern Ireland.</p>
-
-      <h2>The Northern Ireland Weather Challenge</h2>
-      <p>Our climate presents unique challenges for outdoor cooking:</p>
-      <ul>
-        <li>Frequent rainfall throughout the year</li>
-        <li>Strong winds that can extinguish flames</li>
-        <li>Cool temperatures that make outdoor dining uncomfortable</li>
-        <li>Limited sunshine for traditional BBQ use</li>
-        <li>Unpredictable weather patterns</li>
-      </ul>
-
-      <p>All-weather grill pods solve these problems by providing a sheltered, comfortable environment for year-round outdoor cooking and dining.</p>
-
-      <h2>Key Features of All-Weather Grill Pods</h2>
-      <p>Modern grill pods designed for Northern Ireland's climate include:</p>
-      <ul>
-        <li>Weatherproof construction with durable materials</li>
-        <li>Integrated roofing and walls for complete protection</li>
-        <li>Professional-grade cooking appliances</li>
-        <li>Comfortable seating and dining areas</li>
-        <li>LED lighting for evening use</li>
-        <li>Heating options for year-round comfort</li>
-        <li>Storage solutions for cooking equipment</li>
-        <li>Easy maintenance and cleaning features</li>
-      </ul>
-
-      <h2>Year-Round Entertainment</h2>
-      <p>With an all-weather grill pod, Northern Ireland families can enjoy outdoor dining and entertainment throughout the year. No longer are BBQs limited to summer months – these structures enable outdoor cooking and socializing even in the depths of winter.</p>
-
-      <p>The sheltered environment means you can host family gatherings, dinner parties, and casual meals outdoors regardless of the weather conditions outside.</p>
-
-      <h2>Professional Cooking Experience</h2>
-      <p>Grill pods are equipped with professional-grade cooking appliances that rival indoor kitchens. Features typically include:</p>
-      <ul>
-        <li>High-quality gas or charcoal grills</li>
-        <li>Side burners for additional cooking</li>
-        <li>Preparation areas with sinks</li>
-        <li>Refrigeration options</li>
-        <li>Storage for utensils and equipment</li>
-      </ul>
-
-      <h2>Regional Popularity</h2>
-      <p>Grill pods are gaining popularity across Northern Ireland, with particular interest in:</p>
-      <ul>
-        <li>Maghera and Mid Ulster area</li>
-        <li>Belfast and surrounding suburbs</li>
-        <li>Derry/Londonderry region</li>
-        <li>Coastal areas where weather is especially challenging</li>
-        <li>Rural properties with large gardens</li>
-      </ul>
-
-      <h2>Installation and Maintenance</h2>
-      <p>Professional installation is essential for grill pods in Northern Ireland. Our team ensures:</p>
-      <ul>
-        <li>Proper foundation and structural integrity</li>
-        <li>Weatherproof construction</li>
-        <li>Safe electrical and gas connections</li>
-        <li>Compliance with local building regulations</li>
-        <li>Ongoing maintenance support</li>
-      </ul>
-
-      <h2>Investment Value</h2>
-      <p>All-weather grill pods represent excellent value for Northern Ireland homeowners. They typically provide:</p>
-      <ul>
-        <li>70-85% return on investment</li>
-        <li>Increased property value</li>
-        <li>Enhanced lifestyle and entertainment options</li>
-        <li>Year-round outdoor living capability</li>
-        <li>Professional cooking facilities</li>
-      </ul>
-
-      <p>For Northern Ireland families looking to maximize their outdoor living potential, all-weather grill pods offer the perfect solution to our climate challenges.</p>
-    `,
+    publishedDate: '2024-01-22',
     category: 'Grill Pods',
-    readTime: '6 min read',
-    date: '2025-01-08',
+    tags: ['grill pods', 'BBQ comparison', 'outdoor cooking', 'entertainment', 'weatherproof'],
     image: '/landing pages/GrillPod1.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Grill Pods', 'Northern Ireland', 'All-Weather', 'Outdoor Cooking', 'BBQ', 'Weather-Proof'],
-    slug: 'grill-pods-northern-ireland-weather',
-    metaDescription: 'Discover how all-weather grill pods are revolutionizing outdoor cooking in Northern Ireland, providing year-round BBQ capabilities regardless of weather conditions.',
-    metaKeywords: ['grill pods', 'Northern Ireland', 'all-weather', 'outdoor cooking', 'BBQ', 'weather-proof']
+    readTime: '6 min read',
+    featured: true,
+    seoKeywords: ['grill pods Northern Ireland', 'BBQ comparison', 'outdoor cooking', 'weatherproof kitchen', 'garden entertainment'],
+    seoDescription: 'Compare grill pods vs traditional BBQs for Northern Ireland gardens. Learn about weatherproof outdoor cooking, entertainment value, and long-term investment benefits.'
   },
   {
-    id: 'custom-sheds-derry-londonderry',
-    title: 'Custom Sheds in Derry/Londonderry: Maximizing Your Garden Space',
-    excerpt: 'Discover how custom sheds are helping homeowners in Derry/Londonderry maximize their garden space with bespoke storage solutions and garden offices.',
+    id: '3',
+    slug: 'custom-sheds-garden-offices-northern-ireland',
+    title: 'Custom Sheds and Garden Offices: Maximizing Your Northern Ireland Property',
+    excerpt: 'Transform your garden with custom sheds and garden offices. Learn how to create functional spaces that add value to your Northern Ireland property.',
     content: `
-      <p>Derry/Londonderry homeowners are discovering the incredible potential of custom sheds to transform their outdoor spaces. No longer just basic storage solutions, modern custom sheds are becoming essential extensions of the home, providing dedicated spaces for work, hobbies, and storage.</p>
+# Custom Sheds and Garden Offices: Maximizing Your Northern Ireland Property
 
-      <h2>The Evolution of Garden Sheds</h2>
-      <p>Gone are the days when sheds were simply places to store garden tools. Today's custom sheds in Derry/Londonderry are sophisticated structures that serve multiple purposes and significantly enhance property value and lifestyle.</p>
+In today's world, homeowners in Northern Ireland are increasingly looking to maximize their property's potential. Custom sheds and garden offices offer versatile solutions that can transform your outdoor space into functional, valuable areas.
 
-      <h2>Popular Uses for Custom Sheds in Derry/Londonderry</h2>
-      <ul>
-        <li><strong>Garden Offices:</strong> Perfect for remote working with proper insulation and electrical installations</li>
-        <li><strong>Workshops:</strong> Dedicated spaces for DIY projects, woodworking, and crafts</li>
-        <li><strong>Gym Spaces:</strong> Home fitness areas with proper ventilation and flooring</li>
-        <li><strong>Entertainment Rooms:</strong> Man caves, gaming rooms, and social spaces</li>
-        <li><strong>Art Studios:</strong> Creative spaces with natural lighting and ventilation</li>
-        <li><strong>Storage Solutions:</strong> Organized storage for tools, equipment, and seasonal items</li>
-      </ul>
+## The Rise of Garden Offices
 
-      <h2>Design Considerations for Derry/Londonderry Climate</h2>
-      <p>Custom sheds in this region need to withstand the local climate challenges:</p>
-      <ul>
-        <li>Weather-resistant materials for frequent rainfall</li>
-        <li>Proper insulation for year-round use</li>
-        <li>Ventilation systems to prevent dampness</li>
-        <li>Secure foundations for stability</li>
-        <li>Energy-efficient design for cost-effective operation</li>
-      </ul>
+### Remote Work Revolution
+The shift to remote work has created unprecedented demand for garden offices:
+- **Privacy**: Separate work environment from home
+- **Productivity**: Dedicated space for focused work
+- **Work-life balance**: Clear separation between work and home
+- **Flexibility**: Adaptable space for various needs
 
-      <h2>Planning and Permissions</h2>
-      <p>Understanding local planning requirements is crucial for Derry/Londonderry homeowners. Most custom sheds fall under permitted development, but it's essential to verify:</p>
-      <ul>
-        <li>Size limitations and height restrictions</li>
-        <li>Distance from property boundaries</li>
-        <li>Impact on neighboring properties</li>
-        <li>Electrical and plumbing requirements</li>
-      </ul>
+### Property Value Impact
+A well-designed garden office can increase property value by 5-15%, making it a smart investment for Northern Ireland homeowners.
 
-      <h2>Investment Value</h2>
-      <p>Custom sheds are proving to be excellent investments for Derry/Londonderry properties, typically providing 70-85% return on investment while significantly enhancing lifestyle and property appeal.</p>
+## Types of Custom Sheds
+
+### 1. Garden Offices
+- **Size**: 2.4m x 3.6m to 4.8m x 6m
+- **Features**: Insulation, electricity, internet, heating
+- **Uses**: Home office, study, creative space
+- **Value**: High return on investment
+
+### 2. Storage Sheds
+- **Size**: 1.8m x 2.4m to 3.6m x 4.8m
+- **Features**: Shelving, security, weather protection
+- **Uses**: Garden tools, equipment, seasonal items
+- **Value**: Practical storage solution
+
+### 3. Workshop Sheds
+- **Size**: 3m x 4.5m to 4.5m x 6m
+- **Features**: Power tools, workbenches, ventilation
+- **Uses**: DIY projects, hobbies, small business
+- **Value**: Creative and productive space
+
+### 4. Garden Rooms
+- **Size**: 3m x 4.5m to 6m x 8m
+- **Features**: Full amenities, insulation, heating
+- **Uses**: Guest accommodation, gym, entertainment
+- **Value**: Luxury outdoor living space
+
+## Design Considerations
+
+### Location and Orientation
+- **Sunlight**: Maximize natural light
+- **Privacy**: Consider neighbor views
+- **Access**: Easy access from house
+- **Drainage**: Proper water management
+- **Trees**: Avoid root damage
+
+### Size Planning
+- **Current needs**: Immediate requirements
+- **Future needs**: Potential expansion
+- **Garden size**: Proportionate to garden
+- **Budget**: Cost per square meter
+- **Planning**: Local regulations
+
+### Materials and Construction
+
+#### Traditional Timber
+- **Pros**: Natural appearance, good insulation
+- **Cons**: Requires maintenance, weather sensitive
+- **Cost**: £800-1,200 per m²
+- **Lifespan**: 15-25 years
+
+#### Composite Materials
+- **Pros**: Low maintenance, weather resistant
+- **Cons**: Higher initial cost
+- **Cost**: £1,200-1,800 per m²
+- **Lifespan**: 25-40 years
+
+#### Steel Frame
+- **Pros**: Very durable, fire resistant
+- **Cons**: Less natural appearance
+- **Cost**: £1,500-2,500 per m²
+- **Lifespan**: 40+ years
+
+## Planning Permission and Regulations
+
+### When Permission is Required
+- **Size**: Over 2.5m height or 50% garden coverage
+- **Location**: Front garden or conservation areas
+- **Use**: Commercial or residential accommodation
+- **Design**: Listed buildings or special areas
+
+### Building Regulations
+- **Electrical**: Must meet safety standards
+- **Insulation**: Energy efficiency requirements
+- **Ventilation**: Proper air circulation
+- **Fire safety**: Escape routes and alarms
+
+## Cost Breakdown
+
+### Basic Storage Shed
+- **Materials**: £2,000-4,000
+- **Installation**: £1,000-2,000
+- **Total**: £3,000-6,000
+
+### Garden Office
+- **Materials**: £8,000-15,000
+- **Installation**: £3,000-5,000
+- **Electrics**: £1,000-2,000
+- **Total**: £12,000-22,000
+
+### Luxury Garden Room
+- **Materials**: £15,000-30,000
+- **Installation**: £5,000-10,000
+- **Finishing**: £5,000-10,000
+- **Total**: £25,000-50,000
+
+## Maintenance Requirements
+
+### Annual Maintenance
+- **Inspection**: Check for damage and wear
+- **Cleaning**: Remove debris and clean surfaces
+- **Repairs**: Fix any issues promptly
+- **Painting**: Refresh exterior if needed
+
+### Seasonal Care
+- **Spring**: Check for winter damage
+- **Summer**: Ensure ventilation and cooling
+- **Autumn**: Prepare for winter weather
+- **Winter**: Protect from snow and ice
+
+## Maximizing Functionality
+
+### Multi-Purpose Design
+- **Flexible layout**: Adaptable for different uses
+- **Storage solutions**: Built-in storage options
+- **Technology**: Internet and power infrastructure
+- **Comfort**: Heating and ventilation systems
+
+### Smart Features
+- **Security**: Alarms and locks
+- **Climate control**: Heating and cooling
+- **Lighting**: Natural and artificial light
+- **Connectivity**: Internet and phone access
+
+## Environmental Considerations
+
+### Sustainable Materials
+- **FSC timber**: Responsibly sourced wood
+- **Recycled materials**: Eco-friendly options
+- **Local suppliers**: Reduce transport emissions
+- **Energy efficiency**: Good insulation
+
+### Green Features
+- **Solar panels**: Renewable energy
+- **Rainwater harvesting**: Water conservation
+- **Green roof**: Natural insulation
+- **Natural ventilation**: Reduce energy use
+
+## Conclusion
+
+Custom sheds and garden offices offer Northern Ireland homeowners an excellent opportunity to maximize their property's potential. Whether you need a home office, storage solution, or entertainment space, a well-designed custom structure can provide years of value and enjoyment.
+
+The key to success is careful planning, quality construction, and choosing the right design for your specific needs and budget.
+
+Contact NMG Outdoor Living to discuss your custom shed or garden office requirements. Our team specializes in creating bespoke outdoor structures that perfectly suit Northern Ireland's climate and your lifestyle needs.
     `,
+    author: 'NMG Outdoor Living Team',
+    publishedDate: '2024-01-29',
     category: 'Sheds',
-    readTime: '5 min read',
-    date: '2025-01-05',
+    tags: ['custom sheds', 'garden offices', 'remote work', 'property value', 'storage solutions'],
     image: '/landing pages/outdoor glass room.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Custom Sheds', 'Derry', 'Londonderry', 'Garden Offices', 'Workshops', 'Storage'],
-    slug: 'custom-sheds-derry-londonderry',
-    metaDescription: 'Discover how custom sheds are maximizing garden space in Derry/Londonderry with bespoke storage solutions and garden offices.',
-    metaKeywords: ['custom sheds', 'Derry', 'Londonderry', 'garden offices', 'workshops', 'storage solutions']
-  },
-  {
-    id: 'outdoor-living-belfast',
-    title: 'Belfast Outdoor Living: Transforming City Gardens with Premium Structures',
-    excerpt: 'See how Belfast homeowners are transforming their city gardens with premium outdoor structures, creating urban oases for relaxation and entertainment.',
-    content: `
-      <p>Belfast's urban landscape is being transformed by innovative outdoor living solutions. City homeowners are discovering that even small gardens can become incredible outdoor living spaces with the right design and premium structures.</p>
-
-      <h2>Urban Outdoor Living Challenges</h2>
-      <p>Belfast city gardens present unique challenges:</p>
-      <ul>
-        <li>Limited space in urban environments</li>
-        <li>Privacy concerns with close neighbors</li>
-        <li>Noise pollution from city life</li>
-        <li>Limited natural light in some areas</li>
-        <li>Planning restrictions in conservation areas</li>
-      </ul>
-
-      <h2>Solutions for Belfast City Gardens</h2>
-      <p>Premium outdoor structures are solving these challenges:</p>
-      <ul>
-        <li><strong>Compact Saunas:</strong> Perfect for small gardens with year-round wellness benefits</li>
-        <li><strong>Urban Grill Pods:</strong> Space-efficient outdoor kitchens for city entertaining</li>
-        <li><strong>Garden Offices:</strong> Quiet workspaces away from city noise</li>
-        <li><strong>Privacy Screens:</strong> Creating secluded outdoor spaces</li>
-        <li><strong>Multi-functional Structures:</strong> Combining multiple uses in limited space</li>
-      </ul>
-
-      <h2>Popular Belfast Areas</h2>
-      <p>Outdoor living is particularly popular in these Belfast areas:</p>
-      <ul>
-        <li>South Belfast - Large Victorian gardens</li>
-        <li>East Belfast - Family-friendly outdoor spaces</li>
-        <li>North Belfast - Hillside properties with views</li>
-        <li>West Belfast - Community-focused outdoor areas</li>
-      </ul>
-
-      <h2>Design Principles for City Gardens</h2>
-      <p>Successful Belfast outdoor living projects follow these principles:</p>
-      <ul>
-        <li>Maximizing limited space with smart design</li>
-        <li>Creating privacy without blocking light</li>
-        <li>Using materials that complement city architecture</li>
-        <li>Incorporating sound-dampening features</li>
-        <li>Ensuring year-round usability</li>
-      </ul>
-
-      <h2>Property Value Impact</h2>
-      <p>Premium outdoor structures are significantly increasing property values in Belfast, with many buyers specifically seeking homes with these features.</p>
-    `,
-    category: 'Trends',
-    readTime: '4 min read',
-    date: '2025-01-03',
-    image: '/landing pages/Sauna2.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Belfast', 'Urban Living', 'City Gardens', 'Outdoor Living', 'Premium Structures'],
-    slug: 'outdoor-living-belfast',
-    metaDescription: 'Discover how Belfast homeowners are transforming city gardens with premium outdoor structures for relaxation and entertainment.',
-    metaKeywords: ['Belfast', 'urban living', 'city gardens', 'outdoor living', 'premium structures']
-  },
-  {
-    id: 'sauna-installation-northern-ireland',
-    title: 'Complete Guide to Sauna Installation in Northern Ireland',
-    excerpt: 'Everything you need to know about installing a garden sauna in Northern Ireland, from planning permission to maintenance tips.',
-    content: `
-      <p>Installing a garden sauna in Northern Ireland requires careful planning and consideration of local conditions. This comprehensive guide covers everything you need to know to ensure a successful sauna installation.</p>
-
-      <h2>Planning and Permissions</h2>
-      <p>Most garden saunas in Northern Ireland fall under permitted development, but it's essential to check:</p>
-      <ul>
-        <li>Size limitations (typically under 2.5m height)</li>
-        <li>Distance from property boundaries</li>
-        <li>Impact on neighboring properties</li>
-        <li>Conservation area restrictions</li>
-      </ul>
-
-      <h2>Site Preparation</h2>
-      <p>Proper site preparation is crucial for Northern Ireland's climate:</p>
-      <ul>
-        <li>Level concrete foundation (minimum 150mm depth)</li>
-        <li>Proper drainage to prevent water pooling</li>
-        <li>Access for delivery and installation</li>
-        <li>Electrical supply planning</li>
-      </ul>
-
-      <h2>Installation Process</h2>
-      <p>Professional installation typically involves:</p>
-      <ul>
-        <li>Site survey and planning</li>
-        <li>Foundation preparation</li>
-        <li>Structure assembly</li>
-        <li>Electrical installation</li>
-        <li>Interior finishing</li>
-        <li>Testing and commissioning</li>
-      </ul>
-
-      <h2>Maintenance Requirements</h2>
-      <p>Regular maintenance ensures optimal performance:</p>
-      <ul>
-        <li>Weekly cleaning and ventilation</li>
-        <li>Monthly deep cleaning</li>
-        <li>Annual professional inspection</li>
-        <li>Heater maintenance and servicing</li>
-      </ul>
-
-      <h2>Cost Considerations</h2>
-      <p>Sauna installation costs in Northern Ireland typically range from £8,000 to £25,000 depending on size, features, and complexity.</p>
-    `,
-    category: 'Saunas',
     readTime: '7 min read',
-    date: '2024-12-28',
-    image: '/landing pages/InsideSauna2.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Sauna Installation', 'Northern Ireland', 'Planning Permission', 'Maintenance', 'Costs'],
-    slug: 'sauna-installation-northern-ireland',
-    metaDescription: 'Complete guide to sauna installation in Northern Ireland, covering planning permission, site preparation, and maintenance requirements.',
-    metaKeywords: ['sauna installation', 'Northern Ireland', 'planning permission', 'maintenance', 'costs']
+    featured: false,
+    seoKeywords: ['custom sheds Northern Ireland', 'garden offices', 'remote work space', 'property value', 'outdoor structures'],
+    seoDescription: 'Transform your Northern Ireland property with custom sheds and garden offices. Learn about design options, costs, planning permission, and maximizing your outdoor space potential.'
   },
   {
-    id: 'grill-pod-costs-northern-ireland',
-    title: 'Grill Pod Costs in Northern Ireland: What to Expect in 2025',
-    excerpt: 'A comprehensive breakdown of grill pod costs across Northern Ireland, including installation, features, and financing options.',
+    id: '4',
+    slug: 'outdoor-living-trends-2024-northern-ireland',
+    title: 'Outdoor Living Trends 2024: What\'s Hot in Northern Ireland Gardens',
+    excerpt: 'Discover the latest outdoor living trends that are transforming gardens across Northern Ireland, from sustainable design to smart technology integration.',
     content: `
-      <p>Understanding grill pod costs in Northern Ireland is essential for homeowners considering this significant outdoor living investment. This comprehensive guide breaks down all the costs involved in 2025.</p>
+# Outdoor Living Trends 2024: What's Hot in Northern Ireland Gardens
 
-      <h2>Base Grill Pod Costs</h2>
-      <p>Basic grill pod packages in Northern Ireland typically range from:</p>
-      <ul>
-        <li>Small grill pods (2-3m): £12,000 - £18,000</li>
-        <li>Medium grill pods (3-4m): £18,000 - £25,000</li>
-        <li>Large grill pods (4-5m): £25,000 - £35,000</li>
-        <li>Premium grill pods (5m+): £35,000 - £50,000</li>
-      </ul>
+As we move into 2024, Northern Ireland homeowners are embracing new outdoor living trends that combine functionality, sustainability, and style. From smart technology to eco-friendly materials, here are the trends shaping garden design across the region.
 
-      <h2>Additional Features and Costs</h2>
-      <p>Optional features that can increase costs:</p>
-      <ul>
-        <li>Premium appliances: +£2,000 - £5,000</li>
-        <li>LED lighting systems: +£500 - £1,500</li>
-        <li>Heating systems: +£1,000 - £3,000</li>
-        <li>Custom finishes: +£1,000 - £3,000</li>
-        <li>Electrical upgrades: +£500 - £2,000</li>
-        <li>Landscaping integration: +£1,000 - £5,000</li>
-      </ul>
+## 1. Sustainable Outdoor Living
 
-      <h2>Installation Costs</h2>
-      <p>Professional installation typically includes:</p>
-      <ul>
-        <li>Site preparation and foundation: £1,500 - £3,000</li>
-        <li>Structure assembly: £2,000 - £4,000</li>
-        <li>Electrical installation: £1,000 - £2,500</li>
-        <li>Gas connection (if required): £500 - £1,500</li>
-        <li>Final finishing and testing: £500 - £1,000</li>
-      </ul>
+### Eco-Friendly Materials
+- **Recycled composites**: Sustainable alternatives to traditional materials
+- **FSC-certified timber**: Responsibly sourced wood products
+- **Local materials**: Reducing transport emissions
+- **Natural finishes**: Non-toxic, environmentally friendly treatments
 
-      <h2>Regional Cost Variations</h2>
-      <p>Costs can vary across Northern Ireland:</p>
-      <ul>
-        <li>Belfast area: Premium pricing due to high demand</li>
-        <li>Maghera/Mid Ulster: Competitive pricing with local expertise</li>
-        <li>Derry/Londonderry: Mid-range pricing</li>
-        <li>Rural areas: May include additional delivery costs</li>
-      </ul>
+### Energy Efficiency
+- **Solar-powered features**: Lighting, water features, and appliances
+- **Smart irrigation**: Water-efficient garden systems
+- **Natural insulation**: Green roofs and living walls
+- **LED lighting**: Energy-efficient outdoor illumination
 
-      <h2>Financing Options</h2>
-      <p>Several financing options are available:</p>
-      <ul>
-        <li>Personal savings: Most common approach</li>
-        <li>Home improvement loans: 3-7% APR</li>
-        <li>Credit cards: 0% introductory offers</li>
-        <li>Payment plans: Available from some suppliers</li>
-      </ul>
+## 2. Smart Technology Integration
 
-      <h2>Return on Investment</h2>
-      <p>Grill pods typically provide 70-85% return on investment when selling your property, making them excellent long-term investments.</p>
+### Automated Systems
+- **Smart irrigation**: Weather-responsive watering systems
+- **Automated lighting**: Motion sensors and timers
+- **Climate control**: Automated ventilation and heating
+- **Security systems**: Smart locks and cameras
+
+### Connected Living
+- **Wi-Fi integration**: Seamless connectivity throughout garden
+- **Mobile apps**: Remote control of garden features
+- **Voice control**: Hands-free operation of systems
+- **Data monitoring**: Track usage and efficiency
+
+## 3. Multi-Functional Spaces
+
+### Year-Round Use
+- **Weatherproof structures**: All-season outdoor living
+- **Heated spaces**: Comfortable winter use
+- **Flexible layouts**: Adaptable for different activities
+- **Integrated storage**: Built-in organization solutions
+
+### Entertainment Hubs
+- **Outdoor kitchens**: Professional cooking facilities
+- **Dining areas**: Comfortable seating and tables
+- **Entertainment systems**: Audio and visual equipment
+- **Social spaces**: Fire pits and conversation areas
+
+## 4. Wellness and Wellness Spaces
+
+### Health-Focused Design
+- **Saunas and spas**: Wellness retreats in the garden
+- **Meditation areas**: Peaceful, private spaces
+- **Exercise zones**: Outdoor gyms and yoga areas
+- **Natural therapy**: Healing gardens and water features
+
+### Mental Health Benefits
+- **Stress reduction**: Calming garden environments
+- **Connection to nature**: Biophilic design principles
+- **Social interaction**: Spaces for family and friends
+- **Personal retreat**: Private relaxation areas
+
+## 5. Local Climate Adaptation
+
+### Weather-Responsive Design
+- **Wind protection**: Strategic planting and structures
+- **Rain management**: Proper drainage and cover
+- **Temperature control**: Shade and heating solutions
+- **Seasonal planning**: Year-round garden interest
+
+### Northern Ireland Specific
+- **Coastal considerations**: Salt-resistant materials
+- **High humidity**: Mold and mildew prevention
+- **Variable weather**: Flexible, adaptable designs
+- **Local materials**: Regional stone and timber
+
+## 6. Minimalist and Modern Design
+
+### Clean Lines
+- **Contemporary aesthetics**: Modern, uncluttered design
+- **Geometric shapes**: Structured, organized layouts
+- **Neutral colors**: Timeless, sophisticated palettes
+- **Open spaces**: Generous, uncluttered areas
+
+### Quality Over Quantity
+- **Premium materials**: Investment in lasting quality
+- **Expert craftsmanship**: Professional installation
+- **Timeless design**: Classic, enduring styles
+- **Reduced maintenance**: Low-maintenance solutions
+
+## 7. Family-Focused Spaces
+
+### Multi-Generational Design
+- **Accessibility**: Universal design principles
+- **Safety features**: Child and elderly-friendly spaces
+- **Flexible layouts**: Adaptable for different ages
+- **Storage solutions**: Organized, clutter-free areas
+
+### Educational Elements
+- **Garden learning**: Educational planting areas
+- **Wildlife habitats**: Nature observation spaces
+- **Sustainable practices**: Environmental education
+- **Family activities**: Spaces for shared experiences
+
+## 8. Technology and Innovation
+
+### Smart Home Integration
+- **Home automation**: Seamless indoor-outdoor connection
+- **Energy management**: Efficient resource use
+- **Security integration**: Comprehensive protection
+- **Entertainment systems**: Integrated audio and visual
+
+### Future-Proofing
+- **Modular design**: Adaptable for future changes
+- **Technology ready**: Infrastructure for smart features
+- **Sustainable systems**: Long-term environmental benefits
+- **Quality construction**: Lasting value and performance
+
+## 9. Local and Regional Influences
+
+### Cultural Heritage
+- **Traditional materials**: Local stone and timber
+- **Historical references**: Respect for local architecture
+- **Regional plants**: Native and adapted species
+- **Community values**: Social and environmental responsibility
+
+### Modern Interpretation
+- **Contemporary updates**: Modern take on traditional elements
+- **Innovative materials**: New technology with local character
+- **Sustainable practices**: Environmental stewardship
+- **Quality craftsmanship**: Expert local skills
+
+## 10. Investment and Value
+
+### Property Enhancement
+- **Increased value**: 5-15% property value increase
+- **Market appeal**: Desirable features for buyers
+- **Lifestyle improvement**: Enhanced quality of life
+- **Long-term investment**: Lasting value and enjoyment
+
+### Return on Investment
+- **Energy savings**: Reduced utility costs
+- **Maintenance reduction**: Lower ongoing costs
+- **Lifestyle benefits**: Improved health and wellbeing
+- **Social value**: Enhanced family and social life
+
+## Conclusion
+
+The outdoor living trends of 2024 reflect a growing awareness of sustainability, technology, and quality of life. Northern Ireland homeowners are investing in outdoor spaces that provide year-round enjoyment, environmental benefits, and lasting value.
+
+The key to successful outdoor living design is balancing current trends with timeless quality, ensuring your garden remains beautiful and functional for years to come.
+
+Contact NMG Outdoor Living to discuss how these trends can be incorporated into your garden design. Our team specializes in creating outdoor living spaces that combine the latest trends with Northern Ireland's unique climate and cultural heritage.
     `,
-    category: 'Grill Pods',
-    readTime: '6 min read',
-    date: '2024-12-25',
-    image: '/landing pages/GrillPod2.JPG',
     author: 'NMG Outdoor Living Team',
-    tags: ['Grill Pod Costs', 'Northern Ireland', '2025', 'Installation', 'Financing', 'ROI'],
-    slug: 'grill-pod-costs-northern-ireland',
-    metaDescription: 'Comprehensive guide to grill pod costs in Northern Ireland 2025, including installation, features, and financing options.',
-    metaKeywords: ['grill pod costs', 'Northern Ireland', '2025', 'installation', 'financing', 'ROI']
-  },
-  {
-    id: 'garden-offices-maghera',
-    title: 'Garden Offices in Maghera: The Future of Remote Working',
-    excerpt: 'How garden offices are helping Maghera residents create the perfect work-from-home environment with dedicated, professional spaces.',
-    content: `
-      <p>Maghera is at the forefront of the remote working revolution, with garden offices becoming essential for professionals seeking the perfect work-life balance. These dedicated workspaces are transforming how residents approach their careers and daily routines.</p>
-
-      <h2>The Remote Working Revolution in Maghera</h2>
-      <p>The shift to remote working has created unprecedented demand for dedicated home office spaces. Maghera residents are discovering that garden offices offer the perfect solution, providing professional work environments without the commute.</p>
-
-      <h2>Benefits of Garden Offices for Maghera Professionals</h2>
-      <ul>
-        <li><strong>Work-Life Separation:</strong> Clear physical boundaries between work and home life</li>
-        <li><strong>Professional Environment:</strong> Dedicated space for meetings and focused work</li>
-        <li><strong>Reduced Commuting:</strong> Save time and money on daily travel</li>
-        <li><strong>Increased Productivity:</strong> Distraction-free work environment</li>
-        <li><strong>Flexible Hours:</strong> Work when you're most productive</li>
-        <li><strong>Tax Benefits:</strong> Potential tax deductions for home office expenses</li>
-      </ul>
-
-      <h2>Design Features for Maghera Garden Offices</h2>
-      <p>Successful garden offices in Maghera typically include:</p>
-      <ul>
-        <li>High-speed internet connectivity</li>
-        <li>Proper insulation for year-round use</li>
-        <li>Natural lighting with window options</li>
-        <li>Electrical outlets and USB charging</li>
-        <li>Heating and cooling systems</li>
-        <li>Soundproofing for professional calls</li>
-        <li>Storage solutions for office equipment</li>
-      </ul>
-
-      <h2>Popular Industries in Maghera</h2>
-      <p>Garden offices are particularly popular among:</p>
-      <ul>
-        <li>IT professionals and software developers</li>
-        <li>Financial advisors and accountants</li>
-        <li>Consultants and business coaches</li>
-        <li>Creative professionals and designers</li>
-        <li>Healthcare professionals with administrative roles</li>
-        <li>Educators and tutors</li>
-      </ul>
-
-      <h2>Investment and Value</h2>
-      <p>Garden offices in Maghera typically cost £8,000 - £25,000 and provide excellent return on investment, often increasing property values by more than the installation cost.</p>
-    `,
-    category: 'Sheds',
-    readTime: '5 min read',
-    date: '2024-12-20',
-    image: '/landing pages/Sauna4.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Garden Offices', 'Maghera', 'Remote Working', 'Work From Home', 'Professional Spaces'],
-    slug: 'garden-offices-maghera',
-    metaDescription: 'Discover how garden offices are helping Maghera residents create perfect work-from-home environments with dedicated professional spaces.',
-    metaKeywords: ['garden offices', 'Maghera', 'remote working', 'work from home', 'professional spaces']
-  },
-  {
-    id: 'outdoor-living-cookstown',
-    title: 'Outdoor Living in Cookstown: Creating Year-Round Entertainment Spaces',
-    excerpt: 'Discover how Cookstown homeowners are creating year-round entertainment spaces with premium outdoor structures and innovative design.',
-    content: `
-      <p>Cookstown, nestled in the heart of Mid Ulster, is experiencing an outdoor living renaissance. Homeowners are transforming their gardens into year-round entertainment spaces that rival indoor living areas in comfort and functionality.</p>
-
-      <h2>The Cookstown Entertainment Revolution</h2>
-      <p>Cookstown residents are leading the way in creating outdoor spaces that can be enjoyed throughout the year, regardless of Northern Ireland's unpredictable weather. This shift is driven by a desire for better social spaces and enhanced lifestyle options.</p>
-
-      <h2>Popular Outdoor Structures in Cookstown</h2>
-      <ul>
-        <li><strong>All-Weather Grill Pods:</strong> Perfect for year-round entertaining and family gatherings</li>
-        <li><strong>Garden Saunas:</strong> Wellness retreats for relaxation and health benefits</li>
-        <li><strong>Multi-Purpose Sheds:</strong> Flexible spaces for work, hobbies, and storage</li>
-        <li><strong>Outdoor Living Rooms:</strong> Comfortable seating areas with heating and lighting</li>
-        <li><strong>Garden Bars:</strong> Social spaces for drinks and entertainment</li>
-      </ul>
-
-      <h2>Design Principles for Cookstown Gardens</h2>
-      <p>Successful outdoor living projects in Cookstown follow these principles:</p>
-      <ul>
-        <li>Weather-resistant construction for year-round use</li>
-        <li>Integrated heating and lighting systems</li>
-        <li>Flexible spaces that adapt to different uses</li>
-        <li>High-quality materials that withstand local climate</li>
-        <li>Smart storage solutions for seasonal items</li>
-      </ul>
-
-      <h2>Community Impact</h2>
-      <p>The outdoor living trend in Cookstown is creating stronger community bonds, with neighbors sharing ideas and hosting gatherings in their enhanced outdoor spaces.</p>
-
-      <h2>Property Value Enhancement</h2>
-      <p>Premium outdoor structures are significantly increasing property values in Cookstown, with many buyers specifically seeking homes with these features.</p>
-    `,
+    publishedDate: '2024-02-05',
     category: 'Trends',
-    readTime: '4 min read',
-    date: '2024-12-18',
-    image: '/landing pages/GrillPod3.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Cookstown', 'Outdoor Living', 'Entertainment', 'Year-Round', 'Mid Ulster'],
-    slug: 'outdoor-living-cookstown',
-    metaDescription: 'Discover how Cookstown homeowners are creating year-round entertainment spaces with premium outdoor structures and innovative design.',
-    metaKeywords: ['Cookstown', 'outdoor living', 'entertainment', 'year-round', 'Mid Ulster']
-  },
-  {
-    id: 'sauna-maintenance-northern-ireland',
-    title: 'Sauna Maintenance in Northern Ireland: Keeping Your Investment Perfect',
-    excerpt: 'Essential maintenance tips for garden saunas in Northern Ireland\'s climate, ensuring your investment lasts for years to come.',
-    content: `
-      <p>Proper maintenance is crucial for garden saunas in Northern Ireland's challenging climate. Regular care ensures your sauna remains in perfect condition and provides years of enjoyment and health benefits.</p>
-
-      <h2>Weekly Maintenance Tasks</h2>
-      <ul>
-        <li><strong>Cleaning:</strong> Wipe down benches and walls with mild soap and water</li>
-        <li><strong>Ventilation:</strong> Open doors and windows for 15-20 minutes after use</li>
-        <li><strong>Stone Care:</strong> Check heater stones for debris and clean as needed</li>
-        <li><strong>Floor Cleaning:</strong> Sweep and mop floors to prevent moisture buildup</li>
-      </ul>
-
-      <h2>Monthly Deep Cleaning</h2>
-      <ul>
-        <li>Deep clean all surfaces with sauna-specific cleaners</li>
-        <li>Check electrical connections and heater performance</li>
-        <li>Inspect door seals and weather stripping</li>
-        <li>Clean ventilation systems and air vents</li>
-      </ul>
-
-      <h2>Seasonal Maintenance</h2>
-      <p>Northern Ireland's climate requires seasonal attention:</p>
-      <ul>
-        <li><strong>Spring:</strong> Check for winter damage and prepare for increased use</li>
-        <li><strong>Summer:</strong> Ensure proper ventilation during hot weather</li>
-        <li><strong>Autumn:</strong> Prepare for winter with insulation checks</li>
-        <li><strong>Winter:</strong> Monitor heating systems and prevent freezing</li>
-      </ul>
-
-      <h2>Professional Servicing</h2>
-      <p>Annual professional maintenance should include:</p>
-      <ul>
-        <li>Heater inspection and servicing</li>
-        <li>Electrical safety checks</li>
-        <li>Structural integrity assessment</li>
-        <li>Weatherproofing verification</li>
-      </ul>
-
-      <h2>Common Issues in Northern Ireland</h2>
-      <ul>
-        <li>Moisture buildup from high humidity</li>
-        <li>Mold growth in poorly ventilated areas</li>
-        <li>Electrical issues from damp conditions</li>
-        <li>Weather damage to exterior finishes</li>
-      </ul>
-
-      <h2>Prevention Tips</h2>
-      <p>Preventive measures can save significant repair costs:</p>
-      <ul>
-        <li>Use dehumidifiers during humid periods</li>
-        <li>Install proper ventilation systems</li>
-        <li>Regular weatherproofing maintenance</li>
-        <li>Immediate repair of any damage</li>
-      </ul>
-    `,
-    category: 'Saunas',
+    tags: ['outdoor living trends', 'sustainable design', 'smart technology', 'wellness', 'climate adaptation'],
+    image: '/landing pages/GrillPod2.JPG',
     readTime: '5 min read',
-    date: '2024-12-15',
-    image: '/landing pages/InsideSauna3.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Sauna Maintenance', 'Northern Ireland', 'Climate', 'Care Tips', 'Longevity'],
-    slug: 'sauna-maintenance-northern-ireland',
-    metaDescription: 'Essential maintenance tips for garden saunas in Northern Ireland\'s climate, ensuring your investment lasts for years to come.',
-    metaKeywords: ['sauna maintenance', 'Northern Ireland', 'climate', 'care tips', 'longevity']
+    featured: false,
+    seoKeywords: ['outdoor living trends 2024', 'garden design Northern Ireland', 'sustainable outdoor living', 'smart garden technology', 'wellness spaces'],
+    seoDescription: 'Discover the latest outdoor living trends for 2024 in Northern Ireland. Learn about sustainable design, smart technology, wellness spaces, and climate-adaptive garden solutions.'
   },
   {
-    id: 'grill-pod-designs-northern-ireland',
-    title: 'Grill Pod Design Trends in Northern Ireland: From Traditional to Modern',
-    excerpt: 'Explore the latest grill pod design trends across Northern Ireland, from traditional styles to modern, minimalist approaches.',
+    id: '5',
+    slug: 'planning-permission-outdoor-structures-northern-ireland',
+    title: 'Planning Permission for Outdoor Structures in Northern Ireland: Your Complete Guide',
+    excerpt: 'Navigate the planning permission process for outdoor structures in Northern Ireland. Learn what requires permission and how to ensure compliance.',
     content: `
-      <p>Grill pod design in Northern Ireland is evolving rapidly, with homeowners embracing both traditional and modern approaches. Understanding these trends helps create outdoor spaces that perfectly match your lifestyle and property.</p>
+# Planning Permission for Outdoor Structures in Northern Ireland: Your Complete Guide
 
-      <h2>Traditional Design Elements</h2>
-      <p>Many Northern Ireland homeowners prefer traditional designs that complement existing architecture:</p>
-      <ul>
-        <li><strong>Natural Materials:</strong> Wood, stone, and brick finishes</li>
-        <li><strong>Classic Colors:</strong> Earth tones and natural wood stains</li>
-        <li><strong>Traditional Layouts:</strong> U-shaped kitchens with central cooking areas</li>
-        <li><strong>Heritage Features:</strong> Period-appropriate details and finishes</li>
-      </ul>
+Understanding planning permission requirements is crucial when adding outdoor structures to your Northern Ireland property. This comprehensive guide will help you navigate the process and ensure compliance with local regulations.
 
-      <h2>Modern Minimalist Trends</h2>
-      <p>Contemporary designs are gaining popularity:</p>
-      <ul>
-        <li><strong>Clean Lines:</strong> Sharp, geometric shapes and minimal ornamentation</li>
-        <li><strong>Neutral Palettes:</strong> Whites, grays, and black accents</li>
-        <li><strong>Integrated Technology:</strong> Smart lighting and automated systems</li>
-        <li><strong>Open Concepts:</strong> Flowing spaces with minimal barriers</li>
-      </ul>
+## What is Planning Permission?
 
-      <h2>Regional Style Variations</h2>
-      <p>Different areas of Northern Ireland show distinct preferences:</p>
-      <ul>
-        <li><strong>Belfast:</strong> Modern, urban designs with premium finishes</li>
-        <li><strong>Maghera:</strong> Traditional styles with contemporary features</li>
-        <li><strong>Coastal Areas:</strong> Weather-resistant materials and nautical themes</li>
-        <li><strong>Rural Properties:</strong> Rustic designs with natural materials</li>
-      </ul>
+### Definition
+Planning permission is formal consent from your local council to carry out building work or change the use of land or buildings. It ensures development is appropriate and doesn't negatively impact the environment or community.
 
-      <h2>Popular Features in 2025</h2>
-      <ul>
-        <li>Integrated seating areas with comfortable furniture</li>
-        <li>LED lighting systems with mood settings</li>
-        <li>Weather-resistant audio systems</li>
-        <li>Smart storage solutions and organization</li>
-        <li>Multi-functional spaces for different uses</li>
-      </ul>
+### Why It Matters
+- **Legal compliance**: Avoid fines and enforcement action
+- **Property value**: Proper permits protect your investment
+- **Future sales**: Buyers expect proper documentation
+- **Community harmony**: Respect for neighbors and environment
 
-      <h2>Customization Options</h2>
-      <p>Personalization is key to modern grill pod design:</p>
-      <ul>
-        <li>Custom color schemes and finishes</li>
-        <li>Personalized layout and equipment selection</li>
-        <li>Integrated branding and signage</li>
-        <li>Specialized storage for specific needs</li>
-      </ul>
+## Permitted Development Rights
 
-      <h2>Future Trends</h2>
-      <p>Emerging trends for 2025 and beyond:</p>
-      <ul>
-        <li>Sustainable materials and eco-friendly design</li>
-        <li>Smart home integration and automation</li>
-        <li>Multi-seasonal use with advanced heating</li>
-        <li>Modular designs for flexibility</li>
-      </ul>
+### What You Can Build Without Permission
+
+#### Garden Buildings
+- **Size limits**: Maximum 2.5m height, 50% garden coverage
+- **Location**: Must be in rear garden
+- **Use**: Domestic purposes only
+- **Materials**: Must match existing house
+
+#### Sheds and Storage
+- **Size**: Up to 2.5m height
+- **Coverage**: Maximum 50% of garden
+- **Location**: Behind front building line
+- **Use**: Storage and domestic use only
+
+#### Decking and Patios
+- **Height**: Maximum 300mm above ground
+- **Coverage**: Maximum 50% of garden
+- **Location**: Behind front building line
+- **Materials**: Permeable surfaces preferred
+
+## When Permission is Required
+
+### Size and Scale
+- **Height**: Over 2.5m (single story) or 4m (dual pitch)
+- **Coverage**: Over 50% of garden area
+- **Volume**: Over 10 cubic meters
+- **Footprint**: Over 30 square meters
+
+### Location Restrictions
+- **Front gardens**: Usually requires permission
+- **Conservation areas**: Stricter regulations apply
+- **Listed buildings**: Special considerations
+- **National parks**: Additional restrictions
+
+### Use and Function
+- **Commercial use**: Business activities require permission
+- **Residential accommodation**: Living spaces need permission
+- **Height restrictions**: Above specified limits
+- **Boundary issues**: Near property lines
+
+## Application Process
+
+### Step 1: Research and Preparation
+- **Check local policies**: Council-specific requirements
+- **Site survey**: Assess your property constraints
+- **Design planning**: Create detailed plans
+- **Neighbor consultation**: Discuss with adjoining properties
+
+### Step 2: Documentation Required
+- **Application form**: Complete planning application
+- **Site plans**: Detailed property layout
+- **Elevation drawings**: Side and front views
+- **Location plan**: Ordnance Survey map
+- **Design statement**: Explanation of proposal
+- **Fee payment**: Application processing fee
+
+### Step 3: Submission and Review
+- **Submit application**: Online or by post
+- **Public consultation**: 21-day consultation period
+- **Council review**: Planning officer assessment
+- **Decision**: Usually within 8-12 weeks
+
+## Common Requirements
+
+### Design Considerations
+- **Materials**: Match existing house style
+- **Scale**: Proportionate to property size
+- **Location**: Sensitive to neighbors
+- **Access**: Safe and convenient access
+
+### Environmental Impact
+- **Drainage**: Proper water management
+- **Landscaping**: Preserve existing trees
+- **Wildlife**: Consider local biodiversity
+- **Sustainability**: Energy-efficient design
+
+### Neighbor Considerations
+- **Privacy**: Don't overlook neighboring properties
+- **Lighting**: Avoid light pollution
+- **Noise**: Consider sound impact
+- **Access**: Maintain existing rights of way
+
+## Special Considerations
+
+### Conservation Areas
+- **Stricter regulations**: More sensitive to change
+- **Design standards**: Must preserve character
+- **Materials**: Traditional materials preferred
+- **Consultation**: Early engagement recommended
+
+### Listed Buildings
+- **Special protection**: Historical significance
+- **Consent required**: Listed building consent
+- **Expert advice**: Specialist consultation needed
+- **Sensitive design**: Minimal impact approach
+
+### National Parks
+- **Additional restrictions**: Environmental protection
+- **Design standards**: Natural materials preferred
+- **Consultation**: Early engagement essential
+- **Expert guidance**: Specialist advice recommended
+
+## Application Tips
+
+### Do's
+- **Research thoroughly**: Understand local requirements
+- **Consult early**: Engage with planning officers
+- **Design carefully**: Consider all aspects
+- **Document properly**: Complete all requirements
+- **Be patient**: Allow adequate time
+
+### Don'ts
+- **Start without permission**: Don't begin work prematurely
+- **Ignore neighbors**: Consider their concerns
+- **Rush the process**: Take time to get it right
+- **Cut corners**: Follow all requirements
+- **Assume approval**: Nothing is guaranteed
+
+## Common Mistakes to Avoid
+
+### Technical Errors
+- **Incomplete applications**: Missing required information
+- **Poor drawings**: Unclear or inaccurate plans
+- **Wrong fees**: Incorrect payment amounts
+- **Missing documents**: Required supporting materials
+
+### Design Issues
+- **Inappropriate scale**: Too large or prominent
+- **Poor location**: Bad positioning on site
+- **Wrong materials**: Incompatible with surroundings
+- **Inadequate access**: Poor accessibility
+
+### Process Errors
+- **Late consultation**: Delayed neighbor engagement
+- **Ignoring feedback**: Not addressing concerns
+- **Poor communication**: Lack of clarity
+- **Rushing decisions**: Hasty planning
+
+## Professional Help
+
+### When to Seek Advice
+- **Complex projects**: Large or unusual structures
+- **Special areas**: Conservation or listed buildings
+- **Neighbor issues**: Potential conflicts
+- **Technical requirements**: Complex regulations
+
+### Types of Professionals
+- **Planning consultants**: Specialized expertise
+- **Architects**: Design and technical knowledge
+- **Surveyors**: Site and boundary expertise
+- **Solicitors**: Legal aspects and rights
+
+## Conclusion
+
+Planning permission for outdoor structures in Northern Ireland requires careful consideration and proper preparation. Understanding the requirements, following the process correctly, and seeking professional advice when needed will ensure a smooth and successful application.
+
+The key to success is thorough research, careful planning, and professional execution. Taking the time to get it right will save time, money, and stress in the long run.
+
+Contact NMG Outdoor Living for expert advice on planning permission for your outdoor structure project. Our team has extensive experience navigating the planning process and ensuring compliance with all local regulations.
     `,
-    category: 'Grill Pods',
-    readTime: '6 min read',
-    date: '2024-12-12',
-    image: '/landing pages/GrillPod4.JPG',
     author: 'NMG Outdoor Living Team',
-    tags: ['Grill Pod Design', 'Northern Ireland', 'Trends', 'Traditional', 'Modern', '2025'],
-    slug: 'grill-pod-designs-northern-ireland',
-    metaDescription: 'Explore the latest grill pod design trends across Northern Ireland, from traditional styles to modern, minimalist approaches.',
-    metaKeywords: ['grill pod design', 'Northern Ireland', 'trends', 'traditional', 'modern', '2025']
-  },
-  {
-    id: 'workshop-sheds-northern-ireland',
-    title: 'Workshop Sheds in Northern Ireland: DIY and Craft Spaces for Every Home',
-    excerpt: 'How workshop sheds are providing Northern Ireland homeowners with dedicated spaces for DIY projects, crafts, and hobbies.',
-    content: `
-      <p>Workshop sheds are becoming essential additions to Northern Ireland homes, providing dedicated spaces for DIY projects, crafts, and hobbies. These versatile structures are transforming how residents approach their creative and practical projects.</p>
-
-      <h2>The Rise of Home Workshops</h2>
-      <p>Northern Ireland's DIY culture is thriving, with homeowners increasingly seeking dedicated spaces for their projects. Workshop sheds provide the perfect solution, offering professional-grade workspaces without the need for expensive commercial premises.</p>
-
-      <h2>Popular Workshop Uses in Northern Ireland</h2>
-      <ul>
-        <li><strong>Woodworking:</strong> Complete woodworking shops with tools and equipment</li>
-        <li><strong>Metalworking:</strong> Welding and metal fabrication spaces</li>
-        <li><strong>Crafts and Hobbies:</strong> Dedicated areas for painting, sewing, and crafts</li>
-        <li><strong>Automotive Work:</strong> Car maintenance and restoration projects</li>
-        <li><strong>Garden Projects:</strong> Plant propagation and garden tool storage</li>
-        <li><strong>Electronics:</strong> Computer repair and electronics projects</li>
-      </ul>
-
-      <h2>Essential Workshop Features</h2>
-      <p>Successful workshop sheds typically include:</p>
-      <ul>
-        <li>Proper lighting with natural and artificial sources</li>
-        <li>Electrical outlets for tools and equipment</li>
-        <li>Ventilation systems for dust and fumes</li>
-        <li>Storage solutions for tools and materials</li>
-        <li>Workbenches and dedicated work areas</li>
-        <li>Security features for valuable equipment</li>
-      </ul>
-
-      <h2>Regional Workshop Trends</h2>
-      <p>Different areas show distinct workshop preferences:</p>
-      <ul>
-        <li><strong>Belfast:</strong> Compact, multi-functional workshops</li>
-        <li><strong>Maghera:</strong> Traditional woodworking and crafts</li>
-        <li><strong>Rural Areas:</strong> Large workshops for farming and mechanical work</li>
-        <li><strong>Coastal Regions:</strong> Boat and marine equipment workshops</li>
-      </ul>
-
-      <h2>Workshop Shed Benefits</h2>
-      <ul>
-        <li>Dedicated space for projects and hobbies</li>
-        <li>Improved organization and tool storage</li>
-        <li>Enhanced productivity and creativity</li>
-        <li>Potential income from side projects</li>
-        <li>Increased property value and appeal</li>
-      </ul>
-
-      <h2>Investment and Value</h2>
-      <p>Workshop sheds typically cost £5,000 - £20,000 and provide excellent return on investment, often increasing property values by more than the installation cost while providing years of enjoyment and utility.</p>
-    `,
-    category: 'Sheds',
-    readTime: '5 min read',
-    date: '2024-12-10',
-    image: '/landing pages/Sauna5.JPG',
-    author: 'NMG Outdoor Living Team',
-    tags: ['Workshop Sheds', 'Northern Ireland', 'DIY', 'Crafts', 'Hobbies', 'Workspaces'],
-    slug: 'workshop-sheds-northern-ireland',
-    metaDescription: 'Discover how workshop sheds are providing Northern Ireland homeowners with dedicated spaces for DIY projects, crafts, and hobbies.',
-    metaKeywords: ['workshop sheds', 'Northern Ireland', 'DIY', 'crafts', 'hobbies', 'workspaces']
+    publishedDate: '2024-02-12',
+    category: 'Planning',
+    tags: ['planning permission', 'outdoor structures', 'building regulations', 'Northern Ireland', 'legal requirements'],
+    image: '/landing pages/outdoor glass room 2.jpg',
+    readTime: '9 min read',
+    featured: false,
+    seoKeywords: ['planning permission Northern Ireland', 'outdoor structures', 'building regulations', 'garden buildings', 'permitted development'],
+    seoDescription: 'Complete guide to planning permission for outdoor structures in Northern Ireland. Learn about permitted development, application process, and compliance requirements.'
   }
 ];
 
-export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
-  return blogPosts.find(post => post.slug === slug);
-};
-
-export const getBlogPostsByCategory = (category: string): BlogPost[] => {
-  if (category === 'All') return blogPosts;
-  return blogPosts.filter(post => post.category === category);
-}; 
+export default blogPosts; 

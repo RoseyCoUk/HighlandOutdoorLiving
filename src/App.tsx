@@ -13,6 +13,7 @@ import CustomerReviews from './components/CustomerReviews';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import StrategicCTA from './components/StrategicCTA';
 import LiveChat from './components/LiveChat';
+import FAQSection from './components/FAQSection';
 import GrillPodPage from './pages/GrillPodPage';
 import SaunaPage from './pages/SaunaPage';
 import ShedsPage from './pages/ShedsPage';
@@ -101,6 +102,7 @@ function App() {
             <ProjectGallery />
             <CustomerReviews />
             <Testimonials />
+            <FAQSection />
             <QuoteForm onGetEstimate={openCalculator} />
             <ContactSection />
             </main>

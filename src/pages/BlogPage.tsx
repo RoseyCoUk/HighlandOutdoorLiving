@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { blogPosts, getBlogPostsByCategory } from '../data/blogPosts';
+import { blogPosts, BlogPost } from '../data/blogPosts';
 import SEOHead from '../components/SEOHead';
 
 const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [filteredPosts, setFilteredPosts] = useState(blogPosts);
 
-  useEffect(() => {
-    setFilteredPosts(getBlogPostsByCategory(selectedCategory));
+  // Filter posts by category
+  const filteredPosts = useMemo(() => {
+    if (selectedCategory === 'All') {
+      return blogPosts;
+    }
+    return blogPosts.filter(post => post.category === selectedCategory);
   }, [selectedCategory]);
 
-  const categories = ['All', 'Trends', 'Saunas', 'Grill Pods', 'Sheds'];
+  // Get unique categories from blog posts
+  const categories = useMemo(() => {
+    const uniqueCategories = [...new Set(blogPosts.map(post => post.category))];
+    return ['All', ...uniqueCategories];
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
@@ -72,13 +79,20 @@ const BlogPage = () => {
                       {post.category}
                     </span>
                   </div>
+                  {post.featured && (
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-[#C5B8AB] text-[#222126] text-sm font-medium rounded-full">
+                        Featured
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-6">
                   <div className="flex items-center space-x-4 text-sm text-[#C5B8AB]/60 mb-4">
                     <div className="flex items-center space-x-1">
                       <Calendar className="w-4 h-4" />
-                      <span>{new Date(post.date).toLocaleDateString('en-GB', { 
+                      <span>{new Date(post.publishedDate).toLocaleDateString('en-GB', { 
                         day: 'numeric', 
                         month: 'long', 
                         year: 'numeric' 
@@ -98,6 +112,18 @@ const BlogPage = () => {
                     {post.excerpt}
                   </p>
 
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {post.tags.slice(0, 3).map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-[#C5B8AB]/10 text-[#C5B8AB]/70 text-xs rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
                   <Link
                     to={`/blog/${post.slug}`}
                     className="inline-flex items-center text-[#C5B8AB] hover:text-white transition-colors font-medium group"
@@ -109,6 +135,16 @@ const BlogPage = () => {
               </article>
             ))}
           </div>
+
+          {/* No Posts Message */}
+          {filteredPosts.length === 0 && (
+            <div className="text-center py-12">
+              <h3 className="text-xl text-white mb-2">No posts found</h3>
+              <p className="text-[#C5B8AB]/60">
+                Try selecting a different category
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>

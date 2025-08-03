@@ -7,12 +7,18 @@ interface SEOHeadProps {
   keywords?: string[];
   image?: string;
   url?: string;
-  type?: 'website' | 'article' | 'product';
+  type?: 'website' | 'article' | 'product' | 'service';
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
   section?: string;
   tags?: string[];
+  product?: {
+    name?: string;
+    price?: string;
+    availability?: string;
+    brand?: string;
+  };
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
@@ -26,7 +32,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   publishedTime,
   modifiedTime,
   section,
-  tags = []
+  tags = [],
+  product
 }) => {
   const fullUrl = url.startsWith('http') ? url : `https://nmgoutdoorliving.com${url}`;
   const fullImageUrl = image.startsWith('http') ? image : `https://nmgoutdoorliving.com${image}`;
@@ -69,19 +76,29 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         </>
       )}
 
+      {/* Product Specific Meta Tags */}
+      {type === 'product' && product && (
+        <>
+          <meta property="product:price:amount" content={product.price} />
+          <meta property="product:price:currency" content="GBP" />
+          <meta property="product:availability" content={product.availability || 'in stock'} />
+          <meta property="product:brand" content={product.brand || 'NMG Outdoor Living'} />
+        </>
+      )}
+
       {/* Local Business Schema */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "NMG Outdoor Living",
-          "description": "Premium outdoor living solutions including saunas, grill pods, and custom sheds in Northern Ireland",
+          "description": "Premium outdoor living solutions including steel-framed saunas, weatherproof grill pods, and custom sheds in Northern Ireland",
           "url": "https://nmgoutdoorliving.com",
-          "telephone": "+44-28-7963-1234",
-          "email": "info@nmgoutdoorliving.com",
+          "telephone": "+447730510368",
+          "email": "nigelmcg@gmail.com",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Main Street",
+            "streetAddress": "9 Ballyknock Road",
             "addressLocality": "Maghera",
             "addressRegion": "County Londonderry",
             "postalCode": "BT46 5AB",
@@ -92,7 +109,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "latitude": 54.8439,
             "longitude": -6.6744
           },
-          "openingHours": "Mo-Fr 09:00-17:00, Sa 09:00-15:00",
+          "openingHours": [
+            "Mo-Fr 08:00-18:00",
+            "Sa 09:00-16:00"
+          ],
           "priceRange": "££",
           "serviceArea": {
             "@type": "GeoCircle",
@@ -111,7 +131,44 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "https://nmgoutdoorliving.com/landing pages/Sauna1.JPG",
             "https://nmgoutdoorliving.com/landing pages/GrillPod1.JPG",
             "https://nmgoutdoorliving.com/landing pages/outdoor glass room.JPG"
-          ]
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Outdoor Living Solutions",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Garden Saunas",
+                  "description": "Steel-framed, fully-insulated saunas with Harvia heaters"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Grill Pods",
+                  "description": "Weatherproof outdoor kitchens with Mont Alpi appliances"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Sheds",
+                  "description": "Bespoke storage solutions and garden offices"
+                }
+              }
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
         })}
       </script>
 
@@ -125,13 +182,106 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "logo": "https://nmgoutdoorliving.com/ngmlogo.jpg",
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+44-28-7963-1234",
+            "telephone": "+447730510368",
             "contactType": "customer service",
             "areaServed": "GB",
-            "availableLanguage": "English"
+            "availableLanguage": "English",
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday", 
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "9 Ballyknock Road",
+            "addressLocality": "Maghera",
+            "addressRegion": "County Londonderry",
+            "postalCode": "BT46 5AB",
+            "addressCountry": "GB"
           }
         })}
       </script>
+
+      {/* Breadcrumb Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://nmgoutdoorliving.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": section || "Services",
+              "item": fullUrl
+            }
+          ]
+        })}
+      </script>
+
+      {/* FAQ Schema (if applicable) */}
+      {type === 'website' && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do you deliver throughout Northern Ireland?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we deliver and install throughout Northern Ireland and Ireland. Our team handles everything from delivery to final setup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What warranty do you provide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "All our products come with a 5-year warranty. We use premium materials and expert craftsmanship to ensure long-lasting quality."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does installation take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Installation time varies by product. Saunas typically take 1-2 days, grill pods 2-3 days, and custom sheds 1-3 days depending on size and complexity."
+                }
+              }
+            ]
+          })}
+        </script>
+      )}
+
+      {/* Additional SEO Meta Tags */}
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow" />
+      <meta name="bingbot" content="index, follow" />
+      
+      {/* Mobile Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      <meta name="theme-color" content="#C5B8AB" />
+      <meta name="msapplication-TileColor" content="#C5B8AB" />
+      
+      {/* Security Meta Tags */}
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-Frame-Options" content="DENY" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
     </Helmet>
   );
 };
