@@ -108,7 +108,7 @@ const SaunaPage = () => {
         type="product"
       />
       {/* 1. Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-[73px]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
@@ -121,37 +121,37 @@ const SaunaPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
         
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-white leading-none tracking-tighter">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 sm:mb-8 text-white leading-none tracking-tighter px-2">
             Steel-Framed, Fully-Insulated, Bespoke Saunas.
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/95 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-base sm:text-xl md:text-2xl text-white/95 mb-8 sm:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-2">
             Galvanised steel frame, fully insulated, Trocal roof and composite cladding — a low-maintenance sauna that looks modern and costs less to run.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
             <button
               onClick={scrollToQuote}
-              className="group inline-flex items-center px-12 py-6 bg-gradient-to-r from-[#C5B8AB] to-white text-[#222126] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:shadow-2xl transform hover:from-white hover:to-[#C5B8AB]"
+              className="group inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-[#C5B8AB] to-white text-[#222126] font-black text-base sm:text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:shadow-2xl transform hover:from-white hover:to-[#C5B8AB] w-full sm:w-auto justify-center"
             >
               Get a Bespoke Quote
-              <ChevronRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-2" />
+              <ChevronRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-2" />
             </button>
             
             <button
               onClick={scrollToOptions}
-              className="group inline-flex items-center px-12 py-6 border-2 border-[#C5B8AB] text-[#C5B8AB] font-black text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:bg-[#C5B8AB] hover:text-[#222126]"
+              className="group inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 border-2 border-[#C5B8AB] text-[#C5B8AB] font-black text-base sm:text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:bg-[#C5B8AB] hover:text-[#222126] w-full sm:w-auto justify-center"
             >
               See Cladding & Interior Options
-              <Settings className="ml-3 w-6 h-6 transition-transform group-hover:scale-110" />
+              <Settings className="ml-2 sm:ml-3 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:scale-110" />
             </button>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-12 h-12 text-white/60" />
+        <div className="absolute bottom-6 sm:bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-8 h-8 sm:w-12 sm:h-12 text-white/60" />
         </div>
       </section>
 

@@ -25,13 +25,13 @@ const BlogPage = () => {
         type="website"
       />
       {/* Hero Section */}
-      <section className="relative py-32 pt-[120px]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-light text-white mb-8">
+      <section className="relative py-16 sm:py-24 md:py-32 pt-20 sm:pt-28 md:pt-[120px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-white mb-6 sm:mb-8 px-2">
               Outdoor Living Blog
             </h1>
-            <p className="text-xl text-[#C5B8AB]/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl text-[#C5B8AB]/90 max-w-3xl mx-auto leading-relaxed px-2">
               Expert insights, trends, and tips for creating the perfect outdoor living space in Northern Ireland.
             </p>
           </div>

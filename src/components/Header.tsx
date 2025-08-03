@@ -51,9 +51,9 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-lg border-b border-white/10 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/10 shadow-lg">
       <nav 
-        className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3 flex items-center justify-between"
         role="navigation"
         aria-label="Main navigation"
         onKeyDown={handleKeyDown}
@@ -62,7 +62,7 @@ const Header = () => {
         <Link to="/admin/login" className="flex items-center space-x-2 group">
           <div className="relative">
             {/* 3D Rotating Logo */}
-            <div className="w-14 h-14 group-hover:animate-spin-slow transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 group-hover:animate-spin-slow transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
               <img 
                 src="/ngmlogo.jpg" 
                 alt="NMG Outdoor Living Logo" 
@@ -80,12 +80,12 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <ul className="hidden md:flex items-center space-x-8">
+        <ul className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navigationLinks.map((link) => (
             <li key={link.path}>
               <Link
                 to={link.path}
-                className={`text-base font-medium transition-colors duration-200 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none ${
+                className={`text-sm lg:text-base font-medium transition-colors duration-200 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none ${
                   location.pathname === link.path 
                     ? 'text-[#C5B8AB] font-semibold border-b-2 border-[#C5B8AB] pb-1' 
                     : 'text-[#e4d4c3] hover:text-white'
@@ -100,16 +100,16 @@ const Header = () => {
 
         {/* Mobile Menu Button - Visible only on mobile */}
         <button
-          className="md:hidden w-10 h-10 flex items-center justify-center text-[#e4d4c3] hover:text-[#C5B8AB] transition-colors duration-200 focus:outline-none focus:text-[#C5B8AB]"
+          className="md:hidden w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-[#e4d4c3] hover:text-[#C5B8AB] transition-colors duration-200 focus:outline-none focus:text-[#C5B8AB]"
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-controls="mobile-menu"
         >
           {isMenuOpen ? (
-            <X className="w-6 h-6 transition-transform duration-300" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300" />
           ) : (
-            <Menu className="w-6 h-6 transition-transform duration-300" />
+            <Menu className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300" />
           )}
         </button>
 
@@ -121,12 +121,12 @@ const Header = () => {
           }`}
           aria-hidden={!isMenuOpen}
         >
-          <ul className="flex flex-col py-4 px-6 space-y-2" role="menu">
+          <ul className="flex flex-col py-4 px-4 sm:px-6 space-y-1 sm:space-y-2" role="menu">
             {navigationLinks.map((link, index) => (
               <li key={link.path} role="none">
                 <Link
                   to={link.path}
-                  className={`block py-3 px-4 text-base font-medium transition-all duration-300 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none hover:bg-white/5 rounded-lg ${
+                  className={`block py-2 sm:py-3 px-3 sm:px-4 text-sm sm:text-base font-medium transition-all duration-300 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none hover:bg-white/5 rounded-lg ${
                     location.pathname === link.path 
                       ? 'text-[#C5B8AB] font-bold bg-white/10' 
                       : 'text-[#e4d4c3]'

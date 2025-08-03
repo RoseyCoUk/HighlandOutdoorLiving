@@ -84,7 +84,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
   }
 
   return (
-    <section id="quote-form" className="relative py-20 min-h-screen flex items-center">
+    <section id="quote-form" className="relative py-16 sm:py-20 min-h-screen flex items-center">
       {/* Background image with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -94,22 +94,22 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
       ></div>
       <div className="absolute inset-0 bg-[#222126]/70"></div>
       
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-4 px-2">
             Get a Tailored Quote for Your Space
           </h2>
-          <p className="text-xl text-[#C5B8AB]/90 mb-4">
+          <p className="text-base sm:text-xl text-[#C5B8AB]/90 mb-4 px-2">
             Tell us about your outdoor space and we'll help you bring it to life.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <div className="inline-flex items-center px-4 py-2 bg-[#C5B8AB]/20 rounded-full border border-[#C5B8AB]/30">
-              <span className="text-[#C5B8AB] text-sm font-medium">✓ We typically respond within 24 hours</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6">
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-[#C5B8AB]/20 rounded-full border border-[#C5B8AB]/30">
+              <span className="text-[#C5B8AB] text-xs sm:text-sm font-medium">✓ We typically respond within 24 hours</span>
             </div>
             {onGetEstimate && (
               <button
                 onClick={onGetEstimate}
-                className="inline-flex items-center px-6 py-2 bg-[#C5B8AB] text-[#222126] font-semibold rounded-lg hover:bg-white transition-colors shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-4 sm:px-6 py-2 bg-[#C5B8AB] text-[#222126] font-semibold text-sm sm:text-base rounded-lg hover:bg-white transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
               >
                 <Calculator className="w-4 h-4 mr-2" />
                 Get Instant Estimate
@@ -118,10 +118,10 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="relative z-10 bg-white/95 backdrop-blur-sm rounded-lg p-8 shadow-xl">
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+        <form onSubmit={handleSubmit} className="relative z-10 bg-white/95 backdrop-blur-sm rounded-lg p-6 sm:p-8 shadow-xl">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-6">
             <div>
-              <label htmlFor="name" className="block text-[#222126] font-medium mb-2">
+              <label htmlFor="name" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
                 Name *
               </label>
               <input
@@ -131,12 +131,12 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors"
+                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-[#222126] font-medium mb-2">
+              <label htmlFor="email" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
                 Email *
               </label>
               <input
@@ -146,12 +146,12 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors"
+                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-[#222126] font-medium mb-2">
+              <label htmlFor="phone" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
                 Phone (optional)
               </label>
               <input
@@ -160,12 +160,12 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors"
+                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
               />
             </div>
 
             <div>
-              <label htmlFor="location" className="block text-[#222126] font-medium mb-2">
+              <label htmlFor="location" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
                 Location (town/city) *
               </label>
               <input
@@ -175,13 +175,13 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
                 value={formData.location}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors"
+                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
               />
             </div>
           </div>
 
-          <div className="mb-8">
-            <label htmlFor="message" className="block text-[#222126] font-medium mb-2">
+          <div className="mb-6 sm:mb-8">
+            <label htmlFor="message" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
               Tell us what you're looking for... *
             </label>
             <textarea
@@ -190,8 +190,8 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows={5}
-              className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors resize-vertical"
+              rows={4}
+              className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors resize-vertical text-sm sm:text-base"
               placeholder="Describe your outdoor space project, preferred materials, timeline, or any specific requirements..."
             ></textarea>
           </div>
@@ -199,10 +199,10 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#222126] text-[#C5B8AB] py-4 font-semibold text-lg transition-all duration-300 hover:bg-[#222126]/90 hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#222126] text-[#C5B8AB] py-3 sm:py-4 font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-[#222126]/90 hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span>{isSubmitting ? 'Submitting...' : 'Request My Quote'}</span>
-            {!isSubmitting && <Send className="w-5 h-5" />}
+            {!isSubmitting && <Send className="w-4 h-4 sm:w-5 sm:h-5" />}
           </button>
         </form>
       </div>

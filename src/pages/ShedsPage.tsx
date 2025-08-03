@@ -57,7 +57,7 @@ const ShedsPage = () => {
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-[73px]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -70,27 +70,27 @@ const ShedsPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
         
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 text-white leading-tight tracking-wide">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 sm:mb-8 text-white leading-tight tracking-wide px-2">
             Bespoke Sheds Built to Last
           </h1>
           
-          <p className="text-lg md:text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed font-light px-2">
             Custom-designed shed solutions for extra space, style, and durability—perfect for storage, workshops, or garden retreats.
           </p>
 
           <button
             onClick={scrollToQuote}
-            className="group inline-flex items-center px-10 py-4 bg-gradient-to-r from-[#C5B8AB]/90 to-[#C5B8AB] text-[#222126] font-semibold text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:from-white hover:to-[#C5B8AB]"
+            className="group inline-flex items-center px-6 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#C5B8AB]/90 to-[#C5B8AB] text-[#222126] font-semibold text-base sm:text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:from-white hover:to-[#C5B8AB] w-full sm:w-auto justify-center max-w-xs sm:max-w-none mx-auto"
           >
             Get a Shed Quote
-            <ChevronDown className="ml-3 w-5 h-5 transition-transform group-hover:translate-y-1" />
+            <ChevronDown className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-y-1" />
           </button>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white/50" />
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-white/50" />
         </div>
       </section>
 

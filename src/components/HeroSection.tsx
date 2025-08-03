@@ -11,7 +11,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#222126] overflow-hidden pt-[73px]">
+    <section className="relative min-h-screen flex items-center justify-center bg-[#222126] overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
       {/* Background texture overlay */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-[#C5B8AB]/20 to-transparent animate-pulse"></div>
@@ -25,10 +25,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         }}
       ></div>
       
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
         {/* Logo and brand name */}
-        <div className="mb-12 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-48 h-48 mb-8 bg-[#C5B8AB]/10 rounded-full border border-[#C5B8AB]/30 p-6">
+        <div className="mb-8 sm:mb-12 animate-fade-in">
+          <div className="inline-flex items-center justify-center w-32 h-32 sm:w-48 sm:h-48 mb-6 sm:mb-8 bg-[#C5B8AB]/10 rounded-full border border-[#C5B8AB]/30 p-4 sm:p-6">
             <img 
               src="/ngmlogo.jpg" 
               alt="NMG Outdoor Living Logo" 
@@ -39,33 +39,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         </div>
 
         {/* Main headline */}
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light mb-6 sm:mb-8 text-white leading-tight px-2">
           Tailored Outdoor Spaces
           <br />
           <span className="text-[#C5B8AB]">That Inspire</span>
         </h2>
 
         {/* Subheading */}
-        <p className="text-lg md:text-xl text-[#C5B8AB]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-[#C5B8AB]/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
           Premium PVC solutions, luxury saunas, and handcrafted grill pods designed to transform your outdoor space.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 px-4">
           <button
             onClick={scrollToQuote}
-            className="group inline-flex items-center px-8 py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-lg rounded-none transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-2xl"
+            className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-base sm:text-lg rounded-none transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-2xl w-full sm:w-auto justify-center"
           >
             Get a Free Design Quote
-            <ChevronDown className="ml-2 w-5 h-5 transition-transform group-hover:translate-y-1" />
+            <ChevronDown className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-y-1" />
           </button>
           
           {onGetEstimate && (
             <button
               onClick={onGetEstimate}
-              className="group inline-flex items-center px-8 py-4 bg-transparent text-[#C5B8AB] font-semibold text-lg border-2 border-[#C5B8AB] rounded-none transition-all duration-300 hover:bg-[#C5B8AB] hover:text-[#222126] hover:scale-105 hover:shadow-2xl"
+              className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-[#C5B8AB] font-semibold text-base sm:text-lg border-2 border-[#C5B8AB] rounded-none transition-all duration-300 hover:bg-[#C5B8AB] hover:text-[#222126] hover:scale-105 hover:shadow-2xl w-full sm:w-auto justify-center"
             >
-              <Calculator className="mr-2 w-5 h-5" />
+              <Calculator className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
               Get Instant Estimate
             </button>
           )}
@@ -73,8 +73,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-[#C5B8AB]/60" />
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-[#C5B8AB]/60" />
       </div>
     </section>
   );
