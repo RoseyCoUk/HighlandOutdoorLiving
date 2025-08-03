@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const ProjectGallery = () => {
   const [filter, setFilter] = useState('All');
+  const [showAll, setShowAll] = useState(false);
   
   const projects = [
     {
@@ -66,6 +68,15 @@ const ProjectGallery = () => {
     ? projects 
     : projects.filter(project => project.category === filter);
 
+  // Show only 2 items initially, or all if showAll is true
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 2);
+
+  // Reset showAll when filter changes
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+    setShowAll(false);
+  };
+
   return (
     <section id="gallery" className="py-20 bg-[#222126]">
       <div className="max-w-7xl mx-auto px-6">
@@ -79,7 +90,7 @@ const ProjectGallery = () => {
             {filters.map((filterOption) => (
               <button
                 key={filterOption}
-                onClick={() => setFilter(filterOption)}
+                onClick={() => handleFilterChange(filterOption)}
                 className={`px-6 py-2 transition-all duration-300 ${
                   filter === filterOption
                     ? 'bg-[#C5B8AB] text-[#222126] font-semibold'
@@ -93,8 +104,8 @@ const ProjectGallery = () => {
         </div>
 
         {/* Project grid - masonry style */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {displayedProjects.map((project, index) => (
             <div
               key={index}
               className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105"
@@ -122,6 +133,19 @@ const ProjectGallery = () => {
             </div>
           ))}
         </div>
+
+        {/* View More Button */}
+        {filteredProjects.length > 2 && (
+          <div className="text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="group inline-flex items-center px-8 py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-lg transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-2xl"
+            >
+              {showAll ? 'Show Less' : 'View More'}
+              <ChevronDown className={`ml-2 w-5 h-5 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

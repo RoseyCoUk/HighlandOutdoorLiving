@@ -9,6 +9,8 @@ import ProjectGallery from './components/ProjectGallery';
 import QuoteForm from './components/QuoteForm';
 import ContactSection from './components/ContactSection';
 import Testimonials from './components/Testimonials';
+import CustomerReviews from './components/CustomerReviews';
+import PerformanceMonitor from './components/PerformanceMonitor';
 import GrillPodPage from './pages/GrillPodPage';
 import SaunaPage from './pages/SaunaPage';
 import ShedsPage from './pages/ShedsPage';
@@ -50,6 +52,7 @@ function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTop />
+        <PerformanceMonitor />
         <Header />
         <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />
         <Routes>
@@ -94,6 +97,7 @@ function App() {
               </div>
             </section>
             <ProjectGallery />
+            <CustomerReviews />
             <Testimonials />
             <QuoteForm onGetEstimate={openCalculator} />
             <ContactSection />
