@@ -876,4 +876,22 @@ Contact NMG Outdoor Living for expert advice on planning permission for your out
   }
 ];
 
+// Utility function to get a blog post by slug
+export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
+  return blogPosts.find(post => post.slug === slug);
+};
+
+// Utility function to get blog posts by category
+export const getBlogPostsByCategory = (category: string): BlogPost[] => {
+  if (category === 'All') {
+    return blogPosts;
+  }
+  return blogPosts.filter(post => post.category === category);
+};
+
+// Utility function to get featured blog posts
+export const getFeaturedBlogPosts = (): BlogPost[] => {
+  return blogPosts.filter(post => post.featured);
+};
+
 export default blogPosts; 

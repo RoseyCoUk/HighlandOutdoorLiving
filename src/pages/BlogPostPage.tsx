@@ -32,13 +32,13 @@ const BlogPostPage = () => {
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
       <SEOHead 
         title={blogPost.title}
-        description={blogPost.metaDescription}
-        keywords={blogPost.metaKeywords}
+        description={blogPost.seoDescription}
+        keywords={blogPost.seoKeywords}
         image={blogPost.image}
         url={`/blog/${blogPost.slug}`}
         type="article"
         author={blogPost.author}
-        publishedTime={blogPost.date}
+        publishedTime={blogPost.publishedDate}
         section={blogPost.category}
         tags={blogPost.tags}
       />
@@ -62,7 +62,7 @@ const BlogPostPage = () => {
               </span>
               <div className="flex items-center space-x-1">
                 <Calendar className="w-4 h-4" />
-                <span>{new Date(blogPost.date).toLocaleDateString('en-GB', { 
+                <span>{new Date(blogPost.publishedDate).toLocaleDateString('en-GB', { 
                   day: 'numeric', 
                   month: 'long', 
                   year: 'numeric' 
@@ -95,7 +95,21 @@ const BlogPostPage = () => {
                 </div>
               </div>
 
-              <button className="flex items-center space-x-2 text-[#C5B8AB]/80 hover:text-white transition-colors">
+              <button 
+                className="flex items-center space-x-2 text-[#C5B8AB]/80 hover:text-white transition-colors"
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: blogPost.title,
+                      text: blogPost.excerpt,
+                      url: window.location.href
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Link copied to clipboard!');
+                  }
+                }}
+              >
                 <Share2 className="w-4 h-4" />
                 <span>Share</span>
               </button>
