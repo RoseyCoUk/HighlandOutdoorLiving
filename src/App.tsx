@@ -11,6 +11,8 @@ import ContactSection from './components/ContactSection';
 import Testimonials from './components/Testimonials';
 import CustomerReviews from './components/CustomerReviews';
 import PerformanceMonitor from './components/PerformanceMonitor';
+import StrategicCTA from './components/StrategicCTA';
+import LiveChat from './components/LiveChat';
 import GrillPodPage from './pages/GrillPodPage';
 import SaunaPage from './pages/SaunaPage';
 import ShedsPage from './pages/ShedsPage';
@@ -125,6 +127,8 @@ function App() {
               </Routes>
       <Footer onGetEstimate={openCalculator} />
       <FloatingSocialButton />
+      <LiveChat />
+      <StrategicCTA variant="floating" type="call" />
         </Router>
       </HelmetProvider>
   );

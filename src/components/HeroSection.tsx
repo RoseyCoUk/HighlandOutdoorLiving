@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronDown, Calculator } from 'lucide-react';
+import StrategicCTA from './StrategicCTA';
 
 interface HeroSectionProps {
   onGetEstimate?: () => void;
@@ -52,22 +53,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 px-4">
-          <button
-            onClick={scrollToQuote}
-            className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-base sm:text-lg rounded-none transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-2xl w-full sm:w-auto justify-center"
-          >
-            Get a Free Design Quote
-            <ChevronDown className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-y-1" />
-          </button>
+          <StrategicCTA
+            type="quote"
+            text="Get a Free Design Quote"
+            size="lg"
+            className="w-full sm:w-auto"
+          />
           
           {onGetEstimate && (
-            <button
-              onClick={onGetEstimate}
-              className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-[#C5B8AB] font-semibold text-base sm:text-lg border-2 border-[#C5B8AB] rounded-none transition-all duration-300 hover:bg-[#C5B8AB] hover:text-[#222126] hover:scale-105 hover:shadow-2xl w-full sm:w-auto justify-center"
-            >
-              <Calculator className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
-              Get Instant Estimate
-            </button>
+            <StrategicCTA
+              type="estimate"
+              text="Get Instant Estimate"
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto"
+            />
           )}
         </div>
       </div>
