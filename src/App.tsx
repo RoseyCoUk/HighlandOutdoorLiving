@@ -108,33 +108,6 @@ function App() {
             <CustomerReviews />
             <Testimonials />
             <FAQSection />
-            
-            {/* SEO & Marketing Follow-Up Section */}
-            <section className="py-16 bg-gradient-to-r from-[#C5B8AB] to-white">
-              <div className="max-w-4xl mx-auto px-6 text-center">
-                <h2 className="text-3xl md:text-4xl font-light text-[#222126] mb-6">
-                  Ready to Scale Your Business?
-                </h2>
-                <p className="text-lg text-[#222126]/80 mb-8 max-w-2xl mx-auto">
-                  Our digital marketing team can help you reach more customers with targeted SEO and Meta Ads campaigns.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="mailto:nigelmcg@gmail.com?subject=SEO Package Inquiry"
-                    className="inline-flex items-center px-6 py-3 bg-[#222126] text-[#C5B8AB] font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                  >
-                    Get SEO Quote
-                  </a>
-                  <a
-                    href="mailto:nigelmcg@gmail.com?subject=Meta Ads Campaign Inquiry"
-                    className="inline-flex items-center px-6 py-3 border-2 border-[#222126] text-[#222126] font-semibold rounded-lg transition-all duration-300 hover:bg-[#222126] hover:text-[#C5B8AB]"
-                  >
-                    Meta Ads Setup
-                  </a>
-                </div>
-              </div>
-            </section>
-            
             <QuoteForm onGetEstimate={openCalculator} />
             <ContactSection />
             </main>
