@@ -167,12 +167,12 @@ const ShedsPage = () => {
           {/* Responsive Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { src: '/landing pages/outdoor glass room.JPG', alt: 'Custom Storage Shed', title: 'Custom Storage Shed' },
-              { src: '/landing pages/Sauna4.JPG', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
-              { src: '/landing pages/Sauna5.JPG', alt: 'Workshop Shed', title: 'Workshop Shed' },
-              { src: '/landing pages/Sauna6.JPG', alt: 'Traditional Timber Shed', title: 'Traditional Timber Shed' },
-              { src: '/landing pages/Sauna7.JPG', alt: 'Modern Composite Shed', title: 'Modern Composite Shed' },
-              { src: '/landing pages/outdoor glass room 2.jpg', alt: 'Large Storage Solution', title: 'Large Storage Solution' }
+              { src: '/Shed1.png', alt: 'Custom Storage Shed', title: 'Custom Storage Shed' },
+              { src: '/landing pages/outdoor glass room.JPG', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
+              { src: '/landing pages/outdoor glass room 2.jpg', alt: 'Workshop Shed', title: 'Workshop Shed' },
+              { src: '/image.png', alt: 'Traditional Timber Shed', title: 'Traditional Timber Shed' },
+              { src: '/image copy.png', alt: 'Modern Composite Shed', title: 'Modern Composite Shed' },
+              { src: '/image copy copy.png', alt: 'Large Storage Solution', title: 'Large Storage Solution' }
             ].map((image, index) => (
               <div
                 key={index}
@@ -220,19 +220,19 @@ const ShedsPage = () => {
                 icon: Building,
                 title: 'Storage Sheds',
                 description: 'Maximize your storage space with custom-built sheds designed for tools, equipment, and seasonal items.',
-                image: '/landing pages/outdoor glass room.JPG'
+                image: '/Shed1.png'
               },
               {
                 icon: Home,
                 title: 'Garden Offices',
                 description: 'Create the perfect work-from-home space with insulated, fully-equipped garden office sheds.',
-                image: '/landing pages/Sauna4.JPG'
+                image: '/landing pages/outdoor glass room.JPG'
               },
               {
                 icon: Hammer,
                 title: 'Workshops',
                 description: 'Dedicated workshop spaces with power, lighting, and ventilation for all your DIY and craft projects.',
-                image: '/landing pages/Sauna5.JPG'
+                image: '/landing pages/outdoor glass room 2.jpg'
               }
             ].map((option, index) => (
               <div

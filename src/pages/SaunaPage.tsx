@@ -158,18 +158,18 @@ const SaunaPage = () => {
       {/* 2. Social Proof & Trust Strip */}
       <section className="py-12 bg-[#C5B8AB]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             {[
               { icon: Award, text: "Built with Harvia® heaters" },
               { icon: Settings, text: "Bespoke to your space" },
-              { icon: Truck, text: "Delivered across the UK & Ireland" },
-              { icon: Shield, text: "Low maintenance composite exterior" }
+              { icon: Truck, text: "Delivered across UK & Ireland" },
+              { icon: Shield, text: "Low maintenance exterior" }
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center space-y-3">
                 <div className="w-12 h-12 bg-[#222126] rounded-full flex items-center justify-center">
                   <item.icon className="w-6 h-6 text-[#C5B8AB]" />
                 </div>
-                <p className="text-[#222126] font-medium text-sm leading-tight">
+                <p className="text-[#222126] font-medium text-sm leading-tight px-2">
                   {item.text}
                 </p>
               </div>
@@ -253,42 +253,75 @@ const SaunaPage = () => {
 
           {/* Comparison Table */}
           <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
-            <div className="grid grid-cols-3 divide-x divide-gray-200">
-              {/* Header */}
-              <div className="p-8 bg-[#222126] text-white">
-                <h3 className="text-xl font-bold mb-2">Feature</h3>
+            {/* Desktop Table */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-3 divide-x divide-gray-200">
+                {/* Header */}
+                <div className="p-6 lg:p-8 bg-[#222126] text-white">
+                  <h3 className="text-lg lg:text-xl font-bold mb-2">Feature</h3>
+                </div>
+                <div className="p-6 lg:p-8 bg-[#222126] text-white">
+                  <h3 className="text-lg lg:text-xl font-bold mb-2">Our Steel & Composite Sauna</h3>
+                </div>
+                <div className="p-6 lg:p-8 bg-[#222126] text-white">
+                  <h3 className="text-lg lg:text-xl font-bold mb-2">Traditional Wooden Barrel Sauna</h3>
+                </div>
               </div>
-              <div className="p-8 bg-[#222126] text-white">
-                <h3 className="text-xl font-bold mb-2">Our Steel & Composite Sauna</h3>
-              </div>
-              <div className="p-8 bg-[#222126] text-white">
-                <h3 className="text-xl font-bold mb-2">Traditional Wooden Barrel Sauna</h3>
-              </div>
+
+              {/* Comparison Rows */}
+              {[
+                { feature: "Heat-up time", modern: "~15 minutes", traditional: "45–60 minutes" },
+                { feature: "Weather resistance", modern: "Designed for UK/Irish climate", traditional: "Can warp & weather" },
+                { feature: "Maintenance", modern: "Low (composite & steel)", traditional: "High (regular staining/oiling)" },
+                { feature: "Running costs", modern: "Lower (insulated, heats fast)", traditional: "Higher (longer heat-up, more loss)" },
+                { feature: "Aesthetics", modern: "Modern, clean lines", traditional: "Rustic" },
+                { feature: "Privacy", modern: "Large tinted window + glass door", traditional: "Clear/glass or small portholes" },
+                { feature: "Roof", modern: "Trocal waterproof roofing", traditional: "Typically timber shingles" },
+                { feature: "Custom sizes", modern: "Fully bespoke", traditional: "Often fixed" }
+              ].map((row, index) => (
+                <div key={index} className="grid grid-cols-3 divide-x divide-gray-200">
+                  <div className="p-4 lg:p-6 bg-gray-50">
+                    <p className="font-bold text-[#222126] text-sm lg:text-base">{row.feature}</p>
+                  </div>
+                  <div className="p-4 lg:p-6">
+                    <p className="text-green-600 font-medium text-sm lg:text-base">{row.modern}</p>
+                  </div>
+                  <div className="p-4 lg:p-6">
+                    <p className="text-red-600 font-medium text-sm lg:text-base">{row.traditional}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Comparison Rows */}
-            {[
-              { feature: "Heat-up time", modern: "~15 minutes", traditional: "45–60 minutes" },
-              { feature: "Weather resistance", modern: "Designed for UK/Irish climate", traditional: "Can warp & weather" },
-              { feature: "Maintenance", modern: "Low (composite & steel)", traditional: "High (regular staining/oiling)" },
-              { feature: "Running costs", modern: "Lower (insulated, heats fast)", traditional: "Higher (longer heat-up, more loss)" },
-              { feature: "Aesthetics", modern: "Modern, clean lines", traditional: "Rustic" },
-              { feature: "Privacy", modern: "Large tinted window + glass door", traditional: "Clear/glass or small portholes" },
-              { feature: "Roof", modern: "Trocal waterproof roofing", traditional: "Typically timber shingles" },
-              { feature: "Custom sizes", modern: "Fully bespoke", traditional: "Often fixed" }
-            ].map((row, index) => (
-              <div key={index} className="grid grid-cols-3 divide-x divide-gray-200">
-                <div className="p-6 bg-gray-50">
-                  <p className="font-bold text-[#222126]">{row.feature}</p>
+            {/* Mobile Table */}
+            <div className="md:hidden">
+              {[
+                { feature: "Heat-up time", modern: "~15 minutes", traditional: "45–60 minutes" },
+                { feature: "Weather resistance", modern: "Designed for UK/Irish climate", traditional: "Can warp & weather" },
+                { feature: "Maintenance", modern: "Low (composite & steel)", traditional: "High (regular staining/oiling)" },
+                { feature: "Running costs", modern: "Lower (insulated, heats fast)", traditional: "Higher (longer heat-up, more loss)" },
+                { feature: "Aesthetics", modern: "Modern, clean lines", traditional: "Rustic" },
+                { feature: "Privacy", modern: "Large tinted window + glass door", traditional: "Clear/glass or small portholes" },
+                { feature: "Roof", modern: "Trocal waterproof roofing", traditional: "Typically timber shingles" },
+                { feature: "Custom sizes", modern: "Fully bespoke", traditional: "Often fixed" }
+              ].map((row, index) => (
+                <div key={index} className="border-b border-gray-200 p-4">
+                  <div className="mb-3">
+                    <h4 className="font-bold text-[#222126] text-sm mb-2">{row.feature}</h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-green-50 p-3 rounded">
+                      <p className="text-green-700 font-medium text-xs mb-1">Our Sauna</p>
+                      <p className="text-green-600 text-xs">{row.modern}</p>
+                    </div>
+                    <div className="bg-red-50 p-3 rounded">
+                      <p className="text-red-700 font-medium text-xs mb-1">Traditional</p>
+                      <p className="text-red-600 text-xs">{row.traditional}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-green-600 font-medium">{row.modern}</p>
-                </div>
-                <div className="p-6">
-                  <p className="text-red-600 font-medium">{row.traditional}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
