@@ -59,7 +59,7 @@ const Header = () => {
         onKeyDown={handleKeyDown}
       >
         {/* Animated Logo */}
-        <Link to="/admin/login" className="flex items-center justify-center h-full group pt-5">
+        <Link to="/admin/login" className="flex items-center justify-center h-full group pt-5 sm:pt-0">
           <div className="relative flex items-center justify-center">
             {/* 3D Rotating Logo */}
             <div className="w-8 h-8 sm:w-12 sm:h-12 group-hover:animate-spin-slow transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
