@@ -130,7 +130,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "image": [
             "https://nmgoutdoorliving.com/landing pages/Sauna1.JPG",
             "https://nmgoutdoorliving.com/landing pages/GrillPod1.JPG",
-            "https://nmgoutdoorliving.com/landing pages/outdoor glass room.JPG"
+            "https://nmgoutdoorliving.com/Shed1.png"
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",

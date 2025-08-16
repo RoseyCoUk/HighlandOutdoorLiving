@@ -25,10 +25,28 @@ const ProjectGallery = () => {
       description: 'All-weather outdoor kitchen perfect for year-round entertaining'
     },
     {
-      title: 'Custom Shed Workshop',
-      category: 'Sheds',
+      title: 'Custom Sheds',
+      description: 'Durable, weather-resistant sheds built to last',
+      image: '/Shed1.png',
+      category: 'sheds'
+    },
+    {
+      title: 'Garden Offices',
+      description: 'Professional workspaces in your garden',
+      image: '/Shed1.png',
+      category: 'sheds'
+    },
+    {
+      title: 'Modern Glass Room',
+      description: 'Contemporary outdoor living space with panoramic views',
       image: '/landing pages/outdoor glass room.JPG',
-      description: 'Bespoke workshop shed with power and lighting'
+      category: 'Other'
+    },
+    {
+      title: 'Luxury Glass Pavilion',
+      description: 'Premium outdoor entertainment space with glass walls',
+      image: '/landing pages/outdoor glass room 2.jpg',
+      category: 'Other'
     },
     {
       title: 'Garden Wellness Sauna',
@@ -57,12 +75,12 @@ const ProjectGallery = () => {
     {
       title: 'Luxury Shed Office',
       category: 'Sheds',
-      image: '/landing pages/outdoor glass room 2.jpg',
+      image: '/Shed1.png',
       description: 'Insulated garden office with modern amenities'
     }
   ];
 
-  const filters = ['All', 'Saunas', 'Grill Pods', 'Sheds'];
+  const filters = ['All', 'Saunas', 'Grill Pods', 'Sheds', 'Other'];
   
   const filteredProjects = filter === 'All' 
     ? projects 
@@ -150,5 +168,5 @@ const ProjectGallery = () => {
     </section>
   );
 };
-
+  
 export default ProjectGallery;

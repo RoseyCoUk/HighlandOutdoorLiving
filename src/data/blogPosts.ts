@@ -507,7 +507,7 @@ Contact NMG Outdoor Living to discuss your custom shed or garden office requirem
     publishedDate: '2024-01-29',
     category: 'Sheds',
     tags: ['custom sheds', 'garden offices', 'remote work', 'property value', 'storage solutions'],
-    image: '/landing pages/outdoor glass room.JPG',
+    image: '/Shed1.png',
     readTime: '7 min read',
     featured: false,
     seoKeywords: ['custom sheds Northern Ireland', 'garden offices', 'remote work space', 'property value', 'outdoor structures'],

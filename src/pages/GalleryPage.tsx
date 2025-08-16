@@ -25,7 +25,7 @@ const GalleryPage = () => {
       id: 3,
       title: 'Modern Storage Shed',
       category: 'Shed',
-      image: '/landing pages/outdoor glass room.JPG',
+      image: '/Shed1.png',
       description: 'Contemporary shed design with composite cladding'
     },
     {
@@ -46,7 +46,7 @@ const GalleryPage = () => {
       id: 6,
       title: 'Workshop Shed',
       category: 'Shed',
-      image: '/landing pages/outdoor glass room 2.jpg',
+      image: '/Shed1.png',
       description: 'Spacious workshop with power and lighting installation'
     },
     {
@@ -60,7 +60,7 @@ const GalleryPage = () => {
       id: 8,
       title: 'Garden Office Shed',
       category: 'Shed',
-      image: '/landing pages/Sauna4.JPG',
+      image: '/Shed1.png',
       description: 'Insulated garden office with modern finishes'
     },
     {
@@ -81,7 +81,7 @@ const GalleryPage = () => {
       id: 11,
       title: 'Luxury Shed Office',
       category: 'Shed',
-      image: '/landing pages/Sauna5.JPG',
+      image: '/Shed1.png',
       description: 'Professional garden office with all amenities'
     },
     {

@@ -60,14 +60,12 @@ const ShedsPage = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
         {/* Background Video/Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-          style={{
-            backgroundImage: "url('/landing pages/outdoor glass room.JPG')"
-          }}
-        ></div>
-        
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/Shed1.png')" }}
+        >
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+        </div>
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto">
@@ -85,7 +83,7 @@ const ShedsPage = () => {
               className="group inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-[#C5B8AB] to-white text-[#222126] font-black text-base sm:text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:shadow-2xl transform hover:from-white hover:to-[#C5B8AB] w-full sm:w-auto justify-center"
             >
               Request a Quote
-              <ChevronRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-2" />
+              <ChevronRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-6 sm:w-6 transition-transform group-hover:translate-x-2" />
             </button>
             
             <button
@@ -168,11 +166,11 @@ const ShedsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { src: '/Shed1.png', alt: 'Custom Storage Shed', title: 'Custom Storage Shed' },
-              { src: '/landing pages/outdoor glass room.JPG', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
-              { src: '/landing pages/outdoor glass room 2.jpg', alt: 'Workshop Shed', title: 'Workshop Shed' },
-              { src: '/image.png', alt: 'Traditional Timber Shed', title: 'Traditional Timber Shed' },
-              { src: '/image copy.png', alt: 'Modern Composite Shed', title: 'Modern Composite Shed' },
-              { src: '/image copy copy.png', alt: 'Large Storage Solution', title: 'Large Storage Solution' }
+              { src: '/Shed1.png', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
+              { src: '/Shed1.png', alt: 'Workshop Shed', title: 'Workshop Shed' },
+              { src: '/Shed1.png', alt: 'Traditional Timber Shed', title: 'Traditional Timber Shed' },
+              { src: '/Shed1.png', alt: 'Modern Composite Shed', title: 'Modern Composite Shed' },
+              { src: '/Shed1.png', alt: 'Large Storage Solution', title: 'Large Storage Solution' }
             ].map((image, index) => (
               <div
                 key={index}
@@ -226,13 +224,13 @@ const ShedsPage = () => {
                 icon: Home,
                 title: 'Garden Offices',
                 description: 'Create the perfect work-from-home space with insulated, fully-equipped garden office sheds.',
-                image: '/landing pages/outdoor glass room.JPG'
+                image: '/Shed1.png'
               },
               {
                 icon: Hammer,
                 title: 'Workshops',
                 description: 'Dedicated workshop spaces with power, lighting, and ventilation for all your DIY and craft projects.',
-                image: '/landing pages/outdoor glass room 2.jpg'
+                image: '/Shed1.png'
               }
             ].map((option, index) => (
               <div

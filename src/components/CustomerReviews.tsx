@@ -44,7 +44,7 @@ const CustomerReviews = () => {
       review: "Our custom shed workshop is exactly what we needed. The team listened to our requirements and delivered a perfect solution. The composite cladding looks modern and requires zero maintenance.",
       product: "Custom Shed",
       date: "January 2024",
-      image: "/landing pages/outdoor glass room.JPG"
+      image: "/Shed1.png"
     },
     {
       id: 4,

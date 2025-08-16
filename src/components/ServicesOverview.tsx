@@ -8,8 +8,8 @@ const ServicesOverview = () => {
       title: 'Sheds',
       description: 'Durable, stylish, and low-maintenance shed solutions built to last.',
       features: ['Fencing', 'Decking', 'Cladding'],
-      image: '/landing pages/outdoor glass room.JPG',
-      alt: 'NMG PVC outdoor fencing and cladding installation',
+      image: '/Shed1.png',
+      alt: 'Custom storage shed with durable construction',
       cta: 'View Shed Range'
     },
     {

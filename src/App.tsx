@@ -135,7 +135,6 @@ function App() {
           <Footer onGetEstimate={openCalculator} />
           <FloatingSocialButton />
           <LiveChat />
-          <StrategicCTA variant="floating" type="call" className="!bottom-24 !right-6" />
           {process.env.NODE_ENV === 'development' && (
             <AccessibilityTester 
               isVisible={showAccessibilityTester} 
