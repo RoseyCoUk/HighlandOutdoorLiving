@@ -118,10 +118,10 @@ const LiveChat: React.FC = () => {
       {/* Chat Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 left-6 z-50 bg-[#C5B8AB] text-[#222126] rounded-full shadow-2xl hover:scale-110 hover:shadow-3xl transition-all duration-300 ${
+        className={`fixed z-50 bg-[#C5B8AB] text-[#222126] rounded-full shadow-2xl hover:scale-110 hover:shadow-3xl transition-all duration-300 floating-button floating-button-left ${
           isOpen ? 'scale-0' : 'scale-100'
-        }`}
-        style={{ width: '60px', height: '60px' }}
+        } bottom-4 left-4 sm:bottom-6 sm:left-6`}
+        style={{ width: '56px', height: '56px' }}
         aria-label="Open chat"
       >
         <MessageCircle className="w-6 h-6 mx-auto" />
@@ -129,7 +129,7 @@ const LiveChat: React.FC = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 left-6 z-50 w-80 bg-white rounded-lg shadow-2xl border border-gray-200">
+        <div className="fixed z-50 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 bottom-4 left-4 sm:bottom-6 sm:left-6">
           {/* Header */}
           <div className="bg-[#C5B8AB] text-[#222126] p-4 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center space-x-2">

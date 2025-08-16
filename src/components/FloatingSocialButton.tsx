@@ -29,9 +29,9 @@ const FloatingSocialButton = () => {
   ];
 
   return (
-    <div className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${
+    <div className={`fixed z-50 transition-all duration-500 floating-button floating-button-right ${
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-    }`}>
+    } bottom-4 right-4 sm:bottom-6 sm:right-6`}>
       {/* Main Floating Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}

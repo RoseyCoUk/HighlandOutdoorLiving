@@ -53,16 +53,16 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/10 shadow-lg">
       <nav 
-        className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-2 sm:px-6 py-2 sm:py-3 flex items-center justify-between h-14 sm:h-16"
         role="navigation"
         aria-label="Main navigation"
         onKeyDown={handleKeyDown}
       >
         {/* Animated Logo */}
-        <Link to="/admin/login" className="flex items-center space-x-2 group">
-          <div className="relative">
+        <Link to="/admin/login" className="flex items-center justify-center h-full group pt-5">
+          <div className="relative flex items-center justify-center">
             {/* 3D Rotating Logo */}
-            <div className="w-10 h-10 sm:w-14 sm:h-14 group-hover:animate-spin-slow transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
+            <div className="w-8 h-8 sm:w-12 sm:h-12 group-hover:animate-spin-slow transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
               <img 
                 src="/ngmlogo.jpg" 
                 alt="NMG Outdoor Living Logo" 
@@ -100,16 +100,16 @@ const Header = () => {
 
         {/* Mobile Menu Button - Visible only on mobile */}
         <button
-          className="md:hidden w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-[#e4d4c3] hover:text-[#C5B8AB] transition-colors duration-200 focus:outline-none focus:text-[#C5B8AB]"
+          className="md:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#e4d4c3] hover:text-[#C5B8AB] transition-colors duration-200 focus:outline-none focus:text-[#C5B8AB]"
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-controls="mobile-menu"
         >
           {isMenuOpen ? (
-            <X className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300" />
           ) : (
-            <Menu className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300" />
+            <Menu className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300" />
           )}
         </button>
 
@@ -121,12 +121,12 @@ const Header = () => {
           }`}
           aria-hidden={!isMenuOpen}
         >
-          <ul className="flex flex-col py-4 px-4 sm:px-6 space-y-1 sm:space-y-2" role="menu">
+          <ul className="flex flex-col py-1.5 px-2 sm:px-6 space-y-0.5 sm:space-y-2" role="menu">
             {navigationLinks.map((link, index) => (
               <li key={link.path} role="none">
                 <Link
                   to={link.path}
-                  className={`block py-2 sm:py-3 px-3 sm:px-4 text-sm sm:text-base font-medium transition-all duration-300 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none hover:bg-white/5 rounded-lg ${
+                  className={`block py-1 sm:py-3 px-2 sm:px-4 text-sm sm:text-base font-medium transition-all duration-300 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none hover:bg-white/5 rounded-lg ${
                     location.pathname === link.path 
                       ? 'text-[#C5B8AB] font-bold bg-white/10' 
                       : 'text-[#e4d4c3]'

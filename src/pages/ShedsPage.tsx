@@ -55,7 +55,7 @@ const ShedsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
+    <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
       {/* 1. Hero Section - Above the Fold */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
         {/* Background Video/Image */}

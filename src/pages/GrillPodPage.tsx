@@ -108,7 +108,7 @@ const GrillPodPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden" style={{ WebkitOverflowScrolling: 'touch' }}>
+    <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
       {/* 1. Hero Section - Above the Fold */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
         {/* Background Video/Image */}
@@ -318,39 +318,69 @@ const GrillPodPage = () => {
 
           {/* Comparison Table */}
           <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
-            <div className="grid grid-cols-3 divide-x divide-gray-200">
-              {/* Header */}
-              <div className="p-8 bg-[#222126] text-white">
-                <h3 className="text-xl font-bold mb-2">Feature</h3>
+            {/* Desktop Table */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-3 divide-x divide-gray-200">
+                {/* Header */}
+                <div className="p-8 bg-[#222126] text-white">
+                  <h3 className="text-xl font-bold mb-2">Feature</h3>
+                </div>
+                <div className="p-8 bg-[#222126] text-white">
+                  <h3 className="text-xl font-bold mb-2">Grill Pod</h3>
+                </div>
+                <div className="p-8 bg-[#222126] text-white">
+                  <h3 className="text-xl font-bold mb-2">Traditional Wood</h3>
+                </div>
               </div>
-              <div className="p-8 bg-[#222126] text-white">
-                <h3 className="text-xl font-bold mb-2">Grill Pod</h3>
-              </div>
-              <div className="p-8 bg-[#222126] text-white">
-                <h3 className="text-xl font-bold mb-2">Traditional Wood</h3>
-              </div>
+
+              {/* Comparison Rows */}
+              {[
+                { feature: "Weatherproof", grillPod: "✅ Fully sealed", traditional: "❌ Warps, rots" },
+                { feature: "Insulated", grillPod: "✅ Year-round use", traditional: "❌ Poor insulation" },
+                { feature: "Low Maintenance", grillPod: "✅ Composite cladding", traditional: "❌ Requires staining" },
+                { feature: "Built-In Appliances", grillPod: "✅ Included", traditional: "❌ Often extra" },
+                { feature: "Safety", grillPod: "✅ Roller door & frame", traditional: "❌ Not secure" }
+              ].map((row, index) => (
+                <div key={index} className="grid grid-cols-3 divide-x divide-gray-200">
+                  <div className="p-6 bg-gray-50">
+                    <p className="font-bold text-[#222126]">{row.feature}</p>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-green-600 font-medium">{row.grillPod}</p>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-red-600 font-medium">{row.traditional}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Comparison Rows */}
-            {[
-              { feature: "Weatherproof", grillPod: "✅ Fully sealed", traditional: "❌ Warps, rots" },
-              { feature: "Insulated", grillPod: "✅ Year-round use", traditional: "❌ Poor insulation" },
-              { feature: "Low Maintenance", grillPod: "✅ Composite cladding", traditional: "❌ Requires staining" },
-              { feature: "Built-In Appliances", grillPod: "✅ Included", traditional: "❌ Often extra" },
-              { feature: "Safety", grillPod: "✅ Roller door & frame", traditional: "❌ Not secure" }
-            ].map((row, index) => (
-              <div key={index} className="grid grid-cols-3 divide-x divide-gray-200">
-                <div className="p-6 bg-gray-50">
-                  <p className="font-bold text-[#222126]">{row.feature}</p>
+            {/* Mobile Table */}
+            <div className="md:hidden">
+              {[
+                { feature: "Weatherproof", grillPod: "✅ Fully sealed", traditional: "❌ Warps, rots" },
+                { feature: "Insulated", grillPod: "✅ Year-round use", traditional: "❌ Poor insulation" },
+                { feature: "Low Maintenance", grillPod: "✅ Composite cladding", traditional: "❌ Requires staining" },
+                { feature: "Built-In Appliances", grillPod: "✅ Included", traditional: "❌ Often extra" },
+                { feature: "Safety", grillPod: "✅ Roller door & frame", traditional: "❌ Not secure" }
+              ].map((row, index) => (
+                <div key={index} className="border-b border-gray-200 p-4">
+                  <div className="mb-3">
+                    <h4 className="font-bold text-[#222126] text-sm mb-2">{row.feature}</h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-green-50 p-3 rounded min-w-0">
+                      <p className="text-green-700 font-medium text-xs mb-1">Grill Pod</p>
+                      <p className="text-green-600 text-sm leading-relaxed break-words">{row.grillPod}</p>
+                    </div>
+                    <div className="bg-red-50 p-3 rounded min-w-0">
+                      <p className="text-red-700 font-medium text-xs mb-1">Traditional</p>
+                      <p className="text-red-600 text-sm leading-relaxed break-words">{row.traditional}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-green-600 font-medium">{row.grillPod}</p>
-                </div>
-                <div className="p-6">
-                  <p className="text-red-600 font-medium">{row.traditional}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

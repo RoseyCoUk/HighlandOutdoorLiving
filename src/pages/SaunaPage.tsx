@@ -98,7 +98,7 @@ const SaunaPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
+    <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
       <SEOHead 
         title="Garden Saunas in Northern Ireland - Premium Sauna Installation | NMG Outdoor Living"
         description="Transform your garden with premium saunas in Northern Ireland. Expert sauna installation in Maghera, Belfast, and beyond. Health benefits, relaxation, and property value enhancement."
@@ -310,13 +310,13 @@ const SaunaPage = () => {
                     <h4 className="font-bold text-[#222126] text-sm mb-2">{row.feature}</h4>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-green-50 p-3 rounded">
+                    <div className="bg-green-50 p-3 rounded min-w-0">
                       <p className="text-green-700 font-medium text-xs mb-1">Our Sauna</p>
-                      <p className="text-green-600 text-xs">{row.modern}</p>
+                      <p className="text-green-600 text-sm leading-relaxed break-words">{row.modern}</p>
                     </div>
-                    <div className="bg-red-50 p-3 rounded">
+                    <div className="bg-red-50 p-3 rounded min-w-0">
                       <p className="text-red-700 font-medium text-xs mb-1">Traditional</p>
-                      <p className="text-red-600 text-xs">{row.traditional}</p>
+                      <p className="text-red-600 text-sm leading-relaxed break-words">{row.traditional}</p>
                     </div>
                   </div>
                 </div>

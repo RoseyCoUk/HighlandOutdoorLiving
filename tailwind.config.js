@@ -33,6 +33,12 @@ export default {
         '7xl': ['4.5rem', { lineHeight: '1' }],
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
+        // Mobile-optimized responsive text sizes
+        'mobile-h1': ['clamp(2rem,8vw,4rem)', { lineHeight: '1.1', fontWeight: '700' }],
+        'mobile-h2': ['clamp(1.5rem,6vw,3rem)', { lineHeight: '1.2', fontWeight: '600' }],
+        'mobile-h3': ['clamp(1.25rem,5vw,2.25rem)', { lineHeight: '1.3', fontWeight: '600' }],
+        'mobile-body': ['clamp(1rem,4vw,1.125rem)', { lineHeight: '1.6' }],
+        'mobile-caption': ['clamp(0.875rem,3.5vw,1rem)', { lineHeight: '1.4' }],
       },
     },
   },
