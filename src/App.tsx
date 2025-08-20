@@ -75,35 +75,6 @@ function App() {
               <HeroSection onGetEstimate={openCalculator} />
               <BrandPositioning />
               <ServicesOverview />
-            <section className="py-12 bg-[#111]">
-              <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-16">
-                  <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-                    Inside Our Maghera Showroom
-                  </h2>
-                  <p className="text-xl text-[#C5B8AB]/90 max-w-3xl mx-auto leading-relaxed">
-                    See what makes NMG Outdoor Living the go-to for premium saunas, sheds, and grill pods.
-                  </p>
-                </div>
-                
-                <div className="max-w-4xl mx-auto">
-                  {/* TODO: Client to provide higher quality showroom video via Google Drive */}
-                  <div className="relative rounded-lg shadow-2xl overflow-hidden">
-                    <video
-                      className="w-full h-auto rounded-lg"
-                      autoPlay
-                      muted
-                      loop
-                      controls
-                      playsInline
-                    >
-                      <source src="/NMG Showroom Vid.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </section>
             <ProjectGallery />
             <CustomerReviews />
             <Testimonials />

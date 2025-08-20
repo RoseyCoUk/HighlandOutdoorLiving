@@ -295,6 +295,82 @@ const ShedsPage = () => {
         </div>
       </section>
 
+      {/* Customer Reviews Section */}
+      <section className="py-24 bg-[#222126]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
+              What Our Customers Say
+            </h2>
+            <p className="text-lg text-[#C5B8AB]/70 max-w-3xl mx-auto">
+              Real feedback from homeowners who chose NMG for their shed projects
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Jerome's Review */}
+            <div className="bg-white rounded-lg p-8 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:-translate-y-2">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-[#C5B8AB]/20 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-[#222126] text-2xl font-bold">J</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-[#222126]">Jerome Mc Allister</h3>
+                  <p className="text-[#222126]/70 text-sm">10 Aug</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="w-5 h-5 text-yellow-500 fill-current" />
+                ))}
+              </div>
+              
+              <blockquote className="text-[#222126]/90 leading-relaxed italic">
+                "Just after getting my new shed from Nigel and everything is first class. Nothing was a problem from day 1 and we are very pleased with our finished product. Would highly recommend NMG."
+              </blockquote>
+              
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <span className="text-[#C5B8AB] text-sm font-medium">✓ Recommends NMG PVC Supplies</span>
+              </div>
+            </div>
+
+            {/* Melissa's Review */}
+            <div className="bg-white rounded-lg p-8 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:-translate-y-2">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-[#C5B8AB]/20 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-[#222126] text-2xl font-bold">M</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-[#222126]">Melissa Graham</h3>
+                  <p className="text-[#222126]/70 text-sm">7 Aug</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="w-5 h-5 text-yellow-500 fill-current" />
+                ))}
+              </div>
+              
+              <blockquote className="text-[#222126]/90 leading-relaxed italic">
+                "I recently received a shed from NMG and I am delighted with the shed, workmanship and customer service! Everyone who has seen the shed has remarked how great quality it is. Right from the beginning the customer service was excellent. Oran was happy to answer all the questions I had and accommodate all my requests for the shed. The men who installed the shed were brilliant neat and tidy workers. Thank you Nigel, Oran and team! Highly Recommend!"
+              </blockquote>
+              
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <span className="text-[#C5B8AB] text-sm font-medium">✓ Recommends NMG PVC Supplies</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center px-6 py-3 bg-[#C5B8AB]/20 rounded-full border border-[#C5B8AB]/30">
+              <span className="text-[#C5B8AB] text-lg font-medium">Not yet rated (2 reviews)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote Form Section */}
       <section id="quote-form" className="py-24 bg-[#222126]">
         <div className="max-w-4xl mx-auto px-6">
