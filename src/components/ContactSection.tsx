@@ -35,11 +35,31 @@ const ContactSection = () => {
       if (result.success) {
         navigate('/thank-you?product=project');
       } else {
-        alert('There was an error submitting your form. Please try again or contact us directly.');
+        // Fallback to email if Supabase fails
+        const subject = `Contact Form Submission from ${contactForm.name}`;
+        const body = `Name: ${contactForm.name}
+Email: ${contactForm.email}
+Message: ${contactForm.message}
+
+Source: Contact Section`;
+
+        const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink, '_blank');
+        navigate('/thank-you?product=project');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('There was an error submitting your form. Please try again or contact us directly.');
+      // Fallback to email if Supabase fails
+      const subject = `Contact Form Submission from ${contactForm.name}`;
+      const body = `Name: ${contactForm.name}
+Email: ${contactForm.email}
+Message: ${contactForm.message}
+
+Source: Contact Section`;
+
+      const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoLink, '_blank');
+      navigate('/thank-you?product=project');
     } finally {
       setIsSubmitting(false);
     }

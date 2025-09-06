@@ -47,14 +47,21 @@ export const useEstimateCalculator = () => {
       }
     };
 
+    // Listen for custom event from StrategicCTA
+    const handleCustomEvent = () => {
+      openCalculator();
+    };
+
     scrollHandler = handleScroll;
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('open-estimate-calculator', handleCustomEvent);
 
     return () => {
       clearTimeout(timeoutId);
       if (scrollHandler) {
         window.removeEventListener('scroll', scrollHandler);
       }
+      window.removeEventListener('open-estimate-calculator', handleCustomEvent);
     };
   }, [hasShown, openCalculator]);
 
