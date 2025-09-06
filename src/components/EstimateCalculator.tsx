@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 
 interface EstimateFormData {
   product: string;
+  customProduct: string;
   location: string;
   timeframe: string;
   budget: string;
@@ -21,6 +22,7 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<EstimateFormData>({
     product: '',
+    customProduct: '',
     location: '',
     timeframe: '',
     budget: '',
@@ -85,6 +87,9 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
     switch (step) {
       case 1:
         if (!formData.product) newErrors.product = 'Please select a product';
+        if (formData.product === 'Other' && !formData.customProduct.trim()) {
+          newErrors.customProduct = 'Please describe your custom product';
+        }
         break;
       case 2:
         if (!formData.location) newErrors.location = 'Please select an installation location';
@@ -130,7 +135,7 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
           email: formData.email,
           phone: formData.phone,
           product: formData.product,
-          message: `Estimate Request - ${formData.product} for ${formData.location} installation. Timeline: ${formData.timeframe}, Budget: ${formData.budget}`,
+          message: `Estimate Request - ${formData.product === 'Other' ? formData.customProduct : formData.product} for ${formData.location} installation. Timeline: ${formData.timeframe}, Budget: ${formData.budget}${formData.product === 'Other' ? `\n\nCustom Requirements: ${formData.customProduct}` : ''}`,
           location: formData.location,
           timeframe: formData.timeframe,
           budget: formData.budget,
@@ -169,7 +174,8 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
               {[
                 { value: 'Sauna', label: 'Sauna', description: 'Custom outdoor saunas for relaxation and wellness' },
                 { value: 'Grill Pod', label: 'Grill Pod', description: 'Professional outdoor cooking and entertainment spaces' },
-                { value: 'Shed', label: 'Shed', description: 'Storage solutions and garden buildings' }
+                { value: 'Shed', label: 'Shed', description: 'Storage solutions and garden buildings' },
+                { value: 'Other', label: 'Other', description: 'Custom outdoor living solution or specific requirements' }
               ].map(option => (
                 <label key={option.value} className="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-[#222126] transition-colors">
                   <input
@@ -196,6 +202,24 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
                 </label>
               ))}
             </div>
+            
+            {/* Custom Product Input */}
+            {formData.product === 'Other' && (
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Please describe your custom outdoor living solution:
+                </label>
+                <textarea
+                  value={formData.customProduct}
+                  onChange={(e) => updateFormData('customProduct', e.target.value)}
+                  placeholder="e.g., Custom outdoor bar, Garden office with sauna, Multi-purpose outdoor room, etc."
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#222126] focus:border-transparent resize-none"
+                  rows={3}
+                />
+                {errors.customProduct && <p className="text-red-600 text-sm mt-1">{errors.customProduct}</p>}
+              </div>
+            )}
+            
             {errors.product && <p className="text-red-600 text-sm">{errors.product}</p>}
           </div>
         );
