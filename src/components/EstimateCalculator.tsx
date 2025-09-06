@@ -147,6 +147,9 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
           });
 
         if (error) throw error;
+        
+        // Success - show success message
+        setIsSubmitted(true);
       } else {
         // Fallback: Create mailto link with form data
         const subject = `Estimate Request - ${formData.product === 'Other' ? formData.customProduct : formData.product}`;
@@ -163,9 +166,8 @@ Source: Estimate Calculator`;
 
         const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(mailtoLink, '_blank');
+        setIsSubmitted(true);
       }
-
-      setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting estimate request:', error);
       // Fallback to email if Supabase fails
