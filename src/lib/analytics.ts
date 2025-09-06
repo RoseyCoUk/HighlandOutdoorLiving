@@ -1,4 +1,6 @@
 // Google Analytics 4 integration for admin dashboard
+import { analyticsService } from './analytics-service';
+
 export interface AnalyticsData {
   pageViews: number;
   users: number;
@@ -125,15 +127,7 @@ export const getMockAnalyticsData = (timeRange: AnalyticsTimeRange): AnalyticsDa
 
 // Check if Google Analytics is ready and collecting data
 const isGoogleAnalyticsReady = (): boolean => {
-  if (typeof window === 'undefined') return false;
-  
-  // Check if gtag is loaded
-  if (!window.gtag) return false;
-  
-  // Check if we're on the live site (not localhost)
-  const isLiveSite = window.location.hostname === 'nmgpvcsupplies.co.uk';
-  
-  return isLiveSite;
+  return analyticsService.isReady();
 };
 
 // Real Google Analytics integration
@@ -251,37 +245,31 @@ export const getAnalyticsData = async (period: '7d' | '30d' | '90d' = '7d'): Pro
   }
 };
 
-// Track custom events
+// Re-export analytics service functions for backward compatibility
+export { 
+  trackPageView,
+  trackProductInterest,
+  trackLeadConversion,
+  trackEstimateRequest,
+  trackContactFormSubmit,
+  trackCalculatorOpen,
+  trackCalculatorComplete,
+  trackCalculatorAbandon,
+  trackPhoneClick,
+  trackEmailClick,
+  trackVideoPlay,
+  trackVideoComplete,
+  trackScrollDepth,
+  trackSocialShare,
+  trackAdminAction
+} from './analytics-service';
+
+// Legacy trackEvent function for backward compatibility
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, parameters);
+  if (typeof window !== 'undefined' && window.dataLayer) {
+    window.dataLayer.push({
+      event: eventName,
+      ...parameters
+    });
   }
-};
-
-// Track lead conversion
-export const trackLeadConversion = (source: string, product?: string) => {
-  trackEvent('lead_conversion', {
-    source,
-    product,
-    value: 1,
-    currency: 'GBP'
-  });
-};
-
-// Track estimate request
-export const trackEstimateRequest = (product: string, location: string) => {
-  trackEvent('estimate_request', {
-    product,
-    location,
-    value: 1,
-    currency: 'GBP'
-  });
-};
-
-// Track page view
-export const trackPageView = (page: string, title: string) => {
-  trackEvent('page_view', {
-    page_title: title,
-    page_location: page
-  });
 };

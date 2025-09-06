@@ -36,8 +36,10 @@ import NotFoundPage from './pages/NotFoundPage';
 import Footer from './components/Footer';
 import EstimateCalculator from './components/EstimateCalculator';
 import { useEstimateCalculator } from './hooks/useEstimateCalculator';
+import { useAnalytics } from './hooks/useAnalytics';
 import SEOHead from './components/SEOHead';
 import FloatingSocialButton from './components/FloatingSocialButton';
+import WebVitalsTracker from './components/WebVitalsTracker';
 
 // ScrollToTop component that uses the hook inside Router context
 const ScrollToTop = () => {
@@ -52,14 +54,16 @@ const ScrollToTop = () => {
 
 function App() {
   const { isOpen, openCalculator, closeCalculator } = useEstimateCalculator();
+  const analytics = useAnalytics();
   const [showAccessibilityTester, setShowAccessibilityTester] = useState(false);
 
   return (
     <HelmetProvider>
       <Router>
         <ScrollToTop />
-        <PerformanceMonitor />
-        <AccessibilityManager>
+        <WebVitalsTracker>
+          <PerformanceMonitor />
+          <AccessibilityManager>
           <Header />
           <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />
           <Routes>
@@ -113,6 +117,7 @@ function App() {
             />
           )}
           </AccessibilityManager>
+        </WebVitalsTracker>
         </Router>
       </HelmetProvider>
   );

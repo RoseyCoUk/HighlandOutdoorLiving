@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 interface EstimateFormData {
   product: string;
@@ -19,6 +20,7 @@ interface EstimateCalculatorProps {
 }
 
 const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose }) => {
+  const analytics = useAnalytics();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<EstimateFormData>({
     product: '',
@@ -36,24 +38,39 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
 
   const totalSteps = 5;
 
+  // Helper function to get estimated value from budget range
+  const getEstimatedValue = (budget: string): number => {
+    switch (budget) {
+      case 'Under £5,000': return 4000;
+      case '£5,000 - £10,000': return 7500;
+      case '£10,000 - £20,000': return 15000;
+      case '£20,000 - £30,000': return 25000;
+      case 'Over £30,000': return 35000;
+      default: return 10000;
+    }
+  };
+
   // Close modal on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
-        onClose();
+        handleClose();
       }
     };
 
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
       document.body.style.overflow = 'hidden';
+      
+      // Track calculator open
+      analytics.trackCalculatorOpen('General');
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, analytics]);
 
   // Auto-close after successful submission
   useEffect(() => {
@@ -80,6 +97,28 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
       return () => clearTimeout(timer);
     }
   }, [isSubmitted, onClose]);
+
+  const handleClose = () => {
+    // Track calculator abandonment if not submitted
+    if (!isSubmitted && currentStep > 1) {
+      analytics.trackCalculatorAbandon('General', currentStep);
+    }
+    
+    setCurrentStep(1);
+    setFormData({
+      product: '',
+      customProduct: '',
+      location: '',
+      timeframe: '',
+      budget: '',
+      name: '',
+      email: '',
+      phone: ''
+    });
+    setErrors({});
+    setIsSubmitted(false);
+    onClose();
+  };
 
   const validateStep = (step: number): boolean => {
     const newErrors: Partial<EstimateFormData> = {};
@@ -147,6 +186,12 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
           });
 
         if (error) throw error;
+        
+        // Track successful estimate request
+        const product = formData.product === 'Other' ? formData.customProduct : formData.product;
+        const estimatedValue = getEstimatedValue(formData.budget);
+        analytics.trackEstimateRequest(product, formData.location, estimatedValue);
+        analytics.trackLeadConversion('Estimate Calculator', product, estimatedValue);
         
         // Success - show success message
         setIsSubmitted(true);
@@ -461,7 +506,7 @@ Source: Estimate Calculator`;
             <p className="text-gray-600">Step {currentStep} of {totalSteps}</p>
           </div>
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
             aria-label="Close modal"
           >
