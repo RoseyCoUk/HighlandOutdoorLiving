@@ -34,10 +34,9 @@ const AnalyticsDashboard: React.FC = () => {
       setAnalyticsData(data);
       setLastUpdated(new Date());
       
-      // Check if we're using real data (on live site with GA4 loaded)
-      const isLiveSite = window.location.hostname === 'nmgpvcsupplies.co.uk';
-      const hasGtag = typeof window !== 'undefined' && window.gtag;
-      setDataSource(isLiveSite && hasGtag ? 'real' : 'mock');
+      // Check if we're using real data (GTM dataLayer available)
+      const hasDataLayer = typeof window !== 'undefined' && window.dataLayer;
+      setDataSource(hasDataLayer ? 'real' : 'mock');
     } catch (error) {
       console.error('Error fetching analytics data:', error);
     } finally {
