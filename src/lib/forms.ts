@@ -11,6 +11,11 @@ export interface FormData {
 
 export const submitLead = async (formData: FormData): Promise<{ success: boolean; error?: string }> => {
   try {
+    // Check if Supabase is available
+    if (!supabase) {
+      return { success: false, error: 'Database not configured' };
+    }
+
     const { error } = await supabase
       .from('leads')
       .insert({

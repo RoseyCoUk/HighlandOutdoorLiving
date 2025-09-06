@@ -129,11 +129,8 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
     setIsSubmitting(true);
     try {
       // Try Supabase first, fallback to email if not available
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-      if (supabaseUrl && supabaseAnonKey) {
-        // Use Supabase if environment variables are set
+      if (supabase) {
+        // Use Supabase if available
         const { error } = await supabase
           .from('leads')
           .insert({
