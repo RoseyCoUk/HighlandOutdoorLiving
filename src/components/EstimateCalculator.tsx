@@ -137,7 +137,7 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
             name: formData.name,
             email: formData.email,
             phone: formData.phone,
-            product: formData.product,
+            product: formData.product === 'Other' ? 'General' : formData.product,
             message: `Estimate Request - ${formData.product === 'Other' ? formData.customProduct : formData.product} for ${formData.location} installation. Timeline: ${formData.timeframe}, Budget: ${formData.budget}${formData.product === 'Other' ? `\n\nCustom Requirements: ${formData.customProduct}` : ''}`,
             location: formData.location,
             timeframe: formData.timeframe,
