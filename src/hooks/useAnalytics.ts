@@ -4,7 +4,14 @@ import { useLocation } from 'react-router-dom';
 import { analyticsService } from '../lib/analytics-service';
 
 export const useAnalytics = () => {
-  const location = useLocation();
+  // Safely get location, fallback to window.location if not in Router context
+  let location;
+  try {
+    location = useLocation();
+  } catch (error) {
+    // Fallback if not in Router context
+    location = { pathname: window.location.pathname };
+  }
 
   // Track page views automatically
   useEffect(() => {
