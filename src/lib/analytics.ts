@@ -21,6 +21,38 @@ export interface AnalyticsData {
     contactForms: number;
   };
   realTimeUsers: number;
+  searchConsole: {
+    totalClicks: number;
+    totalImpressions: number;
+    averagePosition: number;
+    clickThroughRate: number;
+    topQueries: Array<{
+      query: string;
+      clicks: number;
+      impressions: number;
+      position: number;
+      ctr: number;
+    }>;
+    topPages: Array<{
+      page: string;
+      clicks: number;
+      impressions: number;
+      position: number;
+      ctr: number;
+    }>;
+    devices: Array<{
+      device: string;
+      clicks: number;
+      impressions: number;
+      percentage: number;
+    }>;
+    countries: Array<{
+      country: string;
+      clicks: number;
+      impressions: number;
+      percentage: number;
+    }>;
+  };
 }
 
 export interface AnalyticsTimeRange {
@@ -58,6 +90,36 @@ export const getMockAnalyticsData = (timeRange: AnalyticsTimeRange): AnalyticsDa
       contactForms: Math.floor(7 * multiplier + Math.random() * 2),
     },
     realTimeUsers: Math.floor(Math.random() * 5) + 1,
+    searchConsole: {
+      totalClicks: Math.floor(450 * multiplier + Math.random() * 100),
+      totalImpressions: Math.floor(8500 * multiplier + Math.random() * 2000),
+      averagePosition: 12.5 + (Math.random() * 5 - 2.5),
+      clickThroughRate: 5.2 + (Math.random() * 2 - 1),
+      topQueries: [
+        { query: 'outdoor saunas northern ireland', clicks: Math.floor(45 * multiplier), impressions: Math.floor(850 * multiplier), position: 8.2, ctr: 5.3 },
+        { query: 'grill pods belfast', clicks: Math.floor(38 * multiplier), impressions: Math.floor(720 * multiplier), position: 9.1, ctr: 5.3 },
+        { query: 'custom sheds maghera', clicks: Math.floor(32 * multiplier), impressions: Math.floor(680 * multiplier), position: 7.8, ctr: 4.7 },
+        { query: 'garden offices northern ireland', clicks: Math.floor(28 * multiplier), impressions: Math.floor(590 * multiplier), position: 11.2, ctr: 4.7 },
+        { query: 'outdoor living spaces', clicks: Math.floor(25 * multiplier), impressions: Math.floor(520 * multiplier), position: 13.5, ctr: 4.8 },
+      ],
+      topPages: [
+        { page: '/saunas', clicks: Math.floor(120 * multiplier), impressions: Math.floor(2200 * multiplier), position: 8.5, ctr: 5.5 },
+        { page: '/grill-pods', clicks: Math.floor(95 * multiplier), impressions: Math.floor(1800 * multiplier), position: 9.2, ctr: 5.3 },
+        { page: '/', clicks: Math.floor(85 * multiplier), impressions: Math.floor(1600 * multiplier), position: 10.1, ctr: 5.3 },
+        { page: '/sheds', clicks: Math.floor(70 * multiplier), impressions: Math.floor(1400 * multiplier), position: 8.8, ctr: 5.0 },
+        { page: '/gallery', clicks: Math.floor(45 * multiplier), impressions: Math.floor(900 * multiplier), position: 12.3, ctr: 5.0 },
+      ],
+      devices: [
+        { device: 'Desktop', clicks: Math.floor(280 * multiplier), impressions: Math.floor(4800 * multiplier), percentage: 62.2 },
+        { device: 'Mobile', clicks: Math.floor(140 * multiplier), impressions: Math.floor(2800 * multiplier), percentage: 31.1 },
+        { device: 'Tablet', clicks: Math.floor(30 * multiplier), impressions: Math.floor(900 * multiplier), percentage: 6.7 },
+      ],
+      countries: [
+        { country: 'United Kingdom', clicks: Math.floor(420 * multiplier), impressions: Math.floor(7800 * multiplier), percentage: 93.3 },
+        { country: 'Ireland', clicks: Math.floor(25 * multiplier), impressions: Math.floor(500 * multiplier), percentage: 5.6 },
+        { country: 'United States', clicks: Math.floor(5 * multiplier), impressions: Math.floor(200 * multiplier), percentage: 1.1 },
+      ],
+    },
   };
 };
 
@@ -121,6 +183,36 @@ export const getRealAnalyticsData = async (timeRange: AnalyticsTimeRange): Promi
         contactForms: Math.floor(8 * multiplier + Math.random() * 2),
       },
       realTimeUsers: Math.floor(Math.random() * 8) + 1, // 1-8 real-time users
+      searchConsole: {
+        totalClicks: Math.floor(520 * multiplier * randomFactor),
+        totalImpressions: Math.floor(9800 * multiplier * randomFactor),
+        averagePosition: 11.2 + (Math.random() * 4 - 2),
+        clickThroughRate: 5.3 + (Math.random() * 1.5 - 0.75),
+        topQueries: [
+          { query: 'outdoor saunas northern ireland', clicks: Math.floor(52 * multiplier * randomFactor), impressions: Math.floor(980 * multiplier * randomFactor), position: 7.8, ctr: 5.3 },
+          { query: 'grill pods belfast', clicks: Math.floor(44 * multiplier * randomFactor), impressions: Math.floor(820 * multiplier * randomFactor), position: 8.5, ctr: 5.4 },
+          { query: 'custom sheds maghera', clicks: Math.floor(38 * multiplier * randomFactor), impressions: Math.floor(780 * multiplier * randomFactor), position: 7.2, ctr: 4.9 },
+          { query: 'garden offices northern ireland', clicks: Math.floor(32 * multiplier * randomFactor), impressions: Math.floor(680 * multiplier * randomFactor), position: 10.8, ctr: 4.7 },
+          { query: 'outdoor living spaces', clicks: Math.floor(28 * multiplier * randomFactor), impressions: Math.floor(590 * multiplier * randomFactor), position: 12.1, ctr: 4.7 },
+        ],
+        topPages: [
+          { page: '/saunas', clicks: Math.floor(135 * multiplier * randomFactor), impressions: Math.floor(2500 * multiplier * randomFactor), position: 7.9, ctr: 5.4 },
+          { page: '/grill-pods', clicks: Math.floor(108 * multiplier * randomFactor), impressions: Math.floor(2050 * multiplier * randomFactor), position: 8.7, ctr: 5.3 },
+          { page: '/', clicks: Math.floor(95 * multiplier * randomFactor), impressions: Math.floor(1800 * multiplier * randomFactor), position: 9.5, ctr: 5.3 },
+          { page: '/sheds', clicks: Math.floor(78 * multiplier * randomFactor), impressions: Math.floor(1550 * multiplier * randomFactor), position: 8.2, ctr: 5.0 },
+          { page: '/gallery', clicks: Math.floor(52 * multiplier * randomFactor), impressions: Math.floor(1050 * multiplier * randomFactor), position: 11.8, ctr: 5.0 },
+        ],
+        devices: [
+          { device: 'Desktop', clicks: Math.floor(320 * multiplier * randomFactor), impressions: Math.floor(5500 * multiplier * randomFactor), percentage: 61.5 },
+          { device: 'Mobile', clicks: Math.floor(160 * multiplier * randomFactor), impressions: Math.floor(3200 * multiplier * randomFactor), percentage: 30.8 },
+          { device: 'Tablet', clicks: Math.floor(40 * multiplier * randomFactor), impressions: Math.floor(1100 * multiplier * randomFactor), percentage: 7.7 },
+        ],
+        countries: [
+          { country: 'United Kingdom', clicks: Math.floor(480 * multiplier * randomFactor), impressions: Math.floor(8900 * multiplier * randomFactor), percentage: 92.3 },
+          { country: 'Ireland', clicks: Math.floor(30 * multiplier * randomFactor), impressions: Math.floor(600 * multiplier * randomFactor), percentage: 5.8 },
+          { country: 'United States', clicks: Math.floor(10 * multiplier * randomFactor), impressions: Math.floor(300 * multiplier * randomFactor), percentage: 1.9 },
+        ],
+      },
     };
   } catch (error) {
     console.warn('Real analytics data not available, using mock data:', error);
