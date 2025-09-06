@@ -1,130 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://nmgoutdoorliving.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna1.JPG</image:loc>
+      <image:title>NMG Outdoor Living - Premium Saunas, Grill Pods & Sheds</image:title>
+    </image:image>
   </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/saunas</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/grill-pods</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/sheds</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
+  <!-- Services Pages -->
   <url>
     <loc>https://nmgoutdoorliving.com/services</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+
+  <url>
+    <loc>https://nmgoutdoorliving.com/saunas</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna1.JPG</image:loc>
+      <image:title>Garden Saunas Northern Ireland</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://nmgoutdoorliving.com/grill-pods</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod1.JPG</image:loc>
+      <image:title>Grill Pods Northern Ireland</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://nmgoutdoorliving.com/sheds</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/Shed1.png</image:loc>
+      <image:title>Custom Sheds Northern Ireland</image:title>
+    </image:image>
+  </url>
+
+  <!-- Other Pages -->
   <url>
     <loc>https://nmgoutdoorliving.com/gallery</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/blog</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://nmgoutdoorliving.com/about</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://nmgoutdoorliving.com/contact</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://nmgoutdoorliving.com/blog</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog Posts -->
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/outdoor-living-trends-northern-ireland-2025</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/ultimate-guide-garden-saunas-northern-ireland</loc>
+    <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna1.JPG</image:loc>
+      <image:title>Garden Saunas Northern Ireland Guide</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/garden-saunas-maghera</loc>
-    <lastmod>2025-01-10</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/grill-pods-vs-traditional-bbq-comparison</loc>
+    <lastmod>2024-01-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod1.JPG</image:loc>
+      <image:title>Grill Pods vs Traditional BBQ</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/grill-pods-northern-ireland-weather</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/custom-sheds-garden-offices-northern-ireland</loc>
+    <lastmod>2024-01-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/Shed1.png</image:loc>
+      <image:title>Custom Sheds and Garden Offices</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/custom-sheds-derry-londonderry</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/outdoor-living-trends-2024-northern-ireland</loc>
+    <lastmod>2024-02-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod2.JPG</image:loc>
+      <image:title>Outdoor Living Trends 2024</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/outdoor-living-belfast</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/planning-permission-outdoor-structures-northern-ireland</loc>
+    <lastmod>2024-02-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/outdoor glass room 2.jpg</image:loc>
+      <image:title>Planning Permission Guide</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/sauna-installation-northern-ireland</loc>
-    <lastmod>2024-12-28</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/outdoor-saunas-belfast-installation-guide</loc>
+    <lastmod>2024-02-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna2.JPG</image:loc>
+      <image:title>Outdoor Saunas Belfast</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/grill-pod-costs-northern-ireland</loc>
-    <lastmod>2024-12-25</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/grill-pods-maghera-custom-outdoor-kitchens</loc>
+    <lastmod>2024-02-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod3.JPG</image:loc>
+      <image:title>Grill Pods Maghera</image:title>
+    </image:image>
   </url>
+
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/garden-offices-maghera</loc>
-    <lastmod>2024-12-20</lastmod>
+    <loc>https://nmgoutdoorliving.com/blog/custom-sheds-northern-ireland-garden-offices</loc>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nmgoutdoorliving.com/Shed1.png</image:loc>
+      <image:title>Custom Sheds Northern Ireland</image:title>
+    </image:image>
   </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/blog/outdoor-living-cookstown</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/blog/sauna-maintenance-northern-ireland</loc>
-    <lastmod>2024-12-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/blog/grill-pod-designs-northern-ireland</loc>
-    <lastmod>2024-12-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nmgoutdoorliving.com/blog/workshop-sheds-northern-ireland</loc>
-    <lastmod>2024-12-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-</urlset> 
+
+</urlset>
