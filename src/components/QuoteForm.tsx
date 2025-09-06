@@ -44,11 +44,35 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
       if (result.success) {
         navigate('/thank-you?product=project');
       } else {
-        alert('There was an error submitting your form. Please try again or contact us directly.');
+        // Fallback to email if Supabase fails
+        const subject = `Quote Request from ${formData.name}`;
+        const body = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Location: ${formData.location}
+Message: ${formData.message}
+
+Source: Home Page Quote Form`;
+
+        const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink, '_blank');
+        navigate('/thank-you?product=project');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('There was an error submitting your form. Please try again or contact us directly.');
+      // Fallback to email if Supabase fails
+      const subject = `Quote Request from ${formData.name}`;
+      const body = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Location: ${formData.location}
+Message: ${formData.message}
+
+Source: Home Page Quote Form`;
+
+      const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoLink, '_blank');
+      navigate('/thank-you?product=project');
     } finally {
       setIsSubmitting(false);
     }

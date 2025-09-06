@@ -128,27 +128,65 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
 
     setIsSubmitting(true);
     try {
-      const { error } = await supabase
-        .from('leads')
-        .insert({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          product: formData.product,
-          message: `Estimate Request - ${formData.product === 'Other' ? formData.customProduct : formData.product} for ${formData.location} installation. Timeline: ${formData.timeframe}, Budget: ${formData.budget}${formData.product === 'Other' ? `\n\nCustom Requirements: ${formData.customProduct}` : ''}`,
-          location: formData.location,
-          timeframe: formData.timeframe,
-          budget: formData.budget,
-          source: 'Estimate Calculator',
-          status: 'New'
-        });
+      // Try Supabase first, fallback to email if not available
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-      if (error) throw error;
+      if (supabaseUrl && supabaseAnonKey) {
+        // Use Supabase if environment variables are set
+        const { error } = await supabase
+          .from('leads')
+          .insert({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            product: formData.product,
+            message: `Estimate Request - ${formData.product === 'Other' ? formData.customProduct : formData.product} for ${formData.location} installation. Timeline: ${formData.timeframe}, Budget: ${formData.budget}${formData.product === 'Other' ? `\n\nCustom Requirements: ${formData.customProduct}` : ''}`,
+            location: formData.location,
+            timeframe: formData.timeframe,
+            budget: formData.budget,
+            source: 'Estimate Calculator',
+            status: 'New'
+          });
+
+        if (error) throw error;
+      } else {
+        // Fallback: Create mailto link with form data
+        const subject = `Estimate Request - ${formData.product === 'Other' ? formData.customProduct : formData.product}`;
+        const body = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Product: ${formData.product === 'Other' ? formData.customProduct : formData.product}
+Location: ${formData.location}
+Timeline: ${formData.timeframe}
+Budget: ${formData.budget}
+${formData.product === 'Other' ? `\nCustom Requirements: ${formData.customProduct}` : ''}
+
+Source: Estimate Calculator`;
+
+        const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink, '_blank');
+      }
 
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting estimate request:', error);
-      alert('There was an error submitting your request. Please try again.');
+      // Fallback to email if Supabase fails
+      const subject = `Estimate Request - ${formData.product === 'Other' ? formData.customProduct : formData.product}`;
+      const body = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Product: ${formData.product === 'Other' ? formData.customProduct : formData.product}
+Location: ${formData.location}
+Timeline: ${formData.timeframe}
+Budget: ${formData.budget}
+${formData.product === 'Other' ? `\nCustom Requirements: ${formData.customProduct}` : ''}
+
+Source: Estimate Calculator`;
+
+      const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoLink, '_blank');
+      setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }
