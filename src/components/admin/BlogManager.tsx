@@ -5,7 +5,7 @@ import { blogPosts, BlogPost } from '../../data/blogPosts';
 interface BlogManagerProps {
   onEditBlog: (blog: BlogPost) => void;
   onDeleteBlog: (id: string) => void;
-  onAddBlog: (blog: BlogPost) => void;
+  onAddBlog: () => void;
 }
 
 const BlogManager: React.FC<BlogManagerProps> = ({ onEditBlog, onDeleteBlog, onAddBlog }) => {
@@ -55,7 +55,7 @@ const BlogManager: React.FC<BlogManagerProps> = ({ onEditBlog, onDeleteBlog, onA
 
   const handleAdd = () => {
     // This will be handled by the parent component
-    onAddBlog({} as BlogPost);
+    onAddBlog();
   };
 
   return (

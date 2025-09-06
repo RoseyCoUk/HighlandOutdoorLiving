@@ -1,22 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Wand2, FileText, Save, Eye, Trash2, Edit3, Loader2 } from 'lucide-react';
-
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  category: string;
-  tags: string[];
-  seoKeywords: string[];
-  seoDescription: string;
-  image: string;
-  readTime: string;
-  featured: boolean;
-  status: 'draft' | 'published';
-  createdAt: string;
-  updatedAt: string;
-}
+import { BlogPost } from '../../data/blogPosts';
 
 interface BlogGeneratorProps {
   onBlogGenerated: (blog: BlogPost) => void;
@@ -172,11 +156,8 @@ Format the response as JSON with these fields:
         image: getDefaultImage(data.category),
         readTime: calculateReadTime(parsed.content),
         featured: false,
-        status: 'draft',
         author: 'NMG Outdoor Living Team',
-        publishedDate: new Date().toISOString().split('T')[0],
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
+        publishedDate: new Date().toISOString().split('T')[0]
       };
     } catch (error) {
       console.error('Error parsing AI content:', error);
@@ -198,12 +179,18 @@ Format the response as JSON with these fields:
     return {
       id: `generated-${Date.now()}`,
       slug,
-      ...template,
-      status: 'draft',
+      title: template.title,
+      excerpt: template.excerpt,
+      content: template.content,
+      category: template.category,
+      tags: template.tags,
+      seoKeywords: template.seoKeywords,
+      seoDescription: template.seoDescription,
+      image: template.image,
+      readTime: template.readTime,
+      featured: template.featured,
       author: 'NMG Outdoor Living Team',
-      publishedDate: new Date().toISOString().split('T')[0],
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString()
+      publishedDate: new Date().toISOString().split('T')[0]
     };
   };
 
