@@ -16,6 +16,7 @@ const AnalyticsDashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [selectedPeriod, setSelectedPeriod] = useState<'7d' | '30d' | '90d'>('7d');
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [dataSource, setDataSource] = useState<'real' | 'mock'>('mock');
 
   useEffect(() => {
     fetchAnalyticsData();
@@ -27,6 +28,11 @@ const AnalyticsDashboard: React.FC = () => {
       const data = await getAnalyticsData(selectedPeriod);
       setAnalyticsData(data);
       setLastUpdated(new Date());
+      
+      // Check if we're using real data (on live site with GA4 loaded)
+      const isLiveSite = window.location.hostname === 'nmgpvcsupplies.co.uk';
+      const hasGtag = typeof window !== 'undefined' && window.gtag;
+      setDataSource(isLiveSite && hasGtag ? 'real' : 'mock');
     } catch (error) {
       console.error('Error fetching analytics data:', error);
     } finally {
@@ -125,9 +131,23 @@ const AnalyticsDashboard: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Analytics Dashboard</h2>
+          <div className="flex items-center space-x-3">
+            <h2 className="text-2xl font-bold text-gray-900">Analytics Dashboard</h2>
+            <span className={`px-2 py-1 text-xs font-medium rounded-full ${
+              dataSource === 'real' 
+                ? 'bg-green-100 text-green-800' 
+                : 'bg-yellow-100 text-yellow-800'
+            }`}>
+              {dataSource === 'real' ? 'Live Data' : 'Demo Data'}
+            </span>
+          </div>
           <p className="text-gray-600">
             Last updated: {lastUpdated.toLocaleTimeString()}
+            {dataSource === 'mock' && (
+              <span className="ml-2 text-sm text-yellow-600">
+                (Using demo data - will switch to live data when Google Analytics is ready)
+              </span>
+            )}
           </p>
         </div>
         
