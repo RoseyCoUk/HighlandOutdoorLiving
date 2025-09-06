@@ -4,81 +4,81 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://nmgoutdoorliving.com/</loc>
+    <loc>https://nmgpvcsupplies.co.uk/</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna1.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/Sauna1.JPG</image:loc>
       <image:title>NMG Outdoor Living - Premium Saunas, Grill Pods & Sheds</image:title>
     </image:image>
   </url>
 
   <!-- Services Pages -->
   <url>
-    <loc>https://nmgoutdoorliving.com/services</loc>
+    <loc>https://nmgpvcsupplies.co.uk/services</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/saunas</loc>
+    <loc>https://nmgpvcsupplies.co.uk/saunas</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna1.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/Sauna1.JPG</image:loc>
       <image:title>Garden Saunas Northern Ireland</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/grill-pods</loc>
+    <loc>https://nmgpvcsupplies.co.uk/grill-pods</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod1.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/GrillPod1.JPG</image:loc>
       <image:title>Grill Pods Northern Ireland</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/sheds</loc>
+    <loc>https://nmgpvcsupplies.co.uk/sheds</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/Shed1.png</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/Shed1.png</image:loc>
       <image:title>Custom Sheds Northern Ireland</image:title>
     </image:image>
   </url>
 
   <!-- Other Pages -->
   <url>
-    <loc>https://nmgoutdoorliving.com/gallery</loc>
+    <loc>https://nmgpvcsupplies.co.uk/gallery</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/about</loc>
+    <loc>https://nmgpvcsupplies.co.uk/about</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/contact</loc>
+    <loc>https://nmgpvcsupplies.co.uk/contact</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -86,89 +86,89 @@
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/ultimate-guide-garden-saunas-northern-ireland</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/ultimate-guide-garden-saunas-northern-ireland</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna1.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/Sauna1.JPG</image:loc>
       <image:title>Garden Saunas Northern Ireland Guide</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/grill-pods-vs-traditional-bbq-comparison</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/grill-pods-vs-traditional-bbq-comparison</loc>
     <lastmod>2024-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod1.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/GrillPod1.JPG</image:loc>
       <image:title>Grill Pods vs Traditional BBQ</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/custom-sheds-garden-offices-northern-ireland</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/custom-sheds-garden-offices-northern-ireland</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/Shed1.png</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/Shed1.png</image:loc>
       <image:title>Custom Sheds and Garden Offices</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/outdoor-living-trends-2024-northern-ireland</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/outdoor-living-trends-2024-northern-ireland</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod2.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/GrillPod2.JPG</image:loc>
       <image:title>Outdoor Living Trends 2024</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/planning-permission-outdoor-structures-northern-ireland</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/planning-permission-outdoor-structures-northern-ireland</loc>
     <lastmod>2024-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/outdoor glass room 2.jpg</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/outdoor glass room 2.jpg</image:loc>
       <image:title>Planning Permission Guide</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/outdoor-saunas-belfast-installation-guide</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/outdoor-saunas-belfast-installation-guide</loc>
     <lastmod>2024-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/Sauna2.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/Sauna2.JPG</image:loc>
       <image:title>Outdoor Saunas Belfast</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/grill-pods-maghera-custom-outdoor-kitchens</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/grill-pods-maghera-custom-outdoor-kitchens</loc>
     <lastmod>2024-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/landing pages/GrillPod3.JPG</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/landing pages/GrillPod3.JPG</image:loc>
       <image:title>Grill Pods Maghera</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://nmgoutdoorliving.com/blog/custom-sheds-northern-ireland-garden-offices</loc>
+    <loc>https://nmgpvcsupplies.co.uk/blog/custom-sheds-northern-ireland-garden-offices</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://nmgoutdoorliving.com/Shed1.png</image:loc>
+      <image:loc>https://nmgpvcsupplies.co.uk/Shed1.png</image:loc>
       <image:title>Custom Sheds Northern Ireland</image:title>
     </image:image>
   </url>

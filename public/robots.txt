@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://nmgoutdoorliving.com/sitemap.xml
+Sitemap: https://nmgpvcsupplies.co.uk/sitemap.xml
 
 # Disallow admin areas
 Disallow: /admin/

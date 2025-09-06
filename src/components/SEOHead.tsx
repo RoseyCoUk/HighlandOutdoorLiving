@@ -26,7 +26,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   description = 'Transform your outdoor space with premium saunas, all-weather grill pods, and custom sheds in Northern Ireland. Expert installation in Maghera, Belfast, and beyond.',
   keywords = ['outdoor living', 'saunas', 'grill pods', 'custom sheds', 'Northern Ireland', 'Maghera', 'Belfast', 'garden offices', 'outdoor kitchens'],
   image = '/landing pages/Sauna1.JPG',
-  url = 'https://nmgoutdoorliving.com',
+  url = 'https://nmgpvcsupplies.co.uk',
   type = 'website',
   author = 'NMG Outdoor Living',
   publishedTime,
@@ -35,8 +35,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   tags = [],
   product
 }) => {
-  const fullUrl = url.startsWith('http') ? url : `https://nmgoutdoorliving.com${url}`;
-  const fullImageUrl = image.startsWith('http') ? image : `https://nmgoutdoorliving.com${image}`;
+  const fullUrl = url.startsWith('http') ? url : `https://nmgpvcsupplies.co.uk${url}`;
+  const fullImageUrl = image.startsWith('http') ? image : `https://nmgpvcsupplies.co.uk${image}`;
 
   return (
     <Helmet>
@@ -93,7 +93,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "@type": "LocalBusiness",
           "name": "NMG Outdoor Living",
           "description": "Premium outdoor living solutions including steel-framed saunas, weatherproof grill pods, and custom sheds in Northern Ireland",
-          "url": "https://nmgoutdoorliving.com",
+          "url": "https://nmgpvcsupplies.co.uk",
           "telephone": "+447730510368",
           "email": "nigelmcg@gmail.com",
           "address": {
@@ -128,9 +128,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "https://www.instagram.com/nmg_outdoorliving"
           ],
           "image": [
-            "https://nmgoutdoorliving.com/landing pages/Sauna1.JPG",
-            "https://nmgoutdoorliving.com/landing pages/GrillPod1.JPG",
-            "https://nmgoutdoorliving.com/Shed1.png"
+            "https://nmgpvcsupplies.co.uk/landing pages/Sauna1.JPG",
+            "https://nmgpvcsupplies.co.uk/landing pages/GrillPod1.JPG",
+            "https://nmgpvcsupplies.co.uk/Shed1.png"
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -178,8 +178,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "NMG Outdoor Living",
-          "url": "https://nmgoutdoorliving.com",
-          "logo": "https://nmgoutdoorliving.com/ngmlogo.jpg",
+          "url": "https://nmgpvcsupplies.co.uk",
+          "logo": "https://nmgpvcsupplies.co.uk/ngmlogo.jpg",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+447730510368",
@@ -220,7 +220,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://nmgoutdoorliving.com"
+              "item": "https://nmgpvcsupplies.co.uk"
             },
             {
               "@type": "ListItem",
