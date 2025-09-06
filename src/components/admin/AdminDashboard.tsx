@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { supabase, Lead } from '../../lib/supabase';
-import { Users, TrendingUp, Clock, CheckCircle, BarChart3 } from 'lucide-react';
+import { Users, TrendingUp, Clock, CheckCircle, BarChart3, FileText, Plus } from 'lucide-react';
 import AnalyticsDashboard from './AnalyticsDashboard';
+import BlogGenerator from './BlogGenerator';
+import BlogManager from './BlogManager';
+import BlogEditor from './BlogEditor';
+import { BlogPost } from '../../data/blogPosts';
 
 const AdminDashboard: React.FC = () => {
   const [stats, setStats] = useState({
@@ -11,7 +15,9 @@ const AdminDashboard: React.FC = () => {
     closedLeads: 0,
   });
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'overview' | 'analytics'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'analytics' | 'blogs'>('overview');
+  const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
+  const [showBlogGenerator, setShowBlogGenerator] = useState(false);
 
   useEffect(() => {
     fetchStats();
@@ -56,6 +62,37 @@ const AdminDashboard: React.FC = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleBlogGenerated = (blog: BlogPost) => {
+    // In a real app, you'd save this to your database
+    console.log('Blog generated:', blog);
+    setShowBlogGenerator(false);
+    // You could also update the blog list here
+  };
+
+  const handleEditBlog = (blog: BlogPost) => {
+    setEditingBlog(blog);
+  };
+
+  const handleDeleteBlog = (id: string) => {
+    // In a real app, you'd delete from your database
+    console.log('Delete blog:', id);
+  };
+
+  const handleAddBlog = () => {
+    setShowBlogGenerator(true);
+  };
+
+  const handleSaveBlog = (blog: BlogPost) => {
+    // In a real app, you'd save to your database
+    console.log('Save blog:', blog);
+    setEditingBlog(null);
+  };
+
+  const handlePreviewBlog = (blog: BlogPost) => {
+    // Open blog in new tab for preview
+    window.open(`/blog/${blog.slug}`, '_blank');
   };
 
   const statCards = [
@@ -125,6 +162,17 @@ const AdminDashboard: React.FC = () => {
               <BarChart3 className="h-4 w-4 mr-2" />
               Analytics
             </button>
+            <button
+              onClick={() => setActiveTab('blogs')}
+              className={`py-2 px-1 border-b-2 font-medium text-sm flex items-center ${
+                activeTab === 'blogs'
+                  ? 'border-[#222126] text-[#222126]'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              <FileText className="h-4 w-4 mr-2" />
+              Blogs
+            </button>
           </nav>
         </div>
       </div>
@@ -188,6 +236,29 @@ const AdminDashboard: React.FC = () => {
       )}
 
       {activeTab === 'analytics' && <AnalyticsDashboard />}
+
+      {activeTab === 'blogs' && (
+        <div className="space-y-6">
+          {editingBlog ? (
+            <BlogEditor
+              blog={editingBlog}
+              onSave={handleSaveBlog}
+              onCancel={() => setEditingBlog(null)}
+              onPreview={handlePreviewBlog}
+            />
+          ) : showBlogGenerator ? (
+            <BlogGenerator
+              onBlogGenerated={handleBlogGenerated}
+            />
+          ) : (
+            <BlogManager
+              onEditBlog={handleEditBlog}
+              onDeleteBlog={handleDeleteBlog}
+              onAddBlog={handleAddBlog}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 };
