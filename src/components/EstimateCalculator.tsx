@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAnalytics } from '../hooks/useAnalytics';
+import { trackQuoteButtonClick, trackFormSubmission } from '../hooks/useGA4Events';
 
 interface EstimateFormData {
   product: string;
@@ -192,6 +193,7 @@ const EstimateCalculator: React.FC<EstimateCalculatorProps> = ({ isOpen, onClose
         const estimatedValue = getEstimatedValue(formData.budget);
         analytics.trackEstimateRequest(product, formData.location, estimatedValue);
         analytics.trackLeadConversion('Estimate Calculator', product, estimatedValue);
+        trackFormSubmission('estimate-calculator', 'Estimate Calculator');
         
         // Success - show success message
         setIsSubmitted(true);

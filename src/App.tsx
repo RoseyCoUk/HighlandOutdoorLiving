@@ -37,6 +37,7 @@ import Footer from './components/Footer';
 import EstimateCalculator from './components/EstimateCalculator';
 import { useEstimateCalculator } from './hooks/useEstimateCalculator';
 import { useAnalytics } from './hooks/useAnalytics';
+import { useGA4Events } from './hooks/useGA4Events';
 import SEOHead from './components/SEOHead';
 import FloatingSocialButton from './components/FloatingSocialButton';
 import WebVitalsTracker from './components/WebVitalsTracker';
@@ -55,6 +56,7 @@ const ScrollToTop = () => {
 function App() {
   const { isOpen, openCalculator, closeCalculator } = useEstimateCalculator();
   const analytics = useAnalytics();
+  useGA4Events(); // Initialize GA4 event tracking
   const [showAccessibilityTester, setShowAccessibilityTester] = useState(false);
 
   return (

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { submitLead } from '../lib/forms';
 import { useAnalytics } from '../hooks/useAnalytics';
+import { trackPhoneClick, trackEmailClick, trackFormSubmission } from '../hooks/useGA4Events';
 
 const ContactSection = () => {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ const ContactSection = () => {
         // Track successful form submission
         analytics.trackContactFormSubmit('Contact Section', 'General');
         analytics.trackLeadConversion('Contact Section', 'General', 25);
+        trackFormSubmission('contact-form', 'Contact Section');
         navigate('/thank-you?product=project');
       } else {
         // Fallback to email if Supabase fails
@@ -114,7 +116,10 @@ Source: Contact Section`;
                   <p className="text-[#C5B8AB]/70 text-sm">Phone</p>
                   <a 
                     href="tel:07730510368" 
-                    onClick={() => analytics.trackPhoneClick('Contact Section')}
+                    onClick={() => {
+                      analytics.trackPhoneClick('Contact Section');
+                      trackPhoneClick('07730510368');
+                    }}
                     className="text-white text-xl font-medium hover:text-[#C5B8AB] transition-colors"
                   >
                     07730 510368
@@ -130,7 +135,10 @@ Source: Contact Section`;
                   <p className="text-[#C5B8AB]/70 text-sm">Email</p>
                   <a 
                     href="mailto:nigelmcg@gmail.com" 
-                    onClick={() => analytics.trackEmailClick('Contact Section')}
+                    onClick={() => {
+                      analytics.trackEmailClick('Contact Section');
+                      trackEmailClick('nigelmcg@gmail.com');
+                    }}
                     className="text-white text-xl font-medium hover:text-[#C5B8AB] transition-colors break-all"
                   >
                     nigelmcg@gmail.com

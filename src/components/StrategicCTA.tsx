@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, Phone, Calendar, Calculator, ArrowRight } from 'lucide-react';
+import { trackQuoteButtonClick } from '../hooks/useGA4Events';
 
 interface StrategicCTAProps {
   variant?: 'primary' | 'secondary' | 'floating' | 'banner';
@@ -28,6 +29,7 @@ const StrategicCTA: React.FC<StrategicCTAProps> = ({
       text: text || 'Get Free Quote',
       icon: ChevronRight,
       action: () => {
+        trackQuoteButtonClick('Get Free Quote', 'quote-button');
         document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' });
         onAction?.();
       }
