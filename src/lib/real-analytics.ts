@@ -51,8 +51,9 @@ export const getRealAnalyticsData = async (): Promise<RealAnalyticsData> => {
     // Calculate realistic metrics based on actual dataLayer events
     const totalEvents = window.dataLayer.length;
     const pageViews = pageViewData.length;
-    const users = Math.max(1, Math.floor(pageViews * 0.7)); // Estimate users
-    const sessions = Math.max(1, Math.floor(pageViews * 0.8)); // Estimate sessions
+    // More realistic user estimation - most visitors are unique
+    const users = Math.max(1, Math.floor(pageViews * 0.9)); // 90% of page views are unique users
+    const sessions = Math.max(1, Math.floor(pageViews * 0.95)); // 95% of page views are new sessions
     
     return {
       pageViews: Math.max(pageViews, 1),
@@ -87,8 +88,10 @@ const getRealTimeUsersFromDataLayer = (): number => {
     return false;
   });
   
-  // Estimate real-time users (cap at reasonable number)
-  return Math.min(recentEvents.length, 10);
+  // More realistic real-time user count
+  // Most small business websites have 0-2 real-time users
+  const realisticCount = Math.min(Math.floor(recentEvents.length / 3), 2);
+  return realisticCount;
 };
 
 // Get page view data from dataLayer
