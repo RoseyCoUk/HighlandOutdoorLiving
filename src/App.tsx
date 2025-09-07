@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
@@ -16,23 +16,26 @@ import LiveChat from './components/LiveChat';
 import FAQSection from './components/FAQSection';
 import AccessibilityManager from './components/AccessibilityManager';
 import AccessibilityTester from './components/AccessibilityTester';
-import GrillPodPage from './pages/GrillPodPage';
-import SaunaPage from './pages/SaunaPage';
-import ShedsPage from './pages/ShedsPage';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import ContactPage from './pages/ContactPage';
-import GalleryPage from './pages/GalleryPage';
-import BlogPage from './pages/BlogPage';
-import BlogPostPage from './pages/BlogPostPage';
-import AdminLayout from './components/admin/AdminLayout';
-import AdminLogin from './components/admin/AdminLogin';
-import AdminDashboard from './components/admin/AdminDashboard';
-import LeadsPage from './components/admin/LeadsPage';
-import AdminSettings from './components/admin/AdminSettings';
-import AdminGuide from './components/admin/AdminGuide';
-import ThankYouPage from './pages/ThankYouPage';
-import NotFoundPage from './pages/NotFoundPage';
+// Lazy load pages for better performance
+const GrillPodPage = lazy(() => import('./pages/GrillPodPage'));
+const SaunaPage = lazy(() => import('./pages/SaunaPage'));
+const ShedsPage = lazy(() => import('./pages/ShedsPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
+const ThankYouPage = lazy(() => import('./pages/ThankYouPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
+// Lazy load admin components
+const AdminLayout = lazy(() => import('./components/admin/AdminLayout'));
+const AdminLogin = lazy(() => import('./components/admin/AdminLogin'));
+const AdminDashboard = lazy(() => import('./components/admin/AdminDashboard'));
+const LeadsPage = lazy(() => import('./components/admin/LeadsPage'));
+const AdminSettings = lazy(() => import('./components/admin/AdminSettings'));
+const AdminGuide = lazy(() => import('./components/admin/AdminGuide'));
 import Footer from './components/Footer';
 import EstimateCalculator from './components/EstimateCalculator';
 import { useEstimateCalculator } from './hooks/useEstimateCalculator';
@@ -68,7 +71,8 @@ function App() {
           <AccessibilityManager>
           <Header />
           <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />
-          <Routes>
+          <Suspense fallback={<div className="min-h-screen bg-[#222126] flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C5B8AB]"></div></div>}>
+            <Routes>
         <Route path="/" element={
           <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
             <SEOHead 
@@ -108,7 +112,8 @@ function App() {
           <Route path="settings" element={<AdminSettings />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
-                        </Routes>
+            </Routes>
+          </Suspense>
           <Footer onGetEstimate={openCalculator} />
           <FloatingSocialButton />
           <LiveChat />
