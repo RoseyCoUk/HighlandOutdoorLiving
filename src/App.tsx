@@ -69,10 +69,42 @@ function App() {
         <WebVitalsTracker>
           <PerformanceMonitor />
           <AccessibilityManager>
-          <Header />
-          <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />
-          <Suspense fallback={<div className="min-h-screen bg-[#222126] flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C5B8AB]"></div></div>}>
-            <Routes>
+          <AppContent 
+            isOpen={isOpen} 
+            openCalculator={openCalculator} 
+            closeCalculator={closeCalculator}
+            showAccessibilityTester={showAccessibilityTester}
+            setShowAccessibilityTester={setShowAccessibilityTester}
+          />
+          </AccessibilityManager>
+        </WebVitalsTracker>
+        </Router>
+      </HelmetProvider>
+  );
+}
+
+function AppContent({ 
+  isOpen, 
+  openCalculator, 
+  closeCalculator, 
+  showAccessibilityTester, 
+  setShowAccessibilityTester 
+}: {
+  isOpen: boolean;
+  openCalculator: () => void;
+  closeCalculator: () => void;
+  showAccessibilityTester: boolean;
+  setShowAccessibilityTester: (show: boolean) => void;
+}) {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
+  return (
+    <>
+      {!isAdminRoute && <Header />}
+      {!isAdminRoute && <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />}
+      <Suspense fallback={<div className="min-h-screen bg-[#222126] flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C5B8AB]"></div></div>}>
+        <Routes>
         <Route path="/" element={
           <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
             <SEOHead 
@@ -114,19 +146,16 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
-          <Footer onGetEstimate={openCalculator} />
-          <FloatingSocialButton />
-          <LiveChat />
+          {!isAdminRoute && <Footer onGetEstimate={openCalculator} />}
+          {!isAdminRoute && <FloatingSocialButton />}
+          {!isAdminRoute && <LiveChat />}
           {process.env.NODE_ENV === 'development' && (
             <AccessibilityTester 
               isVisible={showAccessibilityTester} 
               onToggle={() => setShowAccessibilityTester(!showAccessibilityTester)} 
             />
           )}
-          </AccessibilityManager>
-        </WebVitalsTracker>
-        </Router>
-      </HelmetProvider>
+    </>
   );
 }
 

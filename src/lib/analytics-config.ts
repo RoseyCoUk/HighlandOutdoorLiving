@@ -11,7 +11,7 @@ export interface AnalyticsConfig {
 export const getAnalyticsConfig = (): AnalyticsConfig => {
   const googleTagManagerId = import.meta.env.VITE_GOOGLE_TAG_MANAGER_ID || 'GTM-PBDNWBWQ';
   const googleAnalyticsId = import.meta.env.VITE_GOOGLE_ANALYTICS_ID || 'G-7K63E6241H';
-  const googleSearchConsoleProperty = import.meta.env.VITE_GOOGLE_SEARCH_CONSOLE_PROPERTY || 'nmgoutdoorliving.com';
+  const googleSearchConsoleProperty = import.meta.env.VITE_GOOGLE_SEARCH_CONSOLE_PROPERTY || 'nmgpvcsupplies.co.uk';
   
   const isDevelopment = import.meta.env.DEV;
   const isProduction = import.meta.env.PROD;
