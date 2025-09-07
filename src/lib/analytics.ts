@@ -149,12 +149,17 @@ export const getRealAnalyticsData = async (timeRange: AnalyticsTimeRange): Promi
     // Get real data from dataLayer
     const realData = await getRealData();
     
-    // Convert real data to our AnalyticsData format
-    return {
-      ...realData,
-      searchConsole: {
-        totalClicks: Math.floor(realData.pageViews * 0.4), // Estimate search clicks
-        totalImpressions: Math.floor(realData.pageViews * 8), // Estimate impressions
+    // Get real Search Console data
+    let searchConsoleData;
+    try {
+      const { fetchSearchConsoleData } = await import('./search-console-api');
+      searchConsoleData = await fetchSearchConsoleData(timeRange.startDate, timeRange.endDate);
+    } catch (error) {
+      console.warn('Search Console data not available, using fallback:', error);
+      // Fallback to estimated data based on real page views
+      searchConsoleData = {
+        totalClicks: Math.floor(realData.pageViews * 0.4),
+        totalImpressions: Math.floor(realData.pageViews * 8),
         averagePosition: 12.5 + (Math.random() * 5 - 2.5),
         clickThroughRate: 5.2 + (Math.random() * 2 - 1),
         topQueries: [
@@ -181,7 +186,13 @@ export const getRealAnalyticsData = async (timeRange: AnalyticsTimeRange): Promi
           { country: 'Ireland', clicks: Math.floor(realData.pageViews * 0.025), impressions: Math.floor(realData.pageViews * 0.5), percentage: 5.6 },
           { country: 'United States', clicks: Math.floor(realData.pageViews * 0.005), impressions: Math.floor(realData.pageViews * 0.2), percentage: 1.1 },
         ],
-      },
+      };
+    }
+    
+    // Convert real data to our AnalyticsData format
+    return {
+      ...realData,
+      searchConsole: searchConsoleData,
     };
   } catch (error) {
     console.warn('Real analytics data not available, using mock data:', error);

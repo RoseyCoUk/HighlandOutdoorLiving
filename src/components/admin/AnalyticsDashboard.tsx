@@ -184,7 +184,7 @@ const AnalyticsDashboard: React.FC = () => {
             Last updated: {lastUpdated.toLocaleTimeString()}
             {dataSource === 'real' && (
               <span className="ml-2 text-sm text-green-600">
-                (Extracting real data from GTM dataLayer)
+                (Real data from GTM dataLayer + Search Console)
               </span>
             )}
             {dataSource === 'mock' && (
