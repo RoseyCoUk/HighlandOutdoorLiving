@@ -273,6 +273,11 @@ class AnalyticsService {
   public getConfig() {
     return this.config;
   }
+
+  // Get GA4 measurement ID
+  public getMeasurementId(): string | null {
+    return this.config.googleAnalyticsId || null;
+  }
 }
 
 // Create singleton instance

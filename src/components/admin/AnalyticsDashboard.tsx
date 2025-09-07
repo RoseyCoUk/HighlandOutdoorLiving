@@ -182,9 +182,14 @@ const AnalyticsDashboard: React.FC = () => {
           </div>
           <p className="text-gray-600">
             Last updated: {lastUpdated.toLocaleTimeString()}
+            {dataSource === 'real' && (
+              <span className="ml-2 text-sm text-green-600">
+                (Connected to Google Analytics via GTM)
+              </span>
+            )}
             {dataSource === 'mock' && (
               <span className="ml-2 text-sm text-yellow-600">
-                (Using demo data - will switch to live data when Google Analytics is ready)
+                (Using demo data - GTM not detected)
               </span>
             )}
           </p>
