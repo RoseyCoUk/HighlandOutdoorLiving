@@ -130,7 +130,7 @@ const isGoogleAnalyticsReady = (): boolean => {
   return analyticsService.isReady();
 };
 
-// Real Google Analytics integration using GA4 Data API
+// Real Google Analytics integration using dataLayer extraction
 export const getRealAnalyticsData = async (timeRange: AnalyticsTimeRange): Promise<AnalyticsData> => {
   try {
     // Check if Google Analytics is ready
@@ -138,43 +138,48 @@ export const getRealAnalyticsData = async (timeRange: AnalyticsTimeRange): Promi
       throw new Error('Google Analytics not ready or not on live site');
     }
 
-    // Import the GA4 API dynamically to avoid circular dependencies
-    const { fetchGA4Data } = await import('./ga4-api');
+    // Import the real analytics module dynamically
+    const { getRealAnalyticsData: getRealData, hasRealAnalyticsData } = await import('./real-analytics');
     
-    // Fetch real data from GA4
-    const ga4Data = await fetchGA4Data(timeRange.startDate, timeRange.endDate);
+    // Check if we have real data available
+    if (!hasRealAnalyticsData()) {
+      throw new Error('No real analytics data available');
+    }
     
-    // Convert GA4 data to our AnalyticsData format
+    // Get real data from dataLayer
+    const realData = await getRealData();
+    
+    // Convert real data to our AnalyticsData format
     return {
-      ...ga4Data,
+      ...realData,
       searchConsole: {
-        totalClicks: Math.floor(ga4Data.pageViews * 0.4), // Estimate search clicks
-        totalImpressions: Math.floor(ga4Data.pageViews * 8), // Estimate impressions
+        totalClicks: Math.floor(realData.pageViews * 0.4), // Estimate search clicks
+        totalImpressions: Math.floor(realData.pageViews * 8), // Estimate impressions
         averagePosition: 12.5 + (Math.random() * 5 - 2.5),
         clickThroughRate: 5.2 + (Math.random() * 2 - 1),
         topQueries: [
-          { query: 'outdoor saunas northern ireland', clicks: Math.floor(ga4Data.pageViews * 0.05), impressions: Math.floor(ga4Data.pageViews * 0.8), position: 8.2, ctr: 5.3 },
-          { query: 'grill pods belfast', clicks: Math.floor(ga4Data.pageViews * 0.04), impressions: Math.floor(ga4Data.pageViews * 0.7), position: 9.1, ctr: 5.3 },
-          { query: 'custom sheds maghera', clicks: Math.floor(ga4Data.pageViews * 0.03), impressions: Math.floor(ga4Data.pageViews * 0.6), position: 7.8, ctr: 4.7 },
-          { query: 'garden offices northern ireland', clicks: Math.floor(ga4Data.pageViews * 0.025), impressions: Math.floor(ga4Data.pageViews * 0.5), position: 11.2, ctr: 4.7 },
-          { query: 'outdoor living spaces', clicks: Math.floor(ga4Data.pageViews * 0.02), impressions: Math.floor(ga4Data.pageViews * 0.4), position: 13.5, ctr: 4.8 },
+          { query: 'outdoor saunas northern ireland', clicks: Math.floor(realData.pageViews * 0.05), impressions: Math.floor(realData.pageViews * 0.8), position: 8.2, ctr: 5.3 },
+          { query: 'grill pods belfast', clicks: Math.floor(realData.pageViews * 0.04), impressions: Math.floor(realData.pageViews * 0.7), position: 9.1, ctr: 5.3 },
+          { query: 'custom sheds maghera', clicks: Math.floor(realData.pageViews * 0.03), impressions: Math.floor(realData.pageViews * 0.6), position: 7.8, ctr: 4.7 },
+          { query: 'garden offices northern ireland', clicks: Math.floor(realData.pageViews * 0.025), impressions: Math.floor(realData.pageViews * 0.5), position: 11.2, ctr: 4.7 },
+          { query: 'outdoor living spaces', clicks: Math.floor(realData.pageViews * 0.02), impressions: Math.floor(realData.pageViews * 0.4), position: 13.5, ctr: 4.8 },
         ],
         topPages: [
-          { page: '/saunas', clicks: Math.floor(ga4Data.pageViews * 0.12), impressions: Math.floor(ga4Data.pageViews * 2.2), position: 8.5, ctr: 5.5 },
-          { page: '/grill-pods', clicks: Math.floor(ga4Data.pageViews * 0.095), impressions: Math.floor(ga4Data.pageViews * 1.8), position: 9.2, ctr: 5.3 },
-          { page: '/', clicks: Math.floor(ga4Data.pageViews * 0.085), impressions: Math.floor(ga4Data.pageViews * 1.6), position: 10.1, ctr: 5.3 },
-          { page: '/sheds', clicks: Math.floor(ga4Data.pageViews * 0.07), impressions: Math.floor(ga4Data.pageViews * 1.4), position: 8.8, ctr: 5.0 },
-          { page: '/gallery', clicks: Math.floor(ga4Data.pageViews * 0.045), impressions: Math.floor(ga4Data.pageViews * 0.9), position: 12.3, ctr: 5.0 },
+          { page: '/saunas', clicks: Math.floor(realData.pageViews * 0.12), impressions: Math.floor(realData.pageViews * 2.2), position: 8.5, ctr: 5.5 },
+          { page: '/grill-pods', clicks: Math.floor(realData.pageViews * 0.095), impressions: Math.floor(realData.pageViews * 1.8), position: 9.2, ctr: 5.3 },
+          { page: '/', clicks: Math.floor(realData.pageViews * 0.085), impressions: Math.floor(realData.pageViews * 1.6), position: 10.1, ctr: 5.3 },
+          { page: '/sheds', clicks: Math.floor(realData.pageViews * 0.07), impressions: Math.floor(realData.pageViews * 1.4), position: 8.8, ctr: 5.0 },
+          { page: '/gallery', clicks: Math.floor(realData.pageViews * 0.045), impressions: Math.floor(realData.pageViews * 0.9), position: 12.3, ctr: 5.0 },
         ],
         devices: [
-          { device: 'Desktop', clicks: Math.floor(ga4Data.pageViews * 0.28), impressions: Math.floor(ga4Data.pageViews * 4.8), percentage: 62.2 },
-          { device: 'Mobile', clicks: Math.floor(ga4Data.pageViews * 0.14), impressions: Math.floor(ga4Data.pageViews * 2.8), percentage: 31.1 },
-          { device: 'Tablet', clicks: Math.floor(ga4Data.pageViews * 0.03), impressions: Math.floor(ga4Data.pageViews * 0.9), percentage: 6.7 },
+          { device: 'Desktop', clicks: Math.floor(realData.pageViews * 0.28), impressions: Math.floor(realData.pageViews * 4.8), percentage: 62.2 },
+          { device: 'Mobile', clicks: Math.floor(realData.pageViews * 0.14), impressions: Math.floor(realData.pageViews * 2.8), percentage: 31.1 },
+          { device: 'Tablet', clicks: Math.floor(realData.pageViews * 0.03), impressions: Math.floor(realData.pageViews * 0.9), percentage: 6.7 },
         ],
         countries: [
-          { country: 'United Kingdom', clicks: Math.floor(ga4Data.pageViews * 0.42), impressions: Math.floor(ga4Data.pageViews * 7.8), percentage: 93.3 },
-          { country: 'Ireland', clicks: Math.floor(ga4Data.pageViews * 0.025), impressions: Math.floor(ga4Data.pageViews * 0.5), percentage: 5.6 },
-          { country: 'United States', clicks: Math.floor(ga4Data.pageViews * 0.005), impressions: Math.floor(ga4Data.pageViews * 0.2), percentage: 1.1 },
+          { country: 'United Kingdom', clicks: Math.floor(realData.pageViews * 0.42), impressions: Math.floor(realData.pageViews * 7.8), percentage: 93.3 },
+          { country: 'Ireland', clicks: Math.floor(realData.pageViews * 0.025), impressions: Math.floor(realData.pageViews * 0.5), percentage: 5.6 },
+          { country: 'United States', clicks: Math.floor(realData.pageViews * 0.005), impressions: Math.floor(realData.pageViews * 0.2), percentage: 1.1 },
         ],
       },
     };
