@@ -138,16 +138,16 @@ export const getRealAnalyticsData = async (timeRange: AnalyticsTimeRange): Promi
       throw new Error('Google Analytics not ready or not on live site');
     }
 
-    // Import the real analytics module dynamically
-    const { getRealAnalyticsData: getRealData, hasRealAnalyticsData } = await import('./real-analytics');
+    // Import the real GA4 API module dynamically
+    const { getRealGA4Data, hasRealGA4Data } = await import('./real-ga4-api');
     
-    // Check if we have real data available
-    if (!hasRealAnalyticsData()) {
-      throw new Error('No real analytics data available');
+    // Check if we have real GA4 data available
+    if (!hasRealGA4Data()) {
+      throw new Error('No real GA4 data available');
     }
     
-    // Get real data from dataLayer
-    const realData = await getRealData();
+    // Get REAL data from Google Analytics 4
+    const realData = await getRealGA4Data();
     
     // Get real Search Console data
     let searchConsoleData;
