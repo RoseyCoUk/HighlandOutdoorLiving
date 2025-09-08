@@ -76,6 +76,13 @@ export const EVENTS = {
   // Admin actions
   ADMIN_LOGIN: 'admin_login',
   ADMIN_ACTION: 'admin_action',
+  
+  // UTM tracking
+  UTM_SOURCE: 'utm_source',
+  UTM_MEDIUM: 'utm_medium',
+  UTM_CAMPAIGN: 'utm_campaign',
+  UTM_TERM: 'utm_term',
+  UTM_CONTENT: 'utm_content',
 } as const;
 
 // Product categories for tracking

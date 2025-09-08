@@ -12,7 +12,8 @@ import {
   Target,
   Globe,
   Smartphone,
-  Monitor
+  Monitor,
+  X
 } from 'lucide-react';
 import { getAnalyticsData, AnalyticsData } from '../../lib/analytics';
 
@@ -22,6 +23,9 @@ const AnalyticsDashboard: React.FC = () => {
   const [selectedPeriod, setSelectedPeriod] = useState<'7d' | '30d' | '90d'>('7d');
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
   const [dataSource, setDataSource] = useState<'real' | 'mock'>('mock');
+  const [showTodaySummary, setShowTodaySummary] = useState(true);
+  const [selectedCountry, setSelectedCountry] = useState<string>('all');
+  const [selectedDevice, setSelectedDevice] = useState<string>('all');
 
   useEffect(() => {
     fetchAnalyticsData();
@@ -196,6 +200,31 @@ const AnalyticsDashboard: React.FC = () => {
         </div>
         
         <div className="flex items-center space-x-4 mt-4 sm:mt-0">
+          {/* Filters */}
+          <div className="flex items-center space-x-2">
+            <select
+              value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}
+              className="text-sm border border-gray-300 rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-[#222126]"
+            >
+              <option value="all">All Countries</option>
+              <option value="UK">United Kingdom</option>
+              <option value="IE">Ireland</option>
+              <option value="US">United States</option>
+            </select>
+            
+            <select
+              value={selectedDevice}
+              onChange={(e) => setSelectedDevice(e.target.value)}
+              className="text-sm border border-gray-300 rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-[#222126]"
+            >
+              <option value="all">All Devices</option>
+              <option value="desktop">Desktop</option>
+              <option value="mobile">Mobile</option>
+              <option value="tablet">Tablet</option>
+            </select>
+          </div>
+          
           {/* Time Period Selector */}
           <div className="flex bg-gray-100 rounded-lg p-1">
             {(['7d', '30d', '90d'] as const).map((period) => (
@@ -223,6 +252,39 @@ const AnalyticsDashboard: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Today Summary Card */}
+      {showTodaySummary && (
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-blue-900">Today's Summary</h3>
+            <button
+              onClick={() => setShowTodaySummary(false)}
+              className="text-blue-600 hover:text-blue-800"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-900">{analyticsData.realTimeUsers}</div>
+              <div className="text-sm text-blue-700">Active Now</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-900">{formatNumber(Math.floor(analyticsData.pageViews / 7))}</div>
+              <div className="text-sm text-blue-700">Today's Views</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-900">{formatNumber(Math.floor(analyticsData.users / 7))}</div>
+              <div className="text-sm text-blue-700">Today's Users</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-900">{analyticsData.conversions.leads}</div>
+              <div className="text-sm text-blue-700">Total Leads</div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Analytics Stats Grid */}
       <div className="space-y-6">

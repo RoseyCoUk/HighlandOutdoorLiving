@@ -22,9 +22,9 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = 'NMG Outdoor Living - Premium Saunas, Grill Pods & Custom Sheds in Northern Ireland',
-  description = 'Transform your outdoor space with premium saunas, all-weather grill pods, and custom sheds in Northern Ireland. Expert installation in Maghera, Belfast, and beyond.',
-  keywords = ['outdoor living', 'saunas', 'grill pods', 'custom sheds', 'Northern Ireland', 'Maghera', 'Belfast', 'garden offices', 'outdoor kitchens'],
+  title = 'NMG Outdoor Living - Premium Saunas, Grill Pods & Steel Sheds in Northern Ireland',
+  description = 'Transform your outdoor space with premium saunas, all-weather grill pods, and galvanized steel sheds in Northern Ireland. Expert installation in Maghera, Belfast, Derry, and across NI.',
+  keywords = ['garden sheds Northern Ireland', 'steel sheds Belfast', 'outdoor sauna UK', 'garden sauna Ireland', 'grill pods UK', 'galvanized sheds NI', 'weatherproof sauna', 'outdoor kitchen pod', 'custom sheds Maghera', 'saunas Derry', 'heavy duty garden sheds', 'energy efficient sauna'],
   image = '/landing pages/Sauna1.JPG',
   url = 'https://nmgpvcsupplies.co.uk',
   type = 'website',
@@ -114,15 +114,32 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "Sa 09:00-16:00"
           ],
           "priceRange": "££",
-          "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": 54.8439,
-              "longitude": -6.6744
+          "serviceArea": [
+            {
+              "@type": "City",
+              "name": "Belfast"
             },
-            "geoRadius": "50000"
-          },
+            {
+              "@type": "City", 
+              "name": "Derry"
+            },
+            {
+              "@type": "City",
+              "name": "Maghera"
+            },
+            {
+              "@type": "Country",
+              "name": "Northern Ireland"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom"
+            },
+            {
+              "@type": "Country",
+              "name": "Ireland"
+            }
+          ],
           "sameAs": [
             "https://www.facebook.com/profile.php?id=100065453470878",
             "https://www.instagram.com/nmg_outdoorliving"
@@ -141,7 +158,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
                 "itemOffered": {
                   "@type": "Service",
                   "name": "Garden Saunas",
-                  "description": "Steel-framed, fully-insulated saunas with Harvia heaters"
+                  "description": "Galvanized steel-framed saunas that heat up in 15-20 minutes. Weatherproof composite cladding, maintenance-free, built for UK weather conditions."
                 }
               },
               {
@@ -149,15 +166,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({
                 "itemOffered": {
                   "@type": "Service",
                   "name": "Grill Pods",
-                  "description": "Weatherproof outdoor kitchens with Mont Alpi appliances"
+                  "description": "Luxury outdoor kitchen pods with composite cladding. All-weather cooking areas with built-in appliances, perfect for UK climate."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Custom Sheds",
-                  "description": "Bespoke storage solutions and garden offices"
+                  "name": "Steel Garden Sheds",
+                  "description": "Heavy-duty galvanized steel sheds requiring only one concrete base. More affordable and less hassle than competitors requiring double bases."
                 }
               }
             ]
