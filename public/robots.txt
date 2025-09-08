@@ -8,7 +8,7 @@ Sitemap: https://nmgpvcsupplies.co.uk/sitemap.xml
 Disallow: /admin/
 Disallow: /admin/login
 
-# Allow all other content
+# Allow all important content
 Allow: /blog/
 Allow: /gallery/
 Allow: /saunas/
@@ -17,6 +17,18 @@ Allow: /sheds/
 Allow: /services/
 Allow: /about/
 Allow: /contact/
+Allow: /belfast/
+Allow: /derry/
 
-# Crawl delay (optional)
+# Allow search engines to access CSS and JS files
+Allow: /src/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+
+# Crawl delay for better server performance
 Crawl-delay: 1 
