@@ -11,14 +11,14 @@ const GalleryPage = () => {
       id: 1,
       title: 'Luxury Garden Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna1.JPG',
+      image: '/landing pages/Sauna6.JPG',
       description: 'Steel-framed, fully-insulated sauna with premium finishes'
     },
     {
       id: 2,
       title: 'Premium Grill Pod',
       category: 'Grill Pod',
-      image: '/landing pages/GrillPod1.JPG',
+      image: '/Nigel Grill Pod/022 HiRes.jpg',
       description: 'All-weather grill pod with Mont Alpi kitchen'
     },
     {
@@ -39,14 +39,14 @@ const GalleryPage = () => {
       id: 4,
       title: 'Compact Spa Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna2.JPG',
+      image: '/landing pages/Sauna7.JPG',
       description: 'Space-efficient sauna perfect for smaller gardens'
     },
     {
       id: 5,
       title: 'Entertainment Grill Pod',
       category: 'Grill Pod',
-      image: '/landing pages/GrillPod2.JPG',
+      image: '/Nigel Grill Pod/008.jpg',
       description: 'Large grill pod designed for family gatherings'
     },
     {
@@ -60,7 +60,7 @@ const GalleryPage = () => {
       id: 7,
       title: 'Garden Wellness Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna3.JPG',
+      image: '/landing pages/Sauna8.JPG',
       description: 'Thermal aspen interior sauna for ultimate relaxation'
     },
     {

@@ -9,19 +9,19 @@ const ProjectGallery = () => {
     {
       title: 'Premium Grill Pod Installation',
       category: 'Grill Pods',
-      image: '/landing pages/GrillPod1.JPG',
+      image: '/Nigel Grill Pod/022 HiRes.jpg',
       description: 'Custom-built weatherproof grill pod with Mont Alpi kitchen'
     },
     {
       title: 'Luxury Garden Sauna',
       category: 'Saunas',
-      image: '/landing pages/Sauna1.JPG',
+      image: '/landing pages/Sauna6.JPG',
       description: 'Steel-framed, fully-insulated sauna with premium finishes'
     },
     {
       title: 'Modern Outdoor Kitchen',
       category: 'Grill Pods',
-      image: '/landing pages/GrillPod2.JPG',
+      image: '/Nigel Grill Pod/003.jpg',
       description: 'All-weather outdoor kitchen perfect for year-round entertaining'
     },
     {
@@ -51,25 +51,25 @@ const ProjectGallery = () => {
     {
       title: 'Garden Wellness Sauna',
       category: 'Saunas',
-      image: '/landing pages/Sauna2.JPG',
+      image: '/landing pages/Sauna7.JPG',
       description: 'Thermal aspen interior sauna for ultimate relaxation'
     },
     {
       title: 'Entertainment Grill Pod',
       category: 'Grill Pods',
-      image: '/landing pages/GrillPod3.JPG',
+      image: '/Nigel Grill Pod/008.jpg',
       description: 'Spacious grill pod designed for family gatherings'
     },
     {
       title: 'Compact Garden Sauna',
       category: 'Saunas',
-      image: '/landing pages/Sauna3.JPG',
+      image: '/landing pages/Sauna8.JPG',
       description: 'Space-efficient sauna perfect for smaller gardens'
     },
     {
       title: 'Professional Grill Pod',
       category: 'Grill Pods',
-      image: '/landing pages/GrillPod4.JPG',
+      image: '/Nigel Grill Pod/015.jpg',
       description: 'Commercial-grade outdoor kitchen installation'
     },
     {
@@ -77,6 +77,24 @@ const ProjectGallery = () => {
       category: 'Sheds',
       image: '/Shed1.png',
       description: 'Insulated garden office with modern amenities'
+    },
+    {
+      title: 'Interior Sauna Experience',
+      category: 'Saunas',
+      image: '/landing pages/InsideSauna1.JPG',
+      description: 'Premium interior sauna with thermal aspen finishes'
+    },
+    {
+      title: 'Grill Pod Interior',
+      category: 'Grill Pods',
+      image: '/Nigel Grill Pod/001.jpg',
+      description: 'Spacious interior with premium kitchen appliances'
+    },
+    {
+      title: 'Garden Room Retreat',
+      category: 'Other',
+      image: '/garden rooms/8ab6ed75-b93d-445e-9adf-4db36c921a87.JPG',
+      description: 'Beautiful garden room for year-round outdoor living'
     }
   ];
 
