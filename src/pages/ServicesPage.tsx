@@ -25,7 +25,7 @@ const ServicesPage = () => {
       title: 'Garden Rooms',
       description: 'Create beautiful outdoor living spaces with our custom garden rooms. From pizza oven rooms to dining areas, perfect for entertaining and relaxing in your garden year-round.',
       features: ['Custom Design', 'Galvanised Steel Frame', 'All-Weather Construction', 'LED Lighting', 'Professional Installation'],
-      image: '/sheds/IMG_2006.HEIC',
+      image: '/garden rooms/Pizza Oven.JPG',
       link: '/garden-rooms',
       icon: Building2
     },
@@ -33,7 +33,7 @@ const ServicesPage = () => {
       title: 'Galvanised Steel Sheds',
       description: 'Durable, weather-resistant steel sheds built to last. From storage solutions to garden offices and workshops, tailored to your space and requirements.',
       features: ['Galvanised Steel Frame', 'Weather-Resistant', 'Bespoke Designs', 'Professional Installation', 'Various Sizes'],
-      image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG',
+      image: '/sheds/IMG_3774.JPG',
       link: '/sheds',
       icon: Home
     }

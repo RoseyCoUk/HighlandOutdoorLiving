@@ -74,7 +74,7 @@ const GalleryPage = () => {
       id: 8.5,
       title: 'Luxury Garden Room',
       category: 'Garden Room',
-      image: '/garden rooms/b94fa607-4b57-4496-8726-a3a38f5e91e3.JPG',
+      image: '/garden rooms/Pizza Oven1.JPG',
       description: 'Premium garden room with panoramic views'
     },
     {
@@ -102,14 +102,14 @@ const GalleryPage = () => {
       id: 11.5,
       title: 'Contemporary Garden Room',
       category: 'Garden Room',
-      image: '/garden rooms/e30f758f-dc62-4ef9-9b91-b92acbe279fd.JPG',
+      image: '/garden rooms/Pizza Oven Closed.JPG',
       description: 'Modern garden room with sleek design and functionality'
     },
     {
       id: 11.6,
       title: 'The Old Thatch Inn Pizza Oven Room',
       category: 'Garden Room',
-      image: '/sheds/IMG_2006.HEIC',
+      image: '/garden rooms/Pizza Oven.JPG',
       description: 'Bespoke garden room with integrated pizza oven - galvanised steel frame with stylish cladding and roller door'
     },
     {

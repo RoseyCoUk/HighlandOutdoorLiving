@@ -115,7 +115,7 @@ const GrillPodPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: "url('/Nigel Grill Pod/001.jpg')"
+            backgroundImage: "url('/Nigel Grill Pod/Grill Pod Exterior.jpg')"
           }}
         ></div>
         
@@ -218,7 +218,7 @@ const GrillPodPage = () => {
             {/* Left - Image */}
             <div className="relative">
               <img
-                src="/Nigel Grill Pod/002.jpg"
+                src="/Nigel Grill Pod/Grill Pod + Kitchen Shot.jpg"
                 alt="Grill Pod Interior"
                 className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-700"
               />
@@ -265,7 +265,7 @@ const GrillPodPage = () => {
             {/* Left - Product Image */}
             <div className="relative">
               <img
-                src="/Nigel Grill Pod/003.jpg"
+                src="/Nigel Grill Pod/Outdoor Kitchen Shot 2.jpg"
                 alt="Mont Alpi 805 DFC Kitchen"
                 className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-700"
               />
@@ -401,7 +401,7 @@ const GrillPodPage = () => {
             {/* Left - Image */}
             <div className="relative">
               <img
-                src="/Nigel Grill Pod/004.jpg"
+                src="/Nigel Grill Pod/Grill Pod Scenic Close Shot.jpg"
                 alt="Grill Pod with Pergola"
                 className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-700"
               />
