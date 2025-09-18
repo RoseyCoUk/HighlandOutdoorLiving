@@ -31,28 +31,10 @@ const ProjectGallery = () => {
       category: 'sheds'
     },
     {
-      title: 'Garden Offices',
-      description: 'Professional workspaces in your garden',
-      image: '/Shed1.png',
-      category: 'sheds'
-    },
-    {
-      title: 'Modern Glass Room',
-      description: 'Contemporary outdoor living space with panoramic views',
-      image: '/landing pages/outdoor glass room.JPG',
-      category: 'Other'
-    },
-    {
       title: 'Luxury Glass Pavilion',
       description: 'Premium outdoor entertainment space with glass walls',
       image: '/landing pages/outdoor glass room 2.jpg',
       category: 'Other'
-    },
-    {
-      title: 'Garden Wellness Sauna',
-      category: 'Saunas',
-      image: '/landing pages/Sauna7.JPG',
-      description: 'Thermal aspen interior sauna for ultimate relaxation'
     },
     {
       title: 'Entertainment Grill Pod',
@@ -89,12 +71,6 @@ const ProjectGallery = () => {
       category: 'Grill Pods',
       image: '/Nigel Grill Pod/Grill In Action.jpg',
       description: 'Spacious interior with premium kitchen appliances'
-    },
-    {
-      title: 'Garden Room Retreat',
-      category: 'Other',
-      image: '/garden rooms/outdoor glass room.JPG',
-      description: 'Beautiful garden room for year-round outdoor living'
     },
     {
       title: 'Luxury Pizza Oven Setup',
