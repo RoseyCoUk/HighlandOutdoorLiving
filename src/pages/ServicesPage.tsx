@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Flame, Waves, Home, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Flame, Waves, Home, Phone, Mail, Building2 } from 'lucide-react';
 
 const ServicesPage = () => {
 
@@ -22,10 +22,18 @@ const ServicesPage = () => {
       icon: Flame
     },
     {
-      title: 'Custom Sheds',
-      description: 'From storage solutions to garden offices and workshops, our bespoke sheds are built to last. Tailored to your space and requirements with premium materials.',
-      features: ['Bespoke Designs', 'Multiple Uses', 'Durable Construction', 'Professional Installation', 'Various Sizes'],
-      image: '/Shed1.png',
+      title: 'Garden Rooms',
+      description: 'Create beautiful outdoor living spaces with our custom garden rooms. From pizza oven rooms to dining areas, perfect for entertaining and relaxing in your garden year-round.',
+      features: ['Custom Design', 'Galvanised Steel Frame', 'All-Weather Construction', 'LED Lighting', 'Professional Installation'],
+      image: '/sheds/IMG_2006.HEIC',
+      link: '/garden-rooms',
+      icon: Building2
+    },
+    {
+      title: 'Galvanised Steel Sheds',
+      description: 'Durable, weather-resistant steel sheds built to last. From storage solutions to garden offices and workshops, tailored to your space and requirements.',
+      features: ['Galvanised Steel Frame', 'Weather-Resistant', 'Bespoke Designs', 'Professional Installation', 'Various Sizes'],
+      image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG',
       link: '/sheds',
       icon: Home
     }

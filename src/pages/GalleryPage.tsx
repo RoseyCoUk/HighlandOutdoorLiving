@@ -25,8 +25,15 @@ const GalleryPage = () => {
       id: 3,
       title: 'Modern Storage Shed',
       category: 'Shed',
-      image: '/Shed1.png',
-      description: 'Contemporary shed design with composite cladding'
+      image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG',
+      description: 'Contemporary shed design with galvanised steel frame'
+    },
+    {
+      id: 3.5,
+      title: 'Garden Room',
+      category: 'Garden Room',
+      image: '/garden rooms/8ab6ed75-b93d-445e-9adf-4db36c921a87.JPG',
+      description: 'Beautiful outdoor living space for year-round use'
     },
     {
       id: 4,
@@ -46,7 +53,7 @@ const GalleryPage = () => {
       id: 6,
       title: 'Workshop Shed',
       category: 'Shed',
-      image: '/Shed1.png',
+      image: '/sheds/IMG_3774.JPG',
       description: 'Spacious workshop with power and lighting installation'
     },
     {
@@ -60,8 +67,15 @@ const GalleryPage = () => {
       id: 8,
       title: 'Garden Office Shed',
       category: 'Shed',
-      image: '/Shed1.png',
+      image: '/sheds/84e6f01a-16e9-4a4c-8730-5b0d62c08214.JPG',
       description: 'Insulated garden office with modern finishes'
+    },
+    {
+      id: 8.5,
+      title: 'Luxury Garden Room',
+      category: 'Garden Room',
+      image: '/garden rooms/b94fa607-4b57-4496-8726-a3a38f5e91e3.JPG',
+      description: 'Premium garden room with panoramic views'
     },
     {
       id: 9,
@@ -81,8 +95,22 @@ const GalleryPage = () => {
       id: 11,
       title: 'Luxury Shed Office',
       category: 'Shed',
-      image: '/Shed1.png',
+      image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG',
       description: 'Professional garden office with all amenities'
+    },
+    {
+      id: 11.5,
+      title: 'Contemporary Garden Room',
+      category: 'Garden Room',
+      image: '/garden rooms/e30f758f-dc62-4ef9-9b91-b92acbe279fd.JPG',
+      description: 'Modern garden room with sleek design and functionality'
+    },
+    {
+      id: 11.6,
+      title: 'The Old Thatch Inn Pizza Oven Room',
+      category: 'Garden Room',
+      image: '/sheds/IMG_2006.HEIC',
+      description: 'Bespoke garden room with integrated pizza oven - galvanised steel frame with stylish cladding and roller door'
     },
     {
       id: 12,

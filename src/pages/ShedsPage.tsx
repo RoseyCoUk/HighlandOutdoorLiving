@@ -165,12 +165,12 @@ const ShedsPage = () => {
           {/* Responsive Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { src: '/Shed1.png', alt: 'Custom Storage Shed', title: 'Custom Storage Shed' },
-              { src: '/Shed1.png', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
-              { src: '/Shed1.png', alt: 'Workshop Shed', title: 'Workshop Shed' },
-              { src: '/Shed1.png', alt: 'Traditional Timber Shed', title: 'Traditional Timber Shed' },
-              { src: '/Shed1.png', alt: 'Modern Composite Shed', title: 'Modern Composite Shed' },
-              { src: '/Shed1.png', alt: 'Large Storage Solution', title: 'Large Storage Solution' }
+              { src: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG', alt: 'Galvanised Steel Storage Shed', title: 'Galvanised Steel Storage Shed' },
+              { src: '/sheds/84e6f01a-16e9-4a4c-8730-5b0d62c08214.JPG', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
+              { src: '/sheds/IMG_3774.JPG', alt: 'Workshop Shed', title: 'Workshop Shed' },
+              { src: '/Shed1.png', alt: 'Custom Steel Shed', title: 'Custom Steel Shed' },
+              { src: '/Shed1.png', alt: 'Large Storage Solution', title: 'Large Storage Solution' },
+              { src: '/Shed1.png', alt: 'Steel Garden Shed', title: 'Steel Garden Shed' }
             ].map((image, index) => (
               <div
                 key={index}
@@ -216,21 +216,21 @@ const ShedsPage = () => {
             {[
               {
                 icon: Building,
-                title: 'Storage Sheds',
-                description: 'Maximize your storage space with custom-built sheds designed for tools, equipment, and seasonal items.',
-                image: '/Shed1.png'
+                title: 'Galvanised Steel Sheds',
+                description: 'Durable, weather-resistant steel sheds built to last. Perfect for storage, tools, and equipment.',
+                image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG'
               },
               {
                 icon: Home,
                 title: 'Garden Offices',
                 description: 'Create the perfect work-from-home space with insulated, fully-equipped garden office sheds.',
-                image: '/Shed1.png'
+                image: '/sheds/84e6f01a-16e9-4a4c-8730-5b0d62c08214.JPG'
               },
               {
                 icon: Hammer,
                 title: 'Workshops',
                 description: 'Dedicated workshop spaces with power, lighting, and ventilation for all your DIY and craft projects.',
-                image: '/Shed1.png'
+                image: '/sheds/IMG_3774.JPG'
               }
             ].map((option, index) => (
               <div
