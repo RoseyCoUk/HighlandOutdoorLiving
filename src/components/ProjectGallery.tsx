@@ -25,10 +25,10 @@ const ProjectGallery = () => {
       description: 'All-weather outdoor kitchen perfect for year-round entertaining'
     },
     {
-      title: 'Custom Sheds',
-      description: 'Durable, weather-resistant sheds built to last',
-      image: '/Shed1.png',
-      category: 'sheds'
+      title: 'Galvanised Steel Shed',
+      description: 'Durable, weather-resistant steel sheds built to last',
+      image: '/sheds/Galvanised Steel Shed.JPG',
+      category: 'Sheds'
     },
     {
       title: 'Luxury Glass Pavilion',
@@ -57,7 +57,7 @@ const ProjectGallery = () => {
     {
       title: 'Luxury Shed Office',
       category: 'Sheds',
-      image: '/Shed1.png',
+      image: '/sheds/Big Tan Shed Interior.jpeg',
       description: 'Insulated garden office with modern amenities'
     },
     {

@@ -33,7 +33,7 @@ const ServicesPage = () => {
       title: 'Galvanised Steel Sheds',
       description: 'Durable, weather-resistant steel sheds built to last. From storage solutions to garden offices and workshops, tailored to your space and requirements.',
       features: ['Galvanised Steel Frame', 'Weather-Resistant', 'Bespoke Designs', 'Professional Installation', 'Various Sizes'],
-      image: '/sheds/IMG_3774.JPG',
+      image: '/sheds/Big Steel Shed.JPG',
       link: '/sheds',
       icon: Home
     }

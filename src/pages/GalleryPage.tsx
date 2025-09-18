@@ -25,7 +25,7 @@ const GalleryPage = () => {
       id: 3,
       title: 'Modern Storage Shed',
       category: 'Shed',
-      image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG',
+      image: '/sheds/Galvanised Steel Shed.JPG',
       description: 'Contemporary shed design with galvanised steel frame'
     },
     {
@@ -53,7 +53,7 @@ const GalleryPage = () => {
       id: 6,
       title: 'Workshop Shed',
       category: 'Shed',
-      image: '/sheds/IMG_3774.JPG',
+      image: '/sheds/Big Steel Shed.JPG',
       description: 'Spacious workshop with power and lighting installation'
     },
     {
@@ -67,7 +67,7 @@ const GalleryPage = () => {
       id: 8,
       title: 'Garden Office Shed',
       category: 'Shed',
-      image: '/sheds/84e6f01a-16e9-4a4c-8730-5b0d62c08214.JPG',
+      image: '/sheds/Big Tan Shed.jpeg',
       description: 'Insulated garden office with modern finishes'
     },
     {
@@ -95,7 +95,7 @@ const GalleryPage = () => {
       id: 11,
       title: 'Luxury Shed Office',
       category: 'Shed',
-      image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG',
+      image: '/sheds/Galvanised Steel Shed.JPG',
       description: 'Professional garden office with all amenities'
     },
     {

@@ -165,9 +165,9 @@ const ShedsPage = () => {
           {/* Responsive Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { src: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG', alt: 'Galvanised Steel Storage Shed', title: 'Galvanised Steel Storage Shed' },
-              { src: '/sheds/84e6f01a-16e9-4a4c-8730-5b0d62c08214.JPG', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
-              { src: '/sheds/IMG_3774.JPG', alt: 'Workshop Shed', title: 'Workshop Shed' },
+              { src: '/sheds/Galvanised Steel Shed.JPG', alt: 'Galvanised Steel Storage Shed', title: 'Galvanised Steel Storage Shed' },
+              { src: '/sheds/Big Tan Shed.jpeg', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
+              { src: '/sheds/Big Steel Shed.JPG', alt: 'Workshop Shed', title: 'Workshop Shed' },
               { src: '/Shed1.png', alt: 'Custom Steel Shed', title: 'Custom Steel Shed' },
               { src: '/Shed1.png', alt: 'Large Storage Solution', title: 'Large Storage Solution' },
               { src: '/Shed1.png', alt: 'Steel Garden Shed', title: 'Steel Garden Shed' }
@@ -218,19 +218,19 @@ const ShedsPage = () => {
                 icon: Building,
                 title: 'Galvanised Steel Sheds',
                 description: 'Durable, weather-resistant steel sheds built to last. Perfect for storage, tools, and equipment.',
-                image: '/sheds/7f48b43d-826d-4937-82c9-d43d0b93e097.JPG'
+                image: '/sheds/Galvanised Steel Shed.JPG'
               },
               {
                 icon: Home,
                 title: 'Garden Offices',
                 description: 'Create the perfect work-from-home space with insulated, fully-equipped garden office sheds.',
-                image: '/sheds/84e6f01a-16e9-4a4c-8730-5b0d62c08214.JPG'
+                image: '/sheds/Big Tan Shed.jpeg'
               },
               {
                 icon: Hammer,
                 title: 'Workshops',
                 description: 'Dedicated workshop spaces with power, lighting, and ventilation for all your DIY and craft projects.',
-                image: '/sheds/IMG_3774.JPG'
+                image: '/sheds/Big Steel Shed.JPG'
               }
             ].map((option, index) => (
               <div
