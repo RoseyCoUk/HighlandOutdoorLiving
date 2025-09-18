@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const ProjectGallery = () => {
@@ -83,6 +83,36 @@ const ProjectGallery = () => {
       category: 'Grill Pods',
       image: '/Nigel Grill Pod/Grill Pod Drawers.jpg',
       description: 'Smart storage solutions in premium grill pod design'
+    },
+    {
+      title: 'Garden Storage Shed',
+      category: 'Sheds',
+      image: '/sheds/Garden Shed.jpeg',
+      description: 'Traditional garden shed with classic design and secure storage'
+    },
+    {
+      title: 'Medium Garden Shed',
+      category: 'Sheds',
+      image: '/sheds/Medium Garden Shed.jpeg',
+      description: 'Mid-size garden shed perfect for tools and equipment storage'
+    },
+    {
+      title: 'Compact Garden Shed',
+      category: 'Sheds',
+      image: '/sheds/Small Shed.jpeg',
+      description: 'Space-efficient shed designed for smaller garden spaces'
+    },
+    {
+      title: 'Custom Garden Shed',
+      category: 'Sheds',
+      image: '/sheds/Another Shed.jpeg',
+      description: 'Bespoke garden shed built to your exact specifications'
+    },
+    {
+      title: 'Shed Construction Process',
+      category: 'Sheds',
+      image: '/sheds/Another Shed In Construction.jpeg',
+      description: 'Professional construction process showing quality workmanship'
     }
   ];
 

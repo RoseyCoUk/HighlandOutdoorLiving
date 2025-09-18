@@ -160,6 +160,83 @@ const GalleryPage = () => {
       category: 'Grill Pod',
       image: '/Nigel Grill Pod/Grill Pod Exterior.jpg',
       description: 'Modern exterior design with premium materials'
+    },
+    {
+      id: 19,
+      title: 'Garden Storage Shed',
+      category: 'Shed',
+      image: '/sheds/Garden Shed.jpeg',
+      description: 'Traditional garden shed with classic design'
+    },
+    {
+      id: 20,
+      title: 'Garden Shed with Doors',
+      category: 'Shed',
+      image: '/sheds/Garden Shed Closed.jpeg',
+      description: 'Secure garden shed with double doors'
+    },
+    {
+      id: 21,
+      title: 'Medium Garden Shed',
+      category: 'Shed',
+      image: '/sheds/Medium Garden Shed.jpeg',
+      description: 'Mid-size garden shed perfect for storage'
+    },
+    {
+      id: 22,
+      title: 'Compact Garden Shed',
+      category: 'Shed',
+      image: '/sheds/Small Shed.jpeg',
+      description: 'Space-efficient shed for smaller gardens'
+    },
+    {
+      id: 23,
+      title: 'Small Storage Shed',
+      category: 'Shed',
+      image: '/sheds/Small Shed 1.jpeg',
+      description: 'Compact storage solution for garden tools'
+    },
+    {
+      id: 24,
+      title: 'Custom Garden Shed',
+      category: 'Shed',
+      image: '/sheds/Another Shed.jpeg',
+      description: 'Bespoke garden shed designed to your specifications'
+    },
+    {
+      id: 25,
+      title: 'Modern Garden Shed',
+      category: 'Shed',
+      image: '/sheds/Another Shed 1.jpeg',
+      description: 'Contemporary shed with modern finishes'
+    },
+    {
+      id: 26,
+      title: 'Shed Construction Process',
+      category: 'Shed',
+      image: '/sheds/Another Shed In Construction.jpeg',
+      description: 'Professional construction process in action'
+    },
+    {
+      id: 27,
+      title: 'Large Shed Construction',
+      category: 'Shed',
+      image: '/sheds/Big Tan Shed In Construction.jpeg',
+      description: 'Large shed project during construction phase'
+    },
+    {
+      id: 28,
+      title: 'Shed Interior View',
+      category: 'Shed',
+      image: '/sheds/Big Tan Shed Interior.jpeg',
+      description: 'Interior view showing quality construction and finishes'
+    },
+    {
+      id: 29,
+      title: 'Open Galvanised Steel Shed',
+      category: 'Shed',
+      image: '/sheds/Galvanised Steel Shed open.JPG',
+      description: 'Galvanised steel shed with open doors showing interior'
     }
   ];
 

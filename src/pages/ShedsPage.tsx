@@ -83,7 +83,7 @@ const ShedsPage = () => {
               className="group inline-flex items-center px-6 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-[#C5B8AB] to-white text-[#222126] font-black text-base sm:text-lg uppercase tracking-wider transition-all duration-700 hover:scale-110 hover:shadow-2xl transform hover:from-white hover:to-[#C5B8AB] w-full sm:w-auto justify-center"
             >
               Request a Quote
-              <ChevronRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-6 sm:w-6 transition-transform group-hover:translate-x-2" />
+              <ChevronRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-2" />
             </button>
             
             <button
@@ -166,17 +166,26 @@ const ShedsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { src: '/sheds/Galvanised Steel Shed.JPG', alt: 'Galvanised Steel Storage Shed', title: 'Galvanised Steel Storage Shed' },
-              { src: '/sheds/Big Tan Shed.jpeg', alt: 'Garden Office Shed', title: 'Garden Office Shed' },
+              { src: '/sheds/Big Tan Shed.jpeg', alt: 'Large Tan Storage Shed', title: 'Large Tan Storage Shed' },
               { src: '/sheds/Big Steel Shed.JPG', alt: 'Workshop Shed', title: 'Workshop Shed' },
-              { src: '/Shed1.png', alt: 'Custom Steel Shed', title: 'Custom Steel Shed' },
-              { src: '/Shed1.png', alt: 'Large Storage Solution', title: 'Large Storage Solution' },
-              { src: '/Shed1.png', alt: 'Steel Garden Shed', title: 'Steel Garden Shed' }
+              { src: '/sheds/Garden Shed.jpeg', alt: 'Garden Storage Shed', title: 'Garden Storage Shed' },
+              { src: '/sheds/Garden Shed Closed.jpeg', alt: 'Garden Shed with Doors', title: 'Garden Shed with Doors' },
+              { src: '/sheds/Medium Garden Shed.jpeg', alt: 'Medium Garden Shed', title: 'Medium Garden Shed' },
+              { src: '/sheds/Small Shed.jpeg', alt: 'Compact Garden Shed', title: 'Compact Garden Shed' },
+              { src: '/sheds/Small Shed 1.jpeg', alt: 'Small Storage Shed', title: 'Small Storage Shed' },
+              { src: '/sheds/Another Shed.jpeg', alt: 'Custom Garden Shed', title: 'Custom Garden Shed' },
+              { src: '/sheds/Another Shed 1.jpeg', alt: 'Modern Garden Shed', title: 'Modern Garden Shed' },
+              { src: '/sheds/Another Shed In Construction.jpeg', alt: 'Shed Under Construction', title: 'Shed Under Construction' },
+              { src: '/sheds/Big Tan Shed In Construction.jpeg', alt: 'Large Shed Construction', title: 'Large Shed Construction' },
+              { src: '/sheds/Big Tan Shed Interior.jpeg', alt: 'Shed Interior View', title: 'Shed Interior View' },
+              { src: '/sheds/Galvanised Steel Shed open.JPG', alt: 'Open Galvanised Steel Shed', title: 'Open Galvanised Steel Shed' }
             ].map((image, index) => (
               <div
                 key={index}
                 className={`group relative overflow-hidden shadow-2xl transition-all duration-700 hover:shadow-3xl hover:-translate-y-2 hover:scale-105 ${
                   index === 0 ? 'lg:row-span-2' : 
-                  index === 2 ? 'lg:col-span-2' : ''
+                  index === 2 ? 'lg:col-span-2' : 
+                  index === 5 ? 'lg:row-span-2' : ''
                 }`}
               >
                 <img
@@ -184,7 +193,8 @@ const ShedsPage = () => {
                   alt={image.alt}
                   className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${
                     index === 0 ? 'h-96 lg:h-full' : 
-                    index === 2 ? 'h-64' : 'h-80'
+                    index === 2 ? 'h-64' : 
+                    index === 5 ? 'h-96 lg:h-full' : 'h-80'
                   }`}
                   loading="lazy"
                 />
