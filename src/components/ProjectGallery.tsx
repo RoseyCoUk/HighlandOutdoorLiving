@@ -9,7 +9,7 @@ const ProjectGallery = () => {
     {
       title: 'Premium Grill Pod Installation',
       category: 'Grill Pods',
-      image: '/Nigel Grill Pod/022 HiRes.jpg',
+      image: '/Nigel Grill Pod/Grill Pod + Kitchen Shot.jpg',
       description: 'Custom-built weatherproof grill pod with Mont Alpi kitchen'
     },
     {
@@ -21,7 +21,7 @@ const ProjectGallery = () => {
     {
       title: 'Modern Outdoor Kitchen',
       category: 'Grill Pods',
-      image: '/Nigel Grill Pod/003.jpg',
+      image: '/Nigel Grill Pod/Outdoor Kitchen Shot 2.jpg',
       description: 'All-weather outdoor kitchen perfect for year-round entertaining'
     },
     {
@@ -57,7 +57,7 @@ const ProjectGallery = () => {
     {
       title: 'Entertainment Grill Pod',
       category: 'Grill Pods',
-      image: '/Nigel Grill Pod/008.jpg',
+      image: '/Nigel Grill Pod/Grill Pod Scenic Close Shot.jpg',
       description: 'Spacious grill pod designed for family gatherings'
     },
     {
@@ -69,7 +69,7 @@ const ProjectGallery = () => {
     {
       title: 'Professional Grill Pod',
       category: 'Grill Pods',
-      image: '/Nigel Grill Pod/015.jpg',
+      image: '/Nigel Grill Pod/Grill Pod Exterior 1.jpg',
       description: 'Commercial-grade outdoor kitchen installation'
     },
     {
@@ -87,14 +87,26 @@ const ProjectGallery = () => {
     {
       title: 'Grill Pod Interior',
       category: 'Grill Pods',
-      image: '/Nigel Grill Pod/001.jpg',
+      image: '/Nigel Grill Pod/Grill In Action.jpg',
       description: 'Spacious interior with premium kitchen appliances'
     },
     {
       title: 'Garden Room Retreat',
       category: 'Other',
-      image: '/garden rooms/8ab6ed75-b93d-445e-9adf-4db36c921a87.JPG',
+      image: '/garden rooms/outdoor glass room.JPG',
       description: 'Beautiful garden room for year-round outdoor living'
+    },
+    {
+      title: 'Luxury Pizza Oven Setup',
+      category: 'Grill Pods',
+      image: '/garden rooms/Pizza Oven.JPG',
+      description: 'Professional pizza oven with outdoor dining area'
+    },
+    {
+      title: 'Grill Pod Storage Solutions',
+      category: 'Grill Pods',
+      image: '/Nigel Grill Pod/Grill Pod Drawers.jpg',
+      description: 'Smart storage solutions in premium grill pod design'
     }
   ];
 
