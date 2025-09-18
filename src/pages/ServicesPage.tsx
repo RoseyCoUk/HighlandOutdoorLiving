@@ -9,7 +9,7 @@ const ServicesPage = () => {
       title: 'Garden Saunas',
       description: 'Transform your garden into a wellness retreat with our custom-built saunas. Handcrafted for year-round relaxation, each sauna combines traditional warmth with modern design.',
       features: ['Custom Design & Build', 'Premium Materials', 'Weather-Resistant', 'LED Lighting', 'Multiple Heating Options'],
-      image: '/landing pages/Sauna1.JPG',
+      image: '/sauna/Sauna1.JPG',
       link: '/saunas',
       icon: Waves
     },
@@ -17,7 +17,7 @@ const ServicesPage = () => {
       title: 'Grill Pods',
       description: 'Enjoy outdoor cooking in any weather with our premium grill pods. Designed for entertaining, these enclosed spaces bring the BBQ experience to a whole new level.',
       features: ['All-Weather Design', 'Professional Installation', 'Custom Features', 'LED Lighting', 'Veranda Options'],
-      image: '/landing pages/GrillPod1.JPG',
+      image: '/Nigel Grill Pod/GrillPod1.JPG',
       link: '/grill-pods',
       icon: Flame
     },
@@ -47,7 +47,7 @@ const ServicesPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/landing pages/GrillPod2.JPG')"
+            backgroundImage: "url('/Nigel Grill Pod/GrillPod2.JPG')"
           }}
         ></div>
         

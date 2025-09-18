@@ -27,7 +27,7 @@ const BlogPage = () => {
         title="Outdoor Living Blog - Expert Tips & Trends in Northern Ireland | NMG Outdoor Living"
         description="Discover the latest outdoor living trends, expert tips, and insights for saunas, grill pods, and custom sheds in Northern Ireland. Expert advice from NMG Outdoor Living."
         keywords={['outdoor living blog', 'sauna tips', 'grill pod trends', 'custom sheds', 'Northern Ireland', 'Maghera', 'outdoor living advice']}
-        image="/landing pages/Sauna1.JPG"
+        image="/sauna/Sauna1.JPG"
         url="/blog"
         type="website"
       />

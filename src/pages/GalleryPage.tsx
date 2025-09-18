@@ -11,7 +11,7 @@ const GalleryPage = () => {
       id: 1,
       title: 'Luxury Garden Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna6.JPG',
+      image: '/sauna/Sauna6.JPG',
       description: 'Steel-framed, fully-insulated sauna with premium finishes'
     },
     {
@@ -39,7 +39,7 @@ const GalleryPage = () => {
       id: 4,
       title: 'Compact Spa Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna7.JPG',
+      image: '/sauna/Sauna7.JPG',
       description: 'Space-efficient sauna perfect for smaller gardens'
     },
     {
@@ -60,7 +60,7 @@ const GalleryPage = () => {
       id: 7,
       title: 'Garden Wellness Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna8.JPG',
+      image: '/sauna/Sauna8.JPG',
       description: 'Thermal aspen interior sauna for ultimate relaxation'
     },
     {
@@ -81,14 +81,14 @@ const GalleryPage = () => {
       id: 9,
       title: 'Deluxe Grill Pod',
       category: 'Grill Pod',
-      image: '/landing pages/GrillPod3.JPG',
+      image: '/Nigel Grill Pod/GrillPod3.JPG',
       description: 'Premium grill pod with custom lighting and seating'
     },
     {
       id: 10,
       title: 'Modern Outdoor Kitchen',
       category: 'Grill Pod',
-      image: '/landing pages/GrillPod4.JPG',
+      image: '/Nigel Grill Pod/GrillPod4.JPG',
       description: 'Contemporary outdoor kitchen with premium appliances'
     },
     {
@@ -116,28 +116,28 @@ const GalleryPage = () => {
       id: 12,
       title: 'Compact Garden Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna6.JPG',
+      image: '/sauna/Sauna6.JPG',
       description: 'Perfect sauna for smaller garden spaces'
     },
     {
       id: 13,
       title: 'Luxury Spa Sauna',
       category: 'Sauna',
-      image: '/landing pages/Sauna7.JPG',
+      image: '/sauna/Sauna7.JPG',
       description: 'Premium spa-grade sauna with advanced features'
     },
     {
       id: 14,
       title: 'Premium Grill Pod',
       category: 'Grill Pod',
-      image: '/landing pages/GrillPod5.JPG',
+      image: '/Nigel Grill Pod/GrillPod5.JPG',
       description: 'Deluxe grill pod with premium finishes and appliances'
     },
     {
       id: 15,
       title: 'Garden Wellness Retreat',
       category: 'Sauna',
-      image: '/landing pages/Sauna8.JPG',
+      image: '/sauna/Sauna8.JPG',
       description: 'Comprehensive wellness space for ultimate relaxation'
     },
     {

@@ -25,7 +25,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   title = 'NMG Outdoor Living - Premium Saunas, Grill Pods & Steel Sheds in Northern Ireland',
   description = 'Transform your outdoor space with premium saunas, all-weather grill pods, and galvanized steel sheds in Northern Ireland. Expert installation in Maghera, Belfast, Derry, and across NI.',
   keywords = ['garden sheds Northern Ireland', 'steel sheds Belfast', 'outdoor sauna UK', 'garden sauna Ireland', 'grill pods UK', 'galvanized sheds NI', 'weatherproof sauna', 'outdoor kitchen pod', 'custom sheds Maghera', 'saunas Derry', 'heavy duty garden sheds', 'energy efficient sauna'],
-  image = '/landing pages/Sauna1.JPG',
+  image = '/sauna/Sauna1.JPG',
   url = 'https://nmgpvcsupplies.co.uk',
   type = 'website',
   author = 'NMG Outdoor Living',
@@ -145,8 +145,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "https://www.instagram.com/nmg_outdoorliving"
           ],
           "image": [
-            "https://nmgpvcsupplies.co.uk/landing pages/Sauna1.JPG",
-            "https://nmgpvcsupplies.co.uk/landing pages/GrillPod1.JPG",
+            "https://nmgpvcsupplies.co.uk/sauna/Sauna1.JPG",
+            "https://nmgpvcsupplies.co.uk/Nigel Grill Pod/GrillPod1.JPG",
             "https://nmgpvcsupplies.co.uk/Shed1.png"
           ],
           "hasOfferCatalog": {

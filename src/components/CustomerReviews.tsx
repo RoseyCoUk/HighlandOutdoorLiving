@@ -24,7 +24,7 @@ const CustomerReviews = () => {
       review: "NMG transformed our garden with a stunning grill pod. The quality is exceptional and the team was professional throughout. We use it year-round and it's become the heart of our outdoor entertaining space.",
       product: "Grill Pod",
       date: "March 2024",
-      image: "/landing pages/GrillPod1.JPG"
+      image: "/Nigel Grill Pod/GrillPod1.JPG"
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ const CustomerReviews = () => {
       review: "The sauna installation was seamless from start to finish. The steel frame construction is incredibly sturdy and the heat-up time is amazing. Best investment we've made for our home.",
       product: "Sauna",
       date: "February 2024",
-      image: "/landing pages/Sauna1.JPG"
+      image: "/sauna/Sauna1.JPG"
     },
     {
       id: 3,
@@ -54,7 +54,7 @@ const CustomerReviews = () => {
       review: "Outstanding service and craftsmanship. The grill pod has exceeded our expectations. The Mont Alpi appliances are top quality and the weatherproof design is perfect for Northern Ireland's climate.",
       product: "Grill Pod",
       date: "December 2023",
-      image: "/landing pages/GrillPod2.JPG"
+      image: "/Nigel Grill Pod/GrillPod2.JPG"
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ const CustomerReviews = () => {
       review: "We're absolutely delighted with our garden sauna. The thermal aspen interior is beautiful and the Harvia heater is incredibly efficient. It's our daily wellness ritual now.",
       product: "Sauna",
       date: "November 2023",
-      image: "/landing pages/Sauna2.JPG"
+      image: "/sauna/Sauna2.JPG"
     }
   ];
 

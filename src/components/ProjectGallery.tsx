@@ -15,7 +15,7 @@ const ProjectGallery = () => {
     {
       title: 'Luxury Garden Sauna',
       category: 'Saunas',
-      image: '/landing pages/Sauna6.JPG',
+      image: '/sauna/Sauna6.JPG',
       description: 'Steel-framed, fully-insulated sauna with premium finishes'
     },
     {
@@ -33,7 +33,7 @@ const ProjectGallery = () => {
     {
       title: 'Luxury Glass Pavilion',
       description: 'Premium outdoor entertainment space with glass walls',
-      image: '/landing pages/outdoor glass room 2.jpg',
+      image: '/garden rooms/outdoor glass room 2.jpg',
       category: 'Other'
     },
     {
@@ -45,7 +45,7 @@ const ProjectGallery = () => {
     {
       title: 'Compact Garden Sauna',
       category: 'Saunas',
-      image: '/landing pages/Sauna8.JPG',
+      image: '/sauna/Sauna8.JPG',
       description: 'Space-efficient sauna perfect for smaller gardens'
     },
     {
@@ -63,7 +63,7 @@ const ProjectGallery = () => {
     {
       title: 'Interior Sauna Experience',
       category: 'Saunas',
-      image: '/landing pages/InsideSauna1.JPG',
+      image: '/sauna/InsideSauna1.JPG',
       description: 'Premium interior sauna with thermal aspen finishes'
     },
     {

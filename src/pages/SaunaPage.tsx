@@ -103,7 +103,7 @@ const SaunaPage = () => {
         title="Garden Saunas in Northern Ireland - Premium Sauna Installation | NMG Outdoor Living"
         description="Transform your garden with premium saunas in Northern Ireland. Expert sauna installation in Maghera, Belfast, and beyond. Health benefits, relaxation, and property value enhancement."
         keywords={['garden saunas', 'sauna installation', 'Northern Ireland', 'Maghera', 'Belfast', 'sauna benefits', 'outdoor saunas', 'wellness']}
-        image="/landing pages/InsideSauna1.JPG"
+        image="/sauna/InsideSauna1.JPG"
         url="/saunas"
         type="product"
       />
@@ -113,7 +113,7 @@ const SaunaPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: "url('/landing pages/Sauna1.JPG')"
+            backgroundImage: "url('/sauna/Sauna1.JPG')"
           }}
         ></div>
         
@@ -402,42 +402,42 @@ const SaunaPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {[
               {
-                image: '/landing pages/InsideSauna1.JPG',
+                image: '/sauna/InsideSauna1.JPG',
                 title: 'Modern Garden Sauna',
                 caption: 'Heat-ready in 15 minutes, even in December.'
               },
               {
-                image: '/landing pages/InsideSauna2.JPG',
+                image: '/sauna/InsideSauna2.JPG',
                 title: 'Lakeside Wellness Retreat',
                 caption: 'Weatherproof design withstands coastal conditions.'
               },
               {
-                image: '/landing pages/InsideSauna3.JPG',
+                image: '/sauna/InsideSauna3.JPG',
                 title: 'Compact Urban Sauna',
                 caption: 'Bespoke size fits perfectly in small gardens.'
               },
               {
-                image: '/landing pages/InsideSauna4.JPG',
+                image: '/sauna/InsideSauna4.JPG',
                 title: 'Luxury Spa Sauna',
                 caption: 'Thermal aspen interior provides premium comfort.'
               },
               {
-                image: '/landing pages/InsideSauna5.JPG',
+                image: '/sauna/InsideSauna5.JPG',
                 title: 'Family Wellness Hub',
                 caption: 'Large tinted window maintains privacy while connecting to nature.'
               },
               {
-                image: '/landing pages/InsideSauna6.JPG',
+                image: '/sauna/InsideSauna6.JPG',
                 title: 'All-Season Sauna',
                 caption: 'Trocal roof ensures year-round protection.'
               },
               {
-                image: '/landing pages/InsideSauna7.JPG',
+                image: '/sauna/InsideSauna7.JPG',
                 title: 'Premium Interior Design',
                 caption: 'Custom lighting and premium materials throughout.'
               },
               {
-                image: '/landing pages/InsideSauna8.JPG',
+                image: '/sauna/InsideSauna8.JPG',
                 title: 'Luxury Finishes',
                 caption: 'High-end finishes and attention to detail.'
               }

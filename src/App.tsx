@@ -113,7 +113,7 @@ function AppContent({
               title="NMG Outdoor Living - Premium Saunas, Grill Pods & Custom Sheds in Northern Ireland"
               description="Transform your outdoor space with premium saunas, all-weather grill pods, and custom sheds in Northern Ireland. Expert installation in Maghera, Belfast, and beyond."
               keywords={['outdoor living', 'saunas', 'grill pods', 'custom sheds', 'Northern Ireland', 'Maghera', 'Belfast', 'garden offices', 'outdoor kitchens']}
-              image="/landing pages/Sauna1.JPG"
+              image="/sauna/Sauna1.JPG"
             />
             <main>
               <HeroSection onGetEstimate={openCalculator} />

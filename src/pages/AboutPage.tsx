@@ -11,7 +11,7 @@ const AboutPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/landing pages/Sauna1.JPG')"
+            backgroundImage: "url('/sauna/Sauna1.JPG')"
           }}
         ></div>
         
@@ -67,7 +67,7 @@ const AboutPage = () => {
             {/* Right - Company Image */}
             <div className="relative">
               <img
-                src="/landing pages/Sauna4.JPG"
+                src="/sauna/Sauna4.JPG"
                 alt="NMG Outdoor Living workshop and craftsmanship"
                 className="w-full h-[600px] object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
               />
@@ -206,7 +206,7 @@ const AboutPage = () => {
             {/* Left - Team Image */}
             <div className="relative">
               <img
-                src="/landing pages/Sauna5.JPG"
+                src="/sauna/Sauna5.JPG"
                 alt="NMG Outdoor Living team at work"
                 className="w-full h-[500px] object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
               />

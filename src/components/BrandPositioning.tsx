@@ -20,7 +20,7 @@ const BrandPositioning = () => {
           {/* Visual */}
           <div className="relative group">
             <img
-              src="/landing pages/Sauna2.JPG"
+              src="/sauna/Sauna2.JPG"
               alt="NMG outdoor living installation showcasing craftsmanship and comfort"
               className="w-full h-[600px] object-cover rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
               loading="lazy"

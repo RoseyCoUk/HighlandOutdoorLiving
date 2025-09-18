@@ -80,7 +80,7 @@ Source: Contact Page`;
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/landing pages/Sauna3.JPG')"
+            backgroundImage: "url('/sauna/Sauna3.JPG')"
           }}
         ></div>
         

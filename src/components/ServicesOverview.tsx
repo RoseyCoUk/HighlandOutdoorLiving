@@ -16,7 +16,7 @@ const ServicesOverview = () => {
       title: 'Garden Saunas',
       description: 'Unwind in your own custom-built sauna — tailored for wellness, comfort, and style.',
       features: ['Custom Design', 'Premium Materials', 'Installation Included'],
-      image: '/landing pages/Sauna1.JPG',
+      image: '/sauna/Sauna1.JPG',
       alt: 'Interior of luxury garden sauna with soft lighting',
       cta: 'Explore Sauna Options'
     },
@@ -24,7 +24,7 @@ const ServicesOverview = () => {
       title: 'Grill Pods',
       description: 'Enjoy BBQs all year round with handcrafted grill pods designed for entertaining in any weather.',
       features: ['Weather Resistant', 'Custom Designs', 'Professional Installation'],
-      image: '/landing pages/GrillPod1.JPG',
+      image: '/Nigel Grill Pod/GrillPod1.JPG',
       alt: 'NMG custom grill pod installation',
       cta: 'View Grill Pod Range'
     }
