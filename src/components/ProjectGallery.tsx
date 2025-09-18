@@ -86,8 +86,8 @@ const ProjectGallery = () => {
     ? projects 
     : projects.filter(project => project.category === filter);
 
-  // Show only 2 items initially, or all if showAll is true
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 2);
+  // Show only 3 items initially, or all if showAll is true
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   // Reset showAll when filter changes
   const handleFilterChange = (newFilter: string) => {
@@ -153,7 +153,7 @@ const ProjectGallery = () => {
         </div>
 
         {/* View More Button */}
-        {filteredProjects.length > 2 && (
+        {filteredProjects.length > 3 && (
           <div className="text-center">
             <button
               onClick={() => setShowAll(!showAll)}
