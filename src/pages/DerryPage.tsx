@@ -1,8 +1,8 @@
 import React from 'react';
-import { SEOHead } from '../components/SEOHead';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { ContactSection } from '../components/ContactSection';
+import SEOHead from '../components/SEOHead';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
 import { MapPin, Phone, Mail, Clock, Star, CheckCircle, ArrowRight } from 'lucide-react';
 
 const DerryPage: React.FC = () => {
