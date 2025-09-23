@@ -5,8 +5,7 @@ export const useEstimateCalculator = () => {
   const [hasShown, setHasShown] = useState(false);
 
   const openCalculator = useCallback(() => {
-    setIsOpen(true);
-    setHasShown(true);
+    // disabled – popup removed
   }, []);
 
   const closeCalculator = useCallback(() => {
@@ -24,33 +23,18 @@ export const useEstimateCalculator = () => {
     let timeoutId: NodeJS.Timeout;
     let scrollHandler: (() => void) | null = null;
 
-    // Time-based trigger (10 seconds)
-    timeoutId = setTimeout(() => {
-      if (!hasShown) {
-        openCalculator();
-        sessionStorage.setItem('nmg-estimate-shown', 'true');
-      }
-    }, 10000);
+    // disabled time-based trigger
+    timeoutId = setTimeout(() => {}, 0);
 
     // Scroll-based trigger (50% scroll)
     const handleScroll = () => {
       const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       
-      if (scrollPercentage >= 50 && !hasShown) {
-        openCalculator();
-        sessionStorage.setItem('nmg-estimate-shown', 'true');
-        
-        // Remove scroll listener after triggering
-        if (scrollHandler) {
-          window.removeEventListener('scroll', scrollHandler);
-        }
-      }
+      // disabled scroll trigger
     };
 
     // Listen for custom event from StrategicCTA
-    const handleCustomEvent = () => {
-      openCalculator();
-    };
+    const handleCustomEvent = () => {};
 
     scrollHandler = handleScroll;
     window.addEventListener('scroll', handleScroll, { passive: true });

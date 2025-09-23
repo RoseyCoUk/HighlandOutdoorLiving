@@ -139,7 +139,7 @@ function AppContent({
         <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
-          {!isAdminRoute && <Footer onGetEstimate={openCalculator} />}
+          {!isAdminRoute && <Footer />}
           {!isAdminRoute && <FloatingSocialButton />}
           {!isAdminRoute && <LiveChat />}
           {process.env.NODE_ENV === 'development' && (
