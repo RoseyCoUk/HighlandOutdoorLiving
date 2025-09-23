@@ -14,7 +14,7 @@ const BrandPositioning = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#2B2B2B]" id="why-highland">
+    <section className="py-20 bg-white" id="why-highland">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Visual */}
@@ -25,22 +25,22 @@ const BrandPositioning = () => {
               className="w-full h-[600px] object-cover rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#8B1E2D]/40 to-transparent rounded-lg"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
           </div>
 
           {/* Content */}
           <div className="space-y-8">
             <div className="mb-6">
-              <h3 className="text-lg font-medium text-[#CBB79C] mb-2">Why Highland</h3>
+              <h3 className="text-lg font-medium text-[#8B1E2D] mb-2">Why Highland</h3>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-[#2B2B2B] leading-tight">
               Where Craftsmanship Meets
               <br />
               <span className="text-[#CBB79C]">Comfort</span>
             </h2>
 
-            <p className="text-lg text-[#E0E0E0] leading-relaxed">
+            <p className="text-lg text-[#2B2B2B] leading-relaxed">
               Your ticket to paradise. We bring Arctic Spas hot tubs, all‑weather pools, and luxury saunas to the Scottish Highlands.
             </p>
 
@@ -49,10 +49,10 @@ const BrandPositioning = () => {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 p-4 bg-[#1f1f1f] rounded-lg border border-[#E0E0E0]/10 transition-all duration-300 hover:border-[#CBB79C] hover:scale-105 cursor-pointer"
+                  className="flex items-center space-x-3 p-4 bg-white rounded-lg border border-[#e5e5e5] transition-all duration-300 hover:border-[#8B1E2D] hover:scale-105 cursor-pointer"
                 >
-                  <item.icon className="w-6 h-6 text-[#CBB79C]" />
-                  <span className="text-[#E0E0E0] font-medium">{item.text}</span>
+                  <item.icon className="w-6 h-6 text-[#8B1E2D]" />
+                  <span className="text-[#2B2B2B] font-medium">{item.text}</span>
                 </div>
               ))}
             </div>
