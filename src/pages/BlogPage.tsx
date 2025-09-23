@@ -24,10 +24,10 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB] overflow-x-hidden">
       <SEOHead 
-        title="Outdoor Living Blog - Expert Tips & Trends in Northern Ireland | NMG Outdoor Living"
-        description="Discover the latest outdoor living trends, expert tips, and insights for saunas, grill pods, and custom sheds in Northern Ireland. Expert advice from NMG Outdoor Living."
-        keywords={['outdoor living blog', 'sauna tips', 'grill pod trends', 'custom sheds', 'Northern Ireland', 'Maghera', 'outdoor living advice']}
-        image="/sauna/Sauna1.JPG"
+        title="Highland Outdoor Living Blog | Arctic Spas in the Scottish Highlands"
+        description="Insights on Arctic Spas hot tubs, all‑weather pools, and luxury saunas for Inverness and the Scottish Highlands."
+        keywords={['Arctic Spas', 'hot tubs Inverness', 'pools Highlands', 'saunas Inverness']}
+        image="/arctic-spas-hero.jpg"
         url="/blog"
         type="website"
       />
@@ -39,7 +39,7 @@ const BlogPage = () => {
               Outdoor Living Blog
             </h1>
             <p className="text-base sm:text-xl text-[#C5B8AB]/90 max-w-3xl mx-auto leading-relaxed px-2">
-              Expert insights, trends, and tips for creating the perfect outdoor living space in Northern Ireland.
+              Expert insights for choosing Arctic Spas hot tubs, pools, and saunas across the Scottish Highlands.
             </p>
           </div>
 

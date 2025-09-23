@@ -266,12 +266,12 @@ Source: Contact Page`;
                 <div>
                   <h4 className="text-white font-medium mb-2">Location</h4>
                   <p className="text-[#C5B8AB] text-lg leading-tight">
-                    9 Ballyknock Road<br />
-                    Maghera<br />
-                    Northern Ireland
+                    18-20 Harbour Road<br />
+                    Inverness<br />
+                    Scottish Highlands
                   </p>
                   <p className="text-[#C5B8AB]/70 text-sm mt-1">
-                    Serving all of Northern Ireland
+                    Serving Inverness and the Scottish Highlands
                   </p>
                 </div>
               </div>
@@ -329,12 +329,12 @@ Source: Contact Page`;
 
               {/* Trust Signal */}
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-6 border border-[#C5B8AB]/20">
-                <h4 className="text-white font-medium mb-3">Why Choose NMG?</h4>
+                <h4 className="text-white font-medium mb-3">Why Choose Highland?</h4>
                 <ul className="space-y-2 text-[#C5B8AB]/80 text-sm">
                   <li>• Free consultations and quotes</li>
                   <li>• 15+ years of experience</li>
                   <li>• Fully insured and certified</li>
-                  <li>• Local Maghera-based team</li>
+                  <li>• Local Inverness-based team</li>
                   <li>• Comprehensive warranty coverage</li>
                 </ul>
               </div>
@@ -346,14 +346,14 @@ Source: Contact Page`;
       {/* Map Section */}
       <section className="relative h-96">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2295.7891234567!2d-6.6234567!3d54.8234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485fd123456789ab%3A0x123456789abcdef0!2s9%20Ballyknock%20Rd%2C%20Maghera%20BT46%205AB%2C%20UK!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+          src="https://www.google.com/maps?q=18-20%20Harbour%20Road,%20Inverness,%20IV1%201UA&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0, filter: 'grayscale(100%) brightness(0.8)' }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="NMG Outdoor Living Location - 9 Ballyknock Road, Maghera"
+          title="Highland Outdoor Living Location - 18-20 Harbour Road, Inverness"
         ></iframe>
         
         {/* Map Pin */}

@@ -21,11 +21,11 @@ const AboutPage = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-white leading-tight tracking-wide">
-            About NMG Outdoor Living
+            About Highland Outdoor Living
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Your trusted Maghera-based team for premium outdoor living solutions across Northern Ireland.
+            Your trusted Inverness-based team for premium outdoor living across the Scottish Highlands.
           </p>
         </div>
       </section>
@@ -51,15 +51,15 @@ const AboutPage = () => {
               
               <div className="space-y-6 text-lg text-[#C5B8AB]/90 leading-relaxed font-light">
                 <p>
-                  Founded in the heart of Maghera, NMG Outdoor Living began with a simple mission: to transform ordinary outdoor spaces into extraordinary living experiences. What started as a passion for quality craftsmanship has grown into Northern Ireland's trusted name for premium outdoor structures.
+                  Founded in Inverness, Highland Outdoor Living brings Arctic Spas hot tubs, all-weather pools, and luxury saunas to homes across the Scottish Highlands.
                 </p>
                 
                 <p>
-                  Our team combines traditional building techniques with modern materials and design innovation. Every sauna, grill pod, and shed we create is a testament to our commitment to excellence, durability, and the unique needs of Northern Ireland homeowners.
+                  Our team focuses on relaxation and wellness—helping you build routines with hydrotherapy and cold plunge therapy.
                 </p>
                 
                 <p>
-                  From our workshop in Maghera, we've had the privilege of enhancing hundreds of gardens across the region, creating spaces where families gather, relax, and make lasting memories.
+                  From our showroom in Inverness, we serve the Highlands with products built for the climate and everyday life.
                 </p>
               </div>
             </div>
@@ -85,9 +85,9 @@ const AboutPage = () => {
       <section className="py-24 bg-[#C5B8AB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-4">
-              Why Choose NMG?
-            </h2>
+              <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-4">
+              Why Choose Highland?
+              </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -95,7 +95,7 @@ const AboutPage = () => {
               {
                 icon: MapPin,
                 title: 'Local Expertise',
-                description: 'Based in Maghera, we understand Northern Ireland\'s unique climate and building requirements.'
+                description: 'Based in Inverness, we understand the Scottish Highlands climate and requirements.'
               },
               {
                 icon: Award,
@@ -166,7 +166,7 @@ const AboutPage = () => {
               {
                 step: '03',
                 title: 'Build',
-                description: 'Expert craftsmanship in our Maghera workshop using premium materials.'
+                description: 'Expert installation and service from our Inverness team.'
               },
               {
                 step: '04',
@@ -207,7 +207,7 @@ const AboutPage = () => {
             <div className="relative">
               <img
                 src="/sauna/Sauna5.JPG"
-                alt="NMG Outdoor Living team at work"
+                alt="Highland Outdoor Living team at work"
                 className="w-full h-[500px] object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/40 to-transparent rounded-lg"></div>
@@ -223,7 +223,7 @@ const AboutPage = () => {
                   Our team brings decades of combined experience in outdoor construction, joinery, and design. Each member is passionate about creating exceptional outdoor living spaces that stand the test of time.
                 </p>
                 <p className="text-lg text-[#222126]/80 leading-relaxed">
-                  From our workshop in Maghera, we've built a reputation for quality, reliability, and customer satisfaction across Northern Ireland.
+                  From Inverness, we've built a reputation for quality, reliability, and customer satisfaction across the Scottish Highlands.
                 </p>
               </div>
 

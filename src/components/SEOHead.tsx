@@ -258,10 +258,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Do you deliver throughout Northern Ireland?",
+                "name": "Do you deliver throughout the Scottish Highlands?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, we deliver and install throughout Northern Ireland and Ireland. Our team handles everything from delivery to final setup."
+                  "text": "Yes, we deliver and install throughout Inverness and the Scottish Highlands. Our team handles everything from delivery to final setup."
                 }
               },
               {
