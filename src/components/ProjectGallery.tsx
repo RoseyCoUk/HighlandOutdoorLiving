@@ -126,10 +126,10 @@ const ProjectGallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-[#2B2B2B]">
+    <section id="gallery" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-light text-[#2B2B2B] mb-8">
             Our Work in Action
           </h2>
 
@@ -142,7 +142,7 @@ const ProjectGallery = () => {
                 className={`px-6 py-2 transition-all duration-300 ${
                   filter === filterOption
                     ? 'bg-[#8B1E2D] text-white font-semibold'
-                    : 'border border-[#CBB79C]/60 text-[#CBB79C] hover:border-[#CBB79C] hover:bg-[#CBB79C]/10'
+                    : 'border border-[#2B2B2B]/30 text-[#2B2B2B] hover:border-[#2B2B2B] hover:bg-[#2B2B2B]/10'
                 }`}
               >
                 {filterOption}
@@ -165,7 +165,7 @@ const ProjectGallery = () => {
                 loading="lazy"
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/90 via-[#2B2B2B]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-6 left-6 right-6">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {project.title}

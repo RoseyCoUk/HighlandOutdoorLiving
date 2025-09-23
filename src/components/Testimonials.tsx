@@ -27,13 +27,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#2B2B2B]">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-light text-[#2B2B2B] mb-4">
             What Our Customers Say
           </h2>
-          <p className="text-lg text-[#E0E0E0] max-w-3xl mx-auto">
+          <p className="text-lg text-[#2B2B2B] max-w-3xl mx-auto">
             Hear from customers across Inverness and the Scottish Highlands
           </p>
         </div>
