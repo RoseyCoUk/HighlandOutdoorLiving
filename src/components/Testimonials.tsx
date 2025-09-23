@@ -27,13 +27,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-[#1F2A44] mb-4">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
             What Our Customers Say
           </h2>
-          <p className="text-lg text-[#1F2A44] max-w-3xl mx-auto">
+          <p className="text-lg text-[#E0E0E0] max-w-3xl mx-auto">
             Hear from customers across Inverness and the Scottish Highlands
           </p>
         </div>
@@ -42,7 +42,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-[#1F2A44] p-8 rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-[#1f1f1f] p-8 rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               {/* Quote Icon */}
               <div className="mb-6">
@@ -89,7 +89,7 @@ const Testimonials = () => {
               <div className="text-[#E0E0E0]/70">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">100%</div>
+              <div className="text-3xl font-bold text:white mb-2">100%</div>
               <div className="text-[#E0E0E0]/70">Customer Satisfaction</div>
             </div>
           </div>

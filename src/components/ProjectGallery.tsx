@@ -126,10 +126,10 @@ const ProjectGallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-white">
+    <section id="gallery" className="py-20 bg-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-[#1F2A44] mb-8">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
             Our Work in Action
           </h2>
 
@@ -142,7 +142,7 @@ const ProjectGallery = () => {
                 className={`px-6 py-2 transition-all duration-300 ${
                   filter === filterOption
                     ? 'bg-[#8B1E2D] text-white font-semibold'
-                    : 'border border-[#1F2A44]/30 text-[#1F2A44] hover:border-[#1F2A44] hover:bg-[#1F2A44]/10'
+                    : 'border border-[#CBB79C]/60 text-[#CBB79C] hover:border-[#CBB79C] hover:bg-[#CBB79C]/10'
                 }`}
               >
                 {filterOption}
