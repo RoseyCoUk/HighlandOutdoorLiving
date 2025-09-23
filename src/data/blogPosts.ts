@@ -18,6 +18,45 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'intro-1',
+    slug: 'reasons-to-choose-arctic-spas-highlands',
+    title: '5 Reasons to Choose Arctic Spas for Your Home in the Highlands',
+    excerpt: 'Built for cold climates, energy efficient, and unbelievably relaxing — here’s why Arctic Spas are perfect for Inverness and the Scottish Highlands.',
+    content: `
+# 5 Reasons to Choose Arctic Spas for Your Home in the Highlands
+
+From icy winters to bright summer evenings, life in the Highlands deserves comfort that lasts all year. Arctic Spas hot tubs and all‑weather pools are engineered for northern climates — delivering relaxation, wellness, and effortless ownership.
+
+## 1) Built for the Highlands
+Insulation, durable shells, and smart engineering designed for cold weather performance.
+
+## 2) Energy Efficient by Design
+Industry‑leading insulation and intelligent controls help reduce running costs.
+
+## 3) True Hydrotherapy
+Powerful, adjustable jets target muscle groups for recovery after a long day of everyday life.
+
+## 4) Smart Controls
+Monitor temperature, energy use, and maintenance from your phone.
+
+## 5) Wellness Routines (Cold Plunge Ready)
+Pair your spa with cold plunge therapy to refresh, reset, and enhance recovery.
+
+—
+
+Ready to try one? Visit Highland Outdoor Living in Inverness — your ticket to paradise.
+`,
+    author: 'Highland Outdoor Living Team',
+    publishedDate: '2025-09-23',
+    category: 'Arctic Spas',
+    tags: ['Arctic Spas', 'hot tubs', 'wellness', 'cold plunge', 'Highlands'],
+    image: '/arctic-spas-hero.jpg',
+    readTime: '4 min read',
+    featured: true,
+    seoKeywords: ['Arctic Spas Inverness', 'hot tubs Scottish Highlands', 'energy efficient hot tub', 'cold plunge'],
+    seoDescription: 'Why Arctic Spas are ideal for homes across Inverness and the Scottish Highlands — durability, efficiency, hydrotherapy, and smart controls.'
+  },
+  {
     id: '1',
     slug: 'ultimate-guide-garden-saunas-northern-ireland',
     title: 'The Ultimate Guide to Garden Saunas in Northern Ireland',
