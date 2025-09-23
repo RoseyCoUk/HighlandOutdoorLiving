@@ -73,10 +73,10 @@ Source: Contact Section`;
   };
 
   return (
-    <section className="relative min-h-screen">
-      <div className="grid lg:grid-cols-2 h-screen">
+    <section className="relative py-24 bg-[#2B2B2B]">
+      <div className="grid lg:grid-cols-2 gap-0">
         {/* Left side - Map */}
-        <div className="relative">
+        <div className="relative h-[320px] md:h-[520px]">
           <iframe
             src="https://www.google.com/maps?q=18-20%20Harbour%20Road,%20Inverness,%20IV1%201UA&output=embed"
             width="100%"
@@ -160,7 +160,7 @@ Source: Contact Section`;
             </div>
 
             {/* Quick Contact Form */}
-            <div className="border-t border-[#C5B8AB]/20 pt-8">
+            <div className="border-t border-white/10 pt-8">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Send a Quick Message
               </h3>

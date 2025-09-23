@@ -8,21 +8,21 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
   return (
-    <footer className="bg-[#222126] text-[#C5B8AB]">
+    <footer className="bg-[#2B2B2B] text-[#E0E0E0]">
       {/* CTA Section */}
       {onGetEstimate && (
-        <section className="bg-gradient-to-r from-[#C5B8AB]/10 to-[#C5B8AB]/5 border-b border-[#C5B8AB]/20">
+        <section className="bg-[#1f1f1f] border-b border-white/10">
           <div className="max-w-7xl mx-auto px-6 py-16">
             <div className="text-center">
               <h3 className="text-3xl md:text-4xl font-light text-white mb-4">
                 Ready to Get Started?
               </h3>
-              <p className="text-lg text-[#C5B8AB]/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-[#E0E0E0]/80 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Get your free instant estimate in just a few clicks. No commitment required.
               </p>
               <button
                 onClick={onGetEstimate}
-                className="inline-flex items-center px-10 py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-lg rounded-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="inline-flex items-center px-10 py-4 bg-[#8B1E2D] text-white font-semibold text-lg rounded-none hover:bg-[#6f1824] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <Calculator className="w-5 h-5 mr-3" />
                 Get Free Estimate
@@ -56,7 +56,7 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
                 <div className="absolute inset-0 rounded-lg border-2 border-[#C5B8AB]/30 hover:border-[#C5B8AB] hover:shadow-[0_0_20px_rgba(197,184,171,0.5)] transition-all duration-500 hover:scale-125 opacity-0 hover:opacity-100"></div>
               </div>
             </div>
-            <p className="text-[#C5B8AB]/80 leading-relaxed text-lg">
+            <p className="text-[#E0E0E0]/80 leading-relaxed text-lg">
               Arctic Spas hot tubs, all-weather pools, and luxury saunas for Inverness and the Scottish Highlands.
             </p>
           </div>
@@ -66,27 +66,27 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
             <h4 className="text-xl font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/services" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/gallery" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/about" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/contact" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   Contact
                 </Link>
               </li>
@@ -98,17 +98,17 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
             <h4 className="text-xl font-semibold text-white mb-4">Our Products</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/hot-tubs" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/hot-tubs" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   Arctic Spas Hot Tubs
                 </Link>
               </li>
               <li>
-                <Link to="/pools" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/pools" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   All-Weather Pools
                 </Link>
               </li>
               <li>
-                <Link to="/saunas" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                <Link to="/saunas" className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg">
                   Luxury Saunas
                 </Link>
               </li>
@@ -117,31 +117,31 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="text-xl font-semibold text-white mb-4">Contact Info</h4>
+            <h4 className="text-xl font-semibold text-white mb-4">Contact</h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#C5B8AB] flex-shrink-0" />
+                <Phone className="w-5 h-5 text-[#CBB79C] flex-shrink-0" />
                 <a 
                   href="tel:+441463223085" 
-                  className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg"
+                  className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg"
                 >
                   +44 1463 223085
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-[#C5B8AB] flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[#CBB79C] flex-shrink-0" />
                 <a 
                   href="mailto:sales@hkbtltd.com" 
-                  className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg"
+                  className="text-[#E0E0E0]/80 hover:text-white transition-colors text-lg"
                 >
                   sales@hkbtltd.com
                 </a>
               </div>
               
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-[#C5B8AB] mt-1 flex-shrink-0" />
-                <div className="text-[#C5B8AB]/80 text-lg">
+                <MapPin className="w-5 h-5 text-[#CBB79C] mt-1 flex-shrink-0" />
+                <div className="text-[#E0E0E0]/80 text-lg">
                   <p>18-20 Harbour Road</p>
                   <p>Inverness, IV1 1UA</p>
                 </div>
@@ -157,33 +157,22 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
               </div>
               
               {/* Social Media Links */}
-              <div className="flex items-center space-x-4 pt-2">
-                <a 
-                  href="https://www.facebook.com/HighlandOutdoorLiving" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#C5B8AB]/80 hover:text-white transition-colors"
-                  aria-label="Follow us on Facebook"
-                >
-                  <Facebook className="w-6 h-6" />
-                </a>
-                
-              </div>
+              <div className="pt-2"></div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#C5B8AB]/20 pt-8">
+        <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-[#C5B8AB]/60 text-base">
+            <p className="text-[#E0E0E0]/60 text-base">
               © {new Date().getFullYear()} Highland Outdoor Living – Official Arctic Spas Partner in the Scottish Highlands.
             </p>
             <div className="flex space-x-8 text-base">
-              <a href="#" className="text-[#C5B8AB]/60 hover:text-white transition-colors">
+              <a href="#" className="text-[#E0E0E0]/60 hover:text-white transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-[#C5B8AB]/60 hover:text-white transition-colors">
+              <a href="#" className="text-[#E0E0E0]/60 hover:text-white transition-colors">
                 Terms of Service
               </a>
             </div>
