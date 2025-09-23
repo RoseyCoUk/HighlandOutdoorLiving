@@ -31,7 +31,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         <div className="mb-8 sm:mb-12 animate-fade-in">
           <div className="inline-flex items-center justify-center w-32 h-32 sm:w-48 sm:h-48 mb-6 sm:mb-8 bg-[#C5B8AB]/10 rounded-full border border-[#C5B8AB]/30 p-4 sm:p-6">
             <img 
-              src="/logo.png" 
+              src="/logo.svg" 
               alt="Highland Outdoor Living Logo" 
               className="w-full h-full object-contain rounded-full"
               loading="eager"

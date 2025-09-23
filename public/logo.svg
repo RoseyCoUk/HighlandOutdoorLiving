@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Highland Outdoor Living">
+  <rect width="512" height="512" fill="#222126"/>
+  <circle cx="256" cy="256" r="200" fill="#C5B8AB" opacity="0.1"/>
+  <g fill="#C5B8AB">
+    <path d="M128 352l64-112 48 84 80-144 64 112h-40l-24-42-80 144-48-84-40 72h-24z"/>
+    <text x="256" y="420" font-family="Inter, Arial, sans-serif" font-size="44" text-anchor="middle" fill="#C5B8AB">Highland</text>
+  </g>
+</svg>
+
