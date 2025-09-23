@@ -5,28 +5,31 @@ import { ExternalLink } from 'lucide-react';
 const ServicesOverview = () => {
   const services = [
     {
-      title: 'Sheds',
-      description: 'Durable, stylish, and low-maintenance shed solutions built to last.',
-      features: ['Fencing', 'Decking', 'Cladding'],
-      image: '/Shed1.png',
-      alt: 'Custom storage shed with durable construction',
-      cta: 'View Shed Range'
+      title: 'Arctic Spas Hot Tubs',
+      description: 'Your ticket to paradise — energy‑efficient hot tubs engineered for the Highlands.',
+      features: ['Hydrotherapy Jets', 'Energy Efficient', 'Smart Controls'],
+      image: '/arctic-spas-hero.jpg',
+      alt: 'Arctic Spas hot tub in Inverness home',
+      cta: 'View Arctic Spas Range',
+      link: '/hot-tubs'
     },
     {
-      title: 'Garden Saunas',
-      description: 'Unwind in your own custom-built sauna — tailored for wellness, comfort, and style.',
-      features: ['Custom Design', 'Premium Materials', 'Installation Included'],
+      title: 'All‑Weather Pools',
+      description: 'Year‑round swimming and cold plunge therapy with insulated, smart‑controlled pools.',
+      features: ['Swim Spa Options', 'Cold Plunge', 'Insulated Shell'],
+      image: '/arctic-spas-pool.jpg',
+      alt: 'All‑weather pool in the Scottish Highlands',
+      cta: 'Explore Pools',
+      link: '/pools'
+    },
+    {
+      title: 'Luxury Saunas',
+      description: 'Relax. Refresh. Rejuvenate. Premium saunas designed for comfort and recovery.',
+      features: ['Traditional & Infrared', 'Premium Materials', 'Professional Installation'],
       image: '/sauna/Sauna1.JPG',
-      alt: 'Interior of luxury garden sauna with soft lighting',
-      cta: 'Explore Sauna Options'
-    },
-    {
-      title: 'Grill Pods',
-      description: 'Enjoy BBQs all year round with handcrafted grill pods designed for entertaining in any weather.',
-      features: ['Weather Resistant', 'Custom Designs', 'Professional Installation'],
-      image: '/Nigel Grill Pod/GrillPod1.JPG',
-      alt: 'NMG custom grill pod installation',
-      cta: 'View Grill Pod Range'
+      alt: 'Luxury sauna interior',
+      cta: 'Explore Saunas',
+      link: '/saunas'
     }
   ];
 
@@ -73,29 +76,9 @@ const ServicesOverview = () => {
                   ))}
                 </ul>
 
-                {service.cta && service.title === 'Grill Pods' && (
+                {service.cta && service.link && (
                   <Link 
-                    to="/grill-pods"
-                    className="inline-flex items-center text-[#222126] font-medium transition-colors hover:text-[#222126]/70"
-                  >
-                    {service.cta}
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </Link>
-                )}
-                
-                {service.cta && service.title === 'Sheds' && (
-                  <Link 
-                    to="/sheds"
-                    className="inline-flex items-center text-[#222126] font-medium transition-colors hover:text-[#222126]/70"
-                  >
-                    {service.cta}
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </Link>
-                )}
-                
-                {service.cta && service.title === 'Garden Saunas' && (
-                  <Link 
-                    to="/saunas"
+                    to={service.link}
                     className="inline-flex items-center text-[#222126] font-medium transition-colors hover:text-[#222126]/70"
                   >
                     {service.cta}

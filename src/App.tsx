@@ -30,8 +30,9 @@ const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
 const ThankYouPage = lazy(() => import('./pages/ThankYouPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
-const BelfastPage = lazy(() => import('./pages/BelfastPage'));
-const DerryPage = lazy(() => import('./pages/DerryPage'));
+// Legacy location pages (removed from routing)
+// const BelfastPage = lazy(() => import('./pages/BelfastPage'));
+// const DerryPage = lazy(() => import('./pages/DerryPage'));
 
 // Lazy load admin components
 const AdminLayout = lazy(() => import('./components/admin/AdminLayout'));
@@ -139,8 +140,6 @@ function AppContent({
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
-        <Route path="/belfast" element={<BelfastPage />} />
-        <Route path="/derry" element={<DerryPage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/admin" element={<AdminLayout />}>
