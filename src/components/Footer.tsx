@@ -40,10 +40,10 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
             <div className="mb-4">
               {/* Animated Logo */}
               <div className="relative">
-                <div className="w-16 h-16 hover:animate-spin-slow transition-all duration-500 hover:scale-110 hover:shadow-2xl">
+                <div className="w-16 h-16 transition-all duration-500 hover:scale-110 hover:shadow-2xl">
                   <img 
-                    src="/ngmlogo.jpg" 
-                    alt="NMG Outdoor Living Logo" 
+                    src="/logo.svg" 
+                    alt="Highland Outdoor Living Logo" 
                     className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                     loading="lazy"
                     style={{
@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
               </div>
             </div>
             <p className="text-[#C5B8AB]/80 leading-relaxed text-lg">
-              Premium outdoor living solutions across Northern Ireland. Crafting bespoke saunas, grill pods, and sheds with expert craftsmanship.
+              Arctic Spas hot tubs, all-weather pools, and luxury saunas for Inverness and the Scottish Highlands.
             </p>
           </div>
 
@@ -98,18 +98,18 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
             <h4 className="text-xl font-semibold text-white mb-4">Our Products</h4>
             <ul className="space-y-3">
               <li>
+                <Link to="/hot-tubs" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                  Arctic Spas Hot Tubs
+                </Link>
+              </li>
+              <li>
+                <Link to="/pools" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
+                  All-Weather Pools
+                </Link>
+              </li>
+              <li>
                 <Link to="/saunas" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
-                  Garden Saunas
-                </Link>
-              </li>
-              <li>
-                <Link to="/grill-pods" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
-                  Grill Pods
-                </Link>
-              </li>
-              <li>
-                <Link to="/sheds" className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg">
-                  Custom Sheds
+                  Luxury Saunas
                 </Link>
               </li>
             </ul>
@@ -122,28 +122,28 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#C5B8AB] flex-shrink-0" />
                 <a 
-                  href="tel:07730510368" 
+                  href="tel:+441463223085" 
                   className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg"
                 >
-                  07730 510368
+                  +44 1463 223085
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#C5B8AB] flex-shrink-0" />
                 <a 
-                  href="mailto:nigelmcg@gmail.com" 
+                  href="mailto:sales@hkbtltd.com" 
                   className="text-[#C5B8AB]/80 hover:text-white transition-colors text-lg"
                 >
-                  nigelmcg@gmail.com
+                  sales@hkbtltd.com
                 </a>
               </div>
               
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-[#C5B8AB] mt-1 flex-shrink-0" />
                 <div className="text-[#C5B8AB]/80 text-lg">
-                  <p>9 Ballyknock Road</p>
-                  <p>Maghera, Northern Ireland</p>
+                  <p>18-20 Harbour Road</p>
+                  <p>Inverness, IV1 1UA</p>
                 </div>
               </div>
               
@@ -159,7 +159,7 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
               {/* Social Media Links */}
               <div className="flex items-center space-x-4 pt-2">
                 <a 
-                  href="https://www.facebook.com/profile.php?id=100065453470878" 
+                  href="https://www.facebook.com/HighlandOutdoorLiving" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-[#C5B8AB]/80 hover:text-white transition-colors"
@@ -167,15 +167,7 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
                 >
                   <Facebook className="w-6 h-6" />
                 </a>
-                <a 
-                  href="https://www.instagram.com/nmg_outdoorliving" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#C5B8AB]/80 hover:text-white transition-colors"
-                  aria-label="Follow us on Instagram"
-                >
-                  <Instagram className="w-6 h-6" />
-                </a>
+                
               </div>
             </div>
           </div>
@@ -185,7 +177,7 @@ const Footer: React.FC<FooterProps> = ({ onGetEstimate }) => {
         <div className="border-t border-[#C5B8AB]/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-[#C5B8AB]/60 text-base">
-              © {new Date().getFullYear()} NMG Outdoor Living. All rights reserved.
+              © {new Date().getFullYear()} Highland Outdoor Living – Official Arctic Spas Partner in the Scottish Highlands.
             </p>
             <div className="flex space-x-8 text-base">
               <a href="#" className="text-[#C5B8AB]/60 hover:text-white transition-colors">

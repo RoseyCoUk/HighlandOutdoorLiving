@@ -39,15 +39,15 @@ const Header = () => {
 
   // Navigation links configuration
   const navigationLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Saunas', path: '/saunas' },
-    { name: 'Grill Pods', path: '/grill-pods' },
-    { name: 'Sheds', path: '/sheds' },
-    { name: 'Services', path: '/services' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
+  { name: 'Home', path: '/' },
+  { name: 'Hot Tubs', path: '/hot-tubs' },
+  { name: 'Pools', path: '/pools' },
+  { name: 'Saunas', path: '/saunas' },
+  { name: 'Services', path: '/services' },
+  { name: 'Gallery', path: '/gallery' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'About', path: '/about' },
+  { name: 'Contact', path: '/contact' }
   ];
 
   return (
@@ -59,13 +59,13 @@ const Header = () => {
         onKeyDown={handleKeyDown}
       >
         {/* Animated Logo */}
-        <Link to="/admin/login" className="flex items-center justify-center h-full group pt-5 sm:pt-0">
+        <Link to="/" className="flex items-center justify-center h-full group pt-5 sm:pt-0">
           <div className="relative flex items-center justify-center">
             {/* 3D Rotating Logo */}
-            <div className="w-8 h-8 sm:w-12 sm:h-12 group-hover:animate-spin-slow transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
+            <div className="w-8 h-8 sm:w-12 sm:h-12 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
               <img 
-                src="/ngmlogo.jpg" 
-                alt="NMG Outdoor Living Logo" 
+                src="/logo.svg" 
+                alt="Highland Outdoor Living Logo" 
                 className="w-full h-full object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300"
                 loading="lazy"
                 style={{

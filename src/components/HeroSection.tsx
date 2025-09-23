@@ -22,7 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{
-          backgroundImage: "url('/image.png')"
+          backgroundImage: "url('/arctic-spas-hero.jpg')"
         }}
       ></div>
       
@@ -41,33 +41,30 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
 
         {/* Main headline */}
         <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light mb-6 sm:mb-8 text-white leading-tight px-2">
-          Tailored Outdoor Spaces
-          <br />
-          <span className="text-[#C5B8AB]">That Inspire</span>
+          Relax. Refresh. Rejuvenate.
         </h2>
 
         {/* Subheading */}
         <p className="text-base sm:text-lg md:text-xl text-[#C5B8AB]/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
-          Premium PVC solutions, luxury saunas, and handcrafted grill pods designed to transform your outdoor space.
+          Luxury Hot Tubs, Pools & Saunas from Arctic Spas – serving Inverness and the Scottish Highlands.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 px-4">
-          <StrategicCTA
-            type="quote"
-            text="Get a Free Design Quote"
-            size="lg"
-            className="w-full sm:w-auto"
-          />
+          <a
+            href="/hot-tubs"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 bg-[#8B1E2D] text-white font-semibold hover:bg-[#6f1824] transition-colors"
+          >
+            View Arctic Spas Range
+          </a>
           
           {onGetEstimate && (
-            <StrategicCTA
-              type="estimate"
-              text="Get Instant Estimate"
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto"
-            />
+            <a
+              href="#quote-form"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 bg-[#CBB79C] text-[#2B2B2B] font-semibold hover:bg-[#b9a185] transition-colors"
+            >
+              Get a Free Quote
+            </a>
           )}
         </div>
       </div>

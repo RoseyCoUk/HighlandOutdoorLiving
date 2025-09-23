@@ -17,9 +17,11 @@ import FAQSection from './components/FAQSection';
 import AccessibilityManager from './components/AccessibilityManager';
 import AccessibilityTester from './components/AccessibilityTester';
 // Lazy load pages for better performance
-const GrillPodPage = lazy(() => import('./pages/GrillPodPage'));
+// const GrillPodPage = lazy(() => import('./pages/GrillPodPage'));
 const SaunaPage = lazy(() => import('./pages/SaunaPage'));
-const ShedsPage = lazy(() => import('./pages/ShedsPage'));
+// const ShedsPage = lazy(() => import('./pages/ShedsPage'));
+const HotTubsPage = lazy(() => import('./pages/HotTubsPage'));
+const PoolsPage = lazy(() => import('./pages/PoolsPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -108,12 +110,12 @@ function AppContent({
       <Suspense fallback={<div className="min-h-screen bg-[#222126] flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C5B8AB]"></div></div>}>
         <Routes>
         <Route path="/" element={
-          <div className="min-h-screen bg-[#222126] font-['Inter'] text-[#C5B8AB]">
+          <div className="min-h-screen bg-[#2B2B2B] font-['Inter'] text-white">
             <SEOHead 
-              title="NMG Outdoor Living - Premium Saunas, Grill Pods & Custom Sheds in Northern Ireland"
-              description="Transform your outdoor space with premium saunas, all-weather grill pods, and custom sheds in Northern Ireland. Expert installation in Maghera, Belfast, and beyond."
-              keywords={['outdoor living', 'saunas', 'grill pods', 'custom sheds', 'Northern Ireland', 'Maghera', 'Belfast', 'garden offices', 'outdoor kitchens']}
-              image="/sauna/Sauna1.JPG"
+              title="Highland Outdoor Living | Arctic Spas Hot Tubs, Pools & Saunas Inverness"
+              description="Discover premium hot tubs, all-weather pools, and luxury saunas from Arctic Spas at Highland Outdoor Living. Serving Inverness and the Scottish Highlands."
+              keywords={['Arctic Spas', 'hot tubs Inverness', 'pools Highlands', 'saunas Inverness']}
+              image="/arctic-spas-hero.jpg"
             />
             <main>
               <HeroSection onGetEstimate={openCalculator} />
@@ -128,9 +130,9 @@ function AppContent({
             </main>
           </div>
         } />
-        <Route path="/grill-pods" element={<GrillPodPage />} />
+        <Route path="/hot-tubs" element={<HotTubsPage />} />
+        <Route path="/pools" element={<PoolsPage />} />
         <Route path="/saunas" element={<SaunaPage />} />
-        <Route path="/sheds" element={<ShedsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
