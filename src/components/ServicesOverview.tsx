@@ -34,10 +34,10 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#C5B8AB]">
+    <section className="py-20 bg-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-4">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
             Explore Our Core Services
           </h2>
         </div>
@@ -46,7 +46,7 @@ const ServicesOverview = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              className="group bg-[#1f1f1f] rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -55,22 +55,22 @@ const ServicesOverview = () => {
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#8B1E2D]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-semibold text-[#222126] mb-3">
+                <h3 className="text-2xl font-semibold text-white mb-3">
                   {service.title}
                 </h3>
                 
-                <p className="text-[#222126]/80 mb-4 leading-relaxed">
+                <p className="text-[#E0E0E0] mb-4 leading-relaxed">
                   {service.description}
                 </p>
 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-[#222126]/70">
-                      <div className="w-2 h-2 bg-[#222126] rounded-full mr-3"></div>
+                    <li key={featureIndex} className="flex items-center text-[#E0E0E0]/80">
+                      <div className="w-2 h-2 bg-[#CBB79C] rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
@@ -79,7 +79,7 @@ const ServicesOverview = () => {
                 {service.cta && service.link && (
                   <Link 
                     to={service.link}
-                    className="inline-flex items-center text-[#222126] font-medium transition-colors hover:text-[#222126]/70"
+                    className="inline-flex items-center px-4 py-2 bg-[#8B1E2D] text-white font-medium transition-colors hover:bg-[#6f1824]"
                   >
                     {service.cta}
                     <ExternalLink className="ml-2 w-4 h-4" />

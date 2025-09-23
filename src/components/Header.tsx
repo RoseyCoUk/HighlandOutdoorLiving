@@ -51,7 +51,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/10 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#2B2B2B]/95 backdrop-blur-lg border-b border-[#E0E0E0]/10 shadow-lg">
       <nav 
         className="max-w-7xl mx-auto px-2 sm:px-6 py-2 sm:py-3 flex items-center justify-between h-14 sm:h-16"
         role="navigation"
@@ -85,10 +85,10 @@ const Header = () => {
             <li key={link.path}>
               <Link
                 to={link.path}
-                className={`text-sm lg:text-base font-medium transition-colors duration-200 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none ${
+                className={`text-sm lg:text-base font-medium transition-colors duration-200 hover:text-[#CBB79C] focus:text-[#CBB79C] focus:outline-none ${
                   location.pathname === link.path 
-                    ? 'text-[#C5B8AB] font-semibold border-b-2 border-[#C5B8AB] pb-1' 
-                    : 'text-[#e4d4c3] hover:text-white'
+                    ? 'text-[#CBB79C] font-semibold border-b-2 border-[#8B1E2D] pb-1' 
+                    : 'text-[#E0E0E0] hover:text-white'
                 }`}
                 aria-current={location.pathname === link.path ? 'page' : undefined}
               >
@@ -100,7 +100,7 @@ const Header = () => {
 
         {/* Mobile Menu Button - Visible only on mobile */}
         <button
-          className="md:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#e4d4c3] hover:text-[#C5B8AB] transition-colors duration-200 focus:outline-none focus:text-[#C5B8AB]"
+          className="md:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#E0E0E0] hover:text-[#CBB79C] transition-colors duration-200 focus:outline-none focus:text-[#CBB79C]"
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -116,7 +116,7 @@ const Header = () => {
         {/* Mobile Menu Dropdown */}
         <div
           id="mobile-menu"
-          className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-white/10 shadow-xl transition-all duration-300 ease-in-out ${
+          className={`md:hidden absolute top-full left-0 right-0 bg-[#2B2B2B]/98 backdrop-blur-lg border-b border-[#E0E0E0]/10 shadow-xl transition-all duration-300 ease-in-out ${
             isMenuOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2'
           }`}
           aria-hidden={!isMenuOpen}

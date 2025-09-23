@@ -42,8 +42,7 @@ const LeadsPage = lazy(() => import('./components/admin/LeadsPage'));
 const AdminSettings = lazy(() => import('./components/admin/AdminSettings'));
 const AdminGuide = lazy(() => import('./components/admin/AdminGuide'));
 import Footer from './components/Footer';
-import EstimateCalculator from './components/EstimateCalculator';
-import { useEstimateCalculator } from './hooks/useEstimateCalculator';
+// Popup disabled: removing estimate calculator
 import { useAnalytics } from './hooks/useAnalytics';
 import { useGA4Events } from './hooks/useGA4Events';
 import SEOHead from './components/SEOHead';
@@ -62,7 +61,6 @@ const ScrollToTop = () => {
 };
 
 function App() {
-  const { isOpen, openCalculator, closeCalculator } = useEstimateCalculator();
   const analytics = useAnalytics();
   useGA4Events(); // Initialize GA4 event tracking
   const [showAccessibilityTester, setShowAccessibilityTester] = useState(false);
@@ -75,9 +73,6 @@ function App() {
           <PerformanceMonitor />
           <AccessibilityManager>
           <AppContent 
-            isOpen={isOpen} 
-            openCalculator={openCalculator} 
-            closeCalculator={closeCalculator}
             showAccessibilityTester={showAccessibilityTester}
             setShowAccessibilityTester={setShowAccessibilityTester}
           />
@@ -89,15 +84,9 @@ function App() {
 }
 
 function AppContent({ 
-  isOpen, 
-  openCalculator, 
-  closeCalculator, 
   showAccessibilityTester, 
   setShowAccessibilityTester 
 }: {
-  isOpen: boolean;
-  openCalculator: () => void;
-  closeCalculator: () => void;
   showAccessibilityTester: boolean;
   setShowAccessibilityTester: (show: boolean) => void;
 }) {
@@ -107,7 +96,6 @@ function AppContent({
   return (
     <>
       {!isAdminRoute && <Header />}
-      {!isAdminRoute && <EstimateCalculator isOpen={isOpen} onClose={closeCalculator} />}
       <Suspense fallback={<div className="min-h-screen bg-[#222126] flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#C5B8AB]"></div></div>}>
         <Routes>
         <Route path="/" element={
@@ -119,14 +107,14 @@ function AppContent({
               image="/arctic-spas-hero.jpg"
             />
             <main>
-              <HeroSection onGetEstimate={openCalculator} />
+              <HeroSection />
               <BrandPositioning />
               <ServicesOverview />
             <ProjectGallery />
             <CustomerReviews />
             <Testimonials />
             <FAQSection />
-            <QuoteForm onGetEstimate={openCalculator} />
+            <QuoteForm />
             <ContactSection />
             </main>
           </div>
