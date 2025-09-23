@@ -78,14 +78,14 @@ Source: Contact Section`;
         {/* Left side - Map */}
         <div className="relative">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2295.7891234567!2d-6.6234567!3d54.8234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485fd123456789ab%3A0x123456789abcdef0!2s9%20Ballyknock%20Rd%2C%20Maghera%20BT46%205AB%2C%20UK!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+            src="https://www.google.com/maps?q=18-20%20Harbour%20Road,%20Inverness,%20IV1%201UA&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, filter: 'grayscale(100%) brightness(0.8)' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="NMG Location Map - 9 Ballyknock Road, Maghera"
+            title="Highland Outdoor Living Location - 18-20 Harbour Road, Inverness"
           ></iframe>
           
           {/* Map pin indicator */}
@@ -95,65 +95,65 @@ Source: Contact Section`;
         </div>
 
         {/* Right side - Contact Info */}
-        <div className="bg-[#222126] flex items-center justify-center p-8 lg:p-16">
+        <div className="bg-[#2B2B2B] flex items-center justify-center p-8 lg:p-16">
           <div className="w-full max-w-md space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-light text-white mb-2">
                 Get In Touch
               </h2>
-              <p className="text-[#C5B8AB]/80">
-                Ready to transform your outdoor space?
+              <p className="text-[#E0E0E0]">
+                Ready to relax, refresh, and rejuvenate?
               </p>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#C5B8AB]/20 rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-[#C5B8AB]" />
+                <div className="w-12 h-12 bg-[#CBB79C]/20 rounded-full flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-[#CBB79C]" />
                 </div>
                 <div>
                   <p className="text-[#C5B8AB]/70 text-sm">Phone</p>
                   <a 
-                    href="tel:07730510368" 
+                    href="tel:+441463223085" 
                     onClick={() => {
                       analytics.trackPhoneClick('Contact Section');
-                      trackPhoneClick('07730510368');
+                      trackPhoneClick('+441463223085');
                     }}
-                    className="text-white text-xl font-medium hover:text-[#C5B8AB] transition-colors"
+                    className="text-white text-xl font-medium hover:text-[#CBB79C] transition-colors"
                   >
-                    07730 510368
+                    +44 1463 223085
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#C5B8AB]/20 rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-[#C5B8AB]" />
+                <div className="w-12 h-12 bg-[#CBB79C]/20 rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-[#CBB79C]" />
                 </div>
                 <div>
                   <p className="text-[#C5B8AB]/70 text-sm">Email</p>
                   <a 
-                    href="mailto:nigelmcg@gmail.com" 
+                    href="mailto:sales@hkbtltd.com" 
                     onClick={() => {
                       analytics.trackEmailClick('Contact Section');
-                      trackEmailClick('nigelmcg@gmail.com');
+                      trackEmailClick('sales@hkbtltd.com');
                     }}
-                    className="text-white text-xl font-medium hover:text-[#C5B8AB] transition-colors break-all"
+                    className="text-white text-xl font-medium hover:text-[#CBB79C] transition-colors break-all"
                   >
-                    nigelmcg@gmail.com
+                    sales@hkbtltd.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#C5B8AB]/20 rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-[#C5B8AB]" />
+                <div className="w-12 h-12 bg-[#CBB79C]/20 rounded-full flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-[#CBB79C]" />
                 </div>
                 <div>
                   <p className="text-[#C5B8AB]/70 text-sm">Location</p>
                   <p className="text-white text-xl font-medium leading-tight">
-                    9 Ballyknock Road<br />Maghera
+                    18-20 Harbour Road<br />Inverness, IV1 1UA
                   </p>
                 </div>
               </div>
@@ -173,7 +173,7 @@ Source: Contact Section`;
                   onChange={handleContactChange}
                   placeholder="Your Name"
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-[#C5B8AB]/30 rounded-none focus:outline-none focus:border-[#C5B8AB] transition-colors text-white placeholder-[#C5B8AB]/60"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors text-white placeholder-[#E0E0E0]/60"
                 />
 
                 <input
@@ -183,7 +183,7 @@ Source: Contact Section`;
                   onChange={handleContactChange}
                   placeholder="Your Email"
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-[#C5B8AB]/30 rounded-none focus:outline-none focus:border-[#C5B8AB] transition-colors text-white placeholder-[#C5B8AB]/60"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors text-white placeholder-[#E0E0E0]/60"
                 />
 
                 <textarea
@@ -193,13 +193,13 @@ Source: Contact Section`;
                   placeholder="Your Message"
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/10 border border-[#C5B8AB]/30 rounded-none focus:outline-none focus:border-[#C5B8AB] transition-colors resize-vertical text-white placeholder-[#C5B8AB]/60"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors resize-vertical text-white placeholder-[#E0E0E0]/60"
                 ></textarea>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#C5B8AB] text-[#222126] py-3 font-semibold transition-all duration-300 hover:bg-white hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#8B1E2D] text-white py-3 font-semibold transition-all duration-300 hover:bg-[#6f1824] hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

@@ -7,10 +7,10 @@ const ProjectGallery = () => {
   
   const projects = [
     {
-      title: 'Premium Grill Pod Installation',
-      category: 'Grill Pods',
-      image: '/Nigel Grill Pod/Grill Pod + Kitchen Shot.jpg',
-      description: 'Custom-built weatherproof grill pod with Mont Alpi kitchen'
+      title: 'Arctic Spas Hot Tub Installation',
+      category: 'Hot Tubs',
+      image: '/arctic-spas-hero.jpg',
+      description: 'Energy‑efficient hot tub designed for the Highlands climate'
     },
     {
       title: 'Luxury Garden Sauna',
@@ -19,16 +19,10 @@ const ProjectGallery = () => {
       description: 'Steel-framed, fully-insulated sauna with premium finishes'
     },
     {
-      title: 'Modern Outdoor Kitchen',
-      category: 'Grill Pods',
-      image: '/Nigel Grill Pod/Outdoor Kitchen Shot 2.jpg',
-      description: 'All-weather outdoor kitchen perfect for year-round entertaining'
-    },
-    {
-      title: 'Galvanised Steel Shed',
-      description: 'Durable, weather-resistant steel sheds built to last',
-      image: '/sheds/Galvanised Steel Shed.JPG',
-      category: 'Sheds'
+      title: 'All‑Weather Pool',
+      category: 'Pools',
+      image: '/arctic-spas-pool.jpg',
+      description: 'Year‑round swimming and cold plunge therapy'
     },
     {
       title: 'Luxury Glass Pavilion',
@@ -116,7 +110,7 @@ const ProjectGallery = () => {
     }
   ];
 
-  const filters = ['All', 'Saunas', 'Grill Pods', 'Sheds', 'Other'];
+  const filters = ['All', 'Hot Tubs', 'Pools', 'Saunas', 'Other'];
   
   const filteredProjects = filter === 'All' 
     ? projects 
@@ -132,7 +126,7 @@ const ProjectGallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-[#222126]">
+    <section id="gallery" className="py-20 bg-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
@@ -147,8 +141,8 @@ const ProjectGallery = () => {
                 onClick={() => handleFilterChange(filterOption)}
                 className={`px-6 py-2 transition-all duration-300 ${
                   filter === filterOption
-                    ? 'bg-[#C5B8AB] text-[#222126] font-semibold'
-                    : 'border border-[#C5B8AB]/50 text-[#C5B8AB] hover:border-[#C5B8AB] hover:bg-[#C5B8AB]/10'
+                    ? 'bg-[#8B1E2D] text-white font-semibold'
+                    : 'border border-[#CBB79C]/60 text-[#CBB79C] hover:border-[#CBB79C] hover:bg-[#CBB79C]/10'
                 }`}
               >
                 {filterOption}
@@ -171,15 +165,15 @@ const ProjectGallery = () => {
                 loading="lazy"
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/90 via-[#222126]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/90 via-[#2B2B2B]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-6 left-6 right-6">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-[#C5B8AB]/90 text-sm mb-3 leading-relaxed">
+                  <p className="text-[#E0E0E0]/90 text-sm mb-3 leading-relaxed">
                     {project.description}
                   </p>
-                  <span className="inline-block px-3 py-1 bg-[#C5B8AB] text-[#222126] text-sm font-medium rounded-full">
+                  <span className="inline-block px-3 py-1 bg-[#8B1E2D] text-white text-sm font-medium rounded-full">
                     {project.category}
                   </span>
                 </div>
@@ -193,7 +187,7 @@ const ProjectGallery = () => {
           <div className="text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="group inline-flex items-center px-8 py-4 bg-[#C5B8AB] text-[#222126] font-semibold text-lg transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-2xl"
+              className="group inline-flex items-center px-8 py-4 bg-[#8B1E2D] text-white font-semibold text-lg transition-all duration-300 hover:bg-[#6f1824] hover:scale-105 hover:shadow-2xl"
             >
               {showAll ? 'Show Less' : 'View More'}
               <ChevronDown className={`ml-2 w-5 h-5 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} />

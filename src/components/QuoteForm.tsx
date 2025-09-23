@@ -3,11 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Send, Calculator } from 'lucide-react';
 import { submitLead } from '../lib/forms';
 
-interface QuoteFormProps {
-  onGetEstimate?: () => void;
-}
-
-const QuoteForm: React.FC<QuoteFormProps> = ({ onGetEstimate }) => {
+const QuoteForm: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -130,22 +126,14 @@ Source: Home Page Quote Form`;
             <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-[#C5B8AB]/20 rounded-full border border-[#C5B8AB]/30">
               <span className="text-[#C5B8AB] text-xs sm:text-sm font-medium">✓ We typically respond within 24 hours</span>
             </div>
-            {onGetEstimate && (
-              <button
-                onClick={onGetEstimate}
-                className="inline-flex items-center px-4 sm:px-6 py-2 bg-[#C5B8AB] text-[#222126] font-semibold text-sm sm:text-base rounded-lg hover:bg-white transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
-              >
-                <Calculator className="w-4 h-4 mr-2" />
-                Get Instant Estimate
-              </button>
-            )}
+            
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="relative z-10 bg-white/95 backdrop-blur-sm rounded-lg p-6 sm:p-8 shadow-xl" role="form" aria-label="Quote request form">
+          <form onSubmit={handleSubmit} className="relative z-10 bg-[#1f1f1f]/95 backdrop-blur-sm rounded-lg p-6 sm:p-8 shadow-xl" role="form" aria-label="Quote request form">
           <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-6">
             <div>
-              <label htmlFor="name" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
+              <label htmlFor="name" className="block text-white font-medium mb-2 text-sm sm:text-base">
                 Name *
               </label>
               <input
@@ -157,13 +145,13 @@ Source: Home Page Quote Form`;
                 required
                 aria-required="true"
                 aria-describedby="name-error"
-                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors text-white placeholder-[#E0E0E0]/60 text-sm sm:text-base"
               />
               <div id="name-error" className="sr-only" role="alert"></div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
+              <label htmlFor="email" className="block text-white font-medium mb-2 text-sm sm:text-base">
                 Email *
               </label>
               <input
@@ -173,12 +161,12 @@ Source: Home Page Quote Form`;
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors text-white placeholder-[#E0E0E0]/60 text-sm sm:text-base"
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
+              <label htmlFor="phone" className="block text-white font-medium mb-2 text-sm sm:text-base">
                 Phone (optional)
               </label>
               <input
@@ -187,12 +175,12 @@ Source: Home Page Quote Form`;
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors text-white placeholder-[#E0E0E0]/60 text-sm sm:text-base"
               />
             </div>
 
             <div>
-              <label htmlFor="location" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
+              <label htmlFor="location" className="block text-white font-medium mb-2 text-sm sm:text-base">
                 Location (town/city) *
               </label>
               <input
@@ -202,13 +190,13 @@ Source: Home Page Quote Form`;
                 value={formData.location}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors text-white placeholder-[#E0E0E0]/60 text-sm sm:text-base"
               />
             </div>
           </div>
 
           <div className="mb-6 sm:mb-8">
-            <label htmlFor="message" className="block text-[#222126] font-medium mb-2 text-sm sm:text-base">
+            <label htmlFor="message" className="block text-white font-medium mb-2 text-sm sm:text-base">
               Tell us what you're looking for... *
             </label>
             <textarea
@@ -218,7 +206,7 @@ Source: Home Page Quote Form`;
               onChange={handleChange}
               required
               rows={4}
-              className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-[#222126] transition-colors resize-vertical text-sm sm:text-base"
+              className="w-full px-3 sm:px-4 py-3 bg-white/10 border border-white/20 rounded-none focus:outline-none focus:border-[#CBB79C] transition-colors resize-vertical text-white placeholder-[#E0E0E0]/60 text-sm sm:text-base"
               placeholder="Describe your outdoor space project, preferred materials, timeline, or any specific requirements..."
             ></textarea>
           </div>
@@ -226,7 +214,7 @@ Source: Home Page Quote Form`;
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#222126] text-[#C5B8AB] py-3 sm:py-4 font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-[#222126]/90 hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#8B1E2D] text-white py-3 sm:py-4 font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-[#6f1824] hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span>{isSubmitting ? 'Submitting...' : 'Request My Quote'}</span>
             {!isSubmitting && <Send className="w-4 h-4 sm:w-5 sm:h-5" />}

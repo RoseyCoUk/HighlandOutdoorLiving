@@ -7,41 +7,41 @@ const BrandPositioning = () => {
   };
 
   const highlights = [
-    { icon: TreePine, text: 'Bespoke PVC Installations' },
-    { icon: Flame, text: 'Premium Grill Pods' },
+    { icon: Waves, text: 'Arctic Spas Hot Tubs' },
+    { icon: Waves, text: 'All‑Weather Pools' },
     { icon: Waves, text: 'Luxury Saunas' },
-    { icon: Wrench, text: 'Expert Workmanship' }
+    { icon: Wrench, text: 'Expert Installation' }
   ];
 
   return (
-    <section className="py-20 bg-[#222126]" id="why-nmg">
+    <section className="py-20 bg-[#2B2B2B]" id="why-highland">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Visual */}
           <div className="relative group">
             <img
-              src="/sauna/Sauna2.JPG"
-              alt="NMG outdoor living installation showcasing craftsmanship and comfort"
+              src="/arctic-spas-hero.jpg"
+              alt="Highland Outdoor Living Arctic Spas installation"
               className="w-full h-[600px] object-cover rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/60 to-transparent rounded-lg"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#8B1E2D]/40 to-transparent rounded-lg"></div>
           </div>
 
           {/* Content */}
           <div className="space-y-8">
             <div className="mb-6">
-              <h3 className="text-lg font-medium text-[#C5B8AB] mb-2">Why NMG</h3>
+              <h3 className="text-lg font-medium text-[#CBB79C] mb-2">Why Highland</h3>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
               Where Craftsmanship Meets
               <br />
-              <span className="text-[#C5B8AB]">Comfort</span>
+              <span className="text-[#CBB79C]">Comfort</span>
             </h2>
 
-            <p className="text-lg text-[#C5B8AB]/90 leading-relaxed">
-              With years of experience in outdoor living solutions, we combine traditional craftsmanship with modern materials. Every project is tailored to your space, lifestyle, and vision — creating outdoor areas that truly enhance your home.
+            <p className="text-lg text-[#E0E0E0] leading-relaxed">
+              Your ticket to paradise. We bring Arctic Spas hot tubs, all‑weather pools, and luxury saunas to the Scottish Highlands.
             </p>
 
             {/* Icon highlights with hover effects */}
@@ -49,10 +49,10 @@ const BrandPositioning = () => {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 p-4 bg-[#C5B8AB]/10 rounded-lg border border-[#C5B8AB]/20 transition-all duration-300 hover:bg-[#C5B8AB]/20 hover:border-[#C5B8AB]/40 hover:scale-105 cursor-pointer"
+                  className="flex items-center space-x-3 p-4 bg-[#1f1f1f] rounded-lg border border-[#E0E0E0]/10 transition-all duration-300 hover:border-[#CBB79C] hover:scale-105 cursor-pointer"
                 >
-                  <item.icon className="w-6 h-6 text-[#C5B8AB]" />
-                  <span className="text-[#C5B8AB] font-medium">{item.text}</span>
+                  <item.icon className="w-6 h-6 text-[#CBB79C]" />
+                  <span className="text-[#E0E0E0] font-medium">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -60,7 +60,7 @@ const BrandPositioning = () => {
             {/* CTA */}
             <button
               onClick={scrollToGallery}
-              className="inline-flex items-center px-6 py-3 border border-[#C5B8AB] text-[#C5B8AB] font-medium rounded-none transition-all duration-300 hover:bg-[#C5B8AB] hover:text-[#222126]"
+              className="inline-flex items-center px-6 py-3 bg-[#8B1E2D] text-white font-medium rounded-none transition-all duration-300 hover:bg-[#6f1824]"
             >
               View Our Work
             </button>
