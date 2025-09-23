@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * Favicon Generation Script for NMG Outdoor Living
+ * Favicon Generation Script for Highland Outdoor Living
  * 
  * This script will help generate all the required favicon files
- * from the existing ngmlogo.jpg file.
+ * from the existing logo.png file.
  * 
  * Requirements:
  * - Install sharp: npm install sharp
@@ -15,7 +15,7 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const logoPath = 'public/ngmlogo.jpg';
+const logoPath = 'public/logo.png';
 const outputDir = 'public';
 
 // Check if logo exists

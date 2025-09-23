@@ -90,7 +90,7 @@ const ServicesPage = () => {
                 <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <img
                     src={service.image}
-                    alt={`${service.title} by NMG Outdoor Living`}
+                    alt={`${service.title} by Highland Outdoor Living`}
                     className="w-full h-[400px] object-cover rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/60 to-transparent rounded-lg"></div>
@@ -144,7 +144,7 @@ const ServicesPage = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8">
-              Why Choose NMG Outdoor Living?
+              Why Choose Highland Outdoor Living?
             </h2>
             <p className="text-lg text-[#222126]/80 max-w-3xl mx-auto">
               We bring decades of experience and a passion for quality to every project.
@@ -158,7 +158,7 @@ const ServicesPage = () => {
               </div>
               <h3 className="text-xl font-semibold text-[#222126] mb-4">Local Expertise</h3>
               <p className="text-[#222126]/80">
-                Based in Maghera, we understand the local climate and building requirements.
+                Based in Inverness, we understand the local climate and building requirements across the Scottish Highlands.
               </p>
             </div>
             

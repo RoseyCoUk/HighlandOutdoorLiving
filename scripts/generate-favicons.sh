@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Favicon Generation Script for NMG Outdoor Living
-# This script generates all required favicon files from ngmlogo.jpg
+# Favicon Generation Script for Highland Outdoor Living
+# This script generates all required favicon files from logo.png
 
-echo "🎨 Generating favicon files for NMG Outdoor Living..."
+echo "🎨 Generating favicon files for Highland Outdoor Living..."
 
 # Check if logo exists
-if [ ! -f "public/ngmlogo.jpg" ]; then
-    echo "❌ Logo file not found: public/ngmlogo.jpg"
+if [ ! -f "public/logo.png" ]; then
+    echo "❌ Logo file not found: public/logo.png"
     exit 1
 fi
 
@@ -22,19 +22,19 @@ fi
 echo "📱 Generating favicon files..."
 
 # Generate favicon.ico (32x32)
-convert public/ngmlogo.jpg -resize 32x32 -background '#C5B8AB' -gravity center -extent 32x32 public/favicon-32x32.png
+convert public/logo.png -resize 32x32 -background '#C5B8AB' -gravity center -extent 32x32 public/favicon-32x32.png
 
 # Generate favicon-16x16.png
-convert public/ngmlogo.jpg -resize 16x16 -background '#C5B8AB' -gravity center -extent 16x16 public/favicon-16x16.png
+convert public/logo.png -resize 16x16 -background '#C5B8AB' -gravity center -extent 16x16 public/favicon-16x16.png
 
 # Generate apple-touch-icon.png (180x180)
-convert public/ngmlogo.jpg -resize 180x180 -background '#C5B8AB' -gravity center -extent 180x180 public/apple-touch-icon.png
+convert public/logo.png -resize 180x180 -background '#C5B8AB' -gravity center -extent 180x180 public/apple-touch-icon.png
 
 # Generate android-chrome-192x192.png
-convert public/ngmlogo.jpg -resize 192x192 -background '#C5B8AB' -gravity center -extent 192x192 public/android-chrome-192x192.png
+convert public/logo.png -resize 192x192 -background '#C5B8AB' -gravity center -extent 192x192 public/android-chrome-192x192.png
 
 # Generate android-chrome-512x512.png
-convert public/ngmlogo.jpg -resize 512x512 -background '#C5B8AB' -gravity center -extent 512x512 public/android-chrome-512x512.png
+convert public/logo.png -resize 512x512 -background '#C5B8AB' -gravity center -extent 512x512 public/android-chrome-512x512.png
 
 # Create favicon.ico (combine 16x16 and 32x32)
 convert public/favicon-16x16.png public/favicon-32x32.png public/favicon.ico

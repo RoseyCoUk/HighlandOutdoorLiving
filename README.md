@@ -1,15 +1,15 @@
-# NMG Outdoor Living - Full Stack Application
+# Highland Outdoor Living - Web Application
 
-A modern, full-stack web application for NMG Outdoor Living, featuring a beautiful frontend built with React/TypeScript and a robust backend powered by Supabase.
+A modern web application for Highland Outdoor Living, featuring a beautiful frontend built with React/TypeScript and a robust backend powered by Supabase.
 
 ## Features
 
 ### Frontend
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Product Pages**: Dedicated pages for Saunas, Grill Pods, and Sheds
+- **Product Pages**: Dedicated pages for Saunas, Hot Tubs, and Pools
 - **Contact Forms**: Integrated forms that submit to Supabase database
 - **Admin Dashboard**: Protected admin area for lead management
-- **Modern UI**: Clean, professional design matching NMG's brand
+- **Modern UI**: Clean, professional design matching Highland's brand
 
 ### Backend (Supabase)
 - **Lead Management**: Complete CRM for tracking customer inquiries
@@ -28,8 +28,8 @@ A modern, full-stack web application for NMG Outdoor Living, featuring a beautif
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd NMGOutdoorLiving
+git clone https://github.com/RoseyCoUk/HighlandOutdoorLiving.git
+cd HighlandOutdoorLiving
 ```
 
 ### 2. Install Dependencies
@@ -156,4 +156,4 @@ For technical support or questions about the application, please contact the dev
 
 ---
 
-Built with ❤️ for NMG Outdoor Living
+Built with ❤️ for Highland Outdoor Living

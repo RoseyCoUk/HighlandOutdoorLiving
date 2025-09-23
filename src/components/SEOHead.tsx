@@ -22,21 +22,21 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = 'NMG Outdoor Living - Premium Saunas, Grill Pods & Steel Sheds in Northern Ireland',
-  description = 'Transform your outdoor space with premium saunas, all-weather grill pods, and galvanized steel sheds in Northern Ireland. Expert installation in Maghera, Belfast, Derry, and across NI.',
-  keywords = ['garden sheds Northern Ireland', 'steel sheds Belfast', 'outdoor sauna UK', 'garden sauna Ireland', 'grill pods UK', 'galvanized sheds NI', 'weatherproof sauna', 'outdoor kitchen pod', 'custom sheds Maghera', 'saunas Derry', 'heavy duty garden sheds', 'energy efficient sauna'],
-  image = '/sauna/Sauna1.JPG',
-  url = 'https://nmgpvcsupplies.co.uk',
+  title = 'Highland Outdoor Living | Hot Tubs, Pools & Saunas Inverness',
+  description = 'Highland Outdoor Living brings luxury hot tubs, pools, and saunas to the Scottish Highlands. Official Arctic Spas partner in Inverness.',
+  keywords = ['hot tubs Inverness', 'pools Scottish Highlands', 'saunas Inverness', 'Arctic Spas partner', 'Highland Outdoor Living', 'swim spas Highlands'],
+  image = '/logo.png',
+  url = 'https://highlandoutdoorliving.com',
   type = 'website',
-  author = 'NMG Outdoor Living',
+  author = 'Highland Outdoor Living',
   publishedTime,
   modifiedTime,
   section,
   tags = [],
   product
 }) => {
-  const fullUrl = url.startsWith('http') ? url : `https://nmgpvcsupplies.co.uk${url}`;
-  const fullImageUrl = image.startsWith('http') ? image : `https://nmgpvcsupplies.co.uk${image}`;
+  const fullUrl = url.startsWith('http') ? url : `https://highlandoutdoorliving.com${url}`;
+  const fullImageUrl = image.startsWith('http') ? image : `https://highlandoutdoorliving.com${image}`;
 
   return (
     <Helmet>
@@ -53,7 +53,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="NMG Outdoor Living" />
+      <meta property="og:site_name" content="Highland Outdoor Living" />
       <meta property="og:locale" content="en_GB" />
 
       {/* Twitter Card Meta Tags */}
@@ -61,7 +61,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImageUrl} />
-      <meta name="twitter:site" content="@nmgoutdoorliving" />
+      <meta name="twitter:site" content="@HighlandOutdoor" />
 
       {/* Article Specific Meta Tags */}
       {type === 'article' && (
@@ -82,7 +82,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           <meta property="product:price:amount" content={product.price} />
           <meta property="product:price:currency" content="GBP" />
           <meta property="product:availability" content={product.availability || 'in stock'} />
-          <meta property="product:brand" content={product.brand || 'NMG Outdoor Living'} />
+          <meta property="product:brand" content={product.brand || 'Highland Outdoor Living'} />
         </>
       )}
 
@@ -91,17 +91,17 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "NMG Outdoor Living",
-          "description": "Premium outdoor living solutions including steel-framed saunas, weatherproof grill pods, and custom sheds in Northern Ireland",
-          "url": "https://nmgpvcsupplies.co.uk",
+          "name": "Highland Outdoor Living",
+          "description": "Luxury hot tubs, pools, and saunas for the Scottish Highlands. Official Arctic Spas partner in Inverness",
+          "url": "https://highlandoutdoorliving.com",
           "telephone": "+447730510368",
           "email": "nigelmcg@gmail.com",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "9 Ballyknock Road",
-            "addressLocality": "Maghera",
-            "addressRegion": "County Londonderry",
-            "postalCode": "BT46 5AB",
+            "addressLocality": "Inverness",
+            "addressRegion": "Scottish Highlands",
+            "postalCode": "IV1 1AA",
             "addressCountry": "GB"
           },
           "geo": {
@@ -125,11 +125,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             },
             {
               "@type": "City",
-              "name": "Maghera"
+              "name": "Inverness"
             },
             {
               "@type": "Country",
-              "name": "Northern Ireland"
+              "name": "Scottish Highlands"
             },
             {
               "@type": "Country",
@@ -141,13 +141,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             }
           ],
           "sameAs": [
-            "https://www.facebook.com/profile.php?id=100065453470878",
-            "https://www.instagram.com/nmg_outdoorliving"
+            "https://www.facebook.com/HighlandOutdoorLiving",
+            "https://www.instagram.com/highland_outdoorliving"
           ],
           "image": [
-            "https://nmgpvcsupplies.co.uk/sauna/Sauna1.JPG",
-            "https://nmgpvcsupplies.co.uk/Nigel Grill Pod/GrillPod1.JPG",
-            "https://nmgpvcsupplies.co.uk/Shed1.png"
+            "https://highlandoutdoorliving.com/sauna/Sauna1.JPG",
+            "https://highlandoutdoorliving.com/hot-tub.jpg",
+            "https://highlandoutdoorliving.com/pool.jpg"
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -194,9 +194,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "NMG Outdoor Living",
-          "url": "https://nmgpvcsupplies.co.uk",
-          "logo": "https://nmgpvcsupplies.co.uk/ngmlogo.jpg",
+          "name": "Highland Outdoor Living",
+          "url": "https://highlandoutdoorliving.com",
+          "logo": "https://highlandoutdoorliving.com/logo.png",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+447730510368",
@@ -219,9 +219,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "9 Ballyknock Road",
-            "addressLocality": "Maghera",
-            "addressRegion": "County Londonderry",
-            "postalCode": "BT46 5AB",
+            "addressLocality": "Inverness",
+            "addressRegion": "Scottish Highlands",
+            "postalCode": "IV1 1AA",
             "addressCountry": "GB"
           }
         })}
