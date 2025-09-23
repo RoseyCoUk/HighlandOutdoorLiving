@@ -88,14 +88,14 @@ const CustomerReviews = () => {
   };
 
   return (
-    <section className="py-20 bg-[#C5B8AB]">
+    <section className="py-20 bg-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-[#222126] mb-8">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
             What Our Customers Say
           </h2>
-          <p className="text-xl text-[#222126]/80 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied customers across Northern Ireland have to say about their NMG outdoor living spaces.
+          <p className="text-xl text-[#E0E0E0] max-w-3xl mx-auto">
+            Hear from homeowners across Inverness and the Scottish Highlands about their Arctic Spas hot tubs, pools, and saunas.
           </p>
         </div>
 
@@ -104,31 +104,31 @@ const CustomerReviews = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Review Content */}
             <div className="relative">
-              <Quote className="absolute -top-4 -left-4 w-12 h-12 text-[#222126]/20" />
+              <Quote className="absolute -top-4 -left-4 w-12 h-12 text-white/20" />
               
-              <div className="bg-white/95 backdrop-blur-sm rounded-lg p-8 shadow-xl">
+              <div className="bg-[#1f1f1f] rounded-lg p-8 shadow-xl">
                 <div className="flex items-center mb-6">
                   <div className="flex mr-4">
                     {renderStars(reviews[currentReview].rating)}
                   </div>
-                  <span className="text-[#222126]/60 text-sm">
+                  <span className="text-[#E0E0E0]/70 text-sm">
                     {reviews[currentReview].rating}/5
                   </span>
                 </div>
 
-                <blockquote className="text-[#222126] text-lg leading-relaxed mb-6 italic">
+                <blockquote className="text-[#E0E0E0] text-lg leading-relaxed mb-6 italic">
                   "{reviews[currentReview].review}"
                 </blockquote>
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-semibold text-[#222126]">
+                    <h4 className="font-semibold text-white">
                       {reviews[currentReview].name}
                     </h4>
-                    <p className="text-[#222126]/60 text-sm">
+                    <p className="text-[#E0E0E0]/60 text-sm">
                       {reviews[currentReview].location} • {reviews[currentReview].product}
                     </p>
-                    <p className="text-[#222126]/40 text-xs">
+                    <p className="text-[#E0E0E0]/40 text-xs">
                       {reviews[currentReview].date}
                     </p>
                   </div>
@@ -143,8 +143,8 @@ const CustomerReviews = () => {
                     onClick={() => setCurrentReview(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentReview
-                        ? 'bg-[#222126]'
-                        : 'bg-[#222126]/30 hover:bg-[#222126]/50'
+                        ? 'bg-[#8B1E2D]'
+                        : 'bg-white/30 hover:bg-white/50'
                     }`}
                   />
                 ))}
@@ -165,14 +165,14 @@ const CustomerReviews = () => {
               {/* Navigation Arrows */}
               <button
                 onClick={prevReview}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-[#222126] hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-[#8B1E2D] text-white rounded-full flex items-center justify-center hover:bg-[#6f1824] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               
               <button
                 onClick={nextReview}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-[#222126] hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-[#8B1E2D] text-white rounded-full flex items-center justify-center hover:bg-[#6f1824] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -184,20 +184,20 @@ const CustomerReviews = () => {
         <div className="mt-16 text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#222126] mb-2">150+</div>
-              <div className="text-[#222126]/70 text-sm">Happy Customers</div>
+              <div className="text-3xl font-bold text-white mb-2">150+</div>
+              <div className="text-[#E0E0E0]/70 text-sm">Happy Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#222126] mb-2">4.9/5</div>
-              <div className="text-[#222126]/70 text-sm">Average Rating</div>
+              <div className="text-3xl font-bold text-white mb-2">4.9/5</div>
+              <div className="text-[#E0E0E0]/70 text-sm">Average Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#222126] mb-2">98%</div>
-              <div className="text-[#222126]/70 text-sm">Satisfaction Rate</div>
+              <div className="text-3xl font-bold text-white mb-2">98%</div>
+              <div className="text-[#E0E0E0]/70 text-sm">Satisfaction Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#222126] mb-2">5 Years</div>
-              <div className="text-[#222126]/70 text-sm">Warranty</div>
+              <div className="text-3xl font-bold text-white mb-2">5 Years</div>
+              <div className="text-[#E0E0E0]/70 text-sm">Warranty</div>
             </div>
           </div>
         </div>
