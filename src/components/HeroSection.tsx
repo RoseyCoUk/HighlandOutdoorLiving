@@ -12,7 +12,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#222126] overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
+    <section className="relative min-h-screen flex items-center justify-center bg-[#1F2A44] overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
       {/* Background texture overlay */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-[#C5B8AB]/20 to-transparent animate-pulse"></div>

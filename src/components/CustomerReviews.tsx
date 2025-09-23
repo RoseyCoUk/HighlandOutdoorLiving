@@ -88,7 +88,7 @@ const CustomerReviews = () => {
   };
 
   return (
-    <section className="py-20 bg-[#2B2B2B]">
+    <section className="py-20 bg-[#1F2A44]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
