@@ -50,7 +50,7 @@ Message: ${contactForm.message}
 
 Source: Contact Section`;
 
-        const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:sales@hkbtltd.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(mailtoLink, '_blank');
         navigate('/thank-you?product=project');
       }
@@ -64,7 +64,7 @@ Message: ${contactForm.message}
 
 Source: Contact Section`;
 
-      const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:sales@hkbtltd.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.open(mailtoLink, '_blank');
       navigate('/thank-you?product=project');
     } finally {

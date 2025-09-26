@@ -45,64 +45,64 @@ const FAQSection: React.FC = () => {
       tags: ['electrical', 'power supply', 'installation']
     },
 
-    // Grill Pods
+    // Hot Tubs
     {
-      id: 'grill-1',
-      question: 'Are grill pods weatherproof?',
-      answer: 'Yes, our grill pods are fully weatherproof and designed for year-round use in Northern Ireland\'s climate. They feature galvanized steel frames, composite cladding, and proper insulation to withstand rain, wind, and temperature changes.',
-      category: 'Grill Pods',
-      tags: ['weatherproof', 'year-round', 'climate']
+      id: 'hottub-1',
+      question: 'Are Arctic Spas hot tubs energy efficient?',
+      answer: 'Yes, Arctic Spas hot tubs are designed for maximum energy efficiency. They feature superior insulation, smart controls, and energy-saving technology that reduces operating costs while maintaining perfect water temperature.',
+      category: 'Hot Tubs',
+      tags: ['energy efficient', 'insulation', 'smart controls']
     },
     {
-      id: 'grill-2',
-      question: 'What appliances come with a grill pod?',
-      answer: 'Our grill pods come with premium Mont Alpi appliances including a gas grill, side burner, warming drawer, and storage. We can customize the appliance package based on your cooking needs and preferences.',
-      category: 'Grill Pods',
-      tags: ['Mont Alpi', 'appliances', 'customization']
+      id: 'hottub-2',
+      question: 'What maintenance do hot tubs require?',
+      answer: 'Arctic Spas hot tubs require minimal maintenance. Regular water testing, filter cleaning, and occasional chemical balancing is all that\'s needed. Our team provides comprehensive maintenance guidance during installation.',
+      category: 'Hot Tubs',
+      tags: ['maintenance', 'water testing', 'filters']
     },
     {
-      id: 'grill-3',
-      question: 'How long does grill pod installation take?',
-      answer: 'Grill pod installation typically takes 2-3 days depending on the size and complexity. Our team handles everything from delivery to final setup, including electrical and gas connections.',
-      category: 'Grill Pods',
-      tags: ['installation', 'timeline', 'delivery']
+      id: 'hottub-3',
+      question: 'How long does hot tub installation take?',
+      answer: 'Hot tub installation typically takes 1-2 days depending on site preparation requirements. Our team handles everything from delivery to final setup, including electrical connections and water testing.',
+      category: 'Hot Tubs',
+      tags: ['installation', 'timeline', 'electrical']
     },
     {
-      id: 'grill-4',
-      question: 'Do you deliver throughout Northern Ireland?',
-      answer: 'Yes, we deliver and install throughout Northern Ireland and Ireland. Our team travels to all areas and handles the complete installation process, including delivery, setup, and final testing.',
-      category: 'Grill Pods',
-      tags: ['delivery', 'Northern Ireland', 'installation']
+      id: 'hottub-4',
+      question: 'Do you deliver throughout the Scottish Highlands?',
+      answer: 'Yes, we deliver and install throughout the Scottish Highlands and surrounding areas. Our team travels to all areas and handles the complete installation process, including delivery, setup, and final testing.',
+      category: 'Hot Tubs',
+      tags: ['delivery', 'Scottish Highlands', 'installation']
     },
 
-    // Sheds
+    // Pools
     {
-      id: 'shed-1',
-      question: 'What sizes are available for custom sheds?',
-      answer: 'We build sheds in any size to suit your needs. Popular sizes range from 2.4m x 3.6m for garden offices to 4.5m x 6m for large workshops. All our sheds are bespoke to your space and requirements.',
-      category: 'Sheds',
-      tags: ['sizes', 'custom', 'bespoke']
+      id: 'pool-1',
+      question: 'What sizes are available for all-weather pools?',
+      answer: 'We offer all-weather pools in various sizes to suit your space and needs. From compact swim spas to full-size pools, all our pools are designed for year-round use in the Scottish climate.',
+      category: 'Pools',
+      tags: ['sizes', 'swim spas', 'year-round']
     },
     {
-      id: 'shed-2',
-      question: 'Can sheds be used as garden offices?',
-      answer: 'Absolutely! Many of our sheds are designed specifically as garden offices. We can include insulation, electricity, internet connections, heating, and all the amenities you need for a comfortable workspace.',
-      category: 'Sheds',
-      tags: ['garden office', 'insulation', 'electricity']
+      id: 'pool-2',
+      question: 'Can pools be used year-round?',
+      answer: 'Absolutely! Our all-weather pools are designed for year-round use. They feature superior insulation, heating systems, and weather protection that allows you to enjoy swimming in any season.',
+      category: 'Pools',
+      tags: ['year-round', 'heating', 'insulation']
     },
     {
-      id: 'shed-3',
-      question: 'What materials do you use for sheds?',
-      answer: 'We use premium materials including FSC-certified timber, composite cladding, and galvanized steel frames. All materials are chosen for durability and low maintenance in Northern Ireland\'s climate.',
-      category: 'Sheds',
-      tags: ['materials', 'timber', 'composite', 'durability']
+      id: 'pool-3',
+      question: 'What maintenance do pools require?',
+      answer: 'Our all-weather pools require minimal maintenance. Regular water testing, filter cleaning, and occasional chemical balancing is all that\'s needed. We provide comprehensive maintenance guidance during installation.',
+      category: 'Pools',
+      tags: ['maintenance', 'water testing', 'filters']
     },
     {
-      id: 'shed-4',
-      question: 'Do sheds require a concrete base?',
-      answer: 'We can install sheds on various base types including concrete slabs, timber decks, or existing patios. We\'ll recommend the best option based on your site conditions and shed size.',
-      category: 'Sheds',
-      tags: ['base', 'foundation', 'installation']
+      id: 'pool-4',
+      question: 'Do pools require planning permission?',
+      answer: 'Most pool installations don\'t require planning permission, but this depends on size, location, and local regulations. We\'ll advise on planning requirements during your consultation and can assist with any necessary applications.',
+      category: 'Pools',
+      tags: ['planning permission', 'regulations', 'consultation']
     },
 
     // General
@@ -116,7 +116,7 @@ const FAQSection: React.FC = () => {
     {
       id: 'general-2',
       question: 'How do I get a quote?',
-      answer: 'You can get a quote by calling us at 07730 510368, filling out our online quote form, or booking a consultation. We\'ll discuss your requirements and provide a detailed, no-obligation quote.',
+      answer: 'You can get a quote by calling us at +44 1463 223085, filling out our online quote form, or booking a consultation. We\'ll discuss your requirements and provide a detailed, no-obligation quote.',
       category: 'General',
       tags: ['quote', 'consultation', 'contact']
     },
@@ -136,7 +136,7 @@ const FAQSection: React.FC = () => {
     }
   ];
 
-  const categories = ['All', 'Saunas', 'Grill Pods', 'Sheds', 'General'];
+  const categories = ['All', 'Hot Tubs', 'Pools', 'Saunas', 'General'];
 
   // Filter FAQ items based on search and category
   const filteredFAQs = useMemo(() => {
@@ -286,13 +286,13 @@ const FAQSection: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+447730510368"
+                href="tel:+441463223085"
                 className="inline-flex items-center px-6 py-3 bg-[#C5B8AB] text-[#222126] font-semibold rounded-lg hover:bg-white transition-colors"
               >
                 Call Us Now
               </a>
               <a
-                href="mailto:nigelmcg@gmail.com"
+                href="mailto:sales@hkbtltd.com"
                 className="inline-flex items-center px-6 py-3 border border-[#C5B8AB] text-[#C5B8AB] font-semibold rounded-lg hover:bg-[#C5B8AB] hover:text-[#222126] transition-colors"
               >
                 Send Email

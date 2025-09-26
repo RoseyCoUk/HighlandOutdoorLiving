@@ -50,7 +50,7 @@ Message: ${formData.message}
 
 Source: Home Page Quote Form`;
 
-        const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:sales@hkbtltd.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(mailtoLink, '_blank');
         navigate('/thank-you?product=project');
       }
@@ -66,7 +66,7 @@ Message: ${formData.message}
 
 Source: Home Page Quote Form`;
 
-      const mailtoLink = `mailto:nigelmcg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:sales@hkbtltd.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.open(mailtoLink, '_blank');
       navigate('/thank-you?product=project');
     } finally {
@@ -95,7 +95,7 @@ Source: Home Page Quote Form`;
               Thank You!
             </h2>
             <p className="text-[#222126]/80 text-lg">
-              Thanks for your interest in NMG! We'll be in touch shortly to discuss your project.
+              Thanks for your interest in Highland Outdoor Living! We'll be in touch shortly to discuss your project.
             </p>
           </div>
         </div>

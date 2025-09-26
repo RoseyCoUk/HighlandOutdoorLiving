@@ -58,14 +58,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
             View Arctic Spas Range
           </a>
           
-          {onGetEstimate && (
-            <a
-              href="#quote-form"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 bg-[#CBB79C] text-[#2B2B2B] font-semibold hover:bg-[#b9a185] transition-colors"
-            >
-              Get a Free Quote
-            </a>
-          )}
+          <a
+            href="#quote-form"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 bg-[#CBB79C] text-[#2B2B2B] font-semibold hover:bg-[#b9a185] transition-colors"
+          >
+            Get a Free Quote
+          </a>
         </div>
       </div>
 
