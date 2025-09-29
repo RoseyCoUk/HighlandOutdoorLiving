@@ -12,10 +12,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#222126] overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
+    <section className="relative min-h-screen flex items-center justify-center bg-[#2B2B2B] overflow-hidden pt-16 sm:pt-20 md:pt-[73px]">
       {/* Background texture overlay */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#C5B8AB]/20 to-transparent animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#CBB79C]/20 to-transparent animate-pulse"></div>
       </div>
       
       {/* Background image */}
@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
         {/* Logo and brand name */}
         <div className="mb-8 sm:mb-12 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-32 h-32 sm:w-48 sm:h-48 mb-6 sm:mb-8 bg-[#C5B8AB]/10 rounded-full border border-[#C5B8AB]/30 p-4 sm:p-6">
+          <div className="inline-flex items-center justify-center w-32 h-32 sm:w-48 sm:h-48 mb-6 sm:mb-8 bg-[#CBB79C]/10 rounded-full border border-[#CBB79C]/30 p-4 sm:p-6">
             <img 
               src="/logo.svg" 
               alt="Highland Outdoor Living Logo" 
@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         </h2>
 
         {/* Subheading */}
-        <p className="text-base sm:text-lg md:text-xl text-[#C5B8AB]/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
+        <p className="text-base sm:text-lg md:text-xl text-[#CBB79C]/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
           Luxury Hot Tubs, Pools & Saunas from Arctic Spas – serving Inverness and the Scottish Highlands.
         </p>
 
@@ -69,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-[#C5B8AB]/60" />
+        <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-[#CBB79C]/60" />
       </div>
     </section>
   );

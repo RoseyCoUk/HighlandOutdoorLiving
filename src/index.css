@@ -211,7 +211,7 @@ button:focus {
 
 /* Focus styles for keyboard navigation */
 *:focus {
-  outline: 2px solid #C5B8AB;
+  outline: 2px solid #CBB79C;
   outline-offset: 2px;
 }
 
@@ -372,16 +372,16 @@ button:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #222126;
+  background: #2B2B2B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C5B8AB;
+  background: #CBB79C;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B5A898;
+  background: #b9a185;
 }
 
 /* Mobile scrollbar */

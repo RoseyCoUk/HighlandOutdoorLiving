@@ -75,7 +75,7 @@ const Header = () => {
               />
             </div>
             {/* Glowing Ring Effect */}
-            <div className="absolute inset-0 rounded-lg border-2 border-[#C5B8AB]/30 group-hover:border-[#C5B8AB] group-hover:shadow-[0_0_20px_rgba(197,184,171,0.5)] transition-all duration-500 group-hover:scale-125 opacity-0 group-hover:opacity-100"></div>
+            <div className="absolute inset-0 rounded-lg border-2 border-[#CBB79C]/30 group-hover:border-[#CBB79C] group-hover:shadow-[0_0_20px_rgba(203,183,156,0.5)] transition-all duration-500 group-hover:scale-125 opacity-0 group-hover:opacity-100"></div>
           </div>
         </Link>
 
@@ -126,9 +126,9 @@ const Header = () => {
               <li key={link.path} role="none">
                 <Link
                   to={link.path}
-                  className={`block py-1 sm:py-3 px-2 sm:px-4 text-sm sm:text-base font-medium transition-all duration-300 hover:text-[#C5B8AB] focus:text-[#C5B8AB] focus:outline-none hover:bg-white/5 rounded-lg ${
+                  className={`block py-1 sm:py-3 px-2 sm:px-4 text-sm sm:text-base font-medium transition-all duration-300 hover:text-[#CBB79C] focus:text-[#CBB79C] focus:outline-none hover:bg-white/5 rounded-lg ${
                     location.pathname === link.path 
-                      ? 'text-[#C5B8AB] font-bold bg-white/10' 
+                      ? 'text-[#CBB79C] font-bold bg-white/10' 
                       : 'text-[#e4d4c3]'
                   }`}
                   role="menuitem"

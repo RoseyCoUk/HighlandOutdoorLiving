@@ -164,13 +164,13 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-[#222126]">
+    <section className="py-20 bg-[#2B2B2B]">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-[#C5B8AB]/90 max-w-3xl mx-auto">
+          <p className="text-xl text-[#CBB79C]/90 max-w-3xl mx-auto">
             Find answers to common questions about our outdoor living solutions. Can't find what you're looking for? Contact us directly.
           </p>
         </div>
@@ -180,13 +180,13 @@ const FAQSection: React.FC = () => {
           <div className="flex flex-col md:flex-row gap-4 mb-6">
             {/* Search Bar */}
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#C5B8AB]/60" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#CBB79C]/60" />
               <input
                 type="text"
                 placeholder="Search questions..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-white/10 border border-[#C5B8AB]/30 rounded-lg text-white placeholder-[#C5B8AB]/60 focus:outline-none focus:border-[#C5B8AB] transition-colors"
+                className="w-full pl-12 pr-4 py-3 bg-white/10 border border-[#CBB79C]/30 rounded-lg text-white placeholder-[#CBB79C]/60 focus:outline-none focus:border-[#CBB79C] transition-colors"
               />
             </div>
 
@@ -198,8 +198,8 @@ const FAQSection: React.FC = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'bg-[#C5B8AB] text-[#222126] font-semibold'
-                      : 'bg-white/10 text-[#C5B8AB] hover:bg-white/20'
+                      ? 'bg-[#CBB79C] text-[#2B2B2B] font-semibold'
+                      : 'bg-white/10 text-[#CBB79C] hover:bg-white/20'
                   }`}
                 >
                   {category}
@@ -209,7 +209,7 @@ const FAQSection: React.FC = () => {
           </div>
 
           {/* Results Count */}
-          <p className="text-[#C5B8AB]/60 text-sm">
+          <p className="text-[#CBB79C]/60 text-sm">
             {filteredFAQs.length} question{filteredFAQs.length !== 1 ? 's' : ''} found
           </p>
         </div>
@@ -220,24 +220,24 @@ const FAQSection: React.FC = () => {
             filteredFAQs.map((item) => (
               <div
                 key={item.id}
-                className="bg-white/5 backdrop-blur-sm border border-[#C5B8AB]/20 rounded-lg overflow-hidden"
+                className="bg-white/5 backdrop-blur-sm border border-[#CBB79C]/20 rounded-lg overflow-hidden"
               >
                 <button
                   onClick={() => toggleItem(item.id)}
                   className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
                 >
                   <div className="flex items-start space-x-4">
-                    <HelpCircle className="w-5 h-5 text-[#C5B8AB] mt-1 flex-shrink-0" />
+                    <HelpCircle className="w-5 h-5 text-[#CBB79C] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1">
                         {item.question}
                       </h3>
                       <div className="flex items-center space-x-2">
-                        <span className="px-2 py-1 bg-[#C5B8AB]/20 text-[#C5B8AB] text-xs rounded">
+                        <span className="px-2 py-1 bg-[#CBB79C]/20 text-[#CBB79C] text-xs rounded">
                           {item.category}
                         </span>
                         {item.tags.slice(0, 2).map(tag => (
-                          <span key={tag} className="px-2 py-1 bg-white/10 text-[#C5B8AB]/60 text-xs rounded">
+                          <span key={tag} className="px-2 py-1 bg-white/10 text-[#CBB79C]/60 text-xs rounded">
                             {tag}
                           </span>
                         ))}
@@ -245,9 +245,9 @@ const FAQSection: React.FC = () => {
                     </div>
                   </div>
                   {openItems.has(item.id) ? (
-                    <ChevronUp className="w-5 h-5 text-[#C5B8AB] flex-shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-[#CBB79C] flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-[#C5B8AB] flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-[#CBB79C] flex-shrink-0" />
                   )}
                 </button>
 
@@ -255,7 +255,7 @@ const FAQSection: React.FC = () => {
                   <div className="px-6 pb-4">
                     <div className="pl-9">
                       <div className="prose prose-invert max-w-none">
-                        <p className="text-[#C5B8AB]/90 leading-relaxed">
+                        <p className="text-[#CBB79C]/90 leading-relaxed">
                           {item.answer}
                         </p>
                       </div>
@@ -266,9 +266,9 @@ const FAQSection: React.FC = () => {
             ))
           ) : (
             <div className="text-center py-12">
-              <HelpCircle className="w-16 h-16 text-[#C5B8AB]/40 mx-auto mb-4" />
+              <HelpCircle className="w-16 h-16 text-[#CBB79C]/40 mx-auto mb-4" />
               <h3 className="text-xl text-white mb-2">No questions found</h3>
-              <p className="text-[#C5B8AB]/60">
+              <p className="text-[#CBB79C]/60">
                 Try adjusting your search terms or category filter
               </p>
             </div>
@@ -277,23 +277,23 @@ const FAQSection: React.FC = () => {
 
         {/* Contact CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-[#C5B8AB]/10 border border-[#C5B8AB]/30 rounded-lg p-8">
+          <div className="bg-[#CBB79C]/10 border border-[#CBB79C]/30 rounded-lg p-8">
             <h3 className="text-2xl font-semibold text-white mb-4">
               Still have questions?
             </h3>
-            <p className="text-[#C5B8AB]/90 mb-6 max-w-2xl mx-auto">
+            <p className="text-[#CBB79C]/90 mb-6 max-w-2xl mx-auto">
               Our team is here to help. Contact us for personalized advice and detailed information about your outdoor living project.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+441463223085"
-                className="inline-flex items-center px-6 py-3 bg-[#C5B8AB] text-[#222126] font-semibold rounded-lg hover:bg-white transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-[#CBB79C] text-[#2B2B2B] font-semibold rounded-lg hover:bg-white transition-colors"
               >
                 Call Us Now
               </a>
               <a
                 href="mailto:sales@hkbtltd.com"
-                className="inline-flex items-center px-6 py-3 border border-[#C5B8AB] text-[#C5B8AB] font-semibold rounded-lg hover:bg-[#C5B8AB] hover:text-[#222126] transition-colors"
+                className="inline-flex items-center px-6 py-3 border border-[#CBB79C] text-[#CBB79C] font-semibold rounded-lg hover:bg-[#CBB79C] hover:text-[#2B2B2B] transition-colors"
               >
                 Send Email
               </a>
