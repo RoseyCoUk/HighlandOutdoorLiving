@@ -40,8 +40,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         </div>
 
         {/* Main headline */}
-        <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[88px] font-light mb-4 sm:mb-6 text-white leading-[1.05] px-2 tracking-tight">
-          Relax. Refresh. Rejuvenate.
+        <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[88px] font-light mb-4 sm:mb-6 leading-[1.05] px-2 tracking-tight">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#CBB79C]">
+            Relax
+          </span>
+          <span className="text-[#CBB79C]">.</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#CBB79C]"> Refresh</span>
+          <span className="text-[#CBB79C]">.</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#CBB79C]"> Rejuvenate</span>
+          <span className="text-[#CBB79C]">.</span>
         </h2>
 
         {/* Subheading */}
