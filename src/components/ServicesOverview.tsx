@@ -8,7 +8,7 @@ const ServicesOverview = () => {
       title: 'Arctic Spas Hot Tubs',
       description: 'Your ticket to paradise — energy‑efficient hot tubs engineered for the Highlands.',
       features: ['Hydrotherapy Jets', 'Energy Efficient', 'Smart Controls'],
-      image: '/Arctic Spa 1.jpg',
+      image: '/Arctic%20Spa%201.jpg',
       alt: 'Arctic Spas hot tub in Inverness home',
       cta: 'View Arctic Spas Range',
       link: '/hot-tubs'
