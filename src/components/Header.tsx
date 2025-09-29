@@ -64,7 +64,7 @@ const Header = () => {
             {/* 3D Rotating Logo */}
             <div className="w-8 h-8 sm:w-12 sm:h-12 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl">
               <img 
-                src="/logo.svg" 
+                src="/Highland%20Outdoor%20Living.png" 
                 alt="Highland Outdoor Living Logo" 
                 className="w-full h-full object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300"
                 loading="lazy"
