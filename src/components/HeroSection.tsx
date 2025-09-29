@@ -26,10 +26,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         }}
       ></div>
       
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
         {/* Logo and brand name */}
         <div className="mb-8 sm:mb-12 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-40 h-40 sm:w-56 sm:h-56 mb-6 sm:mb-8 bg-[#CBB79C]/10 rounded-full border border-[#CBB79C]/30 p-2 sm:p-3 shadow-[0_0_0_0_rgba(203,183,156,0.4)] animate-[pulseGlow_3s_ease-in-out_infinite, floatUpDown_8s_ease-in-out_infinite]">
+          <div className="inline-flex items-center justify-center w-40 h-40 sm:w-56 sm:h-56 mb-6 sm:mb-8 bg-[#CBB79C]/10 rounded-full border border-[#CBB79C]/30 p-2 sm:p-3 shadow-[0_0_0_0_rgba(203,183,156,0.4)] hero-logo-anim">
             <img 
               src="/Highland%20Outdoor%20Living.png" 
               alt="Highland Outdoor Living Logo" 
@@ -40,34 +40,34 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         </div>
 
         {/* Main headline */}
-        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light mb-6 sm:mb-8 text-white leading-tight px-2">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[88px] font-light mb-4 sm:mb-6 text-white leading-[1.05] px-2 tracking-tight">
           Relax. Refresh. Rejuvenate.
         </h2>
 
         {/* Subheading */}
-        <p className="text-base sm:text-lg md:text-xl text-[#CBB79C]/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
+        <p className="text-lg sm:text-xl md:text-2xl text-[#CBB79C]/90 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-2">
           Luxury Hot Tubs, Pools & Saunas from Arctic Spas – serving Inverness and the Scottish Highlands.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 px-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-2 px-4">
           <a
             href="/hot-tubs"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 bg-[#8B1E2D] text-white font-semibold hover:bg-[#6f1824] transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-5 bg-[#8B1E2D] text-white font-semibold hover:bg-[#6f1824] transition-colors shadow-lg"
           >
             View Arctic Spas Range
           </a>
           
           <a
             href="#quote-form"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 bg-[#CBB79C] text-[#2B2B2B] font-semibold hover:bg-[#b9a185] transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-5 bg-[#CBB79C] text-[#2B2B2B] font-semibold hover:bg-[#b9a185] transition-colors shadow-lg"
           >
             Get a Free Quote
           </a>
         </div>
 
         {/* Scroll indicator below CTAs, not overlapping */}
-        <div className="mt-10 flex justify-center animate-bounce">
+        <div className="mt-6 flex justify-center animate-bounce">
           <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-[#CBB79C]/60" />
         </div>
       </div>
