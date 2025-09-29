@@ -20,7 +20,7 @@ const BrandPositioning = () => {
           {/* Visual */}
           <div className="relative group">
             <img
-              src="/arctic-spas-hero.jpg"
+              src="/Arctic Spa 1.jpg"
               alt="Highland Outdoor Living Arctic Spas installation"
               className="w-full h-[600px] object-cover rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
