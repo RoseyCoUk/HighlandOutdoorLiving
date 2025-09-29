@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
       
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
         {/* Logo and brand name */}
-        <div className="mb-8 sm:mb-12 animate-fade-in">
+        <div className="mb-8 sm:mb-12 mt-4 md:mt-6 animate-fade-in">
           <div className="inline-flex items-center justify-center w-40 h-40 sm:w-56 sm:h-56 mb-6 sm:mb-8 bg-[#CBB79C]/10 rounded-full border border-[#CBB79C]/30 p-2 sm:p-3 shadow-[0_0_0_0_rgba(203,183,156,0.4)] hero-logo-anim">
             <img 
               src="/Highland%20Outdoor%20Living.png" 
