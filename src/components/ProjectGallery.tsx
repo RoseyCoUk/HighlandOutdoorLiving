@@ -9,7 +9,7 @@ const ProjectGallery = () => {
     {
       title: 'Arctic Spas Hot Tub Installation',
       category: 'Hot Tubs',
-      image: '/arctic-spas-hero.jpg',
+      image: '/Arctic Spa 1.jpg',
       description: 'Energy‑efficient hot tub designed for the Highlands climate'
     },
     {
