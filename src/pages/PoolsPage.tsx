@@ -3,19 +3,17 @@ import SEOHead from '../components/SEOHead';
 
 const PoolsPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#2B2B2B] text-white">
+    <div className="min-h-screen bg-[#2B2B2B] text-white flex items-center justify-center">
       <SEOHead 
-        title="All-Weather Pools & Swim Spas | Highland Outdoor Living"
-        description="Arctic Spas All-Weather Pools and swim spas for Inverness and the Scottish Highlands. Wellness routines with cold plunge therapy."
-        image="/arctic-spas-pool.jpg"
+        title="All-Weather Pools | Highland Outdoor Living"
+        description="All-Weather Pools page is coming soon."
+        image="/Arctic-Spa-1.jpg"
         url="/pools"
       />
-      <section className="pt-24 pb-16 text-center px-6">
-        <h1 className="text-4xl md:text-6xl font-light mb-4">All-Weather Pools</h1>
-        <p className="text-[#E0E0E0] max-w-3xl mx-auto">
-          Wellness routines with cold plunge therapy and year‑round swimming. Built for the Highlands with energy‑efficient insulation and smart controls.
-        </p>
-      </section>
+      <div className="text-center px-6">
+        <h1 className="text-3xl md:text-5xl font-semibold">All-Weather Pools</h1>
+        <p className="mt-3 text-[#E0E0E0]">Coming soon.</p>
+      </div>
     </div>
   );
 };
