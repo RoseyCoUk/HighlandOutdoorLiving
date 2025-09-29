@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 px-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-20 px-4">
           <a
             href="/hot-tubs"
             className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 bg-[#8B1E2D] text-white font-semibold hover:bg-[#6f1824] transition-colors"
@@ -68,7 +68,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetEstimate }) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-10 sm:bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce z-20 pointer-events-none">
         <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-[#CBB79C]/60" />
       </div>
     </section>
