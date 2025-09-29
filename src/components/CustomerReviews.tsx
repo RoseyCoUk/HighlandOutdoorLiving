@@ -88,7 +88,7 @@ const CustomerReviews = () => {
   };
 
   return (
-    <section className="py-20 bg-[#1F2A44]">
+    <section className="py-20 bg-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
@@ -159,7 +159,7 @@ const CustomerReviews = () => {
                   alt={`${reviews[currentReview].product} project`}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#222126]/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/20 to-transparent"></div>
               </div>
               
               {/* Navigation Arrows */}
